@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../overview-unified-routing](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/overview-unified-routing)
 
 ## What it does
-The core routing and assignment engine for D365 Contact Center. Routes work items across all channels (voice, chat, SMS, social, cases, email) through a two-stage pipeline: Classification (enrich the work item) then Assignment (match to the right agent). All channels use the same engine and logic.
+Routes all work items (voice, chat, SMS, social, cases, email) through a two-stage pipeline: Classification (enrich the work item) then Assignment (match to the right agent). All channels run through the same engine.
 
 ## Key facts
 - Two stages: **Classification** (rules/ML add context: skills, priority, capacity profile) → **Assignment** (match enriched item to agent by skills, capacity, presence, workload)
@@ -24,10 +24,10 @@ Unified routing is mandatory for D365 Contact Center and Customer Service routin
 - Capacity model: profiles or units — use profiles for all new implementations
 
 ## Gotchas
-- **Classification before assignment.** A common setup mistake is jumping straight to queues without designing classification rules. Poor classification means the assignment stage can't do its job — work items arrive without the context needed to match them correctly.
-- **Copilot Service workspace is mandatory.** Agents still using Customer Service Hub won't receive work. This is a non-obvious blocker for hybrid rollouts where some agents haven't migrated yet.
-- **Start simple.** Most clients try to replicate all their existing routing complexity on day one. Recommend starting with 3–5 queues and basic rule-based classification. ML models and complex skill taxonomies should come later, once there's real usage data.
+- **Classification before assignment.** Common mistake: jump straight to queues without designing classification rules. Poor classification means assignment can't match items properly—they arrive with no useful context.
+- **Copilot Service workspace is mandatory.** Agents on Customer Service Hub won't receive work. Non-obvious blocker for hybrid rollouts where some agents haven't migrated yet.
+- **Start simple.** Most clients try to replicate all existing routing complexity on day one. Start with 3–5 queues and basic rule-based classification. ML and complex skill taxonomies come later, after you have real data.
 
 ---
 
-*Source last updated: 2026-04-15 | Review when: Routing architecture changes in release wave plans*
+*Source last updated: 2026-04-15 | Worth revisiting when: Routing architecture changes in release wave plans*

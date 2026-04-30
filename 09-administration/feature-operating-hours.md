@@ -23,10 +23,10 @@ Use on any deployment where the contact centre doesn't operate 24/7 or needs to 
 - **Holidays** — define the governance process for who maintains the calendar and how public holidays get added each year
 
 ## Gotchas
-- **Calendar entity cannot be migrated.** This is one of the few Contact Center configurations that must be manually recreated in each environment. Include it explicitly in the UAT-to-production migration checklist.
-- **The "Out of operation hours" queue overflow condition is created automatically and cannot be deleted** — only the action can be changed. If you see this condition appearing unexpectedly, it's because operating hours were attached to the queue.
-- **Holidays are easy to miss post-go-live.** Without an established process, agents will receive calls on bank holidays because nobody configured the date. Establish ownership during operational handover.
+- **Calendar entity cannot be migrated.** It's one of the few Contact Center configurations that must be manually recreated in each environment. Include it explicitly in the UAT-to-production migration checklist.
+- **The "Out of operation hours" queue overflow condition is created automatically and cannot be deleted** — only the action can be changed. If it appears unexpectedly, operating hours were attached to the queue.
+- **Holidays are easy to miss post-go-live.** Without an established process, agents will receive calls on bank holidays because nobody configured the date. Establish ownership during handover.
 
 ---
 
-*Source last updated: 2026-03-18 | Review when: Calendar entity export/import support added, or operating hours relocated in admin center*
+*Source last updated: 2026-03-18 | Check this: Calendar entity export/import support added, or operating hours relocated in admin center*

@@ -28,12 +28,12 @@ Use real-time translation in multicultural or multilingual contact centers where
 - **Cost controls:** Set alerts or caps on monthly translation API usage to prevent budget overruns
 
 ## Gotchas
-- Azure AI Translator charges per character translated; high-volume chat centers can incur unexpected costs if usage isn't monitored
-- Translation latency (typically <1 second) can feel slow in fast-paced conversations; set customer expectations about response time
-- Tone and sentiment can be lost in translation; a casual agent phrase may sound curt or rude to a customer after translation
-- System-wide language detection can misidentify code-switching (mixing languages) or minority languages; manual language selection may be needed
-- Translated canned responses are *not* automatically handled; teams must separately translate knowledge base articles if agents rely on them
-- The feature does not translate customer context or interaction history; agents still see metadata in English, which can cause confusion
+- Azure AI Translator charges per character. High-volume chat centers can incur unexpected costs if usage isn't monitored.
+- Translation latency (typically <1 second) can feel slow in fast-paced conversations. Set customer expectations about response time.
+- Tone and sentiment are lost in translation. A casual agent phrase may sound curt or rude to a customer after translation.
+- System-wide language detection can misidentify code-switching (mixing languages) or minority languages. Manual language selection may be needed.
+- Translated canned responses are not automatically handled. Teams must separately translate knowledge base articles if agents rely on them.
+- The feature does not translate customer context or interaction history. Agents still see metadata in English, which causes confusion.
 
 ---
 

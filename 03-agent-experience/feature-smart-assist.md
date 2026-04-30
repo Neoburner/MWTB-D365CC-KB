@@ -25,8 +25,8 @@ Use when there is a custom recommendation engine or external knowledge system to
 - Custom bot vs Copilot — for most new deployments, Copilot Ask a Question (see `feature-copilot-help-pane.md`) replaces what smart assist's native AI did; smart assist custom bots are for specialised recommendation use cases beyond KB search
 
 ## Gotchas
-- **Don't plan around the deprecated native AI suggestions.** Any client or internal reference to "smart assist suggesting knowledge articles" is referring to functionality that no longer exists. The correct replacement is Copilot's Ask a Question.
-- **Copilot Studio agents cannot be used here.** Smart assist is Azure Bot Service only. This is a non-obvious constraint that surprises teams who have standardised on Copilot Studio.
+- **Don't plan around the deprecated native AI suggestions.** Any client reference to "smart assist suggesting knowledge articles" is functionality that no longer exists. The replacement is Copilot's Ask a Question.
+- **Copilot Studio agents cannot be used here.** Smart assist is Azure Bot Service only. Non-obvious constraint that surprises teams standardised on Copilot Studio.
 
 ---
 

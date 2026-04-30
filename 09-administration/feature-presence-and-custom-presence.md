@@ -25,9 +25,9 @@ Always relevant — presence is core to routing. Custom presence statuses are us
 
 ## Gotchas
 - **Wrong base status mapping is silent and harmful.** A "Training" status mapped to Available will route work to agents in training. Review every mapping before go-live.
-- **Allowed Presences on workstreams must be reviewed alongside custom presence.** Creating a custom "Busy – Admin" status mapped to Busy means nothing if the workstream excludes Busy from Allowed Presences.
-- **Capacity profile Assignment Blocking forces Busy-DND automatically.** Supervisors seeing unexpected Busy-DND on a rep's status should check whether a capacity profile limit was hit, not assume a system error.
+- **Review Allowed Presences on workstreams alongside custom presence.** Creating a custom "Busy – Admin" status mapped to Busy means nothing if the workstream excludes Busy from Allowed Presences.
+- **Capacity profile Assignment Blocking forces Busy-DND automatically.** If supervisors see unexpected Busy-DND on a rep, check whether a capacity profile limit was hit.
 
 ---
 
-*Source last updated: 2025-06-11 | Review when: New base statuses added or presence API behaviour changes*
+*Source last updated: 2025-06-11 | Check this: New base statuses added or presence API behaviour changes*

@@ -26,9 +26,9 @@ Almost all deployments use one of the OOB methods. Use Custom only when out-of-t
 - Whether to configure custom assignment — adds maintenance overhead; only justified for operating-hours-aware routing or complex multi-stage skill relaxation
 
 ## Gotchas
-- **Custom assignment requires explicit presence and capacity rules.** Workstream defaults don't carry over. Forgetting this results in work being assigned regardless of whether agents are available.
-- **The decline limit is operationally significant.** If agents miss notifications at go-live (common), items can get stuck after 3 decline cycles. Configure the limit deliberately and test the decline flow in UAT.
-- **Dynamic Prioritisation is Preview.** Do not use in production for regulated environments. Monitor for GA.
+- **Custom assignment requires explicit presence and capacity rules.** Workstream defaults don't carry over. Miss this and work gets assigned regardless of agent availability.
+- **The decline limit matters operationally.** If agents miss notifications at go-live (common), items can get stuck after 3 decline cycles. Configure deliberately and test the decline flow in UAT.
+- **Dynamic Prioritisation is Preview.** Don't use in production for regulated environments yet.
 
 ---
 

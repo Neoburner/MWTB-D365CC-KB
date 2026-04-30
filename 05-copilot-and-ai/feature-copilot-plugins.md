@@ -17,17 +17,17 @@ Extends Copilot's capabilities beyond built-in knowledge by connecting it to ext
 - Prerequisites: AI Builder environment (prompt plugins); existing Power Automate custom connector (custom connector plugins); Copilot Studio access (certified connector plugins)
 
 ## When to use / skip
-Use when reps need Copilot to reach into external systems or execute complex processes beyond KB search and email drafting. Skip for standard deployments where built-in Copilot capabilities are sufficient.
+Use when reps need Copilot to reach into external systems or run complex processes beyond KB and email. Skip for standard deployments where built-in capabilities are enough.
 
 ## Configuration decisions
 - Which plugin type is appropriate: Prompt plugins for Dataverse-based processes; Custom connector plugins for external system integration; Certified connector plugins for well-known SaaS tools
 - Access scoping — restrict by role if only specific teams should use a particular plugin
 
 ## Gotchas
-- **Preview status.** Configuration interface and behaviour are subject to change. Do not build production-critical workflows on this feature until GA.
-- **15-minute publish delay.** After enabling, reps won't see the plugin immediately. Factor this into testing and training sessions.
-- **Custom connector must exist before configuring.** If the Power Automate custom connector hasn't been built yet, the plugin can't be configured. This is a dependency that's easy to overlook when scoping the Copilot configuration work.
+- **Preview status.** Configuration and behaviour are subject to change. Don't build production workflows on this until GA.
+- **15-minute publish delay.** Reps won't see the plugin immediately after enabling. Factor this into testing and training.
+- **Custom connector must exist first.** If the Power Automate connector isn't built yet, the plugin can't be configured. Easy to miss when scoping the work.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Feature reaches GA, or new plugin types added*
+*Source last updated: check Microsoft Learn | Check this after feature reaches GA or new plugin types are added*

@@ -23,9 +23,9 @@ Most standard deployments don't need custom persona mapping — OOB roles work. 
 - **Direct assignment vs. team-based access** — the direct assignment requirement must be built into the IT onboarding process; teams-based access alone won't work
 
 ## Gotchas
-- **Three-step grant process is commonly incomplete.** Clients create and map the custom role, then users can't log into the workspace because app access and form access weren't granted. Build all three steps (create role, map persona, grant app access, grant form access) into every custom role implementation checklist.
-- **Direct assignment requirement creates IT friction.** Enterprise clients managing access through Azure AD groups or D365 teams must add a parallel direct-assignment process for Omnichannel roles. Raise this in the security design phase, not at go-live.
+- **Three-step grant process is commonly incomplete.** Clients create and map the custom role, then users can't log in because app access and form access weren't granted. Build all three steps into every custom role implementation checklist.
+- **Direct assignment requirement creates IT friction.** Enterprise clients managing access through Azure AD groups or D365 teams need a parallel direct-assignment process for Omnichannel roles. Raise this during security design, not at go-live.
 
 ---
 
-*Source last updated: 2025-04-15 | Review when: Team-based role assignment supported for persona mapping, or new personas added*
+*Source last updated: 2025-04-15 | Check this: Team-based role assignment supported for persona mapping, or new personas added*

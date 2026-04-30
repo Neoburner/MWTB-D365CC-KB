@@ -27,12 +27,12 @@ Use Conversation Diagnostics when an agent is confused about why they received a
 - **Audit trail:** Determine if diagnostics access is logged for compliance purposes
 
 ## Gotchas
-- Conversation Diagnostics shows *what happened* but not *why the rules were written that way*; agents still need training on business logic behind routing
-- If a conversation was mis-classified by AI or intent detection, diagnostics will show the classification that was applied, not the "correct" classification—investigation must look upstream
-- Diagnostics can expose business logic (routing rules, skill hierarchies) to agents, which some organizations consider sensitive; consider role-based filtering
-- High detail level diagnostics can overwhelm agents in fast-paced channels; simplify the view for chat/social agents
-- If a conversation is transferred multiple times, the diagnostics panel may grow very long; UX optimization is needed for visibility
-- Diagnostics rely on clean data logging upstream; if routing events are not logged correctly, diagnostics will be incomplete or inaccurate
+- Conversation Diagnostics shows what happened but not why the rules were written that way. Agents still need training on business logic behind routing.
+- If a conversation was mis-classified by AI or intent detection, diagnostics show the classification that was applied, not the "correct" one. Investigation must look upstream.
+- Diagnostics can expose business logic (routing rules, skill hierarchies) to agents, which some orgs consider sensitive. Consider role-based filtering.
+- High detail level diagnostics can overwhelm agents in fast-paced channels. Simplify the view for chat/social agents.
+- If a conversation is transferred multiple times, the diagnostics panel grows very long. UX optimization is needed for visibility.
+- Diagnostics rely on clean data logging upstream. If routing events aren't logged correctly, diagnostics will be incomplete or inaccurate.
 
 ---
 

@@ -15,16 +15,16 @@ Integrates WFM shift schedules with unified routing. When enabled, the routing e
 - **Standalone only**
 
 ## When to use / skip
-Enable as part of the WFM go-live — this is what makes WFM schedules operationally meaningful for routing. Without it, shift schedules are visible to reps but have no effect on work assignment. No value in enabling before shift schedules are published.
+Turn this on as part of WFM go-live — it's what makes schedules actually matter for routing. Without it, schedules exist but don't affect work assignment. Wait until shift schedules are published before enabling.
 
 ## Configuration decisions
 None beyond the enable toggle — routing behaviour derives from published shift bookings and approved time-off records.
 
 ## Gotchas
-- **Enable only after shift schedules are published.** If you enable before schedules exist, representatives with no active shift booking may be excluded from routing entirely. Validate at least one complete week of shift bookings is published before enabling in production.
-- **Test with a single rep first.** Enable for a test user with a known shift, verify work is blocked outside shift hours, then roll out to the full population.
-- **Time-off auto-blocking is the most demonstrable benefit.** Show the workflow end-to-end during WFM handover: approve time-off → rep removed from routing eligibility during that period automatically.
+- **Don't enable before schedules are published.** Enable too early and reps with no shift booking get locked out of routing entirely. Publish at least one full week of shifts in production before you flip the toggle.
+- **Test with one rep first.** Pick a test user with a known shift, verify work blocks outside shift hours, then roll out.
+- **Time-off auto-blocking is the win here.** Show this in the handover: approve time-off → rep automatically disappears from routing for that period.
 
 ---
 
-*Source last updated: 2025-04-14 | Review when: Shift-based routing becomes available in embedded deployment, or routing integration with WFM expands*
+*Source last updated: 2025-04-14 | Check this if: Shift-based routing rolls out to embedded, or WFM routing integrations expand*

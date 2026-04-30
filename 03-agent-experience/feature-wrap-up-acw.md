@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-after-conversation-work
 
 ## What it does
-Wrap-up (ACW) is the period after an agent ends a conversation where they complete notes, select disposition codes, or handle other post-interaction work before becoming available for the next contact. ACW can be configured as auto-ending (agent becomes available after timer expires), supervisor-forced (supervisor must manually close the wrap-up session), or unrestricted (no timer, agent decides when ready). During wrap-up, the agent's presence state and capacity consumption are configurable independently.
+Wrap-up (ACW) is the period after an agent ends a conversation where they complete notes, select disposition codes, or handle post-interaction work before becoming available for the next contact. Can be configured as auto-ending (agent becomes available after timer expires), supervisor-forced (supervisor must close the wrap-up session), or unrestricted (no timer). During wrap-up, the agent's presence state and capacity consumption are configurable independently.
 
 ## Key facts
 - Wrap-up timer can be disabled entirely, set to auto-end after N minutes, or require supervisor intervention to close
@@ -27,12 +27,12 @@ Use ACW when you have post-call processes: quality assurance notes, capture cust
 - **Timer enforcement:** If auto-end is enabled, set duration based on average post-call work time (typically 2–5 minutes) to avoid timeout frustration
 
 ## Gotchas
-- Wrap-up presence state is *not* the same as availability for routing; agents can appear "Available" to the system while their capacity is consumed in wrap-up
-- If wrap-up timer is too short, agents may rush or skip notes; if too long, queue wait times appear inflated (agents in wrap-up won't accept new work)
-- Disposition codes are *not* required by default; if compliance or reporting depends on them, enforce via form validation, not training alone
-- Supervisor-controlled wrap-up can become a bottleneck if supervisors are also taking contacts; ensure a supervisor queue and monitoring
-- Metrics can be skewed: "Average Handle Time" may exclude wrap-up by default, making it seem agents are faster than they actually are
-- Conversation close and wrap-up close are separate events; failing to track the difference can obscure process inefficiencies
+- Wrap-up presence state is not the same as availability for routing. Agents can appear "Available" while their capacity is consumed in wrap-up.
+- If wrap-up timer is too short, agents rush or skip notes. If too long, queue wait times appear inflated (agents in wrap-up won't accept new work).
+- Disposition codes are not required by default. If compliance or reporting depends on them, enforce via form validation, not training alone.
+- Supervisor-controlled wrap-up can become a bottleneck if supervisors are also taking contacts. Ensure a supervisor queue and monitoring.
+- Metrics can be skewed. "Average Handle Time" may exclude wrap-up by default, making agents seem faster than they are.
+- Conversation close and wrap-up close are separate events. Failing to track the difference obscures process inefficiencies.
 
 ---
 

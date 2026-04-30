@@ -27,9 +27,9 @@ Required for every routing deployment. Every channel type and instance needs a w
 - Workstream granularity — separate workstreams per line of business allow different routing rules and capacity settings; one workstream per channel type is simpler but forces shared routing logic
 
 ## Gotchas
-- **Push vs Pick cannot be changed post-creation.** Confirm with the client before creating. Recreating workstreams post go-live means reconfiguring all rules, reassigning channel instances, and retesting.
-- **Bot handoff context variables must be configured before attaching a Copilot Studio agent.** Without context variables, agents start conversations cold — the bot's collected data doesn't transfer.
-- **Asynchronous plug-ins must be enabled** (`DisabledForAsyncProcessing = No`) in some orgs — disabled async plug-ins silently break workstream creation. Check if the org has this disabled before starting setup.
+- **Push vs Pick cannot be changed post-creation.** Confirm with the client before you build. Recreating post go-live means reconfiguring all rules, reassigning channels, and retesting.
+- **Bot handoff context variables must be configured before attaching a Copilot Studio agent.** Without them, agents start conversations cold—the bot's data doesn't carry over.
+- **Asynchronous plug-ins must be enabled** (`DisabledForAsyncProcessing = No`) in some orgs—disabled async plug-ins silently break workstream creation. Check before you start setup.
 
 ---
 

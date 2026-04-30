@@ -18,26 +18,26 @@ Callback allows customers waiting in a voice queue to request a callback instead
 - Callback integration with voice workstreams requires Power Automate trigger and agent assignment logic
 
 ## When to use / skip
-Use callbacks in high-traffic periods, seasonal spikes, or when average hold time exceeds 2 minutes. Callbacks improve CSAT by reducing abandonment and freeing queue space. Skip if your contact centre operates on-demand (always agents available) or if callback infrastructure (outbound calling capacity) is not available.
+Use callbacks if you've got traffic spikes, seasonal peaks, or average hold time over 2 minutes. They cut abandonment and CSAT improves. Skip if you always have agents ready or don't have outbound dialling capacity to spare.
 
 ## Configuration decisions
-- **Wait-time threshold:** Set the minimum hold time before offering callback (30 sec to 10 min range typical)
-- **Callback slot capacity:** Limit the number of pending callbacks to avoid overwhelming outbound calling (common: 50–200 per queue)
-- **Callback message:** Customize what the customer hears when offered a callback
-- **Scheduled callback window:** Define business hours and allowed slots (e.g., next business day, 10am–5pm only)
-- **Retry logic:** If callback fails, decide whether to retry once, multiple times, or abandon
-- **Callback priority:** Decide if new callbacks queue ahead of new inbound calls or go to the back of the queue
-- **Agent assignment:** Route callbacks to the agent who took the original request or use standard queue assignment
+- **Wait-time threshold** — When do you offer callback? (30 sec to 10 min typical).
+- **Callback slot limit** — How many pending callbacks before you stop accepting them per queue? (50–200 common).
+- **Callback message** — What does the customer hear when offered a callback.
+- **Scheduled callback window** — Business hours and slot availability (next day, 10am–5pm only, etc.).
+- **Retry logic** — Does callback retry once, multiple times, or just abandon if the customer doesn't answer.
+- **Priority** — Do new callbacks jump ahead of new inbound calls or queue at the back.
+- **Agent assignment** — Route back to the original agent or use standard queue assignment.
 
 ## Gotchas
-- Callback requests are lost if the customer hangs up before confirming; no partial confirmation logic
-- Scheduled callbacks must be confirmed *during* the call; customers cannot pre-book via self-service without Power Automate custom logic
-- Callback dialling fails silently if the customer number is invalid; no error notification to agents or supervisors
-- Callback slots are per-queue; if you have 10 queues, each gets its own callback pool (total 10x the configured limit)
-- Callback messages are played from text-to-speech; custom audio for callback prompts requires ACS recording configuration
-- If an agent is assigned to a callback and goes unavailable, the callback may be orphaned or automatically reassigned—clarify agent-to-callback binding
-- Callback analytics (abandonment, callback completion rate) must be tracked via custom reporting; not surfaced in standard dashboards
+- **Callback requests die if the customer hangs up before confirming.** No partial confirmation recovery.
+- **Scheduled callbacks only happen during the call.** Customers can't pre-book self-service without custom Power Automate.
+- **Invalid customer numbers fail silently.** No error alert to agents or supervisors.
+- **Slots are per-queue.** 10 queues with a 100-slot limit = 1,000 total callbacks possible. Easy to not realise you've blown past capacity.
+- **Callback prompts use text-to-speech.** Custom audio requires ACS recording setup.
+- **Agent unavailability orphans callbacks.** If the assigned agent goes unavailable, the callback may hang or auto-reassign. Clarify how this works.
+- **Callback reporting is custom.** Abandonment rates, completion rates — not in the standard dashboards. You'll build them yourself.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Callback automation features expand or callback integration with Copilot Agent launches*
+*Source last updated: 2026-04-30 | Worth revisiting if callback automation expands or Copilot Agents integrate with callback*

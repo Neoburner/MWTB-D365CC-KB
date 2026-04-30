@@ -27,9 +27,9 @@ Configure on any deployment where reps need context before accepting a work item
 - **Desktop notification setting** — "When app is in background" is the right default for most contact centres; "Always" is appropriate for high-priority queues
 
 ## Gotchas
-- **Pre-chat survey slugs in notification fields** require the exact survey question slug name — if the name doesn't match, the field renders blank.
-- **Incognito mode and Windows Focus Assist block desktop notifications** — commonly causes confusion during testing.
+- **Pre-chat survey slugs in notification fields** require the exact survey question slug name — mismatched names render blank fields.
+- **Incognito mode and Windows Focus Assist block desktop notifications** — common cause of confusion during testing.
 
 ---
 
-*Source last updated: 2025-05-20 | Review when: Autoassign/autoaccept reaches GA or new slug types added*
+*Source last updated: 2025-05-20 | Check this: Autoassign/autoaccept reaches GA or new slug types added*

@@ -19,19 +19,19 @@ Enables call recording (audio), transcription (live text), and real-time transla
 - Transcript timestamps are grouped in 2-minute intervals — per-second timestamps not available
 
 ## When to use / skip
-In scope for virtually all voice deployments — transcripts are required for Copilot post-call summaries. Recording is additionally needed for QA, compliance, and dispute resolution.
+Essential for almost all voice deployments. Transcripts are required for Copilot post-call summaries. Recording covers QA, compliance, and dispute resolution.
 
 ## Configuration decisions
-- Automatic vs Manual start — Manual when some call content should not be recorded (PCI-scope calls, sensitive conversations); Automatic for uniform compliance recording
-- Whether to enable pause/resume — adds rep control; required for PCI DSS cardholder data environments
-- Auto-pause on hold — low-risk, worth enabling as default
+- **Automatic vs Manual start** — Manual if some calls need to stay off the record (PCI calls, sensitive chats). Automatic for consistent compliance recording.
+- **Pause/resume toggle** — Gives reps control. Required for PCI DSS if you're handling card data.
+- **Auto-pause on hold** — Low risk, sensible default.
 
 ## Gotchas
-- **Event Grid is the most commonly missed prerequisite.** The workstream config looks complete but no recordings appear. Always verify Event Grid system topic registration as the first step in voice channel testing.
-- **MIME type allowlisting is a separate Power Platform admin step.** Easy to overlook if the person configuring the workstream isn't also the Power Platform admin.
-- **Consent and compliance is the client's legal obligation.** The system can play a consent announcement but whether it satisfies legal requirements is a legal question — not a D365 config question. Get written sign-off from their legal team before enabling automatic recording in regulated industries.
-- **Storage costs accumulate at scale.** 1,000 calls/day × 20-min average ≈ 10 GB/day of recording data. Size Dataverse storage accordingly in the solution design.
+- **Event Grid is the gotcha everyone misses.** Workstream config looks done but recordings never appear. Always register the Event Grid system topic first — it's the thing that actually makes it work.
+- **MIME type allowlisting is a separate Power Platform admin task.** Easy to miss if the person building the workstream isn't also the Power Platform admin.
+- **Consent and compliance is the client's legal problem, not yours.** The system can play an announcement, but whether that satisfies legal requirements is a legal question. Get written legal sign-off before you enable automatic recording in regulated industries.
+- **Storage scales fast.** 1,000 calls/day at 20 min each ≈ 10 GB/day. Size the Dataverse storage properly in your solution design.
 
 ---
 
-*Source last updated: 2026-02-15 | Review when: Recording storage options change, or real-time translation language support expands*
+*Source last updated: 2026-02-15 | Worth revisiting if recording storage options shift or translation language support expands*

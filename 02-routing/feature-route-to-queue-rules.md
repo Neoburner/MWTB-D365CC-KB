@@ -26,9 +26,9 @@ Required for any routing deployment. Every work item must be routed to a queue â
 - Rule-specific overflow overrides â€” configure for any customer segment that needs different overflow behaviour than the queue default (e.g. VIP customers never get an "End call" action)
 
 ## Gotchas
-- **Hit-all vs classification first-match is a frequently misunderstood distinction.** Classification stops at first match per ruleset; route-to-queue evaluates all rules. Client admins maintaining rules post-go-live often get confused by this.
-- **A well-designed route-to-queue ruleset is short.** If you have 20+ rules, classification rulesets aren't doing enough work. Complex routing logic belongs in classification, not here. Route-to-queue should be simple: "if attribute X equals Y, go to queue Z."
-- **Test every rule permutation.** Misrouted work items in production are hard to diagnose retroactively if diagnostics weren't enabled from day one.
+- **Hit-all vs classification first-match is a frequently misunderstood distinction.** Classification stops at first match per ruleset; route-to-queue evaluates all rules. Admins maintaining rules post-go-live often get confused by this.
+- **A well-designed route-to-queue ruleset is short.** If you have 20+ rules, classification rulesets aren't doing enough work. Complex routing logic belongs in classification, not here. Route-to-queue should be simple: "if X equals Y, go to queue Z."
+- **Test every rule permutation.** Misrouted items in production are hard to diagnose retroactively if diagnostics weren't enabled from day one.
 
 ---
 

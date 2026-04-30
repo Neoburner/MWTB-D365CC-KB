@@ -16,16 +16,16 @@ Grants supervisors the ability to directly act on live conversations: silently m
 - Dashboard access (Ongoing Conversations) is a separate configuration from the permission toggles — both must be done
 
 ## When to use / skip
-Enable all four for supervisor roles unless there is a specific operational reason not to. Force Close is the most sensitive — scope it to senior supervisors if the client wants tighter control.
+Enable all four unless you have a specific operational reason to restrict one. Force Close is the most sensitive — consider limiting it to senior supervisors if the client wants tighter control.
 
 ## Configuration decisions
 - Whether to enable Force Close for all supervisors or restrict it to senior roles — note: this is a global toggle, not per-role; restriction is done via process/policy rather than system config
 
 ## Gotchas
-- **Role must be directly assigned, not via team.** Team-based role assignments work for most D365 features but not for Omnichannel supervisor permission inheritance. Verify direct role assignment during UAT.
-- **Enabling the toggles alone is not enough.** Supervisors also need access to the Ongoing Conversations dashboard to use these controls. Both the toggles and the dashboard access must be configured — see `feature-supervisor-conversation-controls.md` for the combined setup.
-- **Force Close has no confirmation prompt** in some channel contexts — supervisors should be trained on when and how to use it before go-live.
+- **Direct role assignment only.** Team-based role assignments work for most D365 features but not for Omnichannel supervisor permissions. Verify during UAT.
+- **Toggles alone aren't enough.** Supervisors also need the Ongoing Conversations dashboard to use these controls. Both must be configured — see `feature-supervisor-conversation-controls.md`.
+- **Force Close has no confirmation prompt** in some channel contexts — train supervisors on when and how to use it before go-live.
 
 ---
 
-*Source last updated: 2025-06-17 | Review when: New supervisor action types added, or Force Close becomes per-channel configurable*
+*Source last updated: 2025-06-17 | Check this after new supervisor action types are added or Force Close becomes per-channel configurable*

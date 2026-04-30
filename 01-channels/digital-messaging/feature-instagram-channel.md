@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-instagram-channel
 
 ## What it does
-Connects Instagram Direct Messages as a contact channel, enabling customers to reach support via their Instagram account. Instagram DMs route to D365 Contact Center queues and are treated as cases, maintaining conversation history. Powered by Meta's Instagram Messaging API integrated through a Meta Business Account.
+Routes Instagram Direct Messages to Contact Center queues as cases. Customers reach support via their Instagram account; full conversation history is maintained. Uses Meta's Instagram Messaging API through a Meta Business Account.
 
 ## Key facts
 - Requires a Meta Business Account with Instagram Business Profile (not personal account)
@@ -20,7 +20,7 @@ Connects Instagram Direct Messages as a contact channel, enabling customers to r
 - Media attachment size limits follow Meta's standards: 4 MB per image, 16 MB per video
 
 ## When to use / skip
-Use Instagram DMs if your customer base is active on Instagram and you want to meet them where they are. Instagram's visual nature makes it excellent for product questions, order status, and visual troubleshooting. Skip Instagram if your customer demographics don't use Instagram (B2B, elderly demographics, enterprise customers) or if you can't commit to the 24-hour response SLA. Also skip if you're uncomfortable managing the Meta Business Account compliance requirements.
+Use Instagram if the customer base is active there and you want to meet them where they are. Good for product questions, order status, and visual troubleshooting. Skip it if your demographics don't use Instagram (B2B, elderly, enterprise), you can't hit the 24-hour SLA, or you're uncomfortable with Meta's compliance requirements.
 
 ## Configuration decisions
 - Will you create a new Meta Business Account or link an existing one?
@@ -31,15 +31,15 @@ Use Instagram DMs if your customer base is active on Instagram and you want to m
 - How will you handle story replies (redirect to DM or ignore)?
 
 ## Gotchas
-- Meta's 24-hour window is strict: messages sent after 24 hours without customer initiation are silently dropped (customer doesn't see them)
-- Instagram Business Profiles must comply with Meta's Community Standards; suspended profiles lose messaging capabilities immediately
-- Customer identity is tied to Instagram profile username; if customer changes their username, historical conversation may not link correctly
-- Attachments sent by customers are metadata-only (links to media on Meta's servers); if Meta deletes the media, agents cannot access it later
-- Rate limiting: Meta applies throttling on accounts with high volume; very high-volume support may hit API limits (check current limits in Meta documentation)
-- Instagram DM notifications are routed to Meta's servers first, then polled by D365; latency can be 1-5 minutes vs. real-time chat
-- Customer-initiated conversations may contain spam or inappropriate content; train agents on rapid assessment and escalation
-- Instagram doesn't support agent ability to delete customer messages; conversation history is permanent and visible to customer
+- Meta's 24-hour window is strict: messages sent after 24 hours without customer initiation are silently dropped.
+- Instagram Business Profiles must comply with Meta's Community Standards; suspension kills messaging immediately.
+- Customer identity ties to username; if they change it, historical conversation may not link.
+- Customer attachments are metadata-only (links on Meta's servers); if Meta deletes the media, agents can't access it later.
+- Rate limiting applies to high-volume accounts; check Meta docs for current API limits.
+- Instagram DM notifications route through Meta's servers then get polled by D365; expect 1-5 minutes latency, not real-time.
+- Customer conversations may include spam or inappropriate content; train agents on quick assessment and escalation.
+- Agents can't delete customer messages; conversation history is permanent and visible to the customer.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Meta API version changes or 24-hour window policy updates*
+*Source last updated: 2026-04-30 | Worth checking again if Meta API version changes or the 24-hour window policy updates*

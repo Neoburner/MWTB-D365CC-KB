@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../copilot-help-pane](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/copilot-help-pane)
 
 ## What it does
-The AI assistant panel in Copilot Service workspace. Two modes: Copilot immersive (full conversational panel) and Copilot side pane (in-context alongside workspace). Enables Ask a Question (knowledge search), Draft a Response, and Proactive Insights (Copilot surfaces answers without the rep asking).
+AI assistant panel in Copilot Service workspace with two modes: immersive (full conversational) or side pane (in-context). Enables Ask a Question (KB search), Draft a Response, and Proactive Insights (Copilot surfaces answers without the rep asking).
 
 ## Key facts
 - Two modes configurable independently: **Copilot immersive** and **Copilot side pane**
@@ -18,7 +18,7 @@ The AI assistant panel in Copilot Service workspace. Two modes: Copilot immersiv
 - External web sources are for email drafting only — Ask a Question uses KB sources, not web
 
 ## When to use / skip
-Standard in any Copilot deployment. Ask a Question replaces the deprecated Smart Assist native AI suggestions. Enable for all rep populations who have access to a knowledge base.
+Standard in any Copilot deployment. Ask a Question replaces the old Smart Assist. Enable for all reps with KB access.
 
 ## Configuration decisions
 - Immersive vs side pane vs both — side pane is the lighter-weight option; immersive is more powerful but requires more screen real estate
@@ -27,9 +27,9 @@ Standard in any Copilot deployment. Ask a Question replaces the deprecated Smart
 - Trusted webpages — only relevant if email drafting needs to reference specific external domains
 
 ## Gotchas
-- **Custom instructions don't apply to Copilot Studio knowledge sources.** If the client switches to extended knowledge sources (SharePoint, uploaded files), their custom instructions will be silently ignored. Make this explicit during configuration.
-- **KB content takes up to 24 hours to refresh.** Newly published articles won't appear immediately in Ask a Question responses. Set expectations during testing — new articles need to be published at least a day before testing their Copilot surface.
+- **Custom instructions are bypassed with Copilot Studio sources.** If the client switches to extended sources (SharePoint, uploaded files), custom instructions won't apply. Make this clear during setup.
+- **KB content takes up to 24 hours to refresh.** Newly published articles won't show up immediately. Set expectations — publish new articles at least a day before Copilot testing.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Custom instructions extend to Copilot Studio sources, or proactive insights GA*
+*Source last updated: check Microsoft Learn | Check this after custom instructions extend to Copilot Studio sources or proactive insights GA*

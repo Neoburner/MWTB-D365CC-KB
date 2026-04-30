@@ -18,7 +18,7 @@ Direct Routing allows you to connect your existing SIP trunk (from any IETF-comp
 - SBC capacity is your responsibility; misconfigured SBCs cause silent call failures or one-way audio
 
 ## When to use / skip
-Use Direct Routing when you have an existing carrier relationship, want to keep your existing numbers, or require carrier-level control (transcoding, custom routing rules, failover to on-premises PBX). Skip if you prefer a fully managed solution, need rapid deployment, or don't have SBC expertise in-house.
+Use Direct Routing if you've got a carrier relationship you want to keep, own your numbers, or need carrier-level control (transcoding, custom routing, PBX failover). Skip it if you want a fully managed setup, need to go live fast, or don't have SBC expertise on the team.
 
 ## Configuration decisions
 - **SBC selection:** Choose an SBC vendor based on your budget, carrier compatibility, and HA requirements (single SBC, redundant pair, or regional cluster)
@@ -40,4 +40,4 @@ Use Direct Routing when you have an existing carrier relationship, want to keep 
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: SBC vendor certification list updates or ACS Direct Routing quota changes*
+*Source last updated: 2026-04-30 | Worth revisiting if ACS updates the SBC vendor list or Direct Routing quotas shift*

@@ -33,11 +33,11 @@ Reference in discovery and pre-sales to validate client environment readiness. A
 None — this is a requirements reference; decisions are on the client side (browser policy, network allowlisting, ACS regional availability).
 
 ## Gotchas
-- **Third-party cookie blocking is the most common enterprise go-live blocker.** Edge and Chrome often have this blocked at group policy level. Must be resolved before go-live — presence and auth depend on it.
-- **URL allowlist timing.** Clients with Zscaler, Palo Alto, or similar proxies need a formal IT change request. Allow 2–3 weeks lead time — don't leave this until the week before go-live.
-- **Geo-specific CDN URL must match the correct region.** Wrong CDN = intermittent widget failures that are hard to diagnose.
-- **ACS regional availability must be confirmed for international clients** before scoping voice or SMS.
+- **Third-party cookie blocking is the most common enterprise go-live blocker.** Edge and Chrome often have this blocked at group policy level. Resolve it before go-live — presence and auth depend on it.
+- **URL allowlist timing.** Clients with Zscaler, Palo Alto, or similar proxies need a formal IT change request. Allow 2–3 weeks lead time — don't leave it until the week before go-live.
+- **Geo-specific CDN URL must match the correct region.** Wrong CDN causes intermittent widget failures that are hard to diagnose.
+- **Check ACS regional availability for international clients** before committing to voice or SMS.
 
 ---
 
-*Source last updated: 2026-01-30 | Review when: New browser support added, network requirements updated, or ACS regional availability changes*
+*Source last updated: 2026-01-30 | Check this: New browser support added, network requirements updated, or ACS regional availability changes*

@@ -5,7 +5,7 @@
 **Source:** [Configure Customer Intent Agent - Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-customer-intent-agent)
 
 ## What it does
-The Customer Assist Agent is an autonomous AI agent in D365 Contact Center that handles entire customer interactions without human involvement, powered by Copilot Studio's generative AI framework. It resolves cases end-to-end across voice and digital channels, and escalates to a live agent when needed or when unable to resolve the issue.
+Autonomous AI agent in Contact Center that handles entire customer interactions without a human. Copilot Studio powered, resolves end-to-end across voice and digital, escalates when needed.
 
 ## Key facts
 - Built on Copilot Studio with generative AI (not the older isolated bot integration model)
@@ -21,7 +21,7 @@ The Customer Assist Agent is an autonomous AI agent in D365 Contact Center that 
 - Conversation history and AI-generated summaries passed to human agent on handoff
 
 ## When to use / skip
-**Use the Customer Assist Agent** when you want to automate high-volume, repetitive interactions (password resets, balance checks, appointment scheduling, simple billing inquiries). It reduces first-contact resolution time and agent workload for routine tasks. **Skip it** if your use case requires deep compliance review, complex reasoning over sensitive data, or frequent interruptions by agents (the overhead of context switching defeats the purpose). Also avoid it in scenarios where customers expect a human-only experience (e.g., complaint escalations, complex account disputes, or high-touch service segments).
+Use the agent for high-volume repetitive work—password resets, balance checks, appointment scheduling, simple billing. It cuts first-contact resolution and agent load. Skip it if the use case needs deep compliance review, complex reasoning over sensitive data, or frequent agent interruptions. Also avoid it where customers expect human-only experience—complaint escalations, complex account disputes, high-touch segments.
 
 ## Configuration decisions
 - **Intent recognition scope**: Define which customer intents the agent can resolve independently vs. escalate immediately (e.g., billing questions escalate, password resets resolve)
@@ -33,14 +33,14 @@ The Customer Assist Agent is an autonomous AI agent in D365 Contact Center that 
 - **Fallback behavior**: Define canned messages when the agent cannot connect to escalation queue or cannot resolve
 
 ## Gotchas
-- Escalation delay: If all agents are busy, the customer may be queued behind escalations, increasing wait time
-- Generative AI hallucination: In rare cases, the agent may provide plausible-sounding but incorrect information; mitigate with guardrails and escalation thresholds
-- Conversation context loss: If escalation queue times out, the agent restarts the conversation with the human agent instead of resuming—ensure timeout policies are appropriate
-- No persistent session for voice: A voice call that drops and reconnects creates a new agent session; the customer must identify themselves again
-- Language model updates: Microsoft updates Copilot Studio's underlying model periodically, which may alter agent behavior without warning; test after major platform updates
-- Cost per interaction visible only in aggregated reports, not per-call: Hard to calculate ROI at the per-customer level
-- Custom business logic limitations: The agent cannot call legacy APIs or perform complex multi-step transactions; for those, escalate to a human with context
+- Escalation delay: If agents are busy, customers queue behind escalations and wait times climb.
+- Generative AI hallucination: In rare cases, the agent gives plausible-sounding but wrong info. Mitigate with guardrails and escalation thresholds.
+- Conversation context loss: If the escalation queue times out, the agent restarts the conversation instead of resuming. Set timeouts appropriately.
+- Voice sessions don't persist: A dropped and reconnected call creates a new session; customer has to identify themselves again.
+- Language model updates: Microsoft updates Copilot Studio's model periodically, which may change agent behavior without warning. Test after major updates.
+- Cost visibility is aggregated-only, not per-call. Hard to calculate ROI per customer.
+- Custom logic limits: The agent can't call legacy APIs or do complex multi-step transactions. Escalate those to humans with context.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Copilot Studio model updates, escalation queue performance changes, or if agent resolution rate drops below target*
+*Source last updated: 2026-04-30 | Revisit after Copilot Studio model updates, if escalation queue performance changes, or agent resolution drops below target*

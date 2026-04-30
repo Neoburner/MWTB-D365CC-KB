@@ -14,15 +14,15 @@ Dashboard tracking how reps use Copilot features — which features are being us
 - Tracks usage, not quality — high usage does not confirm good Copilot output quality
 
 ## When to use / skip
-Enable alongside Copilot during initial setup. If a client wants Copilot ROI data, this is the primary source. No reason to skip if Copilot is in scope.
+Turn this on when you enable Copilot. It's the main source of Copilot ROI data. No reason to skip if Copilot is in scope.
 
 ## Configuration decisions
 - **Which interaction types to track** — enable all three (cases, emails, conversations) unless there is a specific exclusion reason; granularity is always more useful than aggregate data
 
 ## Gotchas
-- **Enable at the same time as Copilot, not after.** The 24-hour delay means enabling post-go-live loses the first day of production data. Enable during UAT.
-- **Usage ≠ quality.** Supplement Copilot analytics with transcript recording and knowledge analytics to get a complete picture of Copilot effectiveness.
+- **Enable it with Copilot, not after.** 24-hour delay means enabling post-go-live loses day one. Enable during UAT.
+- **Usage doesn't equal quality.** Pair Copilot analytics with transcript recording and knowledge analytics for the full picture.
 
 ---
 
-*Source last updated: 2025-05-06 | Review when: New Copilot interaction types trackable, or analytics content expands*
+*Source last updated: 2025-05-06 | Check this if: New Copilot interaction types become trackable, or analytics expand*

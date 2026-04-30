@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../configure-pre-chat-survey](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-pre-chat-survey)
 
 ## What it does
-Presents structured questions to customers in the chat widget before the conversation starts. Responses become context variables in the workstream, available for routing rules and the representative's conversation panel.
+Chat widget shows structured questions before the conversation starts. Answers become context variables available for routing rules and rep conversation panels.
 
 ## Key facts
 - Chat channel only — not available for voice, SMS, or social messaging channels
@@ -17,7 +17,7 @@ Presents structured questions to customers in the chat widget before the convers
 - Mandatory field validation only — no conditional logic, no question branching
 
 ## When to use / skip
-Use on virtually every chat channel deployment. Survey responses are the simplest way to feed intent-based routing without an AI agent — an option-set "What do you need help with?" drives route-to-queue rules directly. Skip only if the client wants zero friction before chat and routes everything to a single queue.
+Use surveys on virtually every chat deployment. They're the simplest way to feed intent-based routing without an AI agent—a "What do you need help with?" dropdown drives routing rules directly. Skip only if the client wants zero friction and routes everything to a single queue.
 
 ## Configuration decisions
 - Which questions to ask — fewer is better; every question increases pre-chat abandonment
@@ -25,10 +25,10 @@ Use on virtually every chat channel deployment. Survey responses are the simples
 - How to name the question's Survey question name field — this becomes the context variable name and should use the exact key names for customer identification: `Name`, `Email`, `Phone`, `CaseNumber` (see `feature-record-identification.md`)
 
 ## Gotchas
-- **Survey question names must be exact for record identification.** If the question name is "CustomerEmail" instead of "Email", the context variable won't match the record identification mapping and customer lookup silently fails.
-- **User Consent link format is fragile.** The `[link text](URL)` markdown must be exact. Test this in the live widget during UAT — formatting errors show as raw markdown to the customer.
-- **No branching or conditional logic.** If the client wants different follow-up questions based on an initial answer, this can't be done in the survey — it requires an AI agent or IVR.
+- Survey question names must match exactly for record identification. "CustomerEmail" instead of "Email" breaks record lookups silently.
+- User Consent link format is fragile. The `[link text](URL)` markdown must be exact. Test in the live widget during UAT—formatting errors show as raw markdown.
+- No branching or conditional logic. If the client wants different follow-up questions based on an initial answer, survey can't do it—you need an AI agent or IVR.
 
 ---
 
-*Source last updated: 2026-01-20 | Review when: Pre-conversation survey expands to additional channels or gains conditional logic*
+*Source last updated: 2026-01-20 | Worth checking again if pre-conversation survey expands to other channels or gains conditional logic*

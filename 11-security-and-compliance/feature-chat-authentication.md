@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../create-chat-auth-settings](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-chat-auth-settings)
 
 ## What it does
-Validates portal sign-in status for chat customers using OAuth 2.0 JWTs. When a customer authenticates via the portal before opening chat, their identity is verified and context variables (VIP status, cart value, account data) are passed into the conversation. Reps see authentication status in the conversation summary.
+Validate portal sign-in status for chat customers using OAuth 2.0 JWTs. Verified customer identity passes context (VIP status, account data) into the conversation.
 
 ## Key facts
 - **Supported channels: Chat and Apple Messages for Business only** — not SMS, WhatsApp, Facebook, or voice
@@ -24,10 +24,10 @@ Use when the client has an authenticated portal and wants to route/prioritise ba
 - **JWT expiry duration** — balance security (shorter) against usability (longer portal sessions); token refresh needs to be handled by the portal team
 
 ## Gotchas
-- **Custom portal JWT implementation is web development work, not admin center config.** The D365 admin creates the auth settings record; the portal dev team builds the signing service and key endpoint. Map this dependency early.
-- **Custom status codes on contacts break auto-linkage silently.** If the `sub` claim points to a contact with a non-active status code, identification fails with no error. Audit contact status codes in the target environment before relying on auto-identification.
-- **JWT expiry on long portal sessions.** If a customer logs in, browses for an hour, then opens chat, the token may have expired. Work with the portal team on token refresh handling — otherwise authentication will intermittently fail.
+- **Custom JWT implementation is a dev task.** D365 admin creates the auth settings; portal devs build the signing service. Map this dependency early.
+- **Custom status codes break auto-linkage silently.** Non-active status codes fail with no error. Audit contact status codes before relying on auto-identification.
+- **JWT expiry on long portal sessions.** Customer logs in, browses for an hour, opens chat—token's expired. Work with portal team on token refresh or authentication fails intermittently.
 
 ---
 
-*Source last updated: 2026-01-22 | Review when: Additional channels gain authentication support, or Power Apps portals authentication mechanism changes*
+*Source last updated: 2026-01-22 | Check this: Additional channels gain authentication support, or Power Apps portals authentication mechanism changes*

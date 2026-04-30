@@ -18,18 +18,18 @@ Creates a voice workstream and binds it to a phone number so inbound calls can b
 - Operating hours at workstream level **override** queue-level overflow settings — this conflicts with voicemail configuration (see `feature-voice-voicemail.md`)
 
 ## When to use / skip
-Required for any inbound voice deployment. Every inbound phone number must be bound to a workstream through this configuration.
+Essential for any inbound voice deployment. Every inbound number has to bind to a workstream here — no way around it.
 
 ## Configuration decisions
-- Bridged vs non-bridged external transfer — bridged maintains recording continuity and shows the Dynamics number; non-bridged gives external parties the customer's actual number for callback. Decide based on compliance requirements and callback workflow needs.
-- Multi-language on a single number vs separate numbers per language — single number with language selection IVR is simpler to manage; raise this option in discovery before clients default to one number per language
-- Post-call survey — wired up in the Behaviours step; do this at channel setup time, not post go-live
+- **Bridged vs non-bridged transfer** — Bridged keeps recording rolling and shows your Dynamics number; non-bridged shows the customer's real number and drops recording. Pick based on compliance and callback needs.
+- **Multi-language: one number vs one per language** — Single number with a language IVR menu is cleaner to maintain. Raise this early in discovery; clients often default to separate numbers without thinking it through.
+- **Post-call survey** — Wired in during the Behaviours step of setup, not after. Do this now, not post go-live.
 
 ## Gotchas
-- **Operating hours at workstream level breaks voicemail.** If operating hours are set at the workstream level, queue-level overflow (needed to offer voicemail) doesn't fire. Configure operating hours at the queue level instead if voicemail is in scope — see `feature-voice-voicemail.md`.
-- **Post-call survey is configured in Behaviours, not separately.** If post-call survey is in scope, it must be linked during the channel setup step — it's easy to miss.
-- **Test every inbound scenario before go-live.** Voice channel issues (number not ringing, not routing to queue, rep not receiving notification) are hard to diagnose remotely. Write a test call plan covering each number, each language, and each operating hours scenario and run it during UAT.
+- **Workstream-level operating hours kill voicemail.** Set at workstream level, and queue-level overflow (which handles voicemail) never fires. If voicemail is in scope, put operating hours at the queue level instead — see `feature-voice-voicemail.md`.
+- **Post-call survey lives in Behaviours, not as a separate step.** If you need it, link it during channel setup now. Easy to miss otherwise.
+- **Test all inbound paths before go-live.** Voice routing issues are a nightmare to debug remotely. Build a test call plan covering every number, every language, and every operating hours scenario and run it through UAT.
 
 ---
 
-*Source last updated: 2026-03-10 | Review when: Enhanced voice becomes available in additional regions, or anonymous inbound expands beyond Direct Routing*
+*Source last updated: 2026-03-10 | Worth revisiting if enhanced voice rolls out to more regions or anonymous inbound stops being Direct Routing only*

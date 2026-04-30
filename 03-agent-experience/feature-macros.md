@@ -25,9 +25,9 @@ Use whenever a rep performs the same sequence of manual steps repeatedly — ope
 - Flow Connector vs native actions — use Flow Connector for back-end integrations with external systems (ERP, external CRM); use native Productivity Automation for Dataverse-only operations
 
 ## Gotchas
-- **"Start macro execution" is required as the first step.** Anyone building macros for the first time will miss this. Add it to any training or handover documentation for client admins who will maintain macros.
-- **No branching within a macro.** Complex conditional logic (e.g. different actions based on case category) requires separate macros triggered by conditional script steps — not a single branching macro.
-- **Macro names are visible to reps.** Use self-documenting names ("Link Case to Conversation", not "Macro_001") — reps see them in the Productivity Pane and script steps.
+- **"Start macro execution" is required as the first step.** Anyone building macros for the first time will miss this. Add it to any training or handover documentation for client admins.
+- **No branching within a macro.** Complex conditional logic (e.g. different actions based on case category) requires separate macros triggered by conditional script steps, not a single branching macro.
+- **Macro names are visible to reps.** Use self-documenting names ("Link Case to Conversation", not "Macro_001")—reps see them in the Productivity Pane and script steps.
 
 ---
 

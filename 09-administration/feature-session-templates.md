@@ -26,9 +26,9 @@ Every deployment uses session templates. OOB defaults are a reasonable starting 
 
 ## Gotchas
 - **Additional tabs cannot be closed by reps.** Every tab you add permanently occupies workspace real estate. Be deliberate — add only what reps routinely need, not everything they might occasionally want.
-- **Design session templates and agent scripts together.** The session template determines which script loads — they're tightly coupled. Don't finalise templates before scripting requirements are understood.
-- **Unique name prefix is easy to violate.** Agree on a project prefix convention early (e.g. `cc_`) and document it.
+- **Design session templates and agent scripts together.** The session template determines which script loads — they're tightly coupled. Don't finalise templates before script requirements are clear.
+- **Unique name prefix is easy to violate.** Agree on a prefix convention early (e.g. `cc_`) and document it.
 
 ---
 
-*Source last updated: 2025-08-19 | Review when: Session template capabilities expand or new OOB templates added*
+*Source last updated: 2025-08-19 | Check this: Session template capabilities expand or new OOB templates added*

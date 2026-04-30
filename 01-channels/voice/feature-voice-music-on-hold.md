@@ -18,25 +18,25 @@ Music on Hold (MOH) is the audio played to customers while they wait in queue or
 - MOH does not interrupt for agent status updates or queue position announcements; announcements overlay MOH
 
 ## When to use / skip
-Use custom MOH to reinforce brand identity, reduce perceived wait time, or comply with accessibility standards (e.g., music + periodic "you are X in queue" announcements). Skip if your contact centre has very short average hold times (<30 sec) where MOH impact is minimal.
+Use custom MOH to reinforce brand, reduce perceived wait time, or meet accessibility standards (music + periodic queue position announcements). Skip if your hold times are under 30 seconds — not worth the effort.
 
 ## Configuration decisions
-- **Audio source:** Choose between Microsoft default, a branded recording (e.g., company jingle), or copyright-free library audio
-- **Audio length:** Typically 30–90 seconds; system loops the audio, so a 1–2 minute loop prevents unnatural repetition
-- **Mono vs. stereo:** Use mono to reduce file size; stereo has minimal perceptual difference in a queue context
-- **Volume normalization:** Audio is normalised; if you need emphasis on certain phrases, adjust source audio levels before upload
-- **Fallback handling:** Test fallback to default audio; ensure it's acceptable if custom upload fails
-- **Accessibility:** If using audio with speech, ensure captions or transcripts exist per WCAG guidelines
+- **Audio source** — Microsoft default, branded recording (company jingle), or copyright-free library.
+- **Audio length** — 30–90 seconds typical; system loops it, so 1–2 min prevents obvious repetition.
+- **Mono vs. stereo** — Mono saves file size; stereo doesn't matter much in a queue context.
+- **Volume normalisation** — Audio gets normalised. Adjust your source file levels before upload if you need emphasis.
+- **Fallback testing** — Make sure the Microsoft default is acceptable if your custom file fails.
+- **Accessibility** — If there's speech in the audio, provide captions or transcripts (WCAG).
 
 ## Gotchas
-- Audio file corruption (truncated uploads, wrong format) causes silent failures; always test the uploaded file by calling in
-- Changing MOH affects all calls in queue immediately; no graceful rollover for in-flight calls (they hear the new audio mid-hold)
-- Custom audio URLs are not publicly accessible; sharing the URL with non-admins requires permission grants in Azure Blob Storage
-- File size limits (10 MB) mean audio longer than ~3 minutes must be compressed; high compression can degrade quality
-- Uploading a new audio file overwrites the old one; no version history, so keep local backups of audio sources
-- Audio playback may glitch if the Azure region hosting audio is geographically distant from the agent; no option to specify audio region
-- MOH cannot be disabled; calls will always hear some audio (Microsoft default if no custom upload)
+- **Corrupt audio files fail silently.** Truncated uploads, wrong format — always test by calling in yourself.
+- **MOH changes apply immediately to in-flight calls.** Customers mid-hold hear the new audio kick in. No graceful transition.
+- **Custom audio URLs are private.** Sharing them with non-admins requires Azure Blob Storage permission grants.
+- **File size limits mean compression.** Anything longer than ~3 minutes has to be compressed; heavy compression kills quality.
+- **Uploads overwrite with no version history.** Keep local backups of your audio files.
+- **Audio glitches if the Azure region is far away.** No way to specify which region hosts your file.
+- **MOH cannot be turned off.** Calls always hear something — Microsoft default if you don't upload custom.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Audio storage limits increase or spatial audio support is added*
+*Source last updated: 2026-04-30 | Worth revisiting if audio storage limits increase or spatial audio ships*

@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../migrate-config-data-for-records-overview](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-config-data-for-records-overview)
 
 ## What it does
-Moves routing configuration (workstreams, queues, classification rules, capacity profiles, session/notification templates) from one environment to another (e.g. UAT → Production) using the Power Platform Configuration Migration tool.
+Moves routing configuration (workstreams, queues, classification rules, capacity profiles, session/notification templates) between environments using the Power Platform Configuration Migration tool. Use this on every UAT → Production migration.
 
 ## Key facts
 - **Separate migration guides per channel** (Records, Live Chat, SMS, Voice, WhatsApp, Custom) — not a single unified process
@@ -16,17 +16,17 @@ Moves routing configuration (workstreams, queues, classification rules, capacity
 - Custom entities used in routing conditions must exist in target before migration
 
 ## When to use / skip
-Use on every UAT → Production migration. Build and test the migration sequence during the project, not at go-live.
+Run this on every UAT → Production migration. Test the sequence during the project, not at go-live — Murphy's Law applies here.
 
 ## Configuration decisions
 - **Which channel migration guides to follow** — run each in-scope channel's migration separately
 - **Post-migration manual checklist** — identify who recreates operating hours, presence, queue membership, and skill finder in target
 
 ## Gotchas
-- **Operating hours must be manually recreated.** This is the most commonly forgotten migration item. It must be in the UAT-to-production migration checklist explicitly.
-- **What's not migrated is as important as what is.** Skill finder, presence, queue membership, and role persona mapping all need manual attention. Assign an owner for each before migration day.
-- **Test the migration in a staging environment before production.** Running this process for the first time on go-live day is high-risk. FetchXML filtering and entity privilege requirements reliably surface issues that need troubleshooting time.
+- **Operating hours must be manually recreated.** The most commonly missed item. Put it in the checklist explicitly.
+- **What's not migrated matters as much as what is.** Skill finder, presence, queue membership, and role persona mapping all need manual attention. Assign an owner for each before migration day.
+- **Test in staging first.** Running this for the first time on go-live is high-risk. FetchXML filtering and entity privilege checks will surface issues that need troubleshooting time.
 
 ---
 
-*Source last updated: 2026-03-18 | Review when: Configuration Migration tool updates to include currently excluded items*
+*Source last updated: 2026-03-18 | Check this: Configuration Migration tool updates to include currently excluded items*

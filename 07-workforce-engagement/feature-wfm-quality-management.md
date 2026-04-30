@@ -20,7 +20,7 @@ WFM Quality Management is the module for manually scoring agent conversations ag
 - Quality Evaluation Agent AI comparison: AI auto-scores all conversations in real-time; Quality Management provides human validation on a subset for calibration and coaching specificity
 
 ## When to use / skip
-**Use Quality Management** when you need to enforce subjective quality standards (e.g., "empathy," "accuracy in summarizing customer issue," "adherence to company brand voice") that AI cannot reliably grade, or when you want supervisors actively involved in coaching based on real conversations. It's essential if regulations require demonstrated quality audits (e.g., financial services, healthcare). **Skip it** if you're purely focused on speed and volume metrics, or if you lack the QA team capacity to review conversations consistently (sampling without follow-up coaching is a compliance risk).
+Use Quality Management for subjective standards (empathy, accuracy, brand voice) that AI can't grade reliably, or when supervisors need to coach from real conversations. Essential for regulated industries (financial, healthcare) that need demonstrable quality audits. Skip if you're optimising for speed and volume only, or if you don't have QA capacity to sample consistently — sampling without follow-up is a compliance risk.
 
 ## Configuration decisions
 - **Scorecard design**: Define 5–10 key criteria and their relative weights (e.g., "Professionalism" = 30%, "Problem Resolution" = 40%, "Empathy" = 30%)
@@ -35,17 +35,17 @@ WFM Quality Management is the module for manually scoring agent conversations ag
 - **Retention and audit trail**: How long to retain scored conversations and evaluation notes for compliance?
 
 ## Gotchas
-- Scoring subjectivity: Two QA analysts may score the same conversation differently; calibration sessions help but don't eliminate variance
-- Coaching notes are subjective too: An agent may misinterpret feedback ("don't use 'sir'") as criticism rather than guidance; delivery matters
-- Conversation length bias: Longer conversations may receive higher scores due to more opportunity to demonstrate criteria; account for this in analysis
-- Sampling randomness: A randomly sampled agent may get unlucky (three hard calls in a row) while another gets easy calls; consider stratification or larger sample sizes
-- Score inflation over time: QA teams tend to give higher scores as they become comfortable with an agent's style; periodic recalibration and "check calls" (re-score old conversations) help
-- No direct link to call handling time: Quality Management focuses on quality, not efficiency; an agent with excellent quality but slow speed is not flagged unless a separate efficiency metric is monitored
-- Coaching not followed: Supervisors may score conversations and assign coaching but not track follow-up; create an action list tied to the scorecard
-- Quality Evaluation Agent AI and manual scores can diverge: If AI gives a high quality score but human QA gives a low score (or vice versa), it signals potential bias in the AI or misalignment in the rubric
-- Sampling rate too low: If you only sample 10 conversations per agent per month and the agent has 500+ calls, the sample may not represent their true performance
-- Conversation availability: Old conversations (>90 days) may be archived and unavailable for re-review; plan for this if you need audit trails
+- **Scoring isn't objective:** Two QA analysts score the same call differently. Calibration helps but doesn't eliminate it.
+- **Coaching notes are subjective too:** Feedback ("don't use 'sir'") gets misread as criticism. Delivery matters.
+- **Longer calls get higher scores:** More opportunity to demonstrate criteria. Account for this in analysis.
+- **Random sampling can be unfair:** One agent gets three hard calls, another gets easy ones. Use stratification or bigger samples.
+- **Score creep over time:** QA teams get more lenient with familiarity. Periodic recalibration and re-scoring old calls help.
+- **Quality vs efficiency tracked separately:** Quality score doesn't flag slow agents. Monitor efficiency separately if it matters.
+- **Coaching assigned but not followed:** Supervisors score and assign coaching, then move on. Create an action list.
+- **AI scores vs manual scores can diverge:** High AI score, low human score = bias in the AI or misaligned rubric.
+- **Sample size matters:** 10 calls per agent per month with 500+ calls total = unrepresentative sample.
+- **Old conversations get archived:** Calls >90 days old may not be available for re-review. Plan for this if audits matter.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: QA team calibration shows >10% variance between evaluators, agent appeals a score, or if Quality Evaluation Agent AI scores diverge significantly from manual scores*
+*Source last updated: 2026-04-30 | Check this if: QA variance exceeds 10%, an agent appeals, or AI and manual scores diverge*

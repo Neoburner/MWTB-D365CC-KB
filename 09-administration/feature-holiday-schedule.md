@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-holiday-schedule
 
 ## What it does
-Holiday schedules define dates when your contact center is closed or operating under modified hours, overriding the standard Operating Hours configuration. When a holiday is active, routing rules treat the queue as "closed" and overflow conversations to alternate queues, or escalate to supervisor queues, depending on your routing rules. Each Operating Hours record can have one associated holiday schedule; holidays must be re-entered annually.
+Holiday schedules define dates when your contact centre is closed or operating under modified hours, overriding standard Operating Hours. When a holiday is active, routing rules treat the queue as "closed" and overflow conversations to alternate queues or escalate to supervisors. Each Operating Hours record gets one holiday schedule; holidays must be re-entered annually.
 
 ## Key facts
 - Holiday schedules are linked to Operating Hours records; you cannot apply a holiday globally across all queues
@@ -17,7 +17,7 @@ Holiday schedules define dates when your contact center is closed or operating u
 - Holiday schedules do not adjust agent schedules or time off; they only affect customer-facing routing
 
 ## When to use / skip
-Use holiday schedules for all public holidays and company-specific closures (e.g., annual maintenance, training days). Define holidays at the time of queue creation to avoid surprise routing gaps. Skip hardcoding holiday overflow in routing rules—use the holiday schedule + routing combination. Re-enter holidays annually; build this into your Q4 planning process to avoid Jan 1 surprises.
+Use holiday schedules for all public holidays and company-specific closures. Define them at queue creation to avoid routing gaps. Don't hardcode holiday overflow in routing rules — use the holiday schedule + routing combination. Re-enter holidays annually; build it into Q4 planning to avoid Jan 1 surprises.
 
 ## Configuration decisions
 - Create one master holiday schedule per region/timezone and link it to all Operating Hours in that region
@@ -28,13 +28,13 @@ Use holiday schedules for all public holidays and company-specific closures (e.g
 - Document the annual holiday-entry deadline (e.g., last day of October for next calendar year)
 
 ## Gotchas
-- Holiday schedules are linked to ONE Operating Hours record; if you have 5 queues with 5 different Operating Hours, you need 5 separate holiday schedules
-- Changing a holiday schedule after it has already passed a holiday date does not re-process conversations routed on that holiday
-- Partial-day holidays (e.g., 8 AM–12 PM closed) require manual entry of all time blocks; there is no "recurrence" option
-- If a holiday schedule is not linked to an Operating Hours record, the holiday has no effect; this is a common source of routing misconfiguration
-- Deleting a holiday schedule does not delete the Operating Hours record, but removing the link disables holiday routing for that queue
-- Holiday schedules apply only to customer-facing routing; agent shift management and scheduling tools do not auto-recognize holidays
+- Holiday schedules link to ONE Operating Hours record. Five queues with five different Operating Hours means five separate holiday schedules.
+- Changing a holiday schedule after a holiday date has passed doesn't re-process conversations routed on that holiday.
+- Partial-day holidays (8 AM–12 PM closed) require manual entry of all time blocks; there's no recurrence option.
+- If a holiday schedule isn't linked to an Operating Hours record, it has no effect. Common routing misconfiguration.
+- Deleting a holiday schedule doesn't delete the Operating Hours record, but removing the link disables holiday routing for that queue.
+- Holiday schedules apply only to customer-facing routing. Agent shift management and scheduling tools don't auto-recognize holidays.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Your organization adds new public holidays or changes calendar structure*
+*Source last updated: 2026-04-30 | Check this: Your organisation adds new public holidays or changes calendar structure*

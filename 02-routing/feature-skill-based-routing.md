@@ -26,9 +26,9 @@ Use when work needs to be matched to agents with specific capabilities — langu
 - Who owns agent skill profile maintenance — define this in the operational handover; it's often missed
 
 ## Gotchas
-- **Rating model mismatch is a silent failure.** If skills were set up at different times by different people, rating models can diverge. Run an audit before go-live to confirm all classification rule skills and agent skill profiles use the same model.
-- **Exact Match can leave items unassigned.** If no agent has all required skills (shift changes, absences), the item sits in queue indefinitely. Plan for this with a fallback skill relaxation rule or a timed overflow action.
-- **ML classification needs training data.** Intelligent Skill Finder isn't useful on day one — it needs historical conversation data to become accurate. Start with logical classification rules and revisit ML models after 6–12 months of data.
+- **Rating model mismatch is a silent failure.** If skills were set up at different times by different people, rating models can diverge. Audit before go-live to confirm all classification rule skills and agent skill profiles use the same model.
+- **Exact Match can leave items unassigned.** If no agent has all required skills (shift changes, absences), the item sits in queue indefinitely. Plan for this with a fallback skill relaxation rule or timed overflow action.
+- **ML classification needs training data.** Intelligent Skill Finder isn't useful on day one—it needs historical conversation data to become accurate. Start with logical rules and revisit ML models after 6–12 months of data.
 
 ---
 

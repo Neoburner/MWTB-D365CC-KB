@@ -26,8 +26,8 @@ Use capacity profiles for all new implementations. Unit-based capacity is the le
 - Custom per-rep limits — useful for ramp-up/onboarding scenarios without creating separate profiles per tier
 
 ## Gotchas
-- **Reset frequency is permanent at creation.** If the client confirms the wrong type and you don't catch it, you'll be recreating profiles, reassigning users, and retesting. Confirm in UAT before assigning to live agents.
-- **Record/activity capacity doesn't release automatically.** Reps and supervisors must know to deactivate the queue item or clear the Worked By field — this is rarely intuitive and often missed in training.
+- **Reset frequency is permanent at creation.** If the client confirms the wrong type and you miss it, you're recreating profiles, reassigning users, and retesting. Confirm in UAT before assigning to live agents.
+- **Record/activity capacity doesn't release automatically.** Reps and supervisors must deactivate the queue item or clear Worked By—rarely intuitive and often missed in training.
 - **Don't mix capacity profiles and capacity units in the same org.** Behaviour becomes unpredictable.
 
 ---

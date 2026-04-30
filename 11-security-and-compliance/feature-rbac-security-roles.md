@@ -17,7 +17,7 @@ D365 Contact Center security is enforced through a three-tier role structure: Da
 - The Omnichannel Administrator persona does not automatically grant admin access to Dynamics; must also assign System Administrator or System Customizer role
 
 ## When to use / skip
-Use RBAC/security roles when defining who can perform specific contact center functions (take conversations, monitor teams, configure queues, view analytics). Skip attempts to build custom roles from scratch without leveraging the out-of-the-box personas; they are heavily optimized for the product's event-driven architecture. Do not assign Dataverse System Administrator to all agents—grant only the minimal Omnichannel persona and a base security role (e.g., Basic User).
+Use when defining who does what (take conversations, monitor teams, configure queues, view analytics). Don't build custom roles from scratch — OOB personas are heavily optimized. Don't assign System Administrator to all agents — grant minimal Omnichannel persona + base role.
 
 ## Configuration decisions
 - Separate Omnichannel Agent from Omnichannel Supervisor by team, not by agent count: both roles are licensed per-seat
@@ -27,12 +27,12 @@ Use RBAC/security roles when defining who can perform specific contact center fu
 - Supervisors managing reports across multiple business units may need User-level scope on the Omnichannel Supervisor role
 
 ## Gotchas
-- Newly assigned roles take effect only after agent sign-out and sign-in; cached permissions persist
-- Experience profiles do not restrict API access—JavaScript SDK calls will still work even if UI is hidden
-- The Omnichannel Agent role alone does NOT grant ability to see Accounts, Contacts, or Cases; agents operate on context passed by the channel/routing system
-- If an agent has no assigned Omnichannel persona, they cannot load the agent interface, even with a valid Dataverse role
-- Security roles created before 2022 may lack Omnichannel privilege sets; ensure role has been updated
+- New roles take effect after sign-out/sign-in — cached permissions persist.
+- Experience profiles don't restrict API access — JavaScript SDK calls work even if UI is hidden.
+- Omnichannel Agent role alone doesn't grant Account/Contact/Case visibility. Agents operate on channel/routing context only.
+- No Omnichannel persona = no agent interface load, even with valid Dataverse role.
+- Pre-2022 roles may lack Omnichannel privilege sets. Check they've been updated.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Major security vulnerability released or role inheritance rules change*
+*Source last updated: 2026-04-30 | Check this: Major security vulnerability released or role inheritance rules change*

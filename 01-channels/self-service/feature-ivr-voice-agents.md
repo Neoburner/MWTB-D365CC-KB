@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../voice-channel-pva-bots](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-pva-bots)
 
 ## What it does
-Attaches a Copilot Studio agent to the voice channel to act as an IVR before calls reach a live rep. Handles speech and DTMF input, performs lookups, routes based on intent, and transfers or terminates calls. Supports both classic topic-matching and generative AI orchestration.
+Attach a Copilot Studio agent to the voice channel as an IVR before live reps. Handles speech and DTMF input, does lookups, routes by intent, transfers or ends calls. Supports classic topic-matching and generative AI.
 
 ## Key facts
 - **1-hour maximum** for bot-handled voice calls — auto-disconnected if not transferred or ended within this window
@@ -16,7 +16,7 @@ Attaches a Copilot Studio agent to the voice channel to act as an IVR before cal
 - Multilingual IVR requires separate configuration in Copilot Studio — not configured solely in admin center
 
 ## When to use / skip
-Use when the client wants automated triage, self-service resolution, or intent-based routing before human rep involvement. Skip if all calls should go directly to a queue — adding an IVR without a clear benefit just adds friction and complexity.
+Use IVR when the client wants automated triage, self-service resolution, or intent-based routing before human reps. Skip if all calls go straight to queue—pointless IVR just adds friction.
 
 ## Configuration decisions
 - Classic vs generative AI orchestration — classic for deterministic menu-style IVR; generative for natural language intent handling
@@ -25,11 +25,11 @@ Use when the client wants automated triage, self-service resolution, or intent-b
 - Escalation path design — define what happens when the bot can't resolve: which queue, what context passes to the rep
 
 ## Gotchas
-- **Build the transfer-to-agent path first.** The most common IVR failure mode is spending weeks on self-service flows without confirming escalation works. Get a live call to reach a rep before designing any self-service content.
-- **The 1-hour bot call limit affects complex IVR flows.** For multi-step troubleshooting or long self-service processes, test total call duration against this ceiling.
-- **SIP X-header context passing requires Direct Routing.** If the client uses ACS managed numbers and needs to pass legacy IVR context, this capability isn't available without switching to Direct Routing.
-- **NLU+ keeps data inside the D365 boundary.** For clients with strict data residency requirements, NLU+ is the right choice — standard NLU sends intent processing data to Copilot Studio's infrastructure.
+- Build the transfer-to-agent path first. Most IVR failures are teams that spend weeks on self-service flows without confirming escalation works. Get a live call to reach a rep before designing any self-service content.
+- The 1-hour bot call limit affects complex IVR flows. For multi-step troubleshooting or long processes, test total call duration against this ceiling.
+- SIP X-header context passing needs Direct Routing. If the client uses ACS managed numbers and needs legacy IVR context, you'll need Direct Routing for this.
+- NLU+ keeps data inside the D365 boundary. For strict data residency, NLU+ is right. Standard NLU sends intent processing to Copilot Studio infrastructure.
 
 ---
 
-*Source last updated: 2026-03-12 | Review when: Generative AI orchestration reaches GA, or SIP context passing broadened to ACS managed numbers*
+*Source last updated: 2026-03-12 | Worth checking again when generative AI orchestration reaches GA, or if SIP context passing extends to ACS managed numbers*

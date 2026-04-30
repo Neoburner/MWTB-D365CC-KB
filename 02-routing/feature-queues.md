@@ -26,9 +26,9 @@ Queues are required for every routing deployment — they are the fundamental un
 - Whether to set operating hours — relevant for any non-24/7 queue
 
 ## Gotchas
-- **Queue type is permanent.** Plan the queue structure on paper before creating anything. Recreating queues post-go-live is disruptive.
-- **Always configure a fallback queue per workstream.** Without it, routing errors cause work items to disappear from the flow with no obvious error.
-- **Design queues before workstreams.** The most common setup mistake is building them reactively and ending up with duplicate, inconsistently named queues.
+- **Queue type is permanent.** Plan the queue structure on paper first. Recreating queues post-go-live is disruptive.
+- **Always configure a fallback queue per workstream.** Without it, routing errors cause work items to vanish silently.
+- **Design queues before workstreams.** Common mistake: build them reactively and end up with duplicate, inconsistently named queues.
 
 ---
 

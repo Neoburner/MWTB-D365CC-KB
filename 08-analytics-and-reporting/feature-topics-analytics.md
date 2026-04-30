@@ -5,8 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/use/topics-dashboard
 
 ## What it does
-
-AI-powered automatic clustering of conversations into topics and themes based on conversation content, without requiring manual categorization. Surfaces metrics like conversation volume, resolution rate, CSAT, and average handle time aggregated by topic.
+AI auto-clusters conversations into topics based on content without manual tagging. Shows volume, resolution rate, CSAT, and AHT per topic.
 
 ## Key facts
 
@@ -18,29 +17,26 @@ AI-powered automatic clustering of conversations into topics and themes based on
 - AI model refines topic groupings over time as it processes more data
 
 ## When to use / skip
-
-Activate Topics Analytics to automatically discover what customers are calling about and identify improvement opportunities without upfront categorization work. Particularly useful for organizations without established categorization schemes, wanting to validate existing categories, or exploring emergent customer needs. Skip if you prefer manual topic management, have very limited conversation volume, or strict compliance requirements around unsupervised data clustering.
+Turn this on to auto-discover what customers are calling about and find improvement opportunities without manual tagging. Great for organisations without established categories, wanting to validate existing ones, or spotting emergent needs. Skip if you prefer manual tagging, have minimal volume, or compliance rules forbid unsupervised clustering.
 
 ## Configuration decisions
-
 - Enable topics clustering in analytics admin settings
-- Configure minimum conversation volume threshold for topic creation (typically 50+ conversations)
-- Review and optionally refine automatically generated topics for business relevance
-- Map topics to business areas or support teams if desired for better organization
-- Grant analytics and manager roles permission to view topics dashboard
-- Set up alerts or KPI tracking for topics with low resolution or high abandon rates
+- Set minimum conversation volume for topics (typically 50+ conversations)
+- Review and refine auto-generated topics if needed
+- Map topics to business areas or teams if you want
+- Grant analytics and manager roles access to the topics dashboard
+- Set up alerts for topics with low resolution or high abandonment
 
 ## Gotchas
-
-- Topics are automatically generated; they may not align perfectly with business categories or naming conventions
-- Requires sufficient conversation volume (typically 30-60 days of data) for meaningful clustering to emerge
-- Manual topic tweaking is limited; topics are intended to be AI-driven and subject to model updates
-- Topics can change or merge as AI model processes more data and refines clusters dynamically
-- Low-volume topics may disappear or merge as clustering algorithm optimizes group boundaries
-- Topics work best with clear conversation transcripts; poor quality audio, text, or non-English conversations reduce accuracy
-- Cannot selectively disable topics once enabled; all-or-nothing feature at analytics level
-- Topic stability may vary; trending topics may emerge and fade based on seasonal patterns
+- **Auto-generated topics may not match your business categories.** AI organises differently than you might.
+- **Needs volume to work.** Typically 30-60 days before meaningful clusters emerge.
+- **Topic tweaking is limited.** They're meant to be AI-driven and change as the model updates.
+- **Topics can merge or shift.** As the model sees more data, it regroups.
+- **Low-volume topics disappear.** Algorithm optimises clusters as they shrink.
+- **Quality matters.** Fuzzy audio, poor text, or non-English conversations reduce accuracy.
+- **All or nothing.** You can't selectively disable certain topics.
+- **Seasonal drift.** Topics emerge and fade with seasonal patterns.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: New customer segments emerge or topics show unexpected clustering patterns*
+*Source last updated: 2026-04-30 | Check this if: New customer segments emerge or topic clustering seems off*

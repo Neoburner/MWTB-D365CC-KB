@@ -18,26 +18,26 @@ Phone Number Management covers the full lifecycle of DIDs in D365 Contact Center
 - One DID can route to multiple queues via call flows (e.g., 1-800-SUPPORT → IVR → English queue or Spanish queue)
 
 ## When to use / skip
-Use this feature to acquire, release, and port numbers as your contact centre scales. Skip only if you manage numbers via a carrier portal and never integrate them with D365 (rare, usually only for Direct Routing with carrier-managed DIDs).
+Use this to acquire, release, and port numbers as you scale. Skip only if you manage numbers in a carrier portal and never bring them into D365 (rare — usually Direct Routing with carrier-managed DIDs).
 
 ## Configuration decisions
-- **Number quantity:** Calculate based on concurrent calls and geographic distribution (e.g., 10 agents × 4 calls per agent = 40 numbers for overflow)
-- **Geography:** Choose numbers in regions matching your customer base (local numbers increase answer rates)
-- **Toll-free vs. geographic:** Toll-free (1-800) has higher cost but wider geographic reach; geographic numbers are cheaper
-- **Number porting timeline:** Plan porting during low-traffic periods; allow 3–4 weeks and test routing before cutover
-- **LNP carrier letter:** Obtain Letter of Authorization (LOA) from your current carrier before porting
-- **Fallback routing:** Configure overflow numbers and backup queues before releasing old numbers
-- **Conservation pool:** If using ACS PSTN, do not release numbers immediately; keep a small pool in reserve for failover
+- **Number quantity** — Calc based on concurrent calls and geography. 10 agents × 4 calls each = 40 numbers for overflow.
+- **Geography** — Pick regions that match your customer base. Local numbers get better answer rates.
+- **Toll-free vs. geographic** — Toll-free costs more but reaches further; geographic numbers are cheaper.
+- **Porting timeline** — Plan for low-traffic periods. Allow 3–4 weeks, test routing before cutover.
+- **LNP paperwork** — Get a Letter of Authorization (LOA) from your current carrier before you port.
+- **Fallback routing** — Set up overflow numbers and backup queues before you release old numbers.
+- **Reserve pool** — Don't release numbers immediately. Keep a small pool handy for failover.
 
 ## Gotchas
-- Porting requests can be rejected if the account holder name or address doesn't match the original; verify account details with old carrier first
-- Number release is immediate and irreversible; once released, the number returns to carrier inventory and cannot be recovered
-- Porting a number to a different Azure region requires deleting and re-importing; brief interruption expected (30 min–2 hours)
-- Direct Routing numbers require SBC configuration before porting; empty SBC routes cause calls to fail silently
-- Vanity numbers (1-800-FLOWERS) are expensive and slow to port; reserve 6–8 weeks lead time
-- Geographic restrictions: Some countries ban call routing across borders (e.g., EU data residency rules); local numbers must terminate locally
-- When a workstream references a released number, the workstream becomes "orphaned"; D365 does not automatically remove the reference
+- **LNP rejects if account details don't match.** Verify account holder name and address with the old carrier first.
+- **Number release is permanent.** Released number goes back to carrier inventory. You can't get it back.
+- **Cross-region porting needs delete + re-import.** Brief outage expected (30 min–2 hours).
+- **Direct Routing requires SBC config before porting.** Empty SBC routes = silent call failures.
+- **Vanity numbers take forever.** 1-800-FLOWERS is expensive and slow. Plan 6–8 weeks ahead.
+- **Geographic restrictions apply.** Some countries forbid cross-border routing (EU data residency). Local numbers must stay local.
+- **Released numbers orphan workstreams.** Workstream still references the number. D365 won't clean that up automatically.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: LNP regulations change or ACS geographic coverage expands*
+*Source last updated: 2026-04-30 | Worth revisiting if LNP regulations shift or ACS adds new geographies*

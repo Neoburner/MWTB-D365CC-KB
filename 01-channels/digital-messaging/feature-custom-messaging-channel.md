@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-custom-channel
 
 ## What it does
-Connects any messaging platform or custom-built chat interface to D365 Contact Center via the Azure Bot Framework Direct Line API. Enables you to bring your own messaging platform (in-app chat, custom web chat, branded mobile app) and route conversations to Contact Center agents without using a pre-built channel.
+Connects any messaging platform or custom chat interface to Contact Center via the Azure Bot Framework Direct Line API. Bring your own platform (in-app chat, custom web chat, branded app) and route to agents without a pre-built channel.
 
 ## Key facts
 - Requires a Copilot Studio bot (Power Virtual Agent) or custom bot deployed on Azure Bot Service
@@ -20,7 +20,7 @@ Connects any messaging platform or custom-built chat interface to D365 Contact C
 - Supports rich message types: text, buttons, adaptive cards, quick replies, and custom JSON payloads
 
 ## When to use / skip
-Use custom messaging when you need brand control, deep app integration, or a messaging platform not supported by pre-built D365 channels. Examples: in-app customer support in your mobile app, branded web chat matching your site design, voice assistant integration, or Slack/Discord community support. Skip custom channels if you can use pre-built channels (chat, email, Teams); they are faster to configure and require less technical overhead.
+Use custom messaging when you need brand control, deep app integration, or a platform not supported by pre-built channels—in-app support, branded web chat, voice assistants, Slack/Discord community support. Skip custom channels if you can use pre-built ones (chat, email, Teams); they're faster to configure and less overhead.
 
 ## Configuration decisions
 - Which platform or app will be the messaging client? (in-app, mobile, web, voice assistant, etc.)
@@ -31,16 +31,16 @@ Use custom messaging when you need brand control, deep app integration, or a mes
 - How will you handle bot-to-agent handoff? Automatic after X turns or manual?
 
 ## Gotchas
-- Direct Line token generation must be secured; exposing the token endpoint to unauthenticated clients allows bot hijacking
-- Message size limit (1 KB) is strict; large JSON payloads, file metadata, or context variables often exceed this and require workarounds
-- Bot latency is additive: custom client delay + bot processing + D365 routing; total response time can be 2-5 seconds
-- Conversation context lost if bot restarts or Direct Line connection drops; design for resilience and context reconstruction
-- Custom channels don't appear in out-of-the-box Contact Center dashboards; you must build custom analytics and reporting
-- WebSocket connections may be blocked by corporate firewalls or proxies; polling is more reliable but has higher latency
-- If bot deployment fails or scales down (Azure), custom channel immediately becomes unavailable to customers; no fallback
-- Adaptive cards and rich message types are custom-rendered in your client; unsupported card types render as plain text (user experience degrades)
-- Testing custom channels requires end-to-end testing (client + bot + D365); integration test coverage is essential
+- Direct Line token generation must be secured; exposed endpoints allow bot hijacking.
+- 1 KB message size limit is strict; large JSON, metadata, or context variables often exceed it and need workarounds.
+- Bot latency is additive: custom client + bot processing + D365 routing = 2-5 seconds total.
+- Conversation context is lost if the bot restarts or Direct Line drops; design for resilience and context reconstruction.
+- Custom channels don't appear in out-of-the-box dashboards; you'll build custom analytics and reporting.
+- WebSocket can get blocked by corporate firewalls; polling is more reliable but slower.
+- If bot deployment fails or scales down, the custom channel goes unavailable immediately—no fallback.
+- Adaptive cards and rich types are custom-rendered in your client; unsupported types degrade to plain text.
+- Custom channels need end-to-end testing (client + bot + D365); integration coverage is essential.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Azure Bot Service API version changes or Direct Line authentication model updates*
+*Source last updated: 2026-04-30 | Worth checking again if Azure Bot Service API changes or Direct Line auth model updates*

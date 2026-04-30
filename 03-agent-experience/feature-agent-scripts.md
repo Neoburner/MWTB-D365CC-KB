@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../agent-scripts](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/agent-scripts)
 
 ## What it does
-Provides step-by-step guidance to reps in the Productivity Pane during interactions. Scripts are composed of ordered steps — each step can be a text instruction, a macro to execute, or a reference to another script. Surfaced automatically based on session type and can be conditionally selected per conversation context.
+Provides step-by-step guidance to reps in the Productivity Pane during interactions. Scripts are ordered steps that can be text instructions, macros, or references to other scripts. They surface automatically based on session type and can be conditionally selected by conversation context.
 
 ## Key facts
 - Scripts are linked to **session templates** — they surface when the matching session type opens; a session template can have multiple scripts
@@ -25,7 +25,7 @@ Use for any contact centre with structured interaction flows: compliance disclos
 
 ## Gotchas
 - **Scripts only appear in Copilot Service workspace.** Customer Service Hub doesn't show the Productivity Pane.
-- **Expression-based default selection is evaluated once at session open.** It doesn't dynamically switch the active script mid-conversation if context changes.
+- **Expression-based default selection is evaluated once at session open.** It doesn't dynamically switch scripts mid-conversation if context changes.
 
 ---
 

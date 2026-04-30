@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/intelligent-skill-finder
 
 ## What it does
-Intelligent Skill Finder uses machine learning to automatically classify incoming work items and assign skills to them based on conversation content, without requiring manual rule configuration. The system trains on historical conversation data, learns patterns of customer intent and problem types, and applies inferred skills to new conversations. It coexists with rule-based classification, allowing organizations to hybrid approach: rules handle known, high-confidence cases, while ML handles ambiguous or novel scenarios.
+Uses machine learning to automatically classify work items and assign skills based on conversation content, without manual rule configuration. Trains on historical data, learns intent and problem patterns, and applies inferred skills to new conversations. Coexists with rule-based classification—rules handle known cases, ML handles ambiguous or novel scenarios.
 
 ## Key facts
 - Requires minimum historical data: 500–1,000 conversations per skill with good skill labeling to train a model with reasonable accuracy
@@ -30,14 +30,14 @@ Use Intelligent Skill Finder when you have diverse, evolving customer requests t
 - **Retraining triggers:** Document conditions that trigger manual retraining (e.g., new product launch, skill definition changes, accuracy drops below 80%)
 
 ## Gotchas
-- Model accuracy is highly dependent on historical data quality; garbage in = garbage out; insufficient or mislabeled training data produces unreliable predictions
-- New skills or products not well-represented in historical data will be under-classified; the model struggles with novel scenarios
-- Model drift occurs naturally over time as customer behavior, products, or language changes; regular retraining is essential but adds operational overhead
-- Confidence scores are not calibrated to business risk; a 90% confident prediction might still be wrong in 10% of cases, which can impact customer satisfaction
-- The model reflects historical bias in your data; if certain skills were historically over-assigned to certain agents or queues, the model learns and perpetuates that bias
-- Effort estimation feature is a nice-to-have but can create unintended incentives (e.g., agents cherry-picking "simple" conversations, complex cases languishing in queue)
-- If rule-based routing is not completely deprecated, hybrid routing can create confusion; conversations matching both rules and ML predictions need clear tiebreaker logic
-- Model explainability is limited; supervisors and agents often want to understand *why* a conversation was routed to them, but the model may only provide keyword relevance scores
+- Model accuracy depends entirely on historical data quality. Garbage in = garbage out. Insufficient or mislabeled training data produces unreliable predictions.
+- New skills or products not well-represented in historical data are under-classified. The model struggles with novel scenarios.
+- Model drift happens naturally as customer behaviour, products, or language changes. Retraining is essential but adds overhead.
+- Confidence scores aren't calibrated to business risk. A 90% confident prediction can still be wrong 10% of the time, which hits customer satisfaction.
+- The model reflects historical bias. If certain skills were over-assigned to certain agents or queues historically, the model learns and perpetuates that.
+- Effort estimation can create unintended incentives—agents cherry-picking "simple" conversations, complex cases languishing.
+- Hybrid routing (rules + ML coexisting) can create confusion if rules aren't fully deprecated. Conversations matching both need clear tiebreaker logic.
+- Model explainability is limited. Supervisors and agents want to know *why* a conversation was routed to them, but you may only get keyword relevance scores.
 
 ---
 

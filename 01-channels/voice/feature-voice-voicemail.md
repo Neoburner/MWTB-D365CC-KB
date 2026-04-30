@@ -19,19 +19,19 @@ Lets customers leave a recorded message when a queue is in overflow, operating h
 - **Operating hours at the voice workstream level must be OFF** for queue-level overflow voicemail to work
 
 ## When to use / skip
-Use on any voice deployment where the client wants customers to leave messages instead of abandoning when queues are busy or closed. Nearly always in scope unless the client explicitly doesn't want voicemail.
+Include voicemail on most voice deployments — gives customers a way to leave a message when queues are busy or you're closed. Skip only if the client explicitly says no.
 
 ## Configuration decisions
-- Group voicemail (overflow-triggered) vs individual voicemail (direct-rep-call) vs both — configure the scenarios that match the client's operational model
-- Overflow conditions that trigger voicemail — defined in queue overflow settings; decide threshold and after-hours logic
-- Whether to add reps to the individual voicemail queue — required for direct voicemail delivery; often missed
+- **Group vs individual voicemail vs both** — Match it to how the client operates.
+- **Overflow thresholds and after-hours** — Set these in queue overflow settings.
+- **Adding reps to the individual voicemail queue** — Required for direct voicemail. Easy to miss.
 
 ## Gotchas
-- **Operating hours conflict.** If operating hours are set at the voice workstream level, they override queue-level overflow settings and voicemail never fires. Set operating hours at the queue level only when voicemail is in scope — this is a very common setup issue.
-- **Phone number format mismatch in routing rules.** Equals requires E.164 (+1XXXXXXXXXX); Contains works without country code. Mixing operators and formats causes voicemail routing failures that are confusing to debug.
-- **Reps must be added to the individual voicemail queue.** If direct-number reps aren't added to the Default Individual Voicemail Queue, voicemails are never delivered. Always verify this step after assigning direct inbound numbers.
-- **IVR cannot offer voicemail directly.** Customers cannot be sent to voicemail from an AI agent/IVR — they must first reach the rep layer and find it unavailable. Design call flows with this constraint in mind.
+- **Operating hours at the workstream level kill voicemail.** Set at that level and queue-level overflow never fires. Put operating hours at the queue level instead — very common gotcha.
+- **Phone number format matters in routing rules.** Equals operator needs E.164 (+1XXXXXXXXXX); Contains works without the country code. Mix them up and voicemail routing fails in confusing ways.
+- **Reps need to be in the individual voicemail queue.** If direct-number reps aren't in the Default Individual Voicemail Queue, voicemails never get delivered. Always verify this after setting up direct numbers.
+- **IVR can't send to voicemail directly.** Customers can't go straight to voicemail from an AI agent — they hit the rep layer first. Design your call flow accordingly.
 
 ---
 
-*Source last updated: 2026-02-08 | Review when: Individual voicemail prompt becomes customisable, or voicemail routing to voice queues supported*
+*Source last updated: 2026-02-08 | Worth revisiting if individual voicemail prompts become customisable or voicemail routing to voice queues ships*

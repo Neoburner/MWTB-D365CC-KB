@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-microsoft-teams-channel
 
 ## What it does
-Deploys a D365 Contact Center bot as a Teams app, enabling internal employees to request support via Teams chat while agents handle tickets in the Contact Center. Unlike external channels, Teams is positioned as an internal employee communication channel for IT helpdesk, HR inquiries, or internal support workflows.
+Deploys a Contact Center bot as a Teams app for internal employees to request support. Agents handle tickets in Contact Center. Teams is internal-facing—IT helpdesk, HR, internal support workflows.
 
 ## Key facts
 - Requires Teams tenant integration with D365 Contact Center (one-time setup per tenant)
@@ -20,7 +20,7 @@ Deploys a D365 Contact Center bot as a Teams app, enabling internal employees to
 - Works with Teams for desktop, web, and mobile clients
 
 ## When to use / skip
-Use Teams channel for internal IT support, employee self-service (benefits, policies, onboarding), or peer support workflows where employees are already in Teams. It reduces friction vs. email or ticket systems for internal users. Skip Teams if your user base is primarily external customers, or if you lack Teams infrastructure. Also skip if your internal support volume is very low (overhead of setup not justified).
+Use Teams for internal IT support, employee self-service (benefits, policies, onboarding), or peer support where employees are already in Teams. Reduces friction vs email or tickets. Skip if your user base is mostly external customers, you lack Teams infrastructure, or internal volume is too low to justify the overhead.
 
 ## Configuration decisions
 - Which D365 Contact Center bot (Copilot Studio or custom) will handle Teams conversations?
@@ -31,14 +31,14 @@ Use Teams channel for internal IT support, employee self-service (benefits, poli
 - How will you handle Teams conversations that span multiple days? Auto-close or manual?
 
 ## Gotchas
-- Teams bot presence and availability don't reflect D365 agent availability; employees may send requests when no agents are online (design for off-hours handling via bot escalation)
-- Teams conversation history is visible to all participants; don't discuss sensitive HR or personal data in Teams chats (private chat recommended)
-- If an employee leaves the organization and their account is disabled, their ongoing Team conversations orphan; no automatic reassignment
-- Bot rate limiting: if an employee sends many messages in rapid succession, Teams may throttle the bot response; latency increases unpredictably
-- Teams file sharing and link previews are not forwarded to D365; agents only see message text, not attachments or embedded media
-- Teams channels (group chats) can have many participants; mention culture (e.g., @support bot) must be documented or employees will miss their request
-- Teams desktop notifications may be noisy if support request volume is high; agent experience can degrade with too many Teams alerts
+- Bot presence doesn't reflect D365 agent availability; employees may send requests when no agents are online. Design for off-hours bot handling.
+- Teams conversation history is visible to all participants; sensitive HR or personal data shouldn't be discussed there. Private chat is better.
+- If an employee leaves and their account disables, their ongoing conversations orphan; there's no auto-reassignment.
+- Bot rate limiting kicks in on rapid messages; Teams may throttle the response and latency climbs unpredictably.
+- Teams file sharing and link previews don't forward to D365; agents only see text, not attachments or embedded media.
+- Teams channels (group chats) can have many participants; mention culture (@support bot) must be documented or requests get missed.
+- Teams notifications get noisy if support volume is high; agent experience degrades with too many alerts.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Teams app manifest changes or Azure AD integration updates*
+*Source last updated: 2026-04-30 | Worth checking again if Teams app manifest changes or Azure AD integration updates*

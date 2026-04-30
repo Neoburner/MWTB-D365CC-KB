@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../agent-hub](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/agent-hub)
 
 ## What it does
-Centralised admin and supervisory console for governing autonomous AI agents. Primarily a navigation and information surface — documentation on AI agent capabilities, security, architecture, compliance, rollout plans, and links to configuration areas. Actual AI agent configuration happens in the individual feature areas (Quality management, Intent, Workstreams, etc.).
+Central admin console for autonomous AI agents. Mainly a navigation and information surface with docs on capabilities, security, architecture, compliance, and rollout plans. Actual configuration happens in the individual feature areas (Quality management, Intent, Workstreams, etc.).
 
 ## Key facts
 - Navigation surface: links out to individual AI agent configuration areas rather than doing configuration itself
@@ -20,8 +20,8 @@ Useful as an orientation point at the start of any AI agent deployment to unders
 None — Agent Hub is a portal/navigation surface, not a configuration screen.
 
 ## Gotchas
-- **Not where you configure agents.** Admins who navigate to Agent Hub expecting to set up an AI agent will need to follow the links out to the relevant feature areas. Document the correct setup paths in project documentation to avoid confusion.
+- **Not a configuration screen.** Admins expecting to set up an AI agent need to follow the links to the relevant feature areas. Document the correct setup paths to avoid confusion.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Agent Hub gains direct configuration capabilities*
+*Source last updated: check Microsoft Learn | Check this after Agent Hub gains direct configuration capabilities*

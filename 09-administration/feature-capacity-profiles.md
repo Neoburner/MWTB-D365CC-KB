@@ -27,10 +27,10 @@ Use on any deployment with unified routing. Capacity profiles are the standard a
 - **Multiple profile combinations** — required for multi-priority or type-tiered workloads; design the combination before building
 
 ## Gotchas
-- **Reset frequency is permanent.** Set it correctly at creation — if you get it wrong, you're rebuilding the profile.
-- **Record routing capacity doesn't auto-release.** For email/task/record routing, reps accumulate stale items that count against their capacity indefinitely. Document the queue item deactivation process in the operational runbook.
-- **Assignment blocking triggers Busy-DND automatically.** Supervisors and reps may not understand why a rep's status changed without manual action. Brief supervisors on this behaviour before go-live.
+- **Reset frequency is permanent.** Get it right at creation — if you don't, you're rebuilding the profile.
+- **Record routing capacity doesn't auto-release.** For email/task/record routing, reps accumulate stale items that count against capacity indefinitely. Document the queue item deactivation process in your operational runbook.
+- **Assignment blocking forces Busy-DND automatically.** Supervisors and reps may not understand why a rep's status changed without manual action. Brief supervisors on this behaviour before go-live.
 
 ---
 
-*Source last updated: 2026-02-03 | Review when: Capacity profile reset options expanded, or automatic capacity release added for record routing*
+*Source last updated: 2026-02-03 | Check this: Capacity profile reset options expanded, or automatic capacity release added for record routing*

@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/cobrowse-screen-share
 
 ## What it does
-Allows a support agent to view the customer's browser session (and optionally take limited control) during a live chat interaction. The agent can see exactly what the customer sees, reducing misunderstandings and enabling real-time visual guidance. Co-browse is typically powered by a third-party provider (Surfly, UserReplay, or similar) integrated into the chat widget.
+Agent can view the customer's browser session during chat and optionally take limited control. Agent sees exactly what the customer sees, reducing confusion and enabling real-time guidance. Requires a third-party provider (Surfly, UserReplay, etc.) integrated into the chat widget.
 
 ## Key facts
 - Co-browse is agent-initiated; agent requests access and customer must accept via a prompt
@@ -19,7 +19,7 @@ Allows a support agent to view the customer's browser session (and optionally ta
 - Works across most modern browsers (Chrome, Edge, Safari, Firefox) but may have issues with some specialized enterprise browsers
 
 ## When to use / skip
-Use co-browse for complex visual issues: "I can't find the button," navigation confusion, or form-filling assistance. It dramatically reduces resolution time for these types of issues. Skip co-browse for simple text-based support, privacy-sensitive customer data entry (credit cards, SSNs should not be visible to agent), or when the customer's connection is poor. Also skip if you haven't trained agents on using co-browse responsibly and respecting customer privacy boundaries.
+Use co-browse for visual problems: button navigation, form-filling, confusion about where something is. It cuts resolution time dramatically. Skip it for text-only issues, privacy-sensitive data entry (cards, SSNs shouldn't be agent-visible), poor connections, or if you haven't trained agents on privacy boundaries.
 
 ## Configuration decisions
 - Should agents be able to take control (click, scroll) or view-only?
@@ -30,15 +30,15 @@ Use co-browse for complex visual issues: "I can't find the button," navigation c
 - Should there be a limit on co-browse usage per customer or per agent per day?
 
 ## Gotchas
-- Customer's browser performance may degrade during co-browse (5-15% CPU increase typical); inform customers to expect this
-- Co-browse doesn't work on pages with restrictive CSP (Content Security Policy) or iframe restrictions; testing is required per website
-- Agent control features (if enabled) can feel invasive to customers; clear communication and training reduce friction
-- Recording compliance: you must have explicit consent before recording co-browse sessions and must disclose retention period
-- If the customer navigates to a different domain during co-browse, the session drops; agent must request access again
-- Co-browse provider outages or latency directly impact chat quality; SLA for third-party provider is critical
-- Agent accidental actions (clicking wrong button, typing in wrong field) are visible to customer; training is essential
-- Co-browse doesn't work on mobile browsers or app-based chat (only web browsers); clarify this limitation to customers upfront
+- Browser performance degrades during co-browse (typical 5-15% CPU increase); set customer expectations.
+- Co-browse doesn't work with restrictive CSP (Content Security Policy) or iframe restrictions; you'll need to test per website.
+- Agent control can feel invasive if not explained clearly; training helps.
+- Recording requires explicit consent and disclosure of retention period.
+- If the customer navigates to a different domain, the session drops and the agent has to request access again.
+- Co-browse provider uptime and latency directly affect chat quality; third-party SLA is critical.
+- Agent misclicks are visible to the customer; training is essential.
+- Co-browse doesn't work on mobile browsers or app chat—only desktop web. Tell customers upfront.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: third-party provider changes or security compliance updates*
+*Source last updated: 2026-04-30 | Worth checking again after a third-party provider change or security compliance update*

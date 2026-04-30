@@ -22,31 +22,31 @@ The Desktop Companion App is a Windows-based application that agents install loc
 - Companion app logs troubleshooting data to local C:\ProgramData\Microsoft\Contact Center logs directory
 
 ## When to use / skip
-**Use the Desktop Companion App** if you're deploying Contact Center embedded in Salesforce (via Lightning Web Components), ServiceNow (via ServiceNow Store app), or a custom CRM portal, and agents need voice capability. **Skip it** if you're using Standalone Contact Center (agents access via dedicated web app or dedicated Dynamics 365 tab) or if you don't need voice (chat/email-only deployments don't require the app).
+Use the companion app for embedded Contact Centre deployments (Salesforce, ServiceNow, custom CRM) that need voice. Skip it for Standalone Contact Centre or chat-only/email-only deployments.
 
 ## Configuration decisions
-- **Deployment method**: Manual install (agents download and run installer), SCCM (System Center Configuration Manager), or Intune (modern MDM for cloud-first orgs)
-- **Auto-update policy**: Allow automatic updates (simplest) or pin to a specific version and test updates before rolling out
-- **Firewall configuration**: Whitelist Contact Center domain and media relay servers in corporate firewalls
-- **Proxy support**: If your network uses a proxy, configure the companion app to route through it (usually auto-detected but may need manual setup)
-- **Network bandwidth reservation**: If QoS is implemented, tag audio streams from the companion app to ensure priority
-- **Logging and diagnostics**: Enable verbose logging for troubleshooting (increases local log size; plan cleanup strategy)
-- **Uninstall policy**: Can agents uninstall the app, or should it be locked down via MDM?
-- **Multiple machine support**: If agents work from multiple devices (office, home, laptop), install the companion app on each
-- **Upgrade testing**: Test new companion app versions in a pilot group before organization-wide rollout
+- **Deployment** — Manual, SCCM, or Intune. Intune is simplest for cloud-first orgs.
+- **Updates** — Auto-update or pin to a version and test before rollout.
+- **Firewall** — Whitelist Contact Centre domain and media relay servers.
+- **Proxy** — Route through corporate proxy if needed (usually auto-detected).
+- **QoS** — If you have QoS, tag audio streams from the companion app for priority.
+- **Logging** — Enable verbose logging for troubleshooting. Plan to clean up the logs.
+- **Uninstall policy** — Can agents remove it, or lock it down with MDM?
+- **Multi-device** — If agents work from different machines, install on each.
+- **Pilot testing** — Test new versions with a small group before org-wide rollout.
 
 ## Gotchas
-- Incompatible driver versions: Some audio driver updates can cause audio dropout with the companion app; maintain a validated list of compatible drivers
-- Antivirus false positives: Aggressive antivirus/endpoint protection may quarantine or block the companion app; whitelist the executable and service in your security policy
-- Network packet loss sensitivity: The companion app is sensitive to packet loss >3%; high-jitter networks (satellite, congested WiFi) cause audio quality issues
-- Windows update conflicts: Aggressive Windows update policies may force restarts during shift, disconnecting the companion app; coordinate update schedules with contact center operations
-- Agent behavior: Agents may kill the background process to "free up resources" or disable it if troubleshooting; educate agents and consider MDM lock-down
-- Dual-SIM/multi-network confusion: If a machine has multiple network adapters, the companion app may bind to the wrong one; requires manual configuration
-- Silent installation limitations: If deploying via SCCM/Intune, the installer must run with admin privileges; some orgs restrict this, requiring agent involvement at install time
-- Version skew: If one agent has a newer companion app than another and they transfer a call, codec negotiation may fail; synchronize update rollouts across teams
-- Uninstall leaves registry entries: Removing the app doesn't fully clean up Windows registry; reinstalls may be incomplete
-- No companion app for remote/VDI scenarios: If agents work in a Citrix, VMware Horizon, or similar virtual desktop, the companion app must be installed in the VDI image, not on the client; contact Microsoft for VDI-specific guidance
+- **Audio drivers break audio.** Some driver updates cause dropout. Keep a list of known-good driver versions.
+- **Antivirus blocks it.** Overly aggressive endpoint protection quarantines the companion app. Whitelist it in your security policy.
+- **Packet loss kills quality.** Loses >3% and audio tanks. Satellite or congested WiFi = problems.
+- **Windows updates force restarts.** Aggressive update policies restart during shift and disconnect the app. Coordinate update schedules with ops.
+- **Agents kill the background process.** They disable it to "free up resources" or while troubleshooting. Educate them or lock it down with MDM.
+- **Multiple network adapters confuse the app.** It may bind to the wrong adapter. Requires manual setup.
+- **Silent install needs admin.** SCCM/Intune deployments require admin privileges. Some orgs don't allow it; agents have to be involved.
+- **Version mismatches break codec negotiation.** Two agents with different app versions try to transfer a call and it fails. Sync updates across teams.
+- **Uninstall leaves junk in the registry.** Full cleanup requires manual registry work. Reinstalls may be incomplete.
+- **No VDI version exists.** For Citrix or VMware Horizon, the app has to be in the VDI image, not the client machine. Contact Microsoft for guidance.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Agents report audio quality issues, Contact Center updates introduce breaking changes to companion app, or if you're expanding to non-Windows platforms (currently unsupported)*
+*Source last updated: 2026-04-30 | Worth revisiting if agents report audio issues, Contact Centre breaks compatibility with the app, or if macOS/Linux support ships*

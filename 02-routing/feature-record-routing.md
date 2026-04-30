@@ -26,10 +26,10 @@ Use for any deployment where cases or email activities need intelligent routing 
 - Whether the 5-minute assignment cycle is acceptable for urgent records — if not, consider a Power Automate trigger for immediate assignment on priority cases
 
 ## Gotchas
-- **Capacity doesn't release automatically for records.** Train reps and supervisors explicitly. "Closing a case" doesn't release routing capacity unless done correctly (resolve/cancel and clear queue item).
-- **5-minute assignment cycle surprises clients.** Clients used to real-time conversation routing expect cases to be assigned instantly. For P1 escalation scenarios, discuss whether 5 minutes is acceptable.
-- **Rep security permissions must be audited before go-live.** A custom Omnichannel role that doesn't include Case Read access will silently fail and close the work item without any useful error.
-- **Enable unified routing in dev/staging first.** The solution import can impact SQL load. Never enable in production without testing in staging first.
+- **Capacity doesn't release automatically for records.** Train reps and supervisors explicitly. "Closing a case" doesn't release capacity unless done correctly (resolve/cancel and clear queue item).
+- **5-minute assignment cycle surprises clients.** Clients used to real-time conversation routing expect cases to be assigned instantly. For P1 escalations, discuss whether 5 minutes is acceptable.
+- **Rep security permissions must be audited before go-live.** A custom Omnichannel role without Case Read access silently fails and closes the work item with no useful error.
+- **Enable unified routing in dev/staging first.** The solution import can impact SQL load. Never enable in production without testing staging first.
 
 ---
 

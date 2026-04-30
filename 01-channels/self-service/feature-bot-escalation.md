@@ -5,7 +5,7 @@
 **Source:** [Integrate a Copilot agent in Dynamics 365 Contact Center - Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-bot-virtual-agent)
 
 ## What it does
-Bot-to-agent escalation transfers a conversation from an automated bot (Copilot Studio, Azure Bot Service, or third-party) to a live human agent in D365 Contact Center, preserving the conversation history, collected variables, and context summary. The agent sees what the bot learned about the customer and can pick up the conversation seamlessly without requiring the customer to repeat information.
+Hand off conversations from an automated bot to a live agent in Contact Center, preserving history, variables, and context. The agent sees what the bot learned and picks up seamlessly without the customer repeating themselves.
 
 ## Key facts
 - Supports handoff from Copilot Studio, Azure Bot Service, and third-party bots via standard escalation patterns
@@ -20,7 +20,7 @@ Bot-to-agent escalation transfers a conversation from an automated bot (Copilot 
 - Handoff latency typically 2-5 seconds depending on network and queue congestion
 
 ## When to use / skip
-**Use bot escalation** when you want to filter simple issues through automation first (reduce agent load) while ensuring complex issues reach a specialist without friction. Example: bot collects account info and issue summary, escalates account disputes directly to specialists. **Skip it** if your bot rarely needs escalation (then why use a bot?), or if your contact center needs synchronous, turn-by-turn co-control (agent and bot both active in same conversation—D365 doesn't support that; the bot must hand off completely).
+Use escalation to filter simple issues through automation first (reduce agent load) while routing complex issues to specialists without friction. Example: bot collects account info and issue summary, escalates disputes directly. Skip it if the bot rarely escalates (pointless bot), or if you need synchronous co-control where agent and bot both act in the same conversation—D365 doesn't support that. The bot must hand off completely.
 
 ## Configuration decisions
 - **Escalation trigger logic**: Define bot conditions that mandate escalation vs. those that allow the bot to attempt resolution again
@@ -33,15 +33,15 @@ Bot-to-agent escalation transfers a conversation from an automated bot (Copilot 
 - **Re-queue threshold**: How many times can an agent reject/requeue the escalation before it goes to supervisor review?
 
 ## Gotchas
-- Variable name mismatches: If bot variable names don't exactly match D365 field names, the data won't transfer; validate mapping during testing
-- Conversation history not searchable in agent transcript by bot variable: Agent sees bot transcript but cannot filter by bot-collected data; ensure key info is in the summary
-- Escalation queues can back up: If bots escalate too eagerly, agents get swamped; monitor escalation rate and adjust bot confidence thresholds
-- No automatic re-escalation to bot: Once an agent takes over, the agent owns the conversation; the bot cannot resume if the agent steps away temporarily
-- Third-party bot lag: Escalation latency may be higher if the bot runs on external infrastructure; test SLA compliance before production
-- Customer context persistence: If the customer's session times out or browser closes during escalation, they may lose their context; ensure graceful reconnection
-- Agent availability signal delays: Agent presence status (Available/Busy/Away) can lag 30+ seconds in Contact Center; escalation might reach an unavailable agent, triggering queue delays
-- Handoff transcript may be incomplete: If bot crashes or loses connection mid-conversation, parts of the transcript may not reach the agent
+- Variable name mismatches break data transfer. Bot variables must exactly match D365 field names; validate during testing.
+- Bot transcript isn't searchable by bot variables. Agents see transcript but can't filter by collected data; put key info in the summary.
+- Escalation queues back up if bots escalate too eagerly. Monitor rate and adjust bot confidence thresholds.
+- No automatic re-escalation to bot. Once an agent takes over, they own it; the bot can't resume if the agent steps away.
+- Third-party bot lag inflates escalation latency. Test SLA compliance before production.
+- Customer context can drop if their session times out during escalation. Design graceful reconnection.
+- Agent presence status lags 30+ seconds in Contact Center. Escalations might reach unavailable agents and cause queue delays.
+- Handoff transcript can be incomplete if the bot crashes or loses connection mid-conversation.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Bot escalation rate exceeds 30% of bot interactions, agent Handle Time increases after escalation, or if queue SLAs are breached*
+*Source last updated: 2026-04-30 | Revisit if escalation rate exceeds 30% of bot interactions, agent Handle Time climbs after escalation, or queue SLAs breach*

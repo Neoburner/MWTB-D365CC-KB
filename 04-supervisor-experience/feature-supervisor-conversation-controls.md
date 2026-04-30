@@ -22,10 +22,10 @@ Required for any deployment where supervisors need to actively manage live conve
 - Document the operational use cases for each control before go-live — assign, transfer, and force close each carry operational risk if used incorrectly
 
 ## Gotchas
-- **Both steps are required.** Permission toggles without dashboard access = supervisors can't get to the controls. Dashboard access without permission toggles = supervisors see conversations but can't act. Both must be configured.
-- **Direct role assignment.** The Omnichannel supervisor role must be assigned directly to each supervisor user record — team membership doesn't work here. This catches out any deployment that assigns roles via teams or security groups.
-- **QA programmes need Monitor enabled explicitly.** Supervisor Monitor is the enabler for live call listening/chat monitoring. If the client has a quality assurance team, confirm this is enabled as part of the QA workflow design — it's a separate toggle from everything else.
+- **Both steps are required.** Toggles without dashboard access = can't reach the controls. Dashboard without toggles = can see conversations but can't act. Both must be done.
+- **Direct role assignment, not teams.** The Omnichannel supervisor role must be assigned directly to each user — team membership doesn't work here. Catches out deployments that assign roles via teams or security groups.
+- **QA programmes need Monitor enabled explicitly.** Supervisor Monitor is the enabler for live call listening and chat monitoring. If you have a QA team, confirm this is on as part of the QA workflow design — it's a separate toggle.
 
 ---
 
-*Source last updated: 2026-01-28 | Review when: Supervisor controls expand to embedded deployment or new control types added*
+*Source last updated: 2026-01-28 | Check this after supervisor controls expand to embedded deployment or new control types are added*

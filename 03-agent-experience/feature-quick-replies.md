@@ -24,8 +24,8 @@ Use for any messaging-heavy contact centre. Most valuable for teams with high vo
 - Custom context key slugs — requires context variables to be configured on the workstream; coordinate with the routing/workstream design
 
 ## Gotchas
-- **Locale mismatch silently hides replies.** If a quick reply's locale doesn't match the channel's language setting, reps won't see it. This is a common cause of "why can't I see my quick replies?" tickets post-go-live.
-- **Custom context key slugs render blank if the variable isn't populated.** If the conversation doesn't have the context key set (e.g. no pre-survey response, no API call), the slug resolves to empty string — the rep sends a message with a blank where the value should be.
+- **Locale mismatch silently hides replies.** If a quick reply's locale doesn't match the channel's language setting, reps won't see it. Common cause of "why can't I see my quick replies?" tickets post-go-live.
+- **Custom context key slugs render blank if the variable isn't populated.** If the conversation doesn't have the context key set (no pre-survey response, no API call), the slug resolves to empty string—the rep sends a message with a blank where the value should be.
 
 ---
 

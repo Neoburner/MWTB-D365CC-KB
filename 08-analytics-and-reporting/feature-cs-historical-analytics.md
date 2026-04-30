@@ -14,16 +14,16 @@ Case-centric analytics reports: Summary, Agent, and Topics. AI-discovered topic 
 - Custom/modified Copilot Service workspace apps require manual App Designer navigation entry to expose the reports
 
 ## When to use / skip
-Enable on any Customer Service deployment. Pairs with Omnichannel historical analytics — CS historical covers case performance; Omnichannel covers conversation performance. Both should be enabled.
+Turn this on for any Customer Service deployment. Use it alongside Omnichannel historical analytics — CS historical is for case data, Omnichannel is for conversations. Enable both.
 
 ## Configuration decisions
 - No meaningful configuration beyond the enable toggle; topic clustering runs on default settings automatically
 
 ## Gotchas
-- **Topics report is underutilised.** AI-discovered topic clustering from cases identifies recurring issues without manual tagging. No extra configuration required — just point the knowledge/ops team at it.
-- **Custom app deployments need the App Designer navigation step.** Without it, the reports won't appear in the workspace menu.
-- **Enable on day one.** Historical analytics depends on accumulated data — enabling at go-live starts from zero.
+- **Topics report gets ignored.** AI auto-clusters cases into recurring issues — no tagging needed. Point the ops team at it.
+- **Custom apps need App Designer nav.** Without it, reports won't show in the workspace menu.
+- **Enable at day one.** Waiting to enable at go-live means zero historical data. Start early.
 
 ---
 
-*Source last updated: 2026-01-23 | Review when: New CS historical analytics report types added*
+*Source last updated: 2026-01-23 | Check this if: New CS analytics report types ship*

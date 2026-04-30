@@ -21,9 +21,9 @@ Always the entry point for all new configuration. Avoid using legacy Customer Se
 None — this is the admin surface; decisions happen in the individual feature areas.
 
 ## Gotchas
-- **Adaptive site map means settings won't appear until the relevant feature is provisioned.** Provision voice or chat first, then the corresponding settings become visible.
-- **System Administrator is the only supported admin role.** There is no scoped admin permission model — if a client wants to delegate partial admin access to a team lead, that's not supported without giving them full System Admin.
+- **Adaptive site map means settings won't appear until the relevant feature is provisioned.** Provision voice or chat first, then watch the corresponding settings become visible.
+- **System Administrator is the only supported admin role.** There is no scoped admin permission model — delegating partial admin access to a team lead means giving them full System Admin, which most clients want to avoid.
 
 ---
 
-*Source last updated: 2026-01-30 | Review when: Scoped admin roles added, or major admin center UI changes*
+*Source last updated: 2026-01-30 | Check this: Scoped admin roles added, or major admin center UI changes*

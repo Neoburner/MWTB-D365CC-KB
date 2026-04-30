@@ -5,8 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/use/voice-channel-reports-analytics
 
 ## What it does
-
-Dedicated dashboard within Omnichannel Historical Analytics that surfaces voice channel metrics exclusively. Displays call-specific performance data and requires a separate enable toggle distinct from the main analytics feature.
+Voice-specific dashboard within Omnichannel Historical Analytics. Shows call metrics separately from other channels and needs its own enable toggle.
 
 ## Key facts
 
@@ -17,25 +16,21 @@ Dedicated dashboard within Omnichannel Historical Analytics that surfaces voice 
 - Integrates with broader omnichannel analytics but isolates voice channel data
 
 ## When to use / skip
-
-Enable Voice Analytics Dashboard when your contact center has active voice channel operations and you need to track voice-specific performance metrics separately from other channels. This is essential for organizations where voice is a primary interaction channel. Skip if your contact center is digital-only or voice is minimal; the overhead of separate reporting may not justify the insights.
+Turn this on if you run voice and need voice metrics separate from other channels. Essential if voice is primary. Skip if you're digital-only or voice is minimal.
 
 ## Configuration decisions
-
-- Navigate to Analytics admin settings and locate Voice Analytics Dashboard toggle (separate from main analytics)
-- Enable the toggle to activate voice-specific reporting
-- Verify users have appropriate security roles to view voice analytics
-- Review voice metrics dashboard in Historical Analytics workspace
-- Document reporting cadence and stakeholder distribution
+- Flip the Voice Analytics Dashboard toggle (separate from main analytics) in admin settings
+- Verify user security roles have access to voice analytics
+- Review the voice dashboard in Historical Analytics
+- Document your reporting cadence and who gets reports
 
 ## Gotchas
-
-- Voice analytics must be enabled separately; enabling general analytics alone does not activate voice reporting
-- 24-hour data delay means real-time voice metrics are not available in this dashboard
-- Requires voice channel to be provisioned and active; no data displays if voice is not deployed
-- Voice metrics dashboard is read-only; configuration changes must be made in voice channel settings
-- Disable voice analytics toggle when decommissioning voice channel to reduce analytics overhead
+- **Voice toggle is separate:** Enabling general analytics doesn't turn on voice reporting.
+- **24-hour data lag:** Real-time voice metrics aren't available here.
+- **Voice must be provisioned:** No data if voice isn't active.
+- **Dashboard is read-only:** Configuration lives in voice channel settings.
+- **Clean up when decommissioning:** Turn off the toggle to reduce overhead.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Voice channel is provisioned or decommissioned*
+*Source last updated: 2026-04-30 | Check this if: Voice channel is provisioned or decommissioned*

@@ -18,7 +18,7 @@ Azure Communication Services (ACS) is the underlying telephony platform for D365
 - Calling Plan numbers (Teams Phone) follow different licensing; ACS PSTN and Calling Plans cannot share the same DID
 
 ## When to use / skip
-Use ACS PSTN when you need Microsoft-managed global PSTN connectivity with no carrier relationship. It's the simplest setup for most contact centers and supports rapid scaling. Skip ACS PSTN if you already own SIP trunk capacity with a carrier and want to reuse existing numbers—use Direct Routing instead. Also reconsider if your organisation requires dedicated SIP failover or carrier-specific compliance hooks (e.g., certain countries restrict cloud calling).
+Choose ACS PSTN if you want Microsoft-managed PSTN with no carrier wrangling. It's the quickest path for most contact centres and scales easily. Skip it if you've already got SIP trunk capacity and own your numbers — Direct Routing is better for that. Also think twice if you need dedicated SIP failover or carrier-specific compliance (some countries restrict cloud calling).
 
 ## Configuration decisions
 - **Number geography:** Decide which countries/regions your DIDs cover. ACS supports 30+ countries; each geography has different pricing and availability
@@ -38,4 +38,4 @@ Use ACS PSTN when you need Microsoft-managed global PSTN connectivity with no ca
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: ACS pricing model changes or new D365 voice features launch*
+*Source last updated: 2026-04-30 | Worth revisiting if ACS pricing shifts or new voice features ship*

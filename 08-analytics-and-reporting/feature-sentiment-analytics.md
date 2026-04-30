@@ -5,8 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/use/omnichannel-analytics-insights
 
 ## What it does
-
-Historical reporting dashboard that aggregates customer sentiment trends and analysis across conversations and channels. Tracks sentiment scores over time to identify satisfaction patterns, problem areas, and channel-specific or topic-specific sentiment degradation.
+Historical dashboard showing customer sentiment trends across conversations and channels. Tracks sentiment over time to spot satisfaction patterns, problem areas, and where sentiment is degrading by channel or topic.
 
 ## Key facts
 
@@ -18,28 +17,25 @@ Historical reporting dashboard that aggregates customer sentiment trends and ana
 - Sentiment scoring is powered by Azure AI language services
 
 ## When to use / skip
-
-Enable Sentiment Analytics when you want to measure customer satisfaction trends over time and identify problem areas by channel, team, or topic. Particularly valuable for contact centers that prioritize customer experience and want rapid feedback loops. Skip if you use external NPS surveys exclusively or lack the Azure AI capacity to process sentiment at scale.
+Turn this on if you want to track customer satisfaction trends and spot problem areas by channel, team, or topic. Essential for CX-focused operations. Skip if you rely only on external NPS surveys or can't process sentiment at scale.
 
 ## Configuration decisions
-
-- Enable sentiment analysis in admin settings (distinct from real-time sentiment toggle)
-- Configure sentiment analysis for relevant channels (chat, email, voice with transcription)
-- Set sentiment score thresholds for alerts and escalation if desired (e.g., red flag at <3)
-- Verify Azure AI language service is provisioned and accessible to D365 environment
-- Configure analytics roles and permissions for who can access historical sentiment reports
-- Set retention policy for historical sentiment data based on compliance requirements
+- Enable sentiment analysis in admin settings (separate from real-time sentiment)
+- Configure which channels get sentiment analysis (chat, email, voice with transcription)
+- Set sentiment thresholds for alerts if you want them (e.g., flag <3)
+- Verify Azure AI language service is available to your environment
+- Grant analytics and manager roles access to sentiment reports
+- Set data retention policy based on compliance needs
 
 ## Gotchas
-
-- Sentiment analytics require separate enablement from real-time sentiment display; both toggles must be on for full functionality
-- Historical data only available after sentiment analysis is enabled; no retroactive scoring of past conversations
-- Azure AI language service costs scale with conversation volume; budget accordingly for high-volume contact centers
-- Sentiment scores reflect AI interpretation; accuracy varies by conversation clarity, language, and sentiment expressions
-- Real-time sentiment (shown during call) and historical analytics come from same AI model but display differently
-- Sentiment analytics may not work accurately on voice channels without enabling call transcription
-- Disabling sentiment analysis stops new scoring but historical data remains available for 90+ days
+- **Sentiment analytics need separate enablement from real-time sentiment.** Both toggles must be on for full functionality.
+- **No retroactive scoring.** Historical data only exists after you enable it.
+- **Azure AI costs scale with volume.** Budget accordingly for high-volume centres.
+- **AI sentiment is just interpretation.** Accuracy varies by conversation clarity, language, and how sentiment is expressed.
+- **Real-time and historical use the same model.** They display differently.
+- **Voice sentiment needs transcription.** Won't work accurately on voice without it.
+- **Disabling analysis stops new scoring.** Historical data lingers 90+ days.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Sentiment accuracy appears degraded or sentiment thresholds need adjustment*
+*Source last updated: 2026-04-30 | Check this if: Sentiment accuracy drops or thresholds need tweaking*

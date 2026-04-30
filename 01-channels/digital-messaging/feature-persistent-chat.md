@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/persistent-chat
 
 ## What it does
-Enables chat conversations to persist across multiple browser sessions. When a returning customer visits your website, they resume the same conversation thread with their previous chat history visible—no new case required. Requires customer authentication to link return visits to the original conversation.
+Chat conversations persist across browser sessions. Returning customers resume the same thread and see their history—no new case. Requires customer authentication to link repeat visits to the original conversation.
 
 ## Key facts
 - Persistent chat requires customer identity authentication (via Azure AD B2C, custom OAuth, or D365 portal authentication)
@@ -19,7 +19,7 @@ Enables chat conversations to persist across multiple browser sessions. When a r
 - Multi-session conversations do not reset the conversation timeout; activity resets the timer
 
 ## When to use / skip
-Use persistent chat for complex, multi-step support issues where customers need time to gather information between responses. Also use for subscription or account services where the customer identity is stable. Skip persistent chat if your support team uses a pure first-in-first-out queue model or if most customer issues resolve in a single session. Also skip if customer authentication infrastructure is not in place or unreliable.
+Use persistent chat for complex issues that span multiple days or when customer identity is stable (subscription, accounts). Skip it if most issues resolve in one session, if your team runs pure FIFO queues, or if customer auth infrastructure is absent or unreliable.
 
 ## Configuration decisions
 - Which authentication method will identify returning customers? Azure AD B2C, custom OAuth, or D365 portal login?
@@ -29,13 +29,13 @@ Use persistent chat for complex, multi-step support issues where customers need 
 - How will you handle conversations that become inactive (auto-close or manual agent review)?
 
 ## Gotchas
-- If a customer clears their cookies or uses a different browser without logging in, they will not be recognized as a returning customer; a new conversation is created
-- Authentication method failures (AD B2C down, OAuth token expired) will block the persistent chat feature; have a fallback non-persistent chat option
-- Persistent conversations that exceed the configured lifespan don't auto-resolve; they remain open and may clutter the queue if agents don't manually close them
-- If the original agent is no longer available, returning customers will route to any agent in queue; don't assume continuity of support
-- Agent notes and conversation tags are preserved, but custom conversation attributes may not persist if the schema changes
-- Long-running persistent conversations (30+ days) can create performance issues in the queue; consider archiving old conversations
+- Customers who clear cookies or switch browsers without logging in create new conversations; they won't be recognized as returning.
+- Auth failures (AD B2C down, OAuth token expired) block persistent chat; have a fallback non-persistent option ready.
+- Conversations that exceed the configured lifespan don't auto-resolve; they sit in the queue until agents manually close them.
+- Original agent may not be available when a customer returns; they'll route to any agent in queue. Don't promise continuity.
+- Agent notes and tags persist, but custom conversation attributes may not if the schema changes.
+- Conversations running 30+ days can cause queue performance issues; consider archiving old ones.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: authentication system changes or conversation retention policy updates*
+*Source last updated: 2026-04-30 | Revisit when your auth system changes or conversation retention policy updates*

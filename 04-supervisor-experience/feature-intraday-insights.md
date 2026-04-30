@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/use/intraday-insights-dashboard
 
 ## What it does
-Intraday Insights is a real-time operational dashboard designed for supervisors to monitor queue health, agent performance, and customer satisfaction metrics *on the same day*, without waiting for end-of-day reports. It displays current queue volume, average handle time, agent availability, service level agreement (SLA) breach rates, customer satisfaction (CSAT) scores, and conversation status breakdowns. Data refreshes every few minutes, providing near-real-time visibility into contact center operations.
+Real-time operational dashboard for supervisors to monitor queue health, agent performance, and customer satisfaction on the same day without waiting for end-of-day reports. Displays queue volume, average handle time, agent availability, SLA breach rates, CSAT scores, and conversation status. Data refreshes every few minutes.
 
 ## Key facts
 - Data refreshes every 5–10 minutes (not true real-time, but close enough for tactical decisions)
@@ -17,7 +17,7 @@ Intraday Insights is a real-time operational dashboard designed for supervisors 
 - Supports exporting snapshots for shift handoff or escalation documentation
 
 ## When to use / skip
-Use Intraday Insights during live operations to identify staffing gaps, detect SLA breaches in real time, monitor customer satisfaction trends, and make intraday staffing adjustments. Supervisors should check it multiple times per shift (at least at shift start, mid-shift, and end). Skip it if your contact center is very small (<20 agents) or has minimal intraday fluctuation; the operational value diminishes with stable staffing. Do not use it for compliance reporting or executive presentations (use Real-Time Analytics or formal reports instead).
+Use during live operations to spot staffing gaps, detect SLA breaches, monitor CSAT trends, and make intraday adjustments. Check it several times per shift (start, mid-shift, end). Skip if you've got a small team (<20 agents) or stable demand with minimal intraday swings. Don't use it for compliance reporting or exec presentations — use Real-Time Analytics for that.
 
 ## Configuration decisions
 - **Dashboard refresh frequency:** Accept default 5–10 minutes or adjust based on operational tempo (faster refresh = more server load)
@@ -28,13 +28,13 @@ Use Intraday Insights during live operations to identify staffing gaps, detect S
 - **Alert routing:** Configure if/how low CSAT or SLA breach alerts notify supervisors (dashboard notification, email, SMS)
 
 ## Gotchas
-- Intraday Insights is *operational snapshot*, not causal analysis; a spike in queue length may be due to staffing, system outage, or demand surge—diagnostics are still needed
-- The refresh lag (5–10 minutes) means decisions based on "current" data are already stale by 5–10 minutes; supervisors must account for pipeline delay
-- CSAT data in Intraday reflects only surveys *completed* during the reporting window; incomplete surveys are excluded, skewing the score upward
-- SLA breach rates may appear to improve late in the shift due to shorter target windows (e.g., if SLA target is 24 hours and it's 11pm, fewer conversations will breach today)
-- High queue lengths don't always mean understaffing; root cause could be longer AHT, system delays, or complexity shifts
-- Metrics are aggregated; a supervisor seeing "80% service level" across a queue may not spot that one agent is handling all complex calls while others idle on simple calls
+- **It's a snapshot, not analysis.** A spike in queue length could be staffing, outage, or demand — you still need to diagnose.
+- **Data is 5–10 minutes stale.** Decisions based on "current" numbers are already behind by the refresh lag.
+- **CSAT skew.** Only completed surveys count; incomplete ones are excluded, which pushes the score up artificially.
+- **SLA rates improve late shift.** If the SLA target is 24 hours and it's 11pm, fewer conversations can breach today anyway.
+- **Queue depth ≠ understaffing.** Could be longer AHT, system delays, or complexity shifts.
+- **Aggregation hides imbalance.** An "80% service level" across a queue might hide one agent handling all the complex calls while others sit idle on simple ones.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Staffing model changes, SLA or CSAT baseline updates, or supervisor feedback on metric relevance*
+*Source last updated: 2026-04-30 | Worth revisiting when staffing model changes, SLA or CSAT baselines are updated, or supervisors give feedback on metric usefulness*

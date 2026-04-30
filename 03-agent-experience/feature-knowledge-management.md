@@ -25,8 +25,8 @@ Use on any deployment where reps need to reference internal knowledge during con
 - External search providers — use if the client's knowledge is distributed across SharePoint or other systems; adds setup complexity
 
 ## Gotchas
-- **Portal URL configuration requires a portal with matching org domain first.** It's not possible to configure the URL format before the portal exists — this dependency surprises clients who want rep-sharing before the portal is live.
-- **Suggest-as-you-type requires knowledge articles to be in a Published state** — draft articles don't appear in suggestions.
+- **Portal URL configuration requires a portal with matching org domain first.** You can't configure the URL format before the portal exists—this dependency surprises clients who want rep-sharing before the portal is live.
+- **Suggest-as-you-type requires knowledge articles in Published state**—draft articles don't appear in suggestions.
 
 ---
 

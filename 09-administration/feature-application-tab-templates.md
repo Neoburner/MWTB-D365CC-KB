@@ -28,10 +28,10 @@ Use on any deployment where reps should automatically see supporting context (cu
 - **OData vs. static vs. slug parameters** — slugs are the right default; OData for more complex dynamic lookups; static for fixed pages like dashboards
 
 ## Gotchas
-- **validateRecord must be manually added as a parameter** if not present by default — its absence causes blank create-form opens when the record doesn't exist.
-- **Iframe blocking is silent.** A third-party website that blocks iframes shows an error page to the rep, not a warning during configuration. Test every external URL in an iframe before including it.
-- **Tab templates are referenced by session templates** — design tabs first, then session templates; they're reusable across multiple session types.
+- **validateRecord must be manually added as a parameter** if not present by default — without it, you get blank create-form opens when the record doesn't exist.
+- **Iframe blocking is silent.** A third-party website that blocks iframes shows an error page to the rep, not a warning during configuration. Test every external URL in an iframe first.
+- **Tab templates are referenced by session templates** — design tabs first, then session templates. They're reusable across multiple session types.
 
 ---
 
-*Source last updated: 2025-05-05 | Review when: New page types added or embedded deployment support extended*
+*Source last updated: 2025-05-05 | Check this: New page types added or embedded deployment support extended*

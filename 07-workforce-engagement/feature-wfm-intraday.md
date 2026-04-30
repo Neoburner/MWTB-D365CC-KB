@@ -20,7 +20,7 @@ Intraday Management is the real-time operational view within Workforce Managemen
 - Historical intraday decisions logged for audit and retrospective analysis (e.g., "How did we handle that spike on 4/28?")
 
 ## When to use / skip
-**Use Intraday Management** if you operate a high-variability contact center (e.g., customer support, sales, emergency lines) where demand swings 50%+ within a single day. It's critical if your service level SLAs are tight (e.g., 80% of calls answered in 20 seconds). **Skip it** if you have steady-state volume, low-variance demand, or a small team where manual oversight is sufficient—the overhead of constant monitoring and adjustment doesn't pay off.
+Use Intraday Management if you run high-variability operations (support, sales, emergency) where demand swings 50%+ in a day, especially with tight SLAs (80% answered in 20 seconds). Skip if you have steady-state volume, low variance, or a small team where manual oversight is enough.
 
 ## Configuration decisions
 - **Forecast data source**: Use Contact Center analytics, import from external forecasting tool, or manual input (e.g., "busy day, expect +20% calls")
@@ -33,15 +33,15 @@ Intraday Management is the real-time operational view within Workforce Managemen
 - **Scheduled vs. ad-hoc adjustments**: Log both, but separately—distinguish planned staffing from emergency fixes
 
 ## Gotchas
-- Forecast can be wrong: Unexpected inbound spikes (viral news, competitor outage, promotional surge) may not be predicted; supervisors must manually adjust forecast in real time
-- Agent availability lag: If an agent goes on unscheduled break or gets disconnected, it may take 1–3 minutes for the system to reflect the availability change; forecast vs. actual may seem out of sync
-- No predictive alerting: The system shows current gap but doesn't warn "you will be understaffed in 30 minutes if you don't act now"; requires supervisor proactivity
-- Overstaffing is often ignored: Supervisors focus on understaffing alerts and may miss overstaffing—wasted labor cost (though some buffers are intentional for resilience)
-- Limited downstream visibility: Intraday decisions (e.g., "extended break for agent X") are logged but not communicated back to scheduling system, so next-day schedules may ignore today's adjustments
-- Skill-group reassignments may not be automatic: If you move an agent from Queue A to Queue B mid-shift, the contact center routing logic must be configured to recognize the change; manual updates needed
-- Approval workflow delays: If overtime requests require a manager's sign-off and the manager is unavailable, the request hangs, defeating the purpose of "same-day" adjustment
-- Break extension policy conflicts with adherence: If an agent takes extra breaks to boost staffing, their adherence score drops—reconcile these metrics with compensation/incentive programs
+- **Forecasts get blindsided:** Viral news, competitor outage, promo surge — supervisors need to manually adjust in real time.
+- **Agent availability lag:** Agent goes on unplanned break or drops, system takes 1-3 minutes to update. Forecast vs actual can look out of sync.
+- **No forward-looking alerts:** System shows the current gap, not "you'll be short in 30 minutes." Requires supervisor to stay ahead.
+- **Overstaffing gets ignored:** Supervisors chase understaffing and miss overstaffing — wasted pay (though some buffer is intentional).
+- **No downstream sync:** Intraday changes (extended break for agent X) don't feed back to next-day schedules. Manual adjustments only.
+- **Skill reassignments may need manual config:** Move an agent from Queue A to Queue B mid-shift — routing engine needs to recognize it.
+- **Approval bottlenecks:** Manager unavailable to sign off on OT? Request hangs, defeating the purpose.
+- **Adherence vs break extension trade-off:** Extra breaks boost staffing but tank adherence scores. Reconcile with compensation.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Service level SLA breaches correlate with intraday staffing gaps, forecast accuracy drops below 80%, or if staffing decisions are not being acted upon by supervisors*
+*Source last updated: 2026-04-30 | Check this if: SLA breaches track with staffing gaps, forecast accuracy falls below 80%, or supervisors aren't acting on recommendations*

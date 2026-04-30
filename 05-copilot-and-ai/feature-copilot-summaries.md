@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../copilot-summaries](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/copilot-summaries)
 
 ## What it does
-Automatically generates AI summaries of cases (pulling from case fields, emails, notes, linked conversation summaries) and live conversations (generating on rep join or conversation end). Reduces time reps spend reading through history to get context.
+Auto-generates AI summaries of cases (pulling from fields, emails, notes, linked conversation summaries) and live conversations (on rep join or end). Cuts the time reps spend reading history.
 
 ## Key facts
 - **Case summary:** Customer Service only, not available in Contact Center embedded; requires Ask a Question to be enabled first; minimum **50 tokens (~38 English words)** in source fields to generate
@@ -17,7 +17,7 @@ Automatically generates AI summaries of cases (pulling from case fields, emails,
 - Conversation summary format is separately configurable — see `feature-copilot-summary-format.md`
 
 ## When to use / skip
-Enable conversation summaries on virtually all deployments — immediate value for rep handoffs and transfers. Case summaries are Customer Service-specific; enable for case-heavy deployments. Both are low-risk features to enable early.
+Enable conversation summaries on virtually all deployments — immediate value for handoffs and transfers. Case summaries are Customer Service-specific; enable for case-heavy deployments. Both are low-risk to enable early.
 
 ## Configuration decisions
 - Which conversation summary triggers to enable (on join, on end, or both) — "on join" is highest value for handoff/transfer scenarios
@@ -25,10 +25,10 @@ Enable conversation summaries on virtually all deployments — immediate value f
 - Custom case forms — additional configuration via Copilot PowerApps settings is required if the client uses custom case forms
 
 ## Gotchas
-- **50-token minimum for case summaries.** Cases with very sparse data won't generate a summary — set expectations with reps so they don't think Copilot is broken.
-- **Bot transcripts are excluded.** If the conversation involves a Copilot Studio IVR agent before rep handoff, that bot portion is not automatically included in the conversation summary. Reps need to be aware the summary starts from rep involvement, not from the beginning of the customer interaction.
-- **Custom case forms need extra config.** If the client has customised the case form layout, case summaries won't appear without additional Copilot PowerApps settings configuration.
+- **50-token minimum for case summaries.** Sparse cases won't generate a summary — let reps know this isn't a Copilot bug.
+- **Bot transcripts aren't included.** If a Copilot Studio IVR agent handled the customer before rep handoff, that part isn't in the summary. Summary starts from rep involvement, not customer first contact.
+- **Custom case forms need extra config.** If the client customised the case form layout, case summaries won't appear without additional PowerApps settings.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Case summary comes to embedded deployment, or bot transcripts included automatically*
+*Source last updated: check Microsoft Learn | Check this after case summary comes to embedded deployment or bot transcripts are included automatically*

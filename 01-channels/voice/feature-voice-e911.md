@@ -18,25 +18,25 @@ Emergency calling (E911 in North America, 999 in UK, 112 in EU) compliance confi
 - E911 configuration is country-specific; different rules apply per jurisdiction (US vs. Canada vs. EU)
 
 ## When to use / skip
-Use E911 in any jurisdiction where emergency calling is regulated. Skip only if your contact centre is in an unregulated territory (rare) or if you operate a private PBX with no PSTN access (internal calls only). Default to enabling E911; disabling it should require legal sign-off.
+Use E911 wherever emergency calling is regulated. Skip only in unregulated territories (rare) or if you're running a private PBX with no PSTN access. Default to enabled — disabling it needs legal approval.
 
 ## Configuration decisions
-- **Location database:** Choose between ACS default location database or integrate with third-party location services (e.g., Intrado, Emergency Reporting)
-- **Agent location accuracy:** Decide whether to use office address, regional office, or street-level address (street-level is most accurate but requires mobile location services)
-- **Location refresh:** Set how often agent locations are updated (real-time for office-based, periodic for remote agents)
-- **Fallback address:** Configure an organisation-wide fallback if an agent's location cannot be determined
-- **Emergency contact:** Register a primary contact (e.g., facility manager) who PSAP can reach if clarification is needed
-- **Regulatory jurisdiction:** Explicitly configure the country/region to ensure correct PSAP routing rules apply
+- **Location database** — Use ACS default or integrate a third-party service (Intrado, Emergency Reporting, etc.).
+- **Location accuracy** — Office address, regional office, or street-level (street-level is more accurate but needs mobile location services).
+- **Location refresh frequency** — Real-time for office-based agents, periodic for remote workers.
+- **Fallback address** — What to use if you can't pin down an agent's location.
+- **Emergency contact** — Who the PSAP can ring if they need more info (facility manager, etc.).
+- **Jurisdiction** — Explicitly set the country/region for correct PSAP routing.
 
 ## Gotchas
-- Agent locations are cached; if an agent moves between offices, the old location may persist for 5–10 minutes
-- Remote agents may trigger "location unknown" errors if mobile location services are disabled or GPS is unavailable
-- PSAP may reject calls with incomplete or invalid address data; always validate address fields
-- E911 compliance audits are routine in regulated industries; keep detailed location logs for all agents
-- Porting a number *into* a D365 instance may clear E911 registration; reconfigure after porting
-- Mass agent location updates (e.g., office relocation) can cause API throttling; batch updates carefully
-- Emergency calls cannot be transferred to other agents; the call ends when the agent hangs up (by design)
+- **Location caching persists.** Agent moves offices, but the old location sticks around for 5–10 minutes.
+- **Remote agents often fail location detection.** Mobile location services off or GPS unavailable = "location unknown" error.
+- **PSAP rejects bad address data.** Incomplete or invalid addresses get rejected. Validate all address fields.
+- **Compliance audits are routine.** Keep audit logs of all agent locations. You'll need them.
+- **Number porting clears E911.** Port a number into D365 and E911 registration vanishes. Reconfigure after porting.
+- **Mass location updates cause throttling.** Office relocation? Batch your location updates carefully or the API backs off.
+- **Emergency calls can't be transferred.** Call ends when the agent hangs up. That's by design.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Emergency calling regulations change or ACS E911 features expand*
+*Source last updated: 2026-04-30 | Worth revisiting if E911 regulations change or ACS adds new E911 features*

@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../configure-apple-messages-for-business-channel](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-apple-messages-for-business-channel)
 
 ## What it does
-Lets customers contact support through the Apple Messages app on iPhone, iPad, and Mac. Supports rich messaging: file attachments, Apple Pay payment requests, and interactive message elements. Asynchronous — conversations persist between sessions.
+Customers contact support via Apple Messages on iPhone, iPad, and Mac. Supports rich messaging: file attachments, Apple Pay, interactive elements. Async—conversations persist between sessions.
 
 ## Key facts
 - **Not self-service.** Requires external Apple Business Register onboarding + Microsoft Support involvement before any D365 config can begin
@@ -16,7 +16,7 @@ Lets customers contact support through the Apple Messages app on iPhone, iPad, a
 - Account ID cannot be encrypted if customer-managed keys are in use
 
 ## When to use / skip
-Use when the client serves a customer base with high Apple device penetration and wants to meet customers in the native Messages app. Skip if the client's customer base is mixed-platform — the onboarding overhead isn't justified unless Apple-device users are a significant segment.
+Use Apple Messages if the customer base has high Apple device penetration and you want to meet them in the native app. Skip if the base is mixed-platform—the onboarding overhead isn't justified unless Apple users are significant.
 
 ## Configuration decisions
 - Whether to enable Apple Pay — requires a payment profile and separate setup; scope this as a distinct work item if in scope
@@ -24,10 +24,10 @@ Use when the client serves a customer base with high Apple device penetration an
 - Rich message types to enable — assess which interactive elements add value vs add complexity
 
 ## Gotchas
-- **Longest lead time of any digital channel.** Apple Business Register registration, MSP selection, and Microsoft Support backend onboarding create a multi-week process before any D365 config can start. Start the Apple onboarding at project kick-off, not during implementation.
-- **Two parties must act before you can touch anything.** Neither Apple approval nor Microsoft support escalation is within your control. Build buffer into the project plan.
-- **Authentication and Apple Pay can be left for a second pass** — the channel can go live without them, but they can't be used until fully configured.
+- Longest lead time of any digital channel. Apple Business Register registration, MSP selection, and Microsoft Support backend onboarding take weeks before you can touch D365 config. Start Apple onboarding at project kick-off, not during implementation.
+- Two parties must move before you can do anything. Apple approval and Microsoft support escalation are out of your control. Build buffer into the timeline.
+- Authentication and Apple Pay can ship in a second phase—the channel goes live without them, but you'll need them fully configured to use them.
 
 ---
 
-*Source last updated: 2026-01-15 | Review when: Apple onboarding becomes self-service, or new rich message types are supported*
+*Source last updated: 2026-01-15 | Revisit when Apple onboarding becomes self-service, or new rich message types land*

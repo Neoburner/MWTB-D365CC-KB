@@ -19,7 +19,7 @@ Uses generative AI to discover customer intents from historical conversation dat
 - Pre-chat survey data can be passed via `Global.EnrichmentContext` to give the agent customer context before the conversation starts
 
 ## When to use / skip
-Use on any deployment where the client wants automated deflection, intent-based routing, or rep guidance from discovered intents. High-value for high-volume contact centres where manual intent tagging isn't feasible. Skip if the client doesn't have meaningful historical conversation data to run discovery against.
+Use on any deployment where the client wants automated deflection, intent-based routing, or rep guidance. High-value for high-volume centres where manual tagging isn't feasible. Skip if you lack meaningful historical conversation data to run discovery.
 
 ## Configuration decisions
 - Intent group granularity (Low/Medium/High) — validate with simulation before running full discovery; right choice depends on how many distinct contact reasons the client actually has
@@ -28,10 +28,10 @@ Use on any deployment where the client wants automated deflection, intent-based 
 - Instructions at organisation, intent group, or intent level — the main tuning mechanism for improving intent accuracy post-deployment
 
 ## Gotchas
-- **Intent library quality affects both deflection and routing simultaneously.** If the client uses intent-based routing AND Copilot agent self-service, both depend on the same library. Poor intents degrade both. Build approval governance into the process — don't leave intents in Pending status.
-- **Copilot agent integration requires a Copilot Studio deployment step**, not just a D365 toggle. Plan this as a development task: open Copilot Studio, find the Intent-based suggestions component collection, add it to the agent, publish. Allow time for this.
-- **Chat workstreams and lines of business mismatch silently.** If chat chats are routing to the wrong line of business, check whether the workstream name is specified in the line of business rules.
+- **Intent quality affects deflection and routing together.** If the client uses both intent-based routing and Copilot agent self-service, both depend on the same library. Poor intents degrade both. Build approval governance — don't leave intents in Pending.
+- **Copilot agent integration is a studio step.** Not just a D365 toggle. Plan as dev work: open Copilot Studio, add Intent-based suggestions component collection, publish. Allow time for this.
+- **Chat and lines of business mismatch silently.** If chats route to the wrong line of business, check whether the workstream name is in the line of business rules.
 
 ---
 
-*Source last updated: 2026-04-14 | Review when: Cases added as an intent discovery source, or intent-based routing expands*
+*Source last updated: 2026-04-14 | Check this after cases are added as an intent discovery source or intent-based routing expands*

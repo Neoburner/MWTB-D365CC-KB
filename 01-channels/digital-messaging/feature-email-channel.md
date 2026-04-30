@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-email-channel
 
 ## What it does
-Enables customers to contact your organization via email and routes incoming messages to support agents within D365 Contact Center. Email conversations are tracked as records and linked to cases, maintaining full message history and attachments. Unlike the standard Dynamics email activity (used for internal communications), the email channel is purpose-built for customer-facing support workflows.
+Routes customer email to agents in Contact Center and tracks it as case records. Full history and attachments preserved. Unlike the standard Dynamics email activity (internal comms), this is built for customer-facing support.
 
 ## Key facts
 - Requires Exchange Online or on-premises Exchange Server 2019+ with EWS (Exchange Web Services) enabled
@@ -19,7 +19,7 @@ Enables customers to contact your organization via email and routes incoming mes
 - Email channel requires a dedicated mailbox per queue (not shared organizational mailbox for initial setup)
 
 ## When to use / skip
-Use the email channel when you want to capture and route customer inquiries arriving via email into your case management system. It's ideal for organizations that receive customer email outside of a website contact form. Skip email if your primary intake is through web forms, chat, or phone—the channel is best suited for async customer-to-agent workflows. Email is slower than chat for real-time support but works well for complex issues requiring documentation and longer response times.
+Use email when you want to capture email inquiries into case management. Ideal if customers email you outside of a contact form. Skip it if primary intake is web forms, chat, or phone. Email is async and slower than chat but works well for complex issues needing documentation and longer response windows.
 
 ## Configuration decisions
 - Which Exchange mailbox(es) to use for incoming customer email—dedicated per queue or shared?
@@ -30,13 +30,13 @@ Use the email channel when you want to capture and route customer inquiries arri
 - Escalation flow: when to create a case record vs. remaining email-only?
 
 ## Gotchas
-- Email channel setup requires Exchange Admin access; delegate the mailbox configuration to your Exchange team early
-- Email threading can fail if the original case is closed or archived; customer replies may create new cases instead
-- Delayed email delivery (hours, not minutes) is normal due to Exchange processing and D365 sync frequency
-- Removing an email channel mailbox will not automatically delete historical cases; they become orphaned
-- Email headers and metadata from external mail systems (like SPF, DKIM failures) are not visible to agents and can't be used for filtering
-- Unicode and special characters in subject lines may not display correctly in some email clients after processing
+- Email channel setup requires Exchange Admin access; get your Exchange team involved early.
+- Email threading fails if the original case is closed or archived; replies create new cases instead.
+- Delayed delivery (hours) is normal due to Exchange processing and D365 sync frequency.
+- Removing a mailbox doesn't delete historical cases; they orphan.
+- Email headers and metadata (SPF, DKIM) aren't visible to agents and can't be used for filtering.
+- Unicode and special characters in subject lines may not render correctly after processing.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: feature deprecation notice issued or Exchange version support changes*
+*Source last updated: 2026-04-30 | Revisit if a feature deprecation notice lands or Exchange version support changes*

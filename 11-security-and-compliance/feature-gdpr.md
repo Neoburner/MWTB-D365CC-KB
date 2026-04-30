@@ -18,7 +18,7 @@ D365 Contact Center provides tools and processes to fulfill GDPR data subject ri
 - Pseudonymization: Available via Dataverse field-level security; you can mask customer identity in transcripts without deleting the conversation
 
 ## When to use / skip
-Use GDPR tooling for all EU customers and any customer who requests their data. Set up a GDPR coordinator role and define a DSAR workflow in your organization. Skip ignoring DSAR requests—GDPR fines are substantial (up to 4% of global revenue). Implement automated deletion of very old recordings (>12 months) to reduce DSR fulfillment burden. Do NOT skip the AI-derived content layer; ensure your DSAR process extracts transcriptions and summaries.
+Use for all EU customers and anyone who requests their data. Set up a GDPR coordinator role and define a DSAR workflow. Don't ignore DSAR requests — fines are substantial (up to 4% revenue). Automate deletion of old recordings (>12 months). Include AI-derived content in DSAR exports.
 
 ## Configuration decisions
 - Create a Power Platform DSR request queue: define who receives DSAR requests and assigns them to the data handler
@@ -29,14 +29,14 @@ Use GDPR tooling for all EU customers and any customer who requests their data. 
 - Define roles: GDPR Coordinator (receives requests), Data Handler (executes delete/export), Legal Hold Officer (approves retention exceptions)
 
 ## Gotchas
-- DSAR exports include all linked records (agent notes, feedback, surveys); ensure you have processes to exclude non-personal data
-- Deleting a conversation record does not automatically delete the audio recording in ACS; you must delete ACS recordings separately
-- Transcripts are read-only in Dataverse; to delete a transcript, you must delete the entire conversation record
-- If you use Copilot-generated summaries or sentiment, those are stored as separate records; they must be included in DSAR exports
-- Screen recordings are stored in Blob Storage outside Dataverse; your Blob Storage lifecycle policy must align with your GDPR retention requirements
-- Bulk delete jobs are asynchronous; DSAR response times depend on the size of the delete queue
-- If a customer appears in multiple conversations (agent notes mention them), DSAR must cover all conversations, not just the ones initiated by that customer
+- DSAR exports include all linked records (agent notes, feedback, surveys). Have processes to exclude non-personal data.
+- Deleting a conversation doesn't delete the ACS audio recording. Delete ACS recordings separately.
+- Transcripts are read-only in Dataverse. Delete transcript = delete entire conversation.
+- Copilot summaries and sentiment are stored separately. Include in DSAR exports.
+- Screen recordings in Blob Storage. Your lifecycle policy must align with GDPR retention.
+- Bulk delete is async. DSAR response time depends on delete queue size.
+- Customer in multiple conversations = DSAR covers all, not just customer-initiated ones.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: GDPR regulations change or Microsoft releases new DSR automation tools*
+*Source last updated: 2026-04-30 | Check this: GDPR regulations change or Microsoft releases new DSR automation tools*

@@ -17,7 +17,7 @@ D365 Contact Center agents sign in via their Microsoft Entra ID (Azure AD) ident
 - Session timeout is not Contact Center-specific; it follows Entra ID session management
 
 ## When to use / skip
-Use Entra ID SSO in all deployments to reduce credential management overhead and align with M365 security posture. Ensure your Entra ID tenant is enabled for cloud apps (not on-premises-only Active Directory). Skip attempts to use local SQL authentication or form-based login—D365 Contact Center does not support these legacy methods. If you need agent identity to persist across multiple SaaS platforms, consider using the same Entra ID tenant or federation.
+Use Entra ID SSO in all deployments. Reduces credential overhead, aligns with M365 security. Ensure Entra is cloud-enabled (not on-premises AD only). Local SQL auth or form-based login aren't supported. For cross-SaaS identity, use same Entra tenant or federation.
 
 ## Configuration decisions
 - Enable MFA in Entra ID for all contact center users, especially supervisors and administrators
@@ -27,12 +27,12 @@ Use Entra ID SSO in all deployments to reduce credential management overhead and
 - Set session timeout in Entra ID conditional access (default 24 hours); do not leave it at the M365 default
 
 ## Gotchas
-- If an agent's Entra ID account is disabled or deleted, their Contact Center access is revoked immediately; no grace period
-- MFA failures (lost phone, app not synced) will lock out agents from Contact Center like any other M365 app; have a recovery process
-- SSO token refresh happens silently, but network interruptions during token renewal can cause unexpected sign-outs
-- Embedded deployments require the embedding app (Salesforce/ServiceNow) to pass Entra ID context correctly; misconfiguration can break SSO in the embed
-- Guests with Entra ID B2B accounts may see reduced scope on certain records if the parent tenant has guest access restrictions
+- Entra ID account disabled/deleted = immediate Contact Center revocation. No grace period.
+- MFA failures lock out agents like any M365 app. Have a recovery process.
+- Token refresh is silent, but network interruptions during renewal cause unexpected sign-outs.
+- Embedded deployments need the embedding app (Salesforce/ServiceNow) to pass Entra ID context correctly. Misconfiguration breaks SSO.
+- B2B guests may see reduced scope if parent tenant has guest access restrictions.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Entra ID MFA requirements change or embedding app updates identity handling*
+*Source last updated: 2026-04-30 | Check this: Entra ID MFA requirements change or embedding app updates identity handling*

@@ -34,11 +34,11 @@ Chat masking: use on any deployment where sensitive data may appear in chat (car
 - **Which Copilot Studio variables to mark sensitive** — document all sensitive-flagged variables in the agent design artefact
 
 ## Gotchas
-- **The two masking features are independent and cover different channels.** Chat masking doesn't cover voice; voice sensitive masking doesn't cover chat. A client needing both must configure both.
-- **Sensitive data is not automatically detected in voice agents.** If a customer volunteers their card number to an agent topic that hasn't marked the capturing variable as sensitive, it will not be redacted. Review all agent topics that could receive sensitive input.
-- **10-rule chat masking limit is tight** for environments with multiple data types (card numbers, NHS numbers, tax IDs, account numbers). Plan the rule set during design, not after go-live.
-- **Known edge case:** if the customer's response to the **first question** in a conversation is sensitive-flagged, it may not be redacted due to a timing issue at conversation start. All subsequent sensitive responses are redacted normally.
+- **Two independent features, different channels.** Chat doesn't cover voice; voice doesn't cover chat. Configure both if needed.
+- **No auto-detection in voice agents.** Customer volunteers a card number—if the variable isn't marked sensitive, it won't redact. Review all topics that could receive sensitive input.
+- **10-rule limit is tight** for multiple data types (cards, NHS numbers, tax IDs). Plan the rule set during design, not after go-live.
+- **First question edge case:** customer responses to the first question may not redact due to timing at conversation start. All subsequent sensitive responses redact normally.
 
 ---
 
-*Source last updated: 2025-10-15 | Review when: Voice sensitive masking extends to digital channels, or chat masking rule limit increases*
+*Source last updated: 2025-10-15 | Check this: Voice sensitive masking extends to digital channels, or chat masking rule limit increases*

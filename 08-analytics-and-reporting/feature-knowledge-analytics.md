@@ -16,16 +16,16 @@ Two dashboards tracking rep knowledge search behaviour: **Article insights** (wh
 - Custom workspace apps require App Designer navigation entry
 
 ## When to use / skip
-Enable on any deployment with an active knowledge base. Search term insights is where KB content gaps are found — enable it without exception alongside the base report.
+Turn this on for any deployment with a knowledge base. Search term insights shows content gaps — always enable it alongside the base report.
 
 ## Configuration decisions
 - No additional configuration beyond enabling both toggles
 
 ## Gotchas
-- **Search term insights has a separate checkbox** from the main enable toggle. It's easy to miss. Enable both at the same time.
-- **Article feedback scores will be blank** if knowledge article rep feedback wasn't enabled in Knowledge Management. Check that setting first.
-- **This is the feedback loop for Copilot quality.** High-volume search terms with no-result responses in Search term insights identify exactly which articles need to be written or improved.
+- **Search term insights needs its own checkbox.** Easy to miss. Enable both at once.
+- **Feedback scores are blank if rep feedback isn't enabled** in Knowledge Management. Check that first.
+- **This is the main feedback loop for Copilot quality.** High-volume searches with no results = articles you need to write or fix.
 
 ---
 
-*Source last updated: 2025-06-20 | Review when: Customer-facing search analytics added, or new quality signals surfaced*
+*Source last updated: 2025-06-20 | Check this if: Customer-facing search analytics ship, or new quality signals appear*

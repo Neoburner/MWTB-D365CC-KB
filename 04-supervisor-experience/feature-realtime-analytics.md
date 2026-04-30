@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../enable-realtime-analytics-dashboard-administrator](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-realtime-analytics-dashboard-administrator)
 
 ## What it does
-Live metrics for supervisors showing the current state of the contact centre: conversations in progress, queue backlogs, agent availability, bot activity. Reports are continuously updated and accessed from Copilot Service workspace. Enabled by default — no setup required for OOB roles.
+Live metrics on queue state, agent availability, active conversations, and bot activity. Reports refresh continuously in Copilot Service workspace. Enabled by default for out-of-the-box roles — no setup needed.
 
 ## Key facts
 - **Enabled by default** for System Administrator, Omnichannel Administrator, Omnichannel Supervisor, Analytics Reports author, CSR Manager
@@ -23,9 +23,9 @@ Standard in any supervisor deployment. Real-time analytics gives supervisors the
 - Custom role access — if non-standard roles need report access, configure via analytics and dashboards user access settings
 
 ## Gotchas
-- **Voice real-time analytics must be explicitly enabled** even after the voice channel is configured. It's a separate checkbox in Operations → Insights → Real-time Analytics. Easy to miss at go-live.
-- **Customised app navigation.** If the Copilot Service workspace app has been customised at all, the reports won't appear in the nav without the App Designer steps. Check whether the app has been customised before go-live testing.
+- **Voice real-time analytics must be explicitly enabled** even after you've set up the voice channel. It's a separate checkbox in Operations → Insights → Real-time Analytics. Easy to miss at go-live.
+- **Customised apps need manual nav setup.** If the Copilot Service workspace app has been customised, the reports won't appear in navigation without the App Designer steps. Check before go-live testing.
 
 ---
 
-*Source last updated: 2026-02-19 | Review when: New report types added, or Contact Center-specific reports change*
+*Source last updated: 2026-02-19 | Check this after new report types are added or Contact Center-specific reports change*

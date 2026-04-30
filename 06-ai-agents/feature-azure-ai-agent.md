@@ -16,16 +16,16 @@ Integrates an Azure Bot Service agent into D365 Contact Center for chat and soci
 - Smart assist via Azure agent is a separate configuration from workstream-based agent handling
 
 ## When to use / skip
-Use when the client has an existing Azure Bot Framework investment or needs lower-level bot development control than Copilot Studio provides. For new implementations without existing Azure bot infrastructure, Copilot Studio is the preferred path.
+Use if the client has an existing Azure Bot Framework investment or needs lower-level control than Copilot Studio. For new implementations without existing Azure bots, default to Copilot Studio.
 
 ## Configuration decisions
 - Azure Bot Service vs Copilot Studio — if the client has an existing Azure bot, use this path; for new bot development, default to Copilot Studio
 - Whether smart assist recommendations are needed — separate configuration from the main workstream bot setup
 
 ## Gotchas
-- **User-Assigned Managed Identity is required.** Client secret authentication is not supported. This is a non-obvious Azure configuration requirement that can block setup if the Azure admin isn't aware.
-- **Routing loop prevention is automatic** — if you're testing and the agent seems to not be re-receiving conversations after it escalates, check whether it's in the same queue it's routing to.
+- **User-Assigned Managed Identity is required.** Client secret authentication isn't supported. Non-obvious Azure requirement that can block setup.
+- **Routing loop prevention is automatic.** If the agent stops receiving conversations after escalating, check whether it's in the same queue it's routing to.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Azure agent gains voice channel support*
+*Source last updated: check Microsoft Learn | Check this after Azure agent gains voice channel support*

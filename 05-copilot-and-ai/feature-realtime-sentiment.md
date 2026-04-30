@@ -6,7 +6,7 @@
 
 ## What it does
 
-Live customer sentiment scoring displayed to agents and supervisors during active conversations. Score updates in real-time as conversation progresses, helping agents gauge customer mood and adjust their approach to de-escalate or address frustration proactively.
+Live customer sentiment scoring on agents' and supervisors' screens during active conversations. Score updates in real-time as the conversation progresses, helping agents gauge mood and adjust approach to de-escalate or address frustration.
 
 ## Key facts
 
@@ -19,7 +19,7 @@ Live customer sentiment scoring displayed to agents and supervisors during activ
 
 ## When to use / skip
 
-Enable Real-Time Sentiment Analysis to provide agents live feedback on customer emotion during interactions. Helps agents recognize when customers become frustrated and adjust approach to de-escalate. Essential for high-touch customer service environments where empathy and rapid response to negativity drive outcomes. Skip if your contact center focuses purely on task completion over emotional intelligence, or if sentiment monitoring creates cognitive overload for agents handling high volume.
+Enable to give agents live feedback on customer emotion. Helps them spot frustration and adjust approach to de-escalate. Essential for high-touch service where empathy and rapid response matter. Skip if you're purely task-focused over emotional intelligence, or if sentiment monitoring overloads agents in high-volume situations.
 
 ## Configuration decisions
 
@@ -34,15 +34,15 @@ Enable Real-Time Sentiment Analysis to provide agents live feedback on customer 
 
 ## Gotchas
 
-- Real-time sentiment requires Azure AI service and incurs per-message processing costs; budget accordingly
-- Sentiment accuracy depends on message clarity and length; single-word messages or abbreviations may score inaccurately
-- Voice channel requires call transcription enabled; adds 5-10 second latency to sentiment display
-- Customers typing in non-English languages may receive inaccurate or neutral scores
-- Sentiment score updates may lag 2-5 seconds behind message send, reducing perceived responsiveness
-- Disabling sentiment analysis removes live indicators but does not affect historical sentiment data
-- Some customers may find visible sentiment scoring invasive or uncomfortable if they notice it during conversation
-- Sentiment AI may misinterpret sarcasm, context, or informal language; occasional false positives/negatives expected
+- **Azure AI service costs.** Per-message processing incurs charges — budget accordingly.
+- **Accuracy depends on message clarity.** Single-word messages or abbreviations score inaccurately.
+- **Voice adds latency.** Call transcription adds 5–10 seconds to sentiment display.
+- **Non-English scores are unreliable.** Customers typing in other languages may get inaccurate or neutral scores.
+- **~2–5 second lag.** Scores update behind message sends, reducing perceived responsiveness.
+- **Disabling doesn't wipe history.** Turning off sentiment removes live indicators but keeps historical data.
+- **Customers may notice it.** Some find visible sentiment scoring intrusive during the conversation.
+- **AI makes mistakes.** Misinterprets sarcasm, context, and informal language — expect occasional false positives and negatives.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Agent feedback indicates sentiment accuracy issues or Azure AI service capacity is reached*
+*Source last updated: 2026-04-30 | Worth revisiting when agent feedback indicates sentiment accuracy issues or Azure AI service capacity is reached*

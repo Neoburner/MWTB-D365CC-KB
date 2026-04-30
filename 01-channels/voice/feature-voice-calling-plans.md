@@ -18,7 +18,7 @@ Microsoft Calling Plans (also called Teams Phone) are pre-provisioned PSTN acces
 - Cannot mix Calling Plans and ACS PSTN on the same D365 instance; choose one model
 
 ## When to use / skip
-Use Calling Plans if your organisation already has Teams Phone licenses, you want integrated Teams/D365 calling, or you operate in a supported country with no complex porting requirements. Skip if you need to reuse non-Teams PSTN numbers, require global reach beyond the supported geographies, or operate a high-volume contact center (Calling Plans per-concurrent-call pricing becomes expensive at scale).
+Go with Calling Plans if you've already got Teams Phone licences, want Teams and D365 to talk to each other, or your country is on the supported list and porting is straightforward. Skip it if you need to reuse existing non-Teams PSTN numbers, need global coverage beyond the supported regions, or run a large contact centre — the per-call pricing gets savage at scale.
 
 ## Configuration decisions
 - **Licensing model:** Determine if you'll licence agents with full Teams Phone or Calling Plan add-ons only
@@ -39,4 +39,4 @@ Use Calling Plans if your organisation already has Teams Phone licenses, you wan
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Teams Phone licensing model changes or geographic availability expands*
+*Source last updated: 2026-04-30 | Worth revisiting if Teams Phone licensing shifts or geographic coverage expands*

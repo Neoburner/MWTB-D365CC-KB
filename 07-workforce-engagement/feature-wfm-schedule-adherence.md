@@ -5,7 +5,7 @@
 **Source:** [Real-Time Adherence in WFM - Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/contact-center/use/wfm-realtime-adherence)
 
 ## What it does
-WFM Schedule Adherence compares an agent's current Dynamics 365 presence status and activity (Available, In Call, On Break, etc.) against their published schedule in real time. Supervisors see which agents are following their schedule, which are out of adherence, and by how much. The system tracks both intraday adherence and calculates an adherence score for reporting and performance reviews.
+WFM Schedule Adherence compares agent presence status and activity (Available, In Call, On Break, etc.) against their published schedule in real time. Supervisors see who's following schedule, who's drifting, and by how much. Tracks intraday adherence and calculates a score for reporting and reviews.
 
 ## Key facts
 - Real-time comparison of scheduled vs. actual agent status every 1–5 minutes (depending on sync frequency)
@@ -20,7 +20,7 @@ WFM Schedule Adherence compares an agent's current Dynamics 365 presence status 
 - Does not track "time off" requests or vacation days separately (those are handled by scheduling logic)
 
 ## When to use / skip
-**Use adherence tracking** when you have regulatory compliance requirements (e.g., financial services, healthcare) or SLA commitments that depend on staff availability. It's also essential if you're running a service level-driven operation where 15 agents in a queue can mean the difference between a met or missed SLA. **Skip it** if your contact center is small, low-volume, or has flexible shift patterns where on-time arrivals and break adherence are not critical to operations.
+Use adherence tracking if you have compliance rules (financial, healthcare) or tight SLA targets that depend on staff being there. Essential for operations where 15 agents in queue vs 14 means missing SLA. Skip if the contact centre is small, low-volume, or flexible-shift and on-time attendance doesn't matter much.
 
 ## Configuration decisions
 - **Adherence threshold**: Set the percentage (e.g., 95%, 90%) that defines compliance vs. out-of-adherence
@@ -34,15 +34,15 @@ WFM Schedule Adherence compares an agent's current Dynamics 365 presence status 
 - **Shift start/end tolerance**: Allow a 5–10 min grace period for clock-in/clock-out or enforce strict times
 
 ## Gotchas
-- Presence sync lag: Agent status changes in Teams, Slack, or phone system may take 1–5 minutes to reflect in Contact Center; adherence calculations based on last-known status, not real-time truth
-- Scheduled breaks not enforced: If an agent doesn't take their scheduled break, WFM logs it as out-of-adherence, but doesn't force compliance
-- Absence reason backdating: Supervisors can tag reasons after the fact (e.g., agent calls in sick 2 hours into shift), which can distort historical adherence data
-- System override needed for exceptions: Legitimate absences (fire alarm, facility closure, emergency training) require manual supervisor intervention to adjust adherence; no automatic detection
-- Adherence calculation does not account for customer wait time: An agent who stays past shift-end to finish a call is marked out-of-adherence, even if it improves customer experience
-- Report lag: Adherence reports in the Analytics dashboard refresh on 15–30 min delay; real-time dashboard is more current but with less drill-down detail
-- Partial-day schedules cause confusion: If an agent has a 10 AM–6 PM shift but clocks in at 9:50 AM and is marked "Available" before 10 AM, the system may show adherence as poor until 10 AM
-- No machine learning for scheduling adjustments: Adherence data is tracked but not automatically used to suggest better shift times; supervisors must manually review trends
+- **Presence sync lag:** Agent status from Teams, Slack, or phone can take 1-5 minutes to reflect. Adherence calculations use last-known status, not live state.
+- **Scheduled breaks are logged, not enforced:** If an agent skips their break, it shows as out-of-adherence, but the system won't force them to take it.
+- **Reason codes can be backdated:** Supervisors tag reasons after the fact (agent calls in sick 2 hours into shift). This skews historical data.
+- **Exceptions need manual override:** Fire alarm, facility closure, emergency training — all need supervisor intervention. No auto-detection.
+- **Adherence doesn't factor in customer impact:** Agent stays past shift-end to finish a call, marked out-of-adherence, even though it's the right move.
+- **Reports lag real-time:** Analytics dashboard is 15-30 min behind. Real-time view is current but less detail.
+- **Partial-day schedules trip people up:** Agent with 10 AM-6 PM shift clocks in at 9:50 AM. System shows poor adherence until 10 AM.
+- **No ML for scheduling suggestions:** Adherence data is tracked, not used to auto-suggest better shifts. Manual review only.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Agent adherence rate drops below organizational target, Intraday Adherence is flagged for compliance audit, or if absence codes need expansion*
+*Source last updated: 2026-04-30 | Check this if: Adherence rates drop, compliance audit flags it, or absence codes need updating*

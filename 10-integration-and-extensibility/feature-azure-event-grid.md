@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-azure-communication-services-location
 
 ## What it does
-Azure Event Grid enables subscription to D365 Contact Center events (conversation started, agent assigned, conversation ended, recording ready, transcription complete) and triggers downstream integrations in near real-time. Events are published to an Event Grid topic, from which custom subscribers (Logic Apps, Azure Functions, Webhooks) can consume them. The ACS Event Grid integration specifically handles voice call lifecycle and recording/transcription readiness notifications, allowing you to trigger CRM sync, analytics pipelines, or workforce management updates without polling.
+Subscribe to D365 Contact Center events (conversation started, agent assigned, ended, recording ready, transcription complete) via Azure Event Grid. Route to Logic Apps, Azure Functions, or webhooks to trigger CRM sync, analytics, or workforce management without polling.
 
 ## Key facts
 - D365 Contact Center publishes events to Azure Event Grid; your subscription filters and routes events to handlers
@@ -18,7 +18,7 @@ Azure Event Grid enables subscription to D365 Contact Center events (conversatio
 - Event Grid requires explicit configuration of the topic and subscription; there is no default Event Grid integration
 
 ## When to use / skip
-Use Event Grid when you need to trigger side-effect integrations (CRM updates, analytics pipelines, third-party WFM sync) based on conversation lifecycle. Skip Event Grid if you only need to log conversations to Dataverse—D365 Contact Center already records conversations natively. Use Event Grid for high-volume, asynchronous integrations (e.g., 10K conversations/day); for low-volume integrations, a simple webhook may suffice.
+Use for side-effect integrations (CRM updates, analytics, WFM sync) based on conversation lifecycle. Skip if you only need conversation logging — D365 already records them. Use for high-volume async work (10K conversations/day); low-volume integrations may be fine with a simple webhook.
 
 ## Configuration decisions
 - Create an Azure Event Grid topic in the same subscription and region as your ACS resource
@@ -29,13 +29,12 @@ Use Event Grid when you need to trigger side-effect integrations (CRM updates, a
 - Set up deadletter queues for failed events; implement manual retry logic or escalation
 
 ## Gotchas
-- Event Grid events do NOT include the full conversation transcript; they only include metadata (ID, start time, duration, outcome)
-- To get the transcript after RecordingReady, you must query the Dataverse conversation record; the event does not include transcript content
-- Event Grid is eventually consistent; if you update CRM immediately upon ConversationEnded, the transcript may not be available yet in Dataverse
-- Event Grid topic is tied to one ACS resource; if you have multiple ACS resources, you need separate Event Grid topics
-- Failed Event Grid deliveries are retried with exponential backoff; a broken endpoint can be retried for up to 24 hours
-- Event Grid requires network connectivity; if your Azure Function is behind a firewall, you must whitelist Event Grid IP ranges
+- Events contain metadata only — no transcript. Query Dataverse after RecordingReady for actual content.
+- Event Grid is eventually consistent — transcripts may not be available immediately on ConversationEnded.
+- One topic per ACS resource. Multiple ACS = multiple topics.
+- Failed deliveries retry for 24 hours with exponential backoff. Broken endpoints keep retrying.
+- Network connectivity required — whitelist Event Grid IP ranges if your Function is firewalled.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Azure Event Grid releases new event types or Microsoft adds streaming transcription events*
+*Source last updated: 2026-04-30 | Check this: Azure Event Grid releases new event types or Microsoft adds streaming transcription events*

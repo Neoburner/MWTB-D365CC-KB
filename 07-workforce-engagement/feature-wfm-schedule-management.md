@@ -17,7 +17,7 @@ Suite of WFM scheduling features: schedule creation and publishing, shift biddin
 - **Representative calendar:** single unified view of all shift activities — enable early so reps can orient to WFM-managed scheduling from day one
 
 ## When to use / skip
-Enable the full suite on any deployment where the client wants WFM-managed scheduling with rep self-service. Individual toggles allow phased rollout — schedule management first, shift bidding/swapping once the base scheduling cadence is established.
+Turn on the full suite if the client wants self-service scheduling. You can roll it out in phases — base scheduling first, then shift bidding/swapping once the rhythm is established.
 
 ## Configuration decisions
 - **Schedule acceptance deadline (days)** — how long reps have to accept their schedule; shorter = more supervisor interventions; 3–5 business days is a reasonable starting point
@@ -26,10 +26,10 @@ Enable the full suite on any deployment where the client wants WFM-managed sched
 - **Time-off request types** — must align with the client's HR leave categories; define in consultation with HR before creating records
 
 ## Gotchas
-- **Activity types must have Duration set.** A named activity type with no duration won't appear in the shift planner. Commonly causes confusion during first shift plan build.
-- **Time-off requests silently don't work if manager assignment is missing.** Reps must have a manager assigned on their user record. Check this during user management setup, not after go-live.
-- **Auto-reject on acceptance deadline is easy to miss.** If reps are not responding to schedule notifications, schedules will auto-reject and require supervisor re-publication. Monitor acceptance rates in the first weeks post-go-live.
+- **Activity types need a Duration or they won't show in the planner.** Common headache when building the first shift plan.
+- **Time-off requests silently break if manager isn't assigned.** Reps need a manager on their user record. Catch this during user setup, not at go-live.
+- **Auto-reject on the acceptance deadline is a snare.** If reps aren't accepting schedules, they auto-reject and supervisors have to re-publish. Watch acceptance rates closely in the first weeks.
 
 ---
 
-*Source last updated: 2026-04-27 | Review when: New WFM scheduling features added, or schedule management UI redesigned*
+*Source last updated: 2026-04-27 | Check this if: New scheduling features ship, or the UI changes*

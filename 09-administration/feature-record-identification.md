@@ -23,10 +23,10 @@ Use on any deployment with a pre-conversation survey or authenticated portal int
 - **AI agent escalation context-setting** — this is a bot development task (Copilot Studio or Azure Bot), not a D365 config task; include it in bot scope if auto-identification on escalation is required
 
 ## Gotchas
-- **Context key names are exact.** "CustomerEmail" instead of "Email" silently fails. Validate the exact keys in UAT with a test conversation before training reps.
-- **Custom status codes on contacts/accounts break identification.** Organisations with custom lifecycle states (e.g. "Prospect", "Archived") may find identification works for some contacts but not others. Audit status codes in the environment before go-live.
-- **Multiple-match failures are common with shared email domains.** B2B environments where multiple contacts share a company domain email (e.g. @bigclient.com) will frequently get no auto-identification via email matching. Phone-based matching is more reliable in those scenarios.
+- **Context key names are exact.** "CustomerEmail" instead of "Email" silently fails. Validate the exact keys in UAT before training reps.
+- **Custom status codes on contacts/accounts break identification.** Organisations with custom lifecycle states (e.g. "Prospect", "Archived") may find identification works for some contacts but not others. Audit status codes before go-live.
+- **Multiple-match failures are common with shared email domains.** B2B environments where multiple contacts share a company domain email will frequently get no auto-identification via email. Phone-based matching is more reliable there.
 
 ---
 
-*Source last updated: 2026-01-25 | Review when: Additional entity types or fields supported for automatic identification*
+*Source last updated: 2026-01-25 | Check this: Additional entity types or fields supported for automatic identification*

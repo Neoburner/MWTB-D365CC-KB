@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../configure-whatsapp-acs](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-whatsapp-acs)
 
 ## What it does
-Routes WhatsApp conversations into D365 unified routing via Azure Communication Services Advanced Messaging + an Azure Event Grid webhook. Representatives send and receive WhatsApp messages in Copilot Service workspace. A 24-hour messaging window governs when free-form vs template messages can be sent.
+Routes WhatsApp to D365 queues via Azure Communication Services + Event Grid. Reps send and receive messages in Copilot Service workspace. A 24-hour window controls when reps can send free-form vs template messages.
 
 ## Key facts
 - Requires ACS resource in the **same tenant** as the D365 organisation — one ACS resource per organisation
@@ -16,7 +16,7 @@ Routes WhatsApp conversations into D365 unified routing via Azure Communication 
 - **June 2026 breaking change:** WhatsApp replacing phone numbers with Business-Scoped User IDs (BSUIDs) for customers who adopt WhatsApp usernames. Format: `US.13491208655302741918`. Any routing rule or flow using `msdyn_CustomerPhoneNumber` will break for those customers.
 
 ## When to use / skip
-Use when WhatsApp is a significant customer communication channel for the client's market. High relevance in LATAM, MENA, South Asia, and Southeast Asia. Less relevant for predominantly North American B2B clients.
+Use WhatsApp if it's a significant channel in the customer's market—high relevance in LATAM, MENA, South Asia, Southeast Asia. Less relevant for North American B2B.
 
 ## Configuration decisions
 - Message templates to configure — only text-based templates; design them before go-live so reps can contact customers outside the 24-hour window
@@ -24,11 +24,11 @@ Use when WhatsApp is a significant customer communication channel for the client
 - Routing rule design — must handle both phone number and BSUID patterns if deploying close to June 2026
 
 ## Gotchas
-- **Event Grid Entra authentication is where most setups get stuck.** The Entra app registration and admin consent step is often blocked by IT security teams. Plan for this dependency early.
-- **The June 2026 BSUID change is a breaking change.** Audit routing rules and Power Automate flows that reference `msdyn_CustomerPhoneNumber` before June 2026. Add fallback routing for customers without a phone number. Don't defer this.
-- **The 24-hour template boundary surprises representatives.** Free-form messaging works in testing (recent conversations), then fails in production when a customer goes quiet for a day. Train reps on this and have templates ready before go-live.
-- **ACS resource must connect to only one D365 organisation.** Reusing an ACS resource across multiple D365 environments is not supported.
+- Event Grid Entra authentication is where most setups fail. The Entra app registration and admin consent step often gets blocked by IT security. Plan this dependency early.
+- The June 2026 BSUID change is breaking. Audit routing rules and Power Automate flows using `msdyn_CustomerPhoneNumber` before then. Add fallback routing for customers without a phone. Don't put this off.
+- The 24-hour template boundary catches reps out. Free-form messaging works in testing, then fails in production when a customer doesn't reply for a day. Train reps and have templates ready before launch.
+- ACS resource must connect to only one D365 organisation. Reusing it across multiple D365 environments won't work.
 
 ---
 
-*Source last updated: 2026-04-17 | Review when: BSUID migration completes (June 2026), or WhatsApp rich media templates supported*
+*Source last updated: 2026-04-17 | Revisit after BSUID migration (June 2026), or when WhatsApp rich media templates launch*

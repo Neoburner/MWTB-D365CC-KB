@@ -16,7 +16,7 @@ Controls the output format of Copilot-generated live conversation summaries. Two
 - Only the five built-in categories are available for structured format — no custom categories
 
 ## When to use / skip
-Configure format on any deployment enabling conversation summaries. Structured format with "remove unfound information" enabled is the recommended default for most deployments — cleaner output, faster for reps to scan.
+Configure format on any deployment with conversation summaries. Structured format with "remove unfound information" is the recommended default — cleaner output, faster to scan.
 
 ## Configuration decisions
 - Paragraph vs Structured — Paragraph is simpler but harder for reps to scan on handoffs; Structured is recommended for any deployment with rep handoffs or transfer scenarios
@@ -24,9 +24,9 @@ Configure format on any deployment enabling conversation summaries. Structured f
 - Category order — put the most actionable information first for the rep receiving the handoff
 
 ## Gotchas
-- **One global setting affects all reps.** If different teams have very different summary needs (e.g. technical team and billing team), the format is a compromise. Design for the highest-volume team; train others on interpreting the format.
-- **Error Codes field is a pattern hint, not an exact filter.** Providing sample error codes improves Copilot's ability to recognise similar codes in the conversation — it's worth investing 10 minutes to populate this with client-specific codes during configuration.
+- **One global setting for all reps.** If teams have different needs (tech vs billing), the format is a compromise. Design for the highest-volume team and train the rest on interpretation.
+- **Error Codes is a pattern hint, not exact matching.** Sample codes help Copilot recognise similar codes — spend 10 minutes populating this with client-specific codes during setup.
 
 ---
 
-*Source last updated: 2026-03-26 | Review when: Additional structured categories added, or per-workstream format configuration supported*
+*Source last updated: 2026-03-26 | Check this after additional structured categories are added or per-workstream format configuration is supported*

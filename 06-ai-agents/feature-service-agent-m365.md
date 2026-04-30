@@ -15,16 +15,16 @@ Extends Microsoft 365 Copilot with customer service data — cases, customer rec
 - Production-ready preview — subject to supplemental terms of use
 
 ## When to use / skip
-Use when the client has M365 Copilot licences and reps need to query service data without switching between apps. Skip if the client doesn't have M365 Copilot licences — this is additive licensing that must be confirmed before committing to delivery.
+Use if the client has M365 Copilot licences and reps need to query service data without switching apps. Skip if they don't have these licences — additive licensing that must be confirmed before committing.
 
 ## Configuration decisions
 - Which users get M365 Copilot licences — this determines who can use Service Agent; typically a subset of the rep population given licensing cost
 
 ## Gotchas
-- **Two admin teams must coordinate.** The M365 admin (installs Service app from Marketplace) and D365 admin (adds M365 Copilot to the environment) may be in different teams. Clarify ownership early — this is a common delay point.
-- **English-only is a real constraint for international deployments.** Don't position this as multilingual-capable to clients with non-English rep populations.
-- **Dual Copilot icon is expected but confusing.** Warn reps proactively; otherwise it generates support tickets.
+- **Two admin teams must coordinate.** M365 admin installs the Service app; D365 admin adds M365 Copilot to the environment. May be different teams. Clarify ownership early — common delay.
+- **English-only is a real constraint.** Don't pitch this as multilingual to clients with non-English reps.
+- **Dual Copilot icon is confusing.** Warn reps upfront or it generates support tickets.
 
 ---
 
-*Source last updated: 2026-04-07 | Review when: Service Agent exits preview, multilingual support added, or licensing requirements change*
+*Source last updated: 2026-04-07 | Check this after Service Agent exits preview, multilingual support is added, or licensing requirements change*

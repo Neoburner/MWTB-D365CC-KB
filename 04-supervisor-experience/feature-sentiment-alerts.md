@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-sentiment-analysis
 
 ## What it does
-Sentiment-Triggered Alerts automatically notify supervisors when a customer's sentiment during a conversation drops below a configurable threshold (e.g., 6.0 on a 1–10 scale), signaling customer dissatisfaction or frustration. The alert appears in the supervisor dashboard and can trigger emails or other notifications in real time, allowing supervisors to intervene by monitoring the conversation, coaching the agent, or offering proactive assistance before the customer escalates or abandons.
+Automatically alerts supervisors when customer sentiment drops below a configured threshold (e.g., 6.0 on a 1–10 scale). Alert appears in the supervisor dashboard and can trigger email or other notifications, letting supervisors intervene by monitoring, coaching, or offering assistance before the customer escalates or leaves.
 
 ## Key facts
 - Sentiment scoring is continuous on a 1–10 scale: 1–3 is negative, 4–6 is neutral, 7–10 is positive
@@ -17,7 +17,7 @@ Sentiment-Triggered Alerts automatically notify supervisors when a customer's se
 - Alert data is retained in reports for coaching, quality assurance, and training gap identification
 
 ## When to use / skip
-Use sentiment alerts in customer-experience-focused environments (SaaS, consumer services, hospitality) where early intervention can salvage relationships and prevent churn. Alerts are especially valuable for high-value customers, VIP accounts, or regulated industries where customer satisfaction is tied to compliance. Skip sentiment alerts if your contact center is transaction-focused (billing, admin tasks) where sentiment is less predictive, or if supervisor ratios are too high to act on alerts (e.g., 1 supervisor for 200+ agents).
+Use in customer-experience-focused operations (SaaS, consumer services, hospitality) where early intervention can save relationships and prevent churn. Valuable for high-value or VIP accounts, or regulated industries where satisfaction ties to compliance. Skip if you're transaction-focused (billing, admin tasks) where sentiment matters less, or if supervisor ratios are too stretched to act on alerts (1 supervisor for 200+ agents).
 
 ## Configuration decisions
 - **Sentiment threshold:** Set the trigger point (recommend 5.0–6.0 for balance; lower = more alerts, higher = fewer but higher-risk misses)
@@ -29,14 +29,14 @@ Use sentiment alerts in customer-experience-focused environments (SaaS, consumer
 - **Reporting linkage:** Ensure alerts are tagged and searchable in post-call coaching records and quality management
 
 ## Gotchas
-- Sentiment analysis is probabilistic; it can misidentify sarcasm, frustrated politeness (customer is calm but angry), or domain-specific terminology (e.g., "terrible" in a positive context)
-- A single low sentiment score may be temporary (customer frustrated at one moment but resolved after agent clarification); supervisors should not over-react to single alerts
-- Sentiment is calculated from text/transcripts; tone of voice, pauses, or non-verbal cues are not captured, reducing accuracy for voice
-- Alerts only trigger on customer sentiment; agent frustration or rudeness is *not* flagged by sentiment analysis (requires separate quality monitoring)
-- If sentiment threshold is too low, supervisors will be overwhelmed with false positives; if too high, genuine at-risk conversations are missed
-- Sentiment score improves artificially if agent apologizes or says "I understand" repeatedly, even if the customer's core issue is unresolved
-- Alerts are delayed by ~1–2 minutes (lag time for sentiment model processing), so "real-time intervention" is not instantaneous
+- **Sentiment is probabilistic.** Can misfire on sarcasm, frustrated politeness (calm but angry), or domain-specific wording (e.g., "terrible" used positively).
+- **Single low scores are often temporary.** A customer frustrated one moment but happy after clarification — don't over-react to one alert.
+- **Text-based only.** Tone, pauses, and non-verbal cues aren't captured, so voice accuracy is reduced.
+- **Agent sentiment isn't flagged.** Only customer sentiment triggers alerts. Agent rudeness needs separate quality monitoring.
+- **Threshold tuning is critical.** Too low = alert fatigue. Too high = you miss the at-risk conversations.
+- **"I understand" gaming.** Sentiment improves artificially when agents apologise or repeat empathy phrases, even if the core issue isn't fixed.
+- **~1–2 minute delay.** Real-time intervention isn't actually instantaneous due to model processing lag.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Threshold adjustments after alert volume analysis, sentiment model updates, or supervisor feedback on alert accuracy*
+*Source last updated: 2026-04-30 | Worth revisiting after threshold tuning, sentiment model updates, or supervisor feedback on alert accuracy*

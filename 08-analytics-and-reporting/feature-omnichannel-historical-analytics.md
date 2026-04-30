@@ -31,7 +31,7 @@ Conversation-level analytics across all channels: Summary, Conversation, Queue, 
 | Knowledge analytics | `msdyn_dataanalyticsreport_ksinsights` |
 
 ## When to use / skip
-Enable on every standalone deployment. This is the primary analytics surface for conversation/channel performance. Pairs with CS historical analytics (case performance). Enable all relevant add-ons based on channels in scope.
+Turn this on for every standalone deployment — it's your main view of conversation and channel performance. Pair it with CS historical analytics for case data. Enable add-ons based on what channels you're running.
 
 ## Configuration decisions
 - **Bot analytics add-on** — enable for any deployment with a Copilot agent; required for meaningful bot containment measurement
@@ -39,11 +39,11 @@ Enable on every standalone deployment. This is the primary analytics surface for
 - **Which users need analytics access** — security role configuration required for non-default roles; don't forget bookmark entity permissions
 
 ## Gotchas
-- **24-hour delay is commonly unexpected.** Enable during UAT, not at go-live, or the first day of production data won't exist.
-- **Base toggle required before add-ons appear.** Enable it first, then configure add-ons.
-- **Report bookmark permissions are easy to forget.** Supervisors who save filtered dashboard views need explicit Create/Read/Write/Delete on the Report Bookmark entity — this is not included in the standard Read access grant.
-- **Bot analytics without the add-on gives a misleading picture.** The Bot dashboard without the add-on aggregates bot + human agents together. Always enable the bot add-on for any Copilot agent deployment.
+- **24-hour delay surprises everyone.** Enable during UAT, not at go-live, or you lose day one of production data.
+- **Base toggle must be on first.** Add-ons won't show without it.
+- **Report bookmark permissions get forgotten.** Supervisors saving filtered views need explicit Create/Read/Write/Delete on Report Bookmark — it's not in the standard Read grant.
+- **Bot add-on is mandatory.** Without it, the Bot dashboard mixes bot and human agents together. Enable it for any Copilot deployment.
 
 ---
 
-*Source last updated: 2026-01-23 | Review when: New historical analytics dashboards added, or Proactive Outbound/Bot-Intent expand to Customer Service*
+*Source last updated: 2026-01-23 | Check this if: New analytics dashboards ship, or Proactive Outbound/Bot-Intent reach Customer Service*

@@ -7,7 +7,7 @@
 > ⚠️ **Preview feature** — subject to change before GA.
 
 ## What it does
-Tags knowledge articles so Copilot returns exact, unmodified text instead of paraphrasing. Configured at the article level by knowledge managers — not in Copilot admin settings. Two scopes: entire article (tag with `doNotSummarize` keyword) or specific sections (tag with the Verbatim icon in the editor).
+Tags knowledge articles so Copilot returns exact, unmodified text instead of paraphrasing. Configured at article level by knowledge managers, not in Copilot admin. Two scopes: entire article (tag with `doNotSummarize`) or specific sections (tag with Verbatim icon).
 
 ## Key facts
 - **Applies to Ask a Question only** — not email drafting, conversation summaries, case summaries, or any other Copilot feature
@@ -25,9 +25,9 @@ Use for content where exact wording is legally, regulatorily, or contractually r
 - Section vs full-article verbatim — section verbatim is more precise; full-article verbatim is appropriate when the entire article is sensitive (e.g. legal disclaimer)
 
 ## Gotchas
-- **Knowledge managers must configure this, not Copilot admins.** It requires editing published knowledge articles. Ensure knowledge managers understand the tagging mechanisms — `doNotSummarize` keyword and the Verbatim icon — and have access to the KB editor.
+- **Knowledge managers configure this, not Copilot admins.** Requires editing published articles. Make sure knowledge managers understand the tagging mechanisms (`doNotSummarize` keyword and Verbatim icon) and have KB editor access.
 - **Preview status.** Tagging methods and behaviour are subject to change before GA.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Feature reaches GA, or additional verbatim tagging methods added*
+*Source last updated: check Microsoft Learn | Check this after feature reaches GA or additional verbatim tagging methods are added*

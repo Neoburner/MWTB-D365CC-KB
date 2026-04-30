@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../enable-audit-tables](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-audit-tables)
 
 ## What it does
-Tracks administrator configuration changes across Contact Center objects (queues, workstreams, routing rules, channels, Copilot settings, capacity profiles, etc.) via Dataverse audit logging. Logs surface in Microsoft Purview compliance portal.
+Tracks admin configuration changes (queues, workstreams, routing rules, channels, Copilot settings) via Dataverse audit logging. Logs show up in Microsoft Purview.
 
 ## Key facts
 - **Configured in Power Platform admin center**, not Copilot Service admin center
@@ -22,10 +22,10 @@ Enable unified routing table auditing on every deployment from day one. Routing 
 - **Retention policy** — governed by Purview settings; confirm with the client's compliance team
 
 ## Gotchas
-- **Audit configuration is a Power Platform admin task, not a Contact Center task.** It often falls outside the Contact Center project scope — explicitly assign ownership or it won't get done.
-- **Purview access must be confirmed separately.** If the compliance team isn't already using Purview, getting them access is a separate workstream. Don't leave this to the week before go-live.
-- **Table-level audit must be explicitly enabled.** Environment-level auditing does not automatically capture all tables. Check the specific routing tables are enabled, not just that environment auditing is on.
+- **This is a Power Platform admin task.** Often falls outside the Contact Center scope. Assign ownership explicitly or it won't get done.
+- **Purview access is separate.** If compliance isn't already in Purview, getting access is a separate job. Don't leave it for the week before go-live.
+- **Table-level audit must be explicitly enabled.** Environment-level auditing doesn't auto-capture all tables. Check routing tables are enabled specifically.
 
 ---
 
-*Source last updated: 2026-02-03 | Review when: New Contact Center activity types added to audit scope, or Purview integration changes*
+*Source last updated: 2026-02-03 | Check this: New Contact Center activity types added to audit scope, or Purview integration changes*

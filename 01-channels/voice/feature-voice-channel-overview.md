@@ -18,7 +18,7 @@ Native telephony built on Azure Communication Services, embedded directly in D36
 - Supervisor capabilities: monitor (listen-only), whisper (speak to agent only), barge (join call), transfer/reassign
 
 ## When to use / skip
-Use when the client needs a phone channel managed within D365 without a third-party telephony integration. If the client has an existing telephony platform and CTI integration is already in scope, evaluate whether full voice channel replacement is justified vs continuing with CTI.
+Go with native voice if the client wants telephony managed inside D365, no separate integrations. If they've already got a telephony platform and CTI integration in flight, decide whether ripping it out for voice channel is worth the disruption — usually it's not unless the existing setup is causing pain.
 
 ## Configuration decisions
 - ACS PSTN vs Direct Routing vs Teams Phone — ACS PSTN is the fastest to provision and most natively integrated; Direct Routing adds carrier and network complexity; Teams Phone is relevant only if the client already has Teams Phone licences
@@ -33,4 +33,4 @@ Use when the client needs a phone channel managed within D365 without a third-pa
 
 ---
 
-*Source last updated: 2026-04-15 | Review when: E911 expands internationally, or enhanced voice agent reaches GA updates*
+*Source last updated: 2026-04-15 | Worth revisiting if E911 goes international or enhanced voice agents hit new GA milestones*

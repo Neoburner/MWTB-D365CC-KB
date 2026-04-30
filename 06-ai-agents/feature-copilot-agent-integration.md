@@ -17,7 +17,7 @@ Connects a Copilot Studio agent to D365 Contact Center workstreams so it can han
 - Agent must be published in Copilot Studio before it can be selected in the workstream configuration
 
 ## When to use / skip
-Use on any workstream where you want automated triage, deflection, or self-service before human handoff. Skip for workstreams that are exclusively human-handled — adding a bot introduces routing complexity with no benefit.
+Use on any workstream where you want automated triage, deflection, or self-service before handoff. Skip exclusively human workstreams — bots just add routing complexity.
 
 ## Configuration decisions
 - Which context variables to pass from the bot on escalation — define these in the Copilot Studio topic and map them to D365 context keys; determines what data the rep sees on handoff
@@ -25,10 +25,10 @@ Use on any workstream where you want automated triage, deflection, or self-servi
 - Inactivity behaviour — the 30-minute auto-close is fixed; design bot topics to prompt the customer before that threshold if needed
 
 ## Gotchas
-- **Classic agents blocked on enhanced voice workstreams.** If you're adding a bot to a voice workstream and it won't appear in the selection list, check whether it's a classic agent — you'll need to migrate or rebuild it as a modern agent.
-- **Publish before configuring.** An unpublished agent won't appear in the workstream agent picker. Publish in Copilot Studio first.
-- **Missing `CloseOmnichannelConversation` on voice = hung sessions.** For voice deployments, make sure every exit path in the bot topic sets this variable; otherwise voice calls can hang without properly closing.
+- **Classic agents blocked on enhanced voice.** If you can't see a bot in the voice workstream picker, it's probably classic — migrate or rebuild it as modern.
+- **Publish first.** Unpublished agents don't appear in the agent picker. Publish in Copilot Studio first.
+- **Missing `CloseOmnichannelConversation` on voice = hung calls.** For voice, every exit path must set this variable. Otherwise calls hang without closing properly.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Multi-agent per workstream support added, or inactivity timeout becomes configurable*
+*Source last updated: check Microsoft Learn | Check this after multi-agent per workstream support is added or inactivity timeout becomes configurable*

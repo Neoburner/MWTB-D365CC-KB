@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../wfm-configure-forecast-scenarios](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/wfm-configure-forecast-scenarios)
 
 ## What it does
-Two complementary WFM features: **Forecasting** predicts conversation/case volumes at daily (up to 6 months) and 15-minute intraday (up to 6 weeks) granularity; **Capacity planning** uses forecast scenarios as inputs to model staffing numbers by channel and queue. Enabled separately but designed to work together.
+Two linked WFM features: **Forecasting** predicts conversation/case volumes daily (up to 6 months) and in 15-minute blocks (up to 6 weeks). **Capacity planning** uses those forecasts to model staffing by channel and queue. Enabled separately, but they're meant to work together.
 
 ## Key facts
 - Both require WFM package installation and user management setup (`feature-wfm-setup.md`) as prerequisites
@@ -15,16 +15,16 @@ Two complementary WFM features: **Forecasting** predicts conversation/case volum
 - These are separate from the AI-backed forecasting report (`feature-conversation-forecasting.md`), which includes SLA/concurrency modelling
 
 ## When to use / skip
-Enable both together on any deployment where the client needs WFM-integrated staffing planning. If the client needs scenario modelling ("what if volumes spike 20%?"), these are the right tools. If they just need a staffing demand number, the AI forecasting report may be sufficient.
+Turn on both together if the client needs WFM-integrated staffing planning, especially for scenario modelling ("what if we spike 20%?"). If they just want a staffing-demand number, the AI forecasting report alone is enough.
 
 ## Configuration decisions
 - Whether to enable both together or start with Forecasting only — Capacity planning has no value without Forecasting, but Forecasting can be used standalone for volume prediction
 - Scenario granularity — the client's planning team should define what scenarios are worth modelling (seasonal peaks, marketing campaigns, product launches)
 
 ## Gotchas
-- **WFM Forecasting ≠ AI Agent Forecasting report.** Two different surfaces, different capabilities. WFM forecasting integrates with capacity plans and scenario modelling. The AI report (`feature-conversation-forecasting.md`) has SLA configuration and concurrency modelling but no capacity plan integration. Clients with sophisticated WFM needs may use both.
-- **Capacity planning is inoperable without Forecasting enabled.** Enable both in the same session.
+- **WFM Forecasting ≠ AI Agent Forecasting report.** Different tools, different UX. WFM forecasting plugs into capacity planning. AI report has SLA/concurrency config but no capacity plan integration. Sophisticated shops use both.
+- **Capacity planning won't work without Forecasting.** Enable both at once.
 
 ---
 
-*Source last updated: 2026-04-16 | Review when: New WFM forecast features added, or capacity planning integrations expand*
+*Source last updated: 2026-04-16 | Check this if: New WFM features drop, or capacity planning integrations expand*

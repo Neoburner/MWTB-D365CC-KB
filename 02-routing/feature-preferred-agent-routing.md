@@ -24,8 +24,8 @@ Use for relationship-manager or account rep models where continuity matters — 
 - Fallback behaviour — "Next best rep" keeps SLA intact; "Unassigned" preserves relationship continuity at the cost of response time. Voice and live chat: use next best. Async channels: unassigned is usually acceptable.
 
 ## Gotchas
-- **Skills are bypassed for preferred reps.** A preferred rep with the wrong skills still gets the work item. For clients using preferred routing alongside strict skill compliance, this needs to be understood and accepted explicitly.
-- **The matrix is manually maintained.** There's no automated sync with CRM account ownership. Build a process for keeping preferred rep mappings current as staff turn over — stale mappings route to ex-employees or wrong reps silently.
+- **Skills are bypassed for preferred reps.** A preferred rep with the wrong skills still gets the work. For clients using preferred routing alongside strict skill compliance, this needs explicit acceptance.
+- **The matrix is manually maintained.** No automated sync with CRM account ownership. Build a process for keeping preferred rep mappings current as staff turn over—stale mappings silently route to ex-employees or wrong reps.
 
 ---
 

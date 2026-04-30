@@ -16,14 +16,14 @@ Dashboard tracking AI agent (bot) performance: autonomous resolution rates, qual
 - Dashboard reflects AI agent activity only — does not include human rep performance (use Omnichannel historical analytics for combined views)
 
 ## When to use / skip
-Enable on any deployment with AI agents (Copilot Studio bots) to track deflection rates and quality. Essential for clients who want to measure ROI from AI agent investment.
+Enable on any deployment with AI agents to track deflection rates and quality. Essential for clients who want to measure ROI from AI agent investment.
 
 ## Configuration decisions
 - KPI goal thresholds — set realistic targets based on the type of queries the AI agent handles; overly ambitious targets are demotivating
 
 ## Gotchas
-- **Quality score won't populate until Quality Evaluation Agent is configured.** The KPI is linked to that feature — enable both together or expect a blank quality score metric.
+- **Quality score won't populate without Quality Evaluation Agent.** The KPI is linked to that feature — enable both together or expect a blank metric.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Dashboard expands to embedded deployment, or new KPI types added*
+*Source last updated: check Microsoft Learn | Check this after dashboard expands to embedded deployment or new KPI types are added*

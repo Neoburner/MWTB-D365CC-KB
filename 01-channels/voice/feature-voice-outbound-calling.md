@@ -15,19 +15,19 @@ Enables representatives to make outbound calls from Copilot Service workspace. C
 - Call forwarding behaviour by presence: DND/Offline + missed → forwards to PSTN number; Available/Away/Busy + rejected → voicemail
 
 ## When to use / skip
-Use when representatives need to proactively call customers. Required for any outbound calling use case — call back on cases, proactive notifications, account manager calls.
+Needed if reps have to make outbound calls — callbacks on cases, proactive notifications, account management. Essential for that use case.
 
 ## Configuration decisions
-- **Personal numbers vs outbound profile numbers** — personal numbers create a 1:1 rep-to-number relationship (B2B account management model); outbound profile numbers are shared pool (contact centre model). Most contact centres should use outbound profiles, not personal numbers.
-- Separate capacity profiles for inbound and outbound — strongly recommended; mixing them causes unpredictable work assignment behaviour
-- Call forwarding — useful for account managers or field reps who need missed calls to reach a mobile number
+- **Personal numbers vs shared outbound numbers** — Personal numbers = one rep per number (B2B account management); shared numbers = pool model (contact centre). Most contact centres want shared. Don't default to personal unless the client is account management–heavy.
+- **Separate capacity profiles for inbound and outbound** — Strongly recommended. Mix them and work assignment gets unpredictable.
+- **Call forwarding to mobile** — Handy for account managers or field reps who need their personal number to ring when they miss a call.
 
 ## Gotchas
-- **"Make calls" upgrade has a cost implication.** Enabling outbound on a number may trigger a calling plan charge in ACS. Confirm with the Azure admin before upgrading numbers.
-- **Separate inbound and outbound capacity profiles.** If a rep can receive inbound while on an outbound call (Assignment blocking = No), they can be double-assigned. Use explicit naming conventions and keep the profiles separate.
-- **20-minute delay is real.** After adding a rep to a queue, they won't see outbound calling features for 20 minutes. Factor this into onboarding and testing timelines.
-- **Personal number management overhead is underestimated.** If the client assigns personal numbers, they'll need to track and reassign them when staff turn over. This operational overhead is often not anticipated during scoping.
+- **"Make calls" enablement costs money.** Flipping on outbound for a number triggers ACS billing. Check with your Azure admin before you upgrade.
+- **Keep inbound and outbound capacity profiles separate.** If Assignment blocking = No, reps can get double-assigned (inbound + outbound at the same time). Use clear naming and keep them apart.
+- **The 20-minute delay is real.** After you add a rep to a queue, they can't make calls for 20 minutes. Plan for that in onboarding and UAT.
+- **Personal numbers create a support headache.** If the client goes that route, they need to manage reassignments when staff leave. This admin cost often gets missed in scoping.
 
 ---
 
-*Source last updated: 2026-02-20 | Review when: Outbound dialer feature reaches GA, or personal number management enhanced*
+*Source last updated: 2026-02-20 | Worth revisiting if the outbound dialer goes GA or personal number management gets upgraded*

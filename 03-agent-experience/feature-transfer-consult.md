@@ -25,9 +25,9 @@ Required config on any deployment with more than one team or one queue. Consult 
 - Capacity blocking during consult — decide whether a rep engaged in a consult should be blocked from receiving new work; surface this in the capacity design discussion
 
 ## Gotchas
-- **Wrap-up after transfer requires workstream wrap-up config.** Enabling the toggle without configuring Block capacity for wrap-up in the workstream does nothing — common missed dependency.
-- **FetchXML filters are off by default.** In multi-team orgs, reps can see all teams' queues and reps in the consult/transfer panel without filtering. This is a visibility and compliance risk that's easy to miss.
-- **Consult inbox view is not OOB.** Reps in high-consult-volume roles who need to track active consults won't have a view unless it's explicitly configured.
+- **Wrap-up after transfer requires workstream wrap-up config.** Enabling the toggle without configuring Block capacity for wrap-up in the workstream does nothing—common missed dependency.
+- **FetchXML filters are off by default.** In multi-team orgs, reps can see all teams' queues and reps in the consult/transfer panel without filtering. Visibility and compliance risk that's easy to miss.
+- **Consult inbox view is not OOB.** Reps in high-consult-volume roles need to track active consults. Won't have a view unless explicitly configured.
 
 ---
 

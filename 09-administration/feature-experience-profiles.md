@@ -27,10 +27,10 @@ Every deployment uses experience profiles — OOB defaults work for simple singl
 - **Inbox view on or off** — some clients prefer all-work-items inbox view; others prefer the session/conversation-first approach
 
 ## Gotchas
-- **Copilot not appearing for a rep?** Check their experience profile — Copilot must be toggled on in the Productivity pane settings of the profile. This is the first diagnostic step before any deeper troubleshooting.
-- **Setting a profile as default removes all role-based assignments from it.** If role assignments exist on a profile and you set it as default, they're wiped.
-- **Team membership doesn't work for profile assignment** — direct security role assignment only. Enterprise clients relying on security groups/teams for access management need a parallel direct-assignment process.
+- **Copilot not appearing for a rep?** Check their experience profile — Copilot must be toggled on in the Productivity pane settings. It's the first diagnostic step before deeper troubleshooting.
+- **Setting a profile as default removes all role-based assignments from it.** If role assignments exist and you set it as default, they're gone.
+- **Team membership doesn't work for profile assignment** — direct security role assignment only. Enterprise clients relying on security groups/teams need a parallel direct-assignment process.
 
 ---
 
-*Source last updated: 2026-04-03 | Review when: New productivity pane tools added, or profile assignment logic changes*
+*Source last updated: 2026-04-03 | Check this: New productivity pane tools added, or profile assignment logic changes*

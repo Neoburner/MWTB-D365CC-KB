@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/data-retention-deletion-purge
 
 ## What it does
-D365 Contact Center does not have a built-in automated retention policy. Instead, you manually configure bulk delete jobs in Dataverse to remove conversation records, transcripts, and activity logs after a specified age. Voice recordings (stored in Azure Blob via ACS) and screen recordings (stored in Azure Blob Storage) are managed separately via Azure lifecycle policies. Without active retention policies, conversation data grows indefinitely and storage costs accumulate.
+D365 Contact Center has no built-in automated retention policy. You manually configure bulk delete jobs in Dataverse to remove conversations, transcripts, and activity logs after a specified age. Voice recordings (Azure Blob via ACS) and screen recordings (separate Blob Storage) are managed via Azure lifecycle policies. Without retention policies, data grows indefinitely and storage costs accumulate.
 
 ## Key facts
 - Conversation records are stored in Dataverse; deletion requires a Dataverse bulk delete job
@@ -18,7 +18,7 @@ D365 Contact Center does not have a built-in automated retention policy. Instead
 - Archival is an alternative to deletion; you can export conversations to cold storage (Blob Storage) before deleting
 
 ## When to use / skip
-Implement a data retention policy from day one of production deployment. Set a baseline retention period (e.g., 12 months) for conversation records and 6 months for voice recordings to balance storage cost and compliance. Skip unlimited retention—unmanaged growth leads to storage costs and GDPR risks. If you have legal holds or compliance requirements, implement a tiered policy (e.g., delete 12-month-old records except those flagged Legal Hold).
+Implement a data retention policy from day one of production. Set a baseline retention period — 12 months for conversations, 6 months for voice recordings — to balance cost and compliance. Don't skip this; unmanaged growth leads to storage costs and GDPR risks. If you have legal holds or compliance requirements, use a tiered policy (delete 12-month-old records except those flagged Legal Hold).
 
 ## Configuration decisions
 - Define retention period by data type: conversation records (12 months), voice recordings (6 months), screen recordings (3 months)
@@ -29,13 +29,13 @@ Implement a data retention policy from day one of production deployment. Set a b
 - Set a quarterly manual review process to validate that bulk deletes are running and storage is declining
 
 ## Gotchas
-- Bulk delete jobs are case-sensitive and can fail silently; monitor the Dataverse Bulk Delete queue for errors
-- If you delete a conversation record, the associated voice recording in Blob Storage is NOT automatically deleted; you must use a lifecycle policy
-- Screen recordings are orphaned if the conversation is deleted; they persist in Blob Storage unless explicitly deleted
-- Bulk delete cannot easily filter by conversation outcome (e.g., "delete only completed conversations"); you must use advanced filters
-- If you archive conversations before deleting, the archive copy is permanent; ensure your cold storage account has a retention policy too
-- Bulk delete jobs do not delete custom fields or extensions; if you added custom conversation fields, they will be deleted with the conversation, but not if you only archive
+- Bulk delete jobs are case-sensitive and can fail silently. Monitor the Dataverse Bulk Delete queue for errors.
+- Deleting a conversation record doesn't automatically delete the voice recording in Blob Storage. Use a lifecycle policy.
+- Screen recordings are orphaned if the conversation is deleted; they persist in Blob Storage unless explicitly deleted.
+- Bulk delete can't easily filter by conversation outcome (e.g., "delete only completed conversations"). Use advanced filters.
+- If you archive conversations before deleting, the archive copy is permanent. Ensure your cold storage account has a retention policy too.
+- Bulk delete doesn't remove custom fields or extensions. Custom conversation fields get deleted with the conversation, but not if you only archive.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Your storage costs spike or compliance requirements mandate shorter retention periods*
+*Source last updated: 2026-04-30 | Check this: Your storage costs spike or compliance requirements mandate shorter retention periods*

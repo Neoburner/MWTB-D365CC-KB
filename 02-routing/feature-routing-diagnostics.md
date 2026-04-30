@@ -27,9 +27,9 @@ Enable from day one in UAT and keep enabled in production until a replacement to
 - Purge schedule — set a periodic purge process in the operational runbook for high-volume environments
 
 ## Gotchas
-- **Enable in UAT, not just production.** Every routing test in UAT should be verified via the diagnostics trace — confirming the right agent got the work item is not enough; the trace shows which rules fired and which were skipped.
+- **Enable in UAT, not just production.** Every routing test in UAT should be verified via the diagnostics trace—confirming the right agent got the work is not enough. The trace shows which rules fired and which were skipped.
 - **Storage accumulates silently.** In high-volume environments, diagnostics data can consume significant Dataverse storage. Build a purge schedule into the operational runbook from go-live.
-- **The deprecation is real but no replacement exists yet.** Don't build long-term operational workflows dependent on this tooling, but also don't disable it until a replacement is confirmed.
+- **The deprecation is real but no replacement exists yet.** Don't build long-term workflows dependent on this tool, but don't disable it until a replacement is confirmed.
 
 ---
 

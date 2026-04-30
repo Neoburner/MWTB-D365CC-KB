@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../configure-screen-recording](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-screen-recording)
 
 ## What it does
-Captures a rep's full on-screen activity during customer interactions via a desktop companion application. Recordings upload to Dataverse and are reviewable by supervisors/admins for QA, compliance, and training. Reps cannot view their own recordings.
+Capture rep on-screen activity during customer interactions via a desktop companion app. Recordings upload to Dataverse for supervisor/admin review (QA, compliance, training). Reps can't view their own.
 
 ## Key facts
 - Requires **desktop companion application** installed and running on the rep's local machine — without it, recordings are not uploaded to Dataverse
@@ -25,11 +25,11 @@ Use when the client needs full interaction capture for QA, regulated industry co
 - **Retention period** — must be defined before go-live; agree with the client's legal/compliance team; configure the bulk delete job immediately
 
 ## Gotchas
-- **Legal compliance is the client's responsibility.** Screen recording captures employee activity and may trigger employment law, privacy law, and customer consent obligations depending on jurisdiction. Legal review must happen before enablement — this is not a standard config task.
-- **No default retention policy.** Storage costs grow indefinitely without a bulk delete job. Configure retention on day one — not as a Phase 2 item.
-- **Desktop companion application is an ongoing IT management task.** It must be installed on every rep's machine and kept current. Include it in endpoint management (Intune/SCCM) — a one-time install approach will cause gaps as new reps join.
-- **"Entire screen" scope has privacy implications.** Other applications, personal browser tabs, and internal systems visible on screen are all captured. Include this scope in employee disclosure/consent documentation.
+- **Legal compliance is on the client.** Screen recording captures employee activity and may trigger employment law, privacy law, and customer consent depending on jurisdiction. Legal review before enablement — not a config task.
+- **No default retention policy.** Storage costs explode without a bulk delete job. Configure retention on day one.
+- **Desktop companion is an ongoing IT task.** Install on every rep's machine, keep current. Use endpoint management (Intune/SCCM). One-time installs create gaps.
+- **Entire screen scope is broad.** Captures other apps, personal browser tabs, internal systems. Document this in employee disclosure/consent.
 
 ---
 
-*Source last updated: 2026-03-05 | Review when: Screen recording expands to embedded deployment, or cloud-based recording option added*
+*Source last updated: 2026-03-05 | Check this: Screen recording expands to embedded deployment, or cloud-based recording option added*

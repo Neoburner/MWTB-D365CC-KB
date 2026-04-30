@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../configure-copilot-features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
 
 ## What it does
-Top-level admin control for Copilot: opt in/out, manage regional data movement, enable features for specific rep populations via experience profiles, configure the Customer Support and Admin Management agents, and assign role permissions.
+Top-level admin controls: opt in/out, manage regional data movement, enable features by rep population via experience profiles, configure agents, and assign role permissions.
 
 ## Key facts
 - **Opt-in required** before any Copilot feature is available; opting out erases all training data with no recovery — do not opt out casually
@@ -17,7 +17,7 @@ Top-level admin control for Copilot: opt in/out, manage regional data movement, 
 - Copilot interaction transcripts stored in `msdyn_copilottranscriptdata` (optional, downloadable via API)
 
 ## When to use / skip
-Required first step for any Copilot deployment. Every Copilot capability in D365 Contact Center or Customer Service flows through this configuration.
+Required first step. Every Copilot capability flows through this configuration.
 
 ## Configuration decisions
 - Cross-region data movement — confirm with the client whether their Power Platform admin center has this enabled or needs to be enabled for non-NA regions
@@ -25,9 +25,9 @@ Required first step for any Copilot deployment. Every Copilot capability in D365
 - Data sharing consent — discuss with the client before enabling; it has data governance implications
 
 ## Gotchas
-- **Custom roles are a common go-live blocker.** If the client uses custom security roles instead of the default CSR role, Copilot won't work until the explicit privileges are added. Audit security roles against the required Copilot privilege list early in implementation.
-- **Opt-out is irreversible.** Training data is deleted immediately. Never use opt-out as a troubleshooting step.
+- **Custom roles are a blocker.** If the client uses custom security roles, Copilot won't work until explicit privileges are added. Audit roles early.
+- **Opt-out is irreversible.** Training data deletes immediately. Never use opt-out as a troubleshooting step.
 
 ---
 
-*Source last updated: check Microsoft Learn | Review when: Copilot GA expands to additional regions*
+*Source last updated: check Microsoft Learn | Check this after Copilot GA expands to additional regions*

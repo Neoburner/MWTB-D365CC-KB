@@ -5,8 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/use/self-service-analytics
 
 ## What it does
-
-Analytics reporting on automated interactions and bot-handled conversations within D365 Contact Center. Tracks bot performance independently and at the topic level, showing containment rates, escalation patterns, and effectiveness across different customer intents.
+Analytics for bot-handled conversations in Contact Center. Tracks containment, escalation patterns, and bot performance by topic without needing manual categorization.
 
 ## Key facts
 
@@ -18,28 +17,25 @@ Analytics reporting on automated interactions and bot-handled conversations with
 - Data aggregates into omnichannel analytics dashboards automatically
 
 ## When to use / skip
-
-Deploy Bot Analytics when you have active bot implementations (Copilot Studio, Azure Bot Service, or custom bots) integrated with your contact center. Use to measure bot effectiveness, identify topics that bots struggle with, and optimize bot training. Skip if you have no bot implementation or use legacy automation without conversation linkage.
+Turn this on if you have active bots (Copilot Studio, Azure Bot Service, or custom) in your contact centre. Use it to measure bot effectiveness and find weak topics. Skip if you have no bots or legacy automation without conversation linkage.
 
 ## Configuration decisions
-
-- Ensure bot is connected via Copilot Studio or Azure Bot Service with conversation handoff enabled
-- Verify bot sessions are logging as omnichannel conversations in conversation activity table
-- Configure bot settings to capture escalation and containment signals explicitly
+- Verify bot is connected with conversation handoff enabled
+- Confirm bot sessions log as omnichannel conversations
+- Configure bot settings to capture escalation and containment signals
 - Enable analytics for bot channels in omnichannel settings
-- Map bot topics to customer intent categories for granular reporting
-- Configure analytics roles to allow analysts and managers access to bot reports
+- Map bot topics to customer intent categories if you need granular reporting
+- Grant analytics and manager roles access to bot reports
 
 ## Gotchas
-
-- Bot analytics only appear if bot is properly connected and conversations are linked to omnichannel
-- Escalation signals must be explicitly configured in bot; not all handoffs auto-populate as escalations
-- Topic-level analytics depend on bot correctly tagging conversations; poor classification reduces insight value
-- Bot performance metrics may lag 1-2 hours behind live bot activity
-- Disconnecting a bot removes analytics access to that bot's historical data; archive reports before decommissioning
-- Custom bots may require additional instrumentation to feed escalation and resolution signals
-- Bot analytics must be enabled separately from voice analytics if both are deployed
+- **Bot analytics only show if bot is properly connected.** Conversations must link to omnichannel.
+- **Escalation signals need explicit config.** Not all handoffs auto-populate.
+- **Topic analytics depend on bot tagging.** Bad classification = bad insights.
+- **Bot metrics lag 1-2 hours.** Not live.
+- **Disconnecting a bot kills historical access.** Archive reports before decommissioning.
+- **Custom bots need instrumentation.** They may not auto-report escalation and resolution signals.
+- **Voice and bot analytics are separate toggles.** Enable both if you need both.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Bot implementation changes or new topics are added*
+*Source last updated: 2026-04-30 | Check this if: Bot implementation changes or new topics emerge*

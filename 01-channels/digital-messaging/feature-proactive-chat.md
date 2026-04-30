@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/proactive-chat
 
 ## What it does
-Automatically initiates a chat invitation to a website visitor based on trigger rules (time on page, page URL, scroll depth, custom JavaScript events). When the visitor accepts the invitation, the chat routes to an available agent. Proactive chat improves customer engagement by offering help at the moment a customer is most likely to need it, before they have to initiate contact.
+Automatically invites website visitors to chat based on trigger rules (time on page, URL, scroll depth, custom events). When they accept, the chat routes to an available agent. The idea is to offer help at the moment someone's most likely to need it, before they ask.
 
 ## Key facts
 - Trigger rules can combine: page URL, time spent on page (in seconds), scroll depth percentage, or custom JavaScript events
@@ -19,7 +19,7 @@ Automatically initiates a chat invitation to a website visitor based on trigger 
 - Requires Copilot Studio or a custom bot connected via Direct Line for bot-assisted proactive chat
 
 ## When to use / skip
-Use proactive chat to reduce friction for new visitors or customers stuck on a particular page. It's especially valuable on pricing pages, product pages with high abandonment, or checkout flows. Skip proactive chat if your support team is capacity-constrained (too many incoming chats); don't trigger aggressive invitations that agents can't handle. Also skip if your website has low traffic or short session durations (rule triggers won't fire often enough to be useful).
+Use proactive chat to reduce friction for new visitors or people stuck on a page—pricing, high-abandonment product pages, checkout. Skip it if your team can't handle the volume. Also skip if traffic is low or sessions are short; the rules won't trigger often enough to matter.
 
 ## Configuration decisions
 - Which page(s) will trigger proactive chat? Single landing page, all product pages, or specific URLs?
@@ -30,14 +30,14 @@ Use proactive chat to reduce friction for new visitors or customers stuck on a p
 - Should different pages have different invitation messages or routing?
 
 ## Gotchas
-- If the chat widget is not fully loaded on the page, the trigger may not fire
-- Scroll depth triggers fire only once per page load; if a visitor scrolls back up, the rule doesn't retrigger
-- Custom JavaScript event triggers require the event name to be correctly configured in the page's code; typos prevent the rule from firing
-- Agents see the trigger context only if the Additional Details section is configured; without it, agents don't know why the chat was initiated
-- Proactive chat doesn't work on pages with restrictive Content Security Policy (CSP) headers
-- High-frequency triggers (e.g., "on scroll past 10%") can cause invitation spam; set realistic thresholds
-- If an agent doesn't respond to a proactive chat request within the routing timeout, the chat offer expires and the visitor sees a "no agents available" message
+- If the chat widget isn't fully loaded, the trigger won't fire.
+- Scroll depth triggers fire once per page load; scrolling back up doesn't retrigger them.
+- Custom JavaScript events require exact naming in your page code; typos break the rule.
+- Agents only see trigger context if Additional Details is configured. Without it, they won't know why the chat started.
+- Proactive chat doesn't work with restrictive Content Security Policy (CSP) headers.
+- High-frequency triggers (like "scroll past 10%") spam customers with invitations; set realistic thresholds.
+- If an agent doesn't respond within the routing timeout, the invitation expires and the visitor sees "no agents available."
 
 ---
 
-*Source last updated: 2026-02-13 | Review when: chat widget version changes or trigger accuracy issues reported*
+*Source last updated: 2026-02-13 | Worth checking again if chat widget version changes or you spot trigger accuracy issues*

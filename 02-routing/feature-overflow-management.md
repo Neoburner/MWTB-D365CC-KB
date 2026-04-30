@@ -28,9 +28,9 @@ Always configure overflow for production deployments. Without it, customers wait
 - Rule-specific overrides — use for tiered service (VIP customers bypass the same overflow actions that apply to standard customers on the same queue)
 
 ## Gotchas
-- **Operating hours on a queue auto-creates an overflow condition** that cannot be deleted — only its action can be changed.
-- **Out-of-hours overflow must be explicitly tested in UAT.** Testers work during business hours and almost never test this scenario. Deliberately set a queue to "out of hours" during testing.
-- **Voice post-queue actions are restricted for transferred/overflowed items.** A call that's already been transferred or overflowed once can only be transferred again or sent to an external number — not offered callback or voicemail. Plan multi-hop overflow scenarios accordingly.
+- **Operating hours on a queue auto-creates an overflow condition** that can't be deleted—only its action can be changed.
+- **Out-of-hours overflow must be explicitly tested in UAT.** Testers work during business hours and almost never test this. Deliberately set a queue to "out of hours" during testing.
+- **Voice post-queue actions are restricted for transferred/overflowed items.** A call that's already been transferred or overflowed once can only be transferred again or sent to an external number—not callback or voicemail. Plan multi-hop scenarios accordingly.
 - **AI-powered immediate overflow is Preview.** Don't use in production for regulated environments yet.
 
 ---

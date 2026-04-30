@@ -5,7 +5,7 @@
 **Source:** [learn.microsoft.com/.../configure-surveys](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-surveys)
 
 ## What it does
-Post-conversation/call surveys built in Copilot Service admin center and backed by Copilot Studio agents. Survey types: CSAT, NPS, CES, or custom blank template. Delivered via digital messaging channels, voice IVR post-call, or email after case resolution.
+Build CSAT, NPS, CES, or custom surveys in Copilot Service admin center (backed by Copilot Studio). Deliver via digital channels, voice IVR post-call, or email after case close.
 
 ## Key facts
 - Surveys are **Copilot Studio agents** — created via admin center but customised in Copilot Studio
@@ -27,11 +27,11 @@ Use on any deployment where the client wants CSAT or NPS measurement. Essential 
 - **Case resolution survey** — requires enabling the Power Automate flow; include in go-live checklist if in scope
 
 ## Gotchas
-- **Published status required before linking to channels.** A survey created but not published won't appear in workstream configuration. Don't forget the Dataverse connection step in Power Apps — that's what blocks publishing.
-- **`MCS_CSAT` variable naming is critical.** If the CSAT response is stored under a different variable name, scores will be absent from analytics. Verify during Copilot Studio setup, not at go-live.
-- **Case resolution survey flow is off by default.** It must be explicitly enabled in Power Automate. This is consistently missed in case-channel deployments.
-- **Never copy survey agents between environments.** Copied surveys appear to exist but won't function. Recreate them in each environment.
+- **Published status required before linking to channels.** Unpublished surveys won't show in workstream config. Don't miss the Dataverse connection step in Power Apps—that blocks publishing.
+- **`MCS_CSAT` variable naming is critical.** Different variable name = no analytics. Verify during Copilot Studio setup, not go-live.
+- **Case resolution survey flow is off by default.** Enable it explicitly in Power Automate. Consistently forgotten in case-channel deployments.
+- **Never copy survey agents between environments.** They look fine but won't work. Recreate in each environment.
 
 ---
 
-*Source last updated: 2026-01-13 | Review when: Survey feature expands to embedded deployment, or new survey analytics added*
+*Source last updated: 2026-01-13 | Check this: Survey feature expands to embedded deployment, or new survey analytics added*

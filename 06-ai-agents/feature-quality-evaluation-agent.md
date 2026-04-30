@@ -19,7 +19,7 @@ AI agent that scores customer interactions (conversations, cases, emails) agains
 - Bulk evaluation available for cases (retroactive assessment of historical data)
 
 ## When to use / skip
-Use on any deployment where the client wants automated QA, consistent scoring across teams, or quality-based KPI tracking. Essential if the Agent Insights dashboard quality score KPI is in scope. Skip if the client has no QA process to digitise — the evaluation criteria design requires investment from the client's QA team.
+Use on any deployment where the client wants automated QA, consistent scoring, or quality-based KPI tracking. Essential if Agent Insights quality score is in scope. Skip if there's no QA process to digitise — the criteria design requires investment from the QA team.
 
 ## Configuration decisions
 - **Evaluation criteria and scoring logic** — the quality framework must be designed with the client's QA team; generic criteria produce generic insights
@@ -28,11 +28,11 @@ Use on any deployment where the client wants automated QA, consistent scoring ac
 - **Whether to enable bulk evaluation** — useful post-go-live to establish a pre-deployment quality baseline on historical cases
 
 ## Gotchas
-- **Prerequisites checklist is the most common failure point.** All three steps (connection references, Power Automate flows, Copilot Studio agent) must show Ready. Clients often enable the toggle and assume setup is complete — explicitly verify all three before testing.
-- **Scoring is permanent once enabled.** Discuss the threshold with the client first. Enabling with a poorly considered threshold means living with it or a complex remediation.
-- **"Enable AI agents" is a Power Platform admin center setting**, not a D365 Contact Center toggle. If the Quality Evaluation Agent won't activate, check this setting — it's easy to miss.
-- **Compliance obligation:** Reps must be notified that interactions may be monitored, recorded, and scored. This is a legal requirement in many jurisdictions — build it into project governance, not just the implementation.
+- **Prerequisites checklist is the common failure.** All three (connection references, Power Automate flows, Copilot Studio agent) must show Ready. Clients enable the toggle and assume it's done — verify all three before testing.
+- **Scoring is permanent.** Discuss threshold with the client first. Enabling with a poor threshold means living with it or complex remediation.
+- **"Enable AI agents" is in Power Platform admin, not D365.** If Quality Evaluation Agent won't activate, check this setting — easy to miss.
+- **Compliance obligation:** Reps must know interactions may be monitored, recorded, and scored. Legal requirement in many jurisdictions — build into project governance.
 
 ---
 
-*Source last updated: 2026-04-30 | Review when: Email evaluation exits preview, or new record types added*
+*Source last updated: 2026-04-30 | Check this after email evaluation exits preview or new record types are added*

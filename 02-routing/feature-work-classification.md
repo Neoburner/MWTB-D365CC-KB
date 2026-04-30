@@ -25,10 +25,10 @@ Required for any routing deployment beyond trivial single-queue setups. Classifi
 - Whether to use sentiment prediction (Preview) — not recommended for production in regulated environments yet
 
 ## Gotchas
-- **Classification stops at first match per ruleset; route-to-queue evaluates all rules.** This distinction catches client admins who maintain rules post go-live. Document it explicitly in the handover.
-- **Rating model consistency is a silent failure mode.** If different people set up skills at different times, the rating models may differ between classification rules and agent profiles. Audit before go-live.
-- **Rerouted items accumulate skills.** If a work item is rerouted after a transfer, it goes through classification again and skills are appended. Over-tagged items may match agents incorrectly or not at all via Exact Match.
-- **The 10-ruleset limit is rarely a problem with clean design** — if you're approaching it, the classification design probably has too many edge cases handled at this level that belong elsewhere.
+- **Classification stops at first match per ruleset; route-to-queue evaluates all rules.** Catches admins maintaining rules post go-live. Document explicitly in the handover.
+- **Rating model consistency is a silent failure mode.** Different people setting up skills at different times can cause rating models to diverge between classification rules and agent profiles. Audit before go-live.
+- **Rerouted items accumulate skills.** When a work item is rerouted after a transfer, it goes through classification again and skills append (not replace). Over-tagged items match agents incorrectly or not at all with Exact Match.
+- **The 10-ruleset limit is rarely a problem with clean design.** If you're approaching it, classification design is handling too many edge cases that belong elsewhere.
 
 ---
 
