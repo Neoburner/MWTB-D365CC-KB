@@ -1,0 +1,32 @@
+# Automatic Record Identification
+
+**Category:** Administration
+**Applies To:** Standalone + embedded
+**Source:** [learn.microsoft.com/.../record-identification-rule](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/record-identification-rule)
+
+## What it does
+Matches incoming conversations to Contact, Account, and Case records using context variables from pre-conversation surveys or the `setContextProvider` API. When a single match is found, the Active Conversation page pre-populates with the customer's record. Eliminates manual lookup at conversation start.
+
+## Key facts
+- **Single match required** — if multiple records match, no auto-link occurs; rep must link manually
+- **Active status codes only** — contacts/accounts with custom status codes are not matched
+- Context key names are exact and fixed: **Name, Email, Phone** (Contact/Account), **CaseNumber** (Case)
+- Voice identification: matches caller phone number against Contact **Mobile Phone** field and Account **Phone** field only; matching against other phone fields requires Microsoft Support
+- Case identification is Customer Service only — not available in Contact Center standalone without Customer Service
+- AI agent to rep handoff: agent must explicitly set context variables before escalation for identification to work on handoff
+
+## When to use / skip
+Use on any deployment with a pre-conversation survey or authenticated portal integration where customer identity is known before the conversation starts. High value for reducing handle time; low configuration effort.
+
+## Configuration decisions
+- **Which identifier to use as the primary match** — phone is more unique than email for B2B; name alone is too unreliable; email works well for authenticated B2C scenarios
+- **AI agent escalation context-setting** — this is a bot development task (Copilot Studio or Azure Bot), not a D365 config task; include it in bot scope if auto-identification on escalation is required
+
+## Gotchas
+- **Context key names are exact.** "CustomerEmail" instead of "Email" silently fails. Validate the exact keys in UAT with a test conversation before training reps.
+- **Custom status codes on contacts/accounts break identification.** Organisations with custom lifecycle states (e.g. "Prospect", "Archived") may find identification works for some contacts but not others. Audit status codes in the environment before go-live.
+- **Multiple-match failures are common with shared email domains.** B2B environments where multiple contacts share a company domain email (e.g. @bigclient.com) will frequently get no auto-identification via email matching. Phone-based matching is more reliable in those scenarios.
+
+---
+
+*Source last updated: 2026-01-25 | Review when: Additional entity types or fields supported for automatic identification*
