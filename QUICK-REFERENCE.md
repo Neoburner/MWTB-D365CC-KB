@@ -2,191 +2,237 @@
 
 Single-pane view of every documented feature. Use this to orient quickly without opening individual docs.
 
-**New & Updated** (top section) — features whose Microsoft source docs changed in the last 3 months. Entries move to the main reference after 3 months.
+**New & Updated** (top section) — features added or significantly updated in the last 3 months. Entries move to the main reference after 3 months.
 
 ---
 
 ## 🆕 New & Updated — Feb to Apr 2026
 
-| Date | Feature | What changed / why it matters |
-|------|---------|-------------------------------|
-| 2026-04-30 | [Quality Evaluation Agent](06-ai-agents/feature-quality-evaluation-agent.md) | Email evaluation added (preview); scoring threshold now permanent once enabled |
-| 2026-04-27 | [WFM Setup & Installation](07-workforce-engagement/feature-wfm-setup.md) | Documentation updated; Bookable Resource requirement clarified |
-| 2026-04-27 | [WFM Schedule Management](07-workforce-engagement/feature-wfm-schedule-management.md) | Documentation updated; activity type Duration requirement clarified |
-| 2026-04-27 | [Assignment Methods](02-routing/feature-assignment-methods.md) | Dynamic Prioritisation remains preview; decline limit OData config clarified |
-| 2026-04-27 | [Overflow Management](02-routing/feature-overflow-management.md) | AI-powered immediate overflow remains preview |
-| 2026-04-17 | [WhatsApp Channel](01-channels/digital-messaging/feature-whatsapp-channel.md) | **BSUID breaking change — June 2026 deadline.** All WhatsApp workstreams must be migrated before June 2026 or messaging stops |
-| 2026-04-16 | [WFM Forecasting & Capacity Planning](07-workforce-engagement/feature-wfm-forecasting-capacity.md) | Documentation updated |
-| 2026-04-15 | [User Management](09-administration/feature-user-management.md) | Enhanced User Management bulk update capabilities updated |
-| 2026-04-15 | [Unified Routing Overview](02-routing/feature-unified-routing-overview.md) | Routing architecture docs updated for 2026 W1 release wave |
-| 2026-04-15 | [Smart Assist](03-agent-experience/feature-smart-assist.md) | Native AI suggestions confirmed deprecated June 2025 — Azure Bot only |
-| 2026-04-14 | [Customer Intent Agent](06-ai-agents/feature-customer-intent-agent.md) | Lines of business, simulation, and Copilot Studio component collection steps clarified |
-| 2026-04-07 | [Service Agent in M365 Copilot](06-ai-agents/feature-service-agent-m365.md) | Production-ready preview status; dual Copilot icon behaviour documented |
-| 2026-04-03 | [Experience Profiles](09-administration/feature-experience-profiles.md) | Profile assignment logic and default behaviour updated |
-| 2026-03-26 | [Conversation Summary Format](05-copilot-and-ai/feature-copilot-summary-format.md) | Error Codes pattern hint behaviour clarified |
-| 2026-03-25 | [Preferred Agent Routing](02-routing/feature-preferred-agent-routing.md) | Overflow interaction clarified |
-| 2026-03-18 | [Config Data Migration](10-integration-and-extensibility/feature-config-data-migration.md) | Per-channel migration sequence docs updated |
-| 2026-03-18 | [Operating Hours](09-administration/feature-operating-hours.md) | Auto-created overflow condition behaviour clarified |
-| 2026-03-12 | [IVR / Voice Agents](01-channels/self-service/feature-ivr-voice-agents.md) | SIP context passing and NLU+ data residency updated |
-| 2026-03-10 | [Chat Channel](01-channels/digital-messaging/feature-chat-channel.md) | Persistent chat and screen sharing limitations updated |
-| 2026-03-10 | [Voice Inbound Calling](01-channels/voice/feature-voice-inbound-calling.md) | Enhanced voice anonymous inbound via Direct Routing clarified |
-| 2026-03-05 | [Screen Recording](11-security-and-compliance/feature-screen-recording.md) | Desktop companion app retention configuration added |
-| 2026-02-20 | [Teams Phone Integration](10-integration-and-extensibility/feature-teams-phone-integration.md) | New feature — use existing Teams PSTN numbers in Contact Center |
-| 2026-02-20 | [Voice Outbound Calling](01-channels/voice/feature-voice-outbound-calling.md) | Outbound dialer preview status updated |
-| 2026-02-19 | [Workstreams](02-routing/feature-workstreams.md) | Push/Pick permanent at creation re-confirmed |
-| 2026-02-19 | [Realtime Analytics](04-supervisor-experience/feature-realtime-analytics.md) | Contact Center-specific report changes noted |
-| 2026-02-18 | [Salesforce Data Connector](10-integration-and-extensibility/feature-salesforce-connector.md) | New feature — one-way Salesforce → Dataverse sync |
-| 2026-02-16 | [Workstreams](02-routing/feature-workstreams.md) | Work distribution mode permanence confirmed |
-| 2026-02-15 | [Voice Recording & Transcription](01-channels/voice/feature-voice-recording-transcription.md) | Real-time translation language support scope updated |
-| 2026-02-12 | [Embedded Widget (Salesforce/ServiceNow)](10-integration-and-extensibility/feature-embedded-third-party-crm.md) | ServiceNow OpenFrame setup steps updated |
+| Date | Feature | What changed / why it's here |
+|------|---------|------------------------------|
+| 2026-04-30 | [ACS PSTN Integration](01-channels/voice/feature-voice-acs-pstn.md) | New doc — ACS resource setup, number acquisition |
+| 2026-04-30 | [Direct Routing (Bring Your Own Carrier)](01-channels/voice/feature-voice-direct-routing.md) | New doc — SBC requirements, SIP carrier via ACS |
+| 2026-04-30 | [Microsoft Calling Plans](01-channels/voice/feature-voice-calling-plans.md) | New doc — Teams Phone numbers in Contact Center |
+| 2026-04-30 | [Predictive / Progressive Dialling](01-channels/voice/feature-voice-proactive-dialling.md) | New doc — automated outbound dialling modes |
+| 2026-04-30 | [Real-Time Translation (Voice)](01-channels/voice/feature-voice-realtime-translation.md) | New doc — live audio translation, Azure AI Speech |
+| 2026-04-30 | [Callback (In-Queue & Scheduled)](01-channels/voice/feature-voice-callback.md) | New doc — callback workstream, capacity counting |
+| 2026-04-30 | [E911 Emergency Calling](01-channels/voice/feature-voice-e911.md) | New doc — regulatory requirement, location policy |
+| 2026-04-30 | [Music on Hold](01-channels/voice/feature-voice-music-on-hold.md) | New doc — custom audio upload, supported formats |
+| 2026-04-30 | [Phone Number Management & Porting](01-channels/voice/feature-voice-phone-number-management.md) | New doc — porting timeline, release impact |
+| 2026-04-30 | [Desktop Companion App (Embedded Voice)](01-channels/voice/feature-desktop-companion-app.md) | New doc — Windows app for embedded deployments |
+| 2026-04-30 | [Email Channel](01-channels/digital-messaging/feature-email-channel.md) | New doc — Exchange/EWS, threading, email routing |
+| 2026-04-30 | [Proactive Chat](01-channels/digital-messaging/feature-proactive-chat.md) | New doc — trigger rules, JS snippet, opt-out |
+| 2026-04-30 | [Persistent Chat](01-channels/digital-messaging/feature-persistent-chat.md) | New doc — auth requirement, multi-session threading |
+| 2026-04-30 | [Co-browse / Screen Share](01-channels/digital-messaging/feature-cobrowse-screen-share.md) | New doc — Surfly provider, consent prompt |
+| 2026-04-30 | [Instagram Direct Messages](01-channels/digital-messaging/feature-instagram-channel.md) | New doc — Meta Business Account, 24-hr window |
+| 2026-04-30 | [Microsoft Teams Channel](01-channels/digital-messaging/feature-teams-channel.md) | New doc — internal employee support via Teams chat |
+| 2026-04-30 | [Custom Messaging Channel (Direct Line)](01-channels/digital-messaging/feature-custom-messaging-channel.md) | New doc — Azure Bot Framework Direct Line |
+| 2026-04-30 | [Customer Assist Agent](01-channels/self-service/feature-customer-assist-agent.md) | New doc — autonomous AI agent, Copilot credits |
+| 2026-04-30 | [Bot-to-Agent Escalation](01-channels/self-service/feature-bot-escalation.md) | New doc — context transfer, variable mapping |
+| 2026-04-30 | [Intelligent Skill Finder](02-routing/feature-intelligent-skill-finder.md) | New doc — ML routing, training data requirement |
+| 2026-04-30 | [Wrap-Up / After Contact Work](03-agent-experience/feature-wrap-up-acw.md) | New doc — ACW timer modes, capacity interaction |
+| 2026-04-30 | [Real-Time Translation (Chat)](03-agent-experience/feature-real-time-translation.md) | New doc — Azure AI Translator, chat channels only |
+| 2026-04-30 | [Conversation Diagnostics](03-agent-experience/feature-conversation-diagnostics.md) | New doc — per-conversation routing trace |
+| 2026-04-30 | [Intraday Insights Dashboard](04-supervisor-experience/feature-intraday-insights.md) | New doc — same-day KPIs, differs from Real-Time Analytics |
+| 2026-04-30 | [Sentiment-Triggered Alerts](04-supervisor-experience/feature-sentiment-alerts.md) | New doc — threshold config, supervisor alerts |
+| 2026-04-30 | [Real-Time Sentiment Analysis](05-copilot-and-ai/feature-realtime-sentiment.md) | New doc — 1-10 scale, live conversation display |
+| 2026-04-30 | [Schedule Adherence & Tracking](07-workforce-engagement/feature-wfm-schedule-adherence.md) | New doc — real-time adherence scoring |
+| 2026-04-30 | [Intraday Management (WFM)](07-workforce-engagement/feature-wfm-intraday.md) | New doc — same-day staffing adjustments |
+| 2026-04-30 | [Quality Management (WFM)](07-workforce-engagement/feature-wfm-quality-management.md) | New doc — manual QA scorecard, sampling |
+| 2026-04-30 | [Voice Analytics Dashboard](08-analytics-and-reporting/feature-voice-analytics.md) | New doc — separate enable toggle, call metrics |
+| 2026-04-30 | [Bot / Self-Service Analytics](08-analytics-and-reporting/feature-bot-analytics.md) | New doc — containment rate, escalation rate |
+| 2026-04-30 | [Customer Sentiment Analytics](08-analytics-and-reporting/feature-sentiment-analytics.md) | New doc — historical sentiment trends |
+| 2026-04-30 | [Topics Analytics](08-analytics-and-reporting/feature-topics-analytics.md) | New doc — AI conversation clustering |
+| 2026-04-30 | [Holiday Schedule](09-administration/feature-holiday-schedule.md) | New doc — annual re-entry, Operating Hours linkage |
+| 2026-04-30 | [Data Retention & Purge Policies](09-administration/feature-data-retention.md) | New doc — no native policy, bulk delete jobs |
+| 2026-04-30 | [Channel Integration Framework v2](10-integration-and-extensibility/feature-cif-v2.md) | New doc — multi-session widget embedding |
+| 2026-04-30 | [Azure Event Grid Integration](10-integration-and-extensibility/feature-azure-event-grid.md) | New doc — conversation lifecycle events |
+| 2026-04-30 | [Omnichannel JavaScript SDK](10-integration-and-extensibility/feature-omnichannel-javascript-sdk.md) | New doc — agent-side context API |
+| 2026-04-30 | [RBAC / Security Roles](11-security-and-compliance/feature-rbac-security-roles.md) | New doc — three-tier role structure |
+| 2026-04-30 | [Agent SSO](11-security-and-compliance/feature-agent-sso.md) | New doc — Entra ID, MFA, embedded SSO |
+| 2026-04-30 | [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-compliance.md) | New doc — masking, DTMF suppression, shared responsibility |
+| 2026-04-30 | [Data Residency](11-security-and-compliance/feature-data-residency.md) | New doc — Dataverse region, ACS cross-region flows |
+| 2026-04-30 | [GDPR & Data Subject Requests](11-security-and-compliance/feature-gdpr.md) | New doc — DSR tools, right to erasure |
+| 2026-03-05 | [Screen Recording](11-security-and-compliance/feature-screen-recording.md) | Desktop companion app install, full-screen scope |
+| 2026-02-26 | [WhatsApp Channel](01-channels/digital-messaging/feature-whatsapp-channel.md) | June 2026 BSUID deprecation — action required |
+| 2026-02-26 | [Recording & Transcription](01-channels/voice/feature-voice-recording-transcription.md) | Event Grid now required for recording upload |
+| 2026-02-03 | [Outbound Messaging](10-integration-and-extensibility/feature-outbound-messaging.md) | Flow-only trigger confirmed for SMS + WhatsApp |
+| 2026-02-01 | [Copilot Plugins](05-copilot-and-ai/feature-copilot-plugins.md) | ⚠️ Preview — 15-min publish delay confirmed |
+| 2026-02-01 | [Verbatim Responses](05-copilot-and-ai/feature-copilot-verbatim-responses.md) | ⚠️ Preview — Ask a Question scope only |
+| 2026-02-01 | [Knowledge Sources](05-copilot-and-ai/feature-copilot-knowledge-sources.md) | ⚠️ Preview — Graph connectors clarified |
 
 ---
 
-## 01 · Channels
+## Full Reference — All 127 Features
 
-### Voice
+### 01 · Voice Channel
 
-- **[Voice Channel Overview](01-channels/voice/feature-voice-channel-overview.md)** — Architecture, ACS dependency, Copilot Service workspace requirement, network assessment. Push mode only.
-- **[Inbound Calling](01-channels/voice/feature-voice-inbound-calling.md)** — Bridged vs non-bridged transfer, operating hours vs voicemail conflict, enhanced vs basic voice.
-- **[Outbound Calling](01-channels/voice/feature-voice-outbound-calling.md)** — Rep-initiated outbound, personal numbers (geographic only), 20-min delay after adding a queue.
-- **[Recording & Transcription](01-channels/voice/feature-voice-recording-transcription.md)** — Event Grid is the most-missed prerequisite. MIME allowlisting for playback. Real-time translation separate.
-- **[Voicemail](01-channels/voice/feature-voice-voicemail.md)** — Operating hours required, phone number format for rules, IVR cannot offer voicemail directly.
+- [Voice Channel Overview](01-channels/voice/feature-voice-channel-overview.md) — Architecture, ACS dependency, network assessment requirements
+- [ACS PSTN Integration](01-channels/voice/feature-voice-acs-pstn.md) — ACS resource provisioning, number acquisition, connecting ACS to D365
+- [Direct Routing (Bring Your Own Carrier)](01-channels/voice/feature-voice-direct-routing.md) — SBC setup, SIP carrier connected via ACS Direct Routing
+- [Microsoft Calling Plans](01-channels/voice/feature-voice-calling-plans.md) — Teams Phone number licence, geographic availability, acquisition via M365 admin
+- [Inbound Calling](01-channels/voice/feature-voice-inbound-calling.md) — Bridged vs non-bridged transfer modes, operating hours interaction
+- [Outbound Calling](01-channels/voice/feature-voice-outbound-calling.md) — Personal numbers, 20-min outbound queue delay, geographic restrictions
+- [Predictive / Progressive Dialling](01-channels/voice/feature-voice-proactive-dialling.md) — Automated outbound dialling, Power Automate trigger, SIP outcome codes
+- [Recording & Transcription](01-channels/voice/feature-voice-recording-transcription.md) — Event Grid prerequisite for upload, MIME type allowlisting
+- [Real-Time Translation (Voice)](01-channels/voice/feature-voice-realtime-translation.md) — Azure AI Speech, translated audio stream, latency and quality trade-offs
+- [Voicemail](01-channels/voice/feature-voice-voicemail.md) — Operating hours conflict, IVR limitation, storage
+- [Callback (In-Queue & Scheduled)](01-channels/voice/feature-voice-callback.md) — Callback workstream config, how callbacks count against capacity
+- [E911 Emergency Calling](01-channels/voice/feature-voice-e911.md) — Regulatory requirement, location policy config via ACS/Teams
+- [Music on Hold](01-channels/voice/feature-voice-music-on-hold.md) — Custom audio upload (WAV/MP3), per-queue or global config
+- [Phone Number Management & Porting](01-channels/voice/feature-voice-phone-number-management.md) — ACS vs Direct Routing numbers, porting timeline, release implications
+- [Desktop Companion App (Embedded Voice)](01-channels/voice/feature-desktop-companion-app.md) — Windows app required for embedded voice, MDM deployment required
 
-### Digital Messaging
+### 01 · Digital Messaging
 
-- **[Chat Channel](01-channels/digital-messaging/feature-chat-channel.md)** — Widget setup, screen sharing not native, domain restrictions default off, pre-survey drives routing.
-- **[SMS Channel](01-channels/digital-messaging/feature-sms-channel.md)** — ACS or Twilio only, no rep-initiated outbound, toll-free verification 3–6 weeks.
-- **[WhatsApp Channel](01-channels/digital-messaging/feature-whatsapp-channel.md)** — ⚠️ BSUID migration required before June 2026. 24-hour messaging window. Event Grid Entra auth.
-- **[Facebook Channel](01-channels/digital-messaging/feature-facebook-channel.md)** — 60-day page token refresh, message tag requires both sides opted in, dev mode blocks UAT.
-- **[Apple Messages for Business](01-channels/digital-messaging/feature-apple-messages-channel.md)** — Apple approval lead time (weeks), two external dependencies (Apple + ACS), not self-service.
-- **[LINE Channel](01-channels/digital-messaging/feature-line-channel.md)** — Japan/SEA markets, long-lived token maintenance, contact linking is a rep workflow task.
-- **[Pre-Conversation Survey](01-channels/digital-messaging/feature-pre-conversation-survey.md)** — Chat only, max 10 questions, exact context key names required for record identification.
+- [Chat Channel](01-channels/digital-messaging/feature-chat-channel.md) — Widget setup, domain restrictions, screen sharing toggle
+- [Proactive Chat](01-channels/digital-messaging/feature-proactive-chat.md) — Trigger rules (time on page, URL, events), JS snippet, opt-out handling
+- [Persistent Chat](01-channels/digital-messaging/feature-persistent-chat.md) — Auth required, conversation lifespan config, multi-session thread continuity
+- [Co-browse / Screen Share](01-channels/digital-messaging/feature-cobrowse-screen-share.md) — Third-party provider (Surfly), agent-initiated, customer consent prompt
+- [Email Channel](01-channels/digital-messaging/feature-email-channel.md) — Exchange/EWS mailbox connection, email threading, routing to queues
+- [SMS Channel](01-channels/digital-messaging/feature-sms-channel.md) — ACS and Twilio providers, no rep-initiated outbound SMS, toll-free verification
+- [WhatsApp Channel](01-channels/digital-messaging/feature-whatsapp-channel.md) — ⚠️ June 2026 BSUID change, 24-hour messaging window, Event Grid auth
+- [Facebook Channel](01-channels/digital-messaging/feature-facebook-channel.md) — 60-day token refresh requirement, message tag, dev mode limitations
+- [Instagram Direct Messages](01-channels/digital-messaging/feature-instagram-channel.md) — Meta Business Account, 24-hour window, requires Facebook channel
+- [Apple Messages for Business](01-channels/digital-messaging/feature-apple-messages-channel.md) — Apple registration approval (weeks), two external dependencies
+- [LINE Channel](01-channels/digital-messaging/feature-line-channel.md) — Japan/SEA markets, long-lived access token
+- [Microsoft Teams Channel](01-channels/digital-messaging/feature-teams-channel.md) — Internal employee support via Teams, bot manifest deployment
+- [Custom Messaging Channel (Direct Line)](01-channels/digital-messaging/feature-custom-messaging-channel.md) — Azure Bot Framework Direct Line, requires Copilot Studio bot
+- [Pre-Conversation Survey](01-channels/digital-messaging/feature-pre-conversation-survey.md) — Chat only, 10-question limit, exact context variable key names
 
-### Self-Service
+### 01 · Self-Service
 
-- **[IVR / Voice Agents](01-channels/self-service/feature-ivr-voice-agents.md)** — Copilot Studio IVR, 1-hour call limit, build escalation path before going live, NLU+ for data residency.
+- [IVR / Voice Agents](01-channels/self-service/feature-ivr-voice-agents.md) — Copilot Studio IVR for voice, 1-hour call limit, NLU+ licensing
+- [Customer Assist Agent](01-channels/self-service/feature-customer-assist-agent.md) — Autonomous AI agent end-to-end, Copilot credits, voice + digital channels
+- [Bot-to-Agent Escalation](01-channels/self-service/feature-bot-escalation.md) — Context and variable transfer at handoff, agent notification on takeover
+
+### 02 · Routing
+
+- [Unified Routing Overview](02-routing/feature-unified-routing-overview.md) — Classification → assignment pipeline, channel-agnostic architecture
+- [Workstreams](02-routing/feature-workstreams.md) — Push vs pick (permanent choice), capacity modes, async plug-ins
+- [Queues](02-routing/feature-queues.md) — Type is permanent, fallback queue, design-before-config order matters
+- [Assignment Methods](02-routing/feature-assignment-methods.md) — Highest capacity / round robin / advanced / dynamic prioritisation
+- [Work Classification](02-routing/feature-work-classification.md) — 10 rulesets / 100 rules / 5 outputs per item, chaining rulesets
+- [Route-to-Queue Rules](02-routing/feature-route-to-queue-rules.md) — Hit-all vs hit-first, percentage-based split routing
+- [Skill-Based Routing](02-routing/feature-skill-based-routing.md) — Rating model mismatch risk, Exact vs Closest match modes
+- [Intelligent Skill Finder](02-routing/feature-intelligent-skill-finder.md) — ML-based skill assignment, training data minimum, co-exists with rules
+- [Capacity Profiles](02-routing/feature-capacity-profiles.md) — Reset frequency is permanent, record routing capacity release
+- [Overflow Management](02-routing/feature-overflow-management.md) — Pre-queue vs post-queue triggers, operating hours condition
+- [Preferred Agent Routing](02-routing/feature-preferred-agent-routing.md) — Skills bypassed, push mode only, fallback on unavailability
+- [Record Routing](02-routing/feature-record-routing.md) — 5-min polling cycle, capacity release on resolve, security role requirement
+- [Routing Diagnostics](02-routing/feature-routing-diagnostics.md) — ⚠️ Deprecated feature — enable in every UAT environment from day one
+
+### 03 · Agent Experience
+
+- [Agent Scripts](03-agent-experience/feature-agent-scripts.md) — Linked to session templates, expression-based script selection
+- [Macros](03-agent-experience/feature-macros.md) — "Start macro execution" step required, no conditional branching
+- [Knowledge Management](03-agent-experience/feature-knowledge-management.md) — Full-text vs relevance search, portal domain matching for external KB
+- [Quick Replies](03-agent-experience/feature-quick-replies.md) — Locale mismatch means agents see wrong language, context key slugs
+- [Smart Assist](03-agent-experience/feature-smart-assist.md) — ⚠️ Native AI suggestions deprecated June 2025 — migrate to Copilot Help Pane
+- [Transfer & Consult](03-agent-experience/feature-transfer-consult.md) — Wrap-up config affects consultability, FetchXML for directory filtering
+- [Wrap-Up / After Contact Work](03-agent-experience/feature-wrap-up-acw.md) — Timer modes (auto/forced/none), ACW blocks capacity, disposition codes
+- [Real-Time Translation](03-agent-experience/feature-real-time-translation.md) — Azure AI Translator, chat channels only (not voice), agent language detection
+- [Conversation Diagnostics](03-agent-experience/feature-conversation-diagnostics.md) — Routing trace per conversation, error flags visible to agent and supervisor
+
+### 04 · Supervisor Experience
+
+- [Real-Time Analytics](04-supervisor-experience/feature-realtime-analytics.md) — Enabled by default, voice analytics requires a separate checkbox
+- [Supervisor Controls](04-supervisor-experience/feature-supervisor-controls.md) — All 4 controls (listen/whisper/barge/assign) are off by default
+- [Supervisor Conversation Controls](04-supervisor-experience/feature-supervisor-conversation-controls.md) — Role toggle AND dashboard access both required (common miss)
+- [Intraday Insights Dashboard](04-supervisor-experience/feature-intraday-insights.md) — Same-day operational view, 5–15 min refresh, distinct from Real-Time Analytics
+- [Sentiment-Triggered Alerts](04-supervisor-experience/feature-sentiment-alerts.md) — Configurable threshold (1-10), alerts appear in supervisor dashboard
+
+### 05 · Copilot and AI
+
+- [Copilot Overview & Configuration](05-copilot-and-ai/feature-copilot-overview-and-configuration.md) — Feature availability matrix: Standalone vs Embedded, GA vs Preview
+- [Configure Copilot](05-copilot-and-ai/feature-configure-copilot.md) — GA regions only, opt-out is permanent, custom role privileges required
+- [Copilot Help Pane](05-copilot-and-ai/feature-copilot-help-pane.md) — Ask a Question, custom instructions per queue, KB article refresh timing
+- [Copilot Summaries](05-copilot-and-ai/feature-copilot-summaries.md) — 50-token conversation minimum, bot transcripts excluded from summary
+- [Conversation Summary Format](05-copilot-and-ai/feature-copilot-summary-format.md) — One global format setting, 5 built-in categories, affects all agents
+- [Email Drafting](05-copilot-and-ai/feature-copilot-email-drafting.md) — Standalone draft panel vs inline (RTE v2 required for inline)
+- [Knowledge Sources](05-copilot-and-ai/feature-copilot-knowledge-sources.md) — ⚠️ Preview — uses Graph connectors, NOT Copilot connectors
+- [Copilot Plugins](05-copilot-and-ai/feature-copilot-plugins.md) — ⚠️ Preview — 15-min publish delay after saving
+- [Verbatim Responses](05-copilot-and-ai/feature-copilot-verbatim-responses.md) — ⚠️ Preview — Ask a Question only, configured by KB manager not admin
+- [Real-Time Sentiment Analysis](05-copilot-and-ai/feature-realtime-sentiment.md) — 1-10 scale updated per message, visible to agent and supervisor, Azure AI dependency
+
+### 06 · AI Agents
+
+- [Agent Hub](06-ai-agents/feature-agent-hub.md) — Navigation surface in admin center, not a configuration layer itself
+- [Copilot Studio Agent Integration](06-ai-agents/feature-copilot-agent-integration.md) — One agent per workstream, push mode only, 30-min inactivity timeout
+- [Azure AI Agent](06-ai-agents/feature-azure-ai-agent.md) — Chat and social channels only, Managed Identity required
+- [Customer Intent Agent](06-ai-agents/feature-customer-intent-agent.md) — Copilot credits consumed, intent library, lines of business grouping
+- [Quality Evaluation Agent](06-ai-agents/feature-quality-evaluation-agent.md) — 3 prerequisites (connection references, flows, Copilot Studio agent), scoring is permanent once on
+- [Agent Insights Dashboard](06-ai-agents/feature-agent-insights-dashboard.md) — Standalone deployment only, depends on Quality Evaluation Agent scores
+- [Service Agent in M365 Copilot](06-ai-agents/feature-service-agent-m365.md) — Requires M365 Copilot licence, English only, dual icon in Teams (known issue)
+
+### 07 · Workforce Engagement
+
+- [WFM Setup & Installation](07-workforce-engagement/feature-wfm-setup.md) — Separate managed package, every rep needs a Bookable Resource record
+- [Conversation Forecasting](07-workforce-engagement/feature-conversation-forecasting.md) — AI-backed, concurrency config critical for accuracy, 24-hr data delay
+- [WFM Forecasting & Capacity Planning](07-workforce-engagement/feature-wfm-forecasting-capacity.md) — WFM-native forecast, scenario modelling, enable alongside Conversation Forecasting
+- [Schedule Management](07-workforce-engagement/feature-wfm-schedule-management.md) — Shift bidding, swapping, time-off requests, activity type Duration required
+- [Shift-Based Routing](07-workforce-engagement/feature-wfm-shift-based-routing.md) — Only enable after schedules are published, not before
+- [Schedule Adherence & Tracking](07-workforce-engagement/feature-wfm-schedule-adherence.md) — Real-time D365 presence vs. schedule comparison, adherence score
+- [Intraday Management](07-workforce-engagement/feature-wfm-intraday.md) — Same-day staffing adjustment view, differs from supervisor Intraday Insights
+- [Quality Management (WFM)](07-workforce-engagement/feature-wfm-quality-management.md) — Manual QA scorecard, sampling logic, separate from Quality Evaluation Agent AI
+
+### 08 · Analytics and Reporting
+
+- [Omnichannel Historical Analytics](08-analytics-and-reporting/feature-omnichannel-historical-analytics.md) — Standalone deployment only, base toggle required before add-on dashboards
+- [CS Historical Analytics](08-analytics-and-reporting/feature-cs-historical-analytics.md) — Case-level analytics, AI topic clustering, custom app needs App Designer step
+- [Knowledge Analytics](08-analytics-and-reporting/feature-knowledge-analytics.md) — Article insights default-on; search term insights requires separate checkbox
+- [Copilot Analytics](08-analytics-and-reporting/feature-copilot-analytics.md) — Tracks adoption/usage not quality; requires Help Pane and Summaries opted-in
+- [Voice Analytics Dashboard](08-analytics-and-reporting/feature-voice-analytics.md) — Separate enable toggle from main analytics, 24-hr delay, call volume/AHT/abandon
+- [Bot / Self-Service Analytics](08-analytics-and-reporting/feature-bot-analytics.md) — Containment and escalation rates, requires Copilot Studio bot connected
+- [Customer Sentiment Analytics](08-analytics-and-reporting/feature-sentiment-analytics.md) — Historical 1-10 sentiment trends, requires sentiment analysis enabled first
+- [Topics Analytics](08-analytics-and-reporting/feature-topics-analytics.md) — AI clusters conversations into themes automatically, links to Customer Intent Agent
+
+### 09 · Administration
+
+- [System Requirements](09-administration/feature-system-requirements.md) — Supported browsers, network bandwidth, full URL allowlist, third-party cookies
+- [Copilot Service Admin Center](09-administration/feature-copilot-service-admin-center.md) — Unified admin surface replacing OC Admin, adaptive site map by licence
+- [Provisioning Unified Routing](09-administration/feature-provisioning-unified-routing.md) — Auto-provisioned in Contact Center; manual steps in CS-only; root BU required
+- [User Management](09-administration/feature-user-management.md) — Bookable Resource record required per agent, bulk management via tools
+- [Capacity Profiles](09-administration/feature-capacity-profiles.md) — Reset frequency is permanent at creation, blocks assignment when full
+- [Experience Profiles](09-administration/feature-experience-profiles.md) — Controls which tools agents see, gates Copilot feature visibility
+- [Session Templates](09-administration/feature-session-templates.md) — Anchor tab is required, additional tabs load on session open, comm panel modes
+- [Application Tab Templates](09-administration/feature-application-tab-templates.md) — Page types, slugs, OData filter parameters for entity-type tabs
+- [Notification Templates](09-administration/feature-notification-templates.md) — 4-field display limit, desktop notification opt-in, reject button config
+- [Operating Hours](09-administration/feature-operating-hours.md) — Cannot be migrated via config migration tool, auto-creates overflow condition
+- [Holiday Schedule](09-administration/feature-holiday-schedule.md) — Must be re-entered every year, linked to Operating Hours record
+- [Presence & Custom Presence](09-administration/feature-presence-and-custom-presence.md) — Custom statuses map to base status, Busy-DND auto-triggered by calls
+- [Record Identification](09-administration/feature-record-identification.md) — Context key names are exact-match only, active record status required
+- [Role Persona Mapping](09-administration/feature-role-persona-mapping.md) — Custom roles require three-step grant process (role + persona + experience profile)
+- [Data Retention & Purge Policies](09-administration/feature-data-retention.md) — No native automated policy, bulk delete jobs required, storage grows indefinitely without
+
+### 10 · Integration and Extensibility
+
+- [Configuration Data Migration](10-integration-and-extensibility/feature-config-data-migration.md) — Migrate routing config between environments; operating hours excluded
+- [Embedded Widget (Salesforce / ServiceNow)](10-integration-and-extensibility/feature-embedded-third-party-crm.md) — CTI Adapter/OpenFrame embedding, context variable passing to D365
+- [Salesforce Data Connector](10-integration-and-extensibility/feature-salesforce-connector.md) — One-way Salesforce → D365 sync, 10 GB limit, column mapping required
+- [Outbound Messaging](10-integration-and-extensibility/feature-outbound-messaging.md) — SMS and WhatsApp outbound via Power Automate flow only, opt-in compliance
+- [Customer Feedback Surveys](10-integration-and-extensibility/feature-surveys.md) — Copilot Studio backed, MCS_CSAT variable required for CSAT score capture
+- [Teams Phone Integration](10-integration-and-extensibility/feature-teams-phone-integration.md) — Reuse existing Teams PSTN numbers in Contact Center voice channel
+- [Teams Voice Consult (VOIP)](10-integration-and-extensibility/feature-teams-voice-consult.md) — Consult or transfer to Teams users who don't have a D365 licence
+- [Channel Integration Framework v2](10-integration-and-extensibility/feature-cif-v2.md) — Multi-session third-party widget embedding, session lifecycle APIs
+- [Azure Event Grid Integration](10-integration-and-extensibility/feature-azure-event-grid.md) — Subscribe to conversation lifecycle events for downstream integrations
+- [Omnichannel JavaScript SDK](10-integration-and-extensibility/feature-omnichannel-javascript-sdk.md) — Agent-side context API for custom tabs, customer-side widget SDK is separate
+
+### 11 · Security and Compliance
+
+- [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview, routing table audit separate
+- [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) — Manual block list + auto-block threshold for spam detection
+- [Chat Authentication](11-security-and-compliance/feature-chat-authentication.md) — OAuth 2.0 JWT tokens, portal-based sign-in, authenticated context passing
+- [Data Masking](11-security-and-compliance/feature-data-masking.md) — Chat regex rules (10 max) + voice sensitive variable masking (two separate systems)
+- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion app required, full-screen capture, no default retention
+- [RBAC / Security Roles](11-security-and-compliance/feature-rbac-security-roles.md) — Three-tier model: Dataverse security role → persona → experience profile
+- [Agent SSO](11-security-and-compliance/feature-agent-sso.md) — Entra ID default SSO, MFA enforced via Conditional Access, embedded deployment nuances
+- [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-compliance.md) — Native masking + DTMF suppression; payment capture itself needs external PCI-compliant system
+- [Data Residency](11-security-and-compliance/feature-data-residency.md) — Dataverse region tied to Power Platform environment; ACS voice may cross regions
+- [GDPR & Data Subject Requests](11-security-and-compliance/feature-gdpr.md) — Power Platform DSR tools for Dataverse; ACS/recording data requires manual steps
 
 ---
 
-## 02 · Routing
+*127 features documented | New & Updated section covers last 3 months | Entries graduate to main reference after 3 months*
 
-- **[Unified Routing Overview](02-routing/feature-unified-routing-overview.md)** — Classification runs before assignment. Copilot Service workspace mandatory. Design queues before workstreams.
-- **[Workstreams](02-routing/feature-workstreams.md)** — Push/Pick mode permanent at creation. Async plug-ins must be enabled. One workstream per channel instance.
-- **[Queues](02-routing/feature-queues.md)** — Queue type permanent. Fallback queue required. Design queues before workstreams or you're rebuilding.
-- **[Work Classification](02-routing/feature-work-classification.md)** — 10 rulesets / 100 rules / 5 output slots per workstream. Rules chain. First match wins per ruleset.
-- **[Route-to-Queue Rules](02-routing/feature-route-to-queue-rules.md)** — Hit-all vs hit-first matters. One ruleset per workstream. Percentage routing max 5 queues.
-- **[Assignment Methods](02-routing/feature-assignment-methods.md)** — 4 methods: Highest Capacity, Round Robin, Least Active, Custom. Decline limit 3 (OData configurable). Dynamic Prioritisation is preview.
-- **[Skill-Based Routing](02-routing/feature-skill-based-routing.md)** — Rating model mismatch = silent failure. Exact vs Closest Match is a business decision, not a technical one.
-- **[Capacity Profiles](02-routing/feature-capacity-profiles.md)** — Reset frequency permanent at creation. Record routing capacity does not auto-release.
-- **[Overflow Management](02-routing/feature-overflow-management.md)** — Pre-queue vs post-queue distinction. Operating hours auto-creates an uneditable overflow condition.
-- **[Preferred Agent Routing](02-routing/feature-preferred-agent-routing.md)** — Skills bypassed for preferred reps. Push mode only. Manual matrix maintenance.
-- **[Record Routing](02-routing/feature-record-routing.md)** — 5-minute assignment cycle. Capacity not auto-released. Rep needs security permissions on routed entity.
-- **[Routing Diagnostics](02-routing/feature-routing-diagnostics.md)** — ⚠️ Deprecated. Enable in UAT from day one regardless — storage accumulates.
-
----
-
-## 03 · Agent Experience
-
-- **[Agent Scripts](03-agent-experience/feature-agent-scripts.md)** — Tied to session templates. Expression-based default selection. Copilot Service workspace only.
-- **[Macros](03-agent-experience/feature-macros.md)** — "Start macro execution" step is mandatory first. No branching logic within a macro.
-- **[Knowledge Management](03-agent-experience/feature-knowledge-management.md)** — Search mode Any vs All affects result quality. Portal requires matching domain configuration first.
-- **[Quick Replies](03-agent-experience/feature-quick-replies.md)** — Locale mismatch silently hides replies. Custom context key slugs render blank if unpopulated.
-- **[Smart Assist](03-agent-experience/feature-smart-assist.md)** — ⚠️ Native AI card suggestions deprecated June 2025. Azure Bot Service only going forward (not Copilot Studio).
-- **[Transfer & Consult](03-agent-experience/feature-transfer-consult.md)** — Wrap-up after transfer requires workstream config. FetchXML filters for consult search are off by default.
-
----
-
-## 04 · Supervisor Experience
-
-- **[Real-Time Analytics](04-supervisor-experience/feature-realtime-analytics.md)** — On by default. Voice analytics is a separate checkbox. Custom app needs App Designer steps to expose reports.
-- **[Supervisor Controls](04-supervisor-experience/feature-supervisor-controls.md)** — All 4 monitoring toggles off by default. Direct role assignment required — team membership doesn't work.
-- **[Supervisor Conversation Controls](04-supervisor-experience/feature-supervisor-conversation-controls.md)** — Both the supervisor toggles AND dashboard access are required. Missing either breaks the experience.
-
----
-
-## 05 · Copilot and AI
-
-- **[Copilot Overview & Configuration](05-copilot-and-ai/feature-copilot-overview-and-configuration.md)** — Feature matrix by deployment type. Don't opt out as a troubleshooting step — it's permanent.
-- **[Configure Copilot](05-copilot-and-ai/feature-configure-copilot.md)** — GA in North America first. Opt-out permanent. Custom roles need explicit Copilot privileges.
-- **[Copilot Help Pane](05-copilot-and-ai/feature-copilot-help-pane.md)** — Ask a Question, custom instructions. Custom instructions don't apply to Copilot Studio sources. KB refresh is daily.
-- **[Copilot Summaries](05-copilot-and-ai/feature-copilot-summaries.md)** — 50-token minimum before summary generates. Bot transcripts excluded. Custom forms need extra config.
-- **[Conversation Summary Format](05-copilot-and-ai/feature-copilot-summary-format.md)** — One global setting, no per-team config. 5 built-in categories only. Error Codes is a pattern hint, not a filter.
-- **[Email Drafting](05-copilot-and-ai/feature-copilot-email-drafting.md)** — Two modes (inline and help pane). RTE v2 required for inline. Case Notes and Email Content always included.
-- **[Knowledge Sources](05-copilot-and-ai/feature-copilot-knowledge-sources.md)** — ⚠️ Preview. Ask a Question only. Use Graph connectors — Copilot connectors not supported.
-- **[Copilot Plugins](05-copilot-and-ai/feature-copilot-plugins.md)** — ⚠️ Preview. 15-minute publish delay. Connector must exist before configuring the plugin.
-- **[Verbatim Responses](05-copilot-and-ai/feature-copilot-verbatim-responses.md)** — ⚠️ Preview. Ask a Question only. Knowledge managers configure this, not Copilot admins.
-
----
-
-## 06 · AI Agents
-
-- **[Agent Hub](06-ai-agents/feature-agent-hub.md)** — Navigation surface only. Not where AI agent configuration happens — follow the links out to the relevant feature areas.
-- **[Copilot Studio Agent Integration](06-ai-agents/feature-copilot-agent-integration.md)** — One agent per workstream. Push mode only. 30-min inactivity auto-close. `CloseOmnichannelConversation` required for voice.
-- **[Azure AI Agent](06-ai-agents/feature-azure-ai-agent.md)** — Chat and social channels only (not voice). User-Assigned Managed Identity required — client secret not supported.
-- **[Customer Intent Agent](06-ai-agents/feature-customer-intent-agent.md)** — Pay-as-you-go Copilot credits. Discover intents from history. Feeds both deflection and routing. Copilot Studio component collection required.
-- **[Quality Evaluation Agent](06-ai-agents/feature-quality-evaluation-agent.md)** — 3 prerequisites must all show Ready. Scoring threshold permanent once enabled. Compliance disclosure required.
-- **[Agent Insights Dashboard](06-ai-agents/feature-agent-insights-dashboard.md)** — Standalone only. Tracks autonomous resolution rate and quality score. Quality score blank until Quality Evaluation Agent configured.
-- **[Service Agent in M365 Copilot](06-ai-agents/feature-service-agent-m365.md)** — M365 Copilot licence required per user. English only. Two Copilot icons appear if both D365 Copilot and Service Agent enabled simultaneously.
-
----
-
-## 07 · Workforce Engagement
-
-- **[WFM Setup & Installation](07-workforce-engagement/feature-wfm-setup.md)** — Separate package install via Power Platform admin center. Bookable Resource required per rep — most commonly missed prerequisite.
-- **[Conversation Forecasting](07-workforce-engagement/feature-conversation-forecasting.md)** — AI-backed staffing demand report. Concurrency config is the most impactful accuracy lever. 24-hour delay on first enable.
-- **[WFM Forecasting & Capacity Planning](07-workforce-engagement/feature-wfm-forecasting-capacity.md)** — WFM-native forecasting with scenario modelling. Enable both Forecasting and Capacity Planning together.
-- **[Schedule Management](07-workforce-engagement/feature-wfm-schedule-management.md)** — Shift bidding, swapping, time-off requests, activity types, rep calendar. Each sub-feature enabled independently.
-- **[Shift-Based Routing](07-workforce-engagement/feature-wfm-shift-based-routing.md)** — Routes based on published shift bookings. Enable only after schedules are published — enabling early blocks all assignments.
-
----
-
-## 08 · Analytics and Reporting
-
-- **[Omnichannel Historical Analytics](08-analytics-and-reporting/feature-omnichannel-historical-analytics.md)** — Standalone only. Base toggle required before add-ons appear. 24-hour delay after first enable. Bot add-on essential for any Copilot agent deployment.
-- **[CS Historical Analytics](08-analytics-and-reporting/feature-cs-historical-analytics.md)** — Case-level analytics. AI-discovered topic clustering on by default. Custom apps need App Designer navigation entry.
-- **[Knowledge Analytics](08-analytics-and-reporting/feature-knowledge-analytics.md)** — Article insights (main toggle) + Search term insights (separate checkbox). Enable both. Internal rep search only.
-- **[Copilot Analytics](08-analytics-and-reporting/feature-copilot-analytics.md)** — Tracks Copilot usage adoption, not output quality. Requires Copilot help pane and summaries opted in first. 24-hour provisioning delay.
-
----
-
-## 09 · Administration
-
-- **[System Requirements](09-administration/feature-system-requirements.md)** — Edge/Chrome only. Third-party cookies must not be blocked. URL allowlist needed — 2–3 weeks lead time for enterprise firewall changes.
-- **[Copilot Service Admin Center](09-administration/feature-copilot-service-admin-center.md)** — Unified admin surface. Adaptive site map — settings only appear after relevant features are provisioned. System Administrator only.
-- **[Provisioning Unified Routing](09-administration/feature-provisioning-unified-routing.md)** — Auto in Contact Center. Manual in CS-only environments. Root business unit System Admin required — child BU not sufficient.
-- **[User Management](09-administration/feature-user-management.md)** — Every rep needs a Bookable Resource — separate from having a user account. Enhanced User Management for bulk operations.
-- **[Capacity Profiles](09-administration/feature-capacity-profiles.md)** — Reset frequency permanent at creation. Assignment blocking forces Busy-DND. Record routing capacity doesn't auto-release.
-- **[Experience Profiles](09-administration/feature-experience-profiles.md)** — Controls which workspace tools reps see. Copilot must be toggled on per profile. Team membership not supported for profile assignment.
-- **[Session Templates](09-administration/feature-session-templates.md)** — Defines workspace layout on session open. Additional tabs cannot be closed by reps. Design with agent scripts together.
-- **[Application Tab Templates](09-administration/feature-application-tab-templates.md)** — Defines what opens in tabs. Supports slugs and OData queries for dynamic record loading. Third-party websites reload on tab switch.
-- **[Notification Templates](09-administration/feature-notification-templates.md)** — Max 4 data fields per template. Desktop notifications need browser permission + Windows notifications on. No Reject button recommended for record routing.
-- **[Operating Hours](09-administration/feature-operating-hours.md)** — Cannot be migrated between environments. Auto-creates uneditable "Out of operation hours" overflow condition when attached to queue.
-- **[Presence & Custom Presence](09-administration/feature-presence-and-custom-presence.md)** — Base status controls routing. Custom presence text is cosmetic. Busy-DND auto-triggered by capacity profile assignment blocking.
-- **[Record Identification](09-administration/feature-record-identification.md)** — Exact context key names required (Name, Email, Phone, CaseNumber). Active status records only. Single match required for auto-link.
-- **[Role Persona Mapping](09-administration/feature-role-persona-mapping.md)** — Three personas: Admin, Supervisor, Agent. Custom roles need three separate steps: create, map persona, grant app access. Direct assignment only — no team inheritance.
-
----
-
-## 10 · Integration and Extensibility
-
-- **[Config Data Migration](10-integration-and-extensibility/feature-config-data-migration.md)** — Per-channel migration guides. Operating hours excluded — must be recreated manually. Skill finder, presence, queue membership also excluded.
-- **[Embedded Widget (Salesforce/ServiceNow)](10-integration-and-extensibility/feature-embedded-third-party-crm.md)** — Contact Center conversation widget embedded in Salesforce (CTI) or ServiceNow (OpenFrame). Records stay in third-party CRM.
-- **[Salesforce Data Connector](10-integration-and-extensibility/feature-salesforce-connector.md)** — One-way sync Salesforce → Dataverse. 10 GB recommended limit. Back up Dataverse data before activating.
-- **[Outbound Messaging](10-integration-and-extensibility/feature-outbound-messaging.md)** — SMS and WhatsApp (Twilio) via Power Automate flows only. Reps cannot send outbound from workspace. WhatsApp Template Name deprecated April 2025.
-- **[Customer Feedback Surveys](10-integration-and-extensibility/feature-surveys.md)** — Copilot Studio backed. Must be published before appearing in channel config. MCS_CSAT variable name required for analytics. Case resolution survey flow is off by default.
-- **[Teams Phone Integration](10-integration-and-extensibility/feature-teams-phone-integration.md)** — Use existing Teams PSTN service numbers in Contact Center. Requires Teams resource account and Entra ID permission. Cross-team setup effort.
-- **[Teams Voice Consult (VOIP)](10-integration-and-extensibility/feature-teams-voice-consult.md)** — Consult/transfer to Teams users without phone numbers. Enterprise Voice required per user. ACS–Teams federation PowerShell required. No voicemail if Teams user doesn't answer.
-
----
-
-## 11 · Security and Compliance
-
-- **[Audit Logging](11-security-and-compliance/feature-audit-logging.md)** — Configured in Power Platform admin center, not Copilot Service admin center. Table-level audit must be explicitly enabled per table. Logs in Microsoft Purview.
-- **[Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md)** — Voice only. Auto-block threshold configurable. Rep spam flagging needs training — feature is invisible unless reps know it exists.
-- **[Chat Authentication](11-security-and-compliance/feature-chat-authentication.md)** — OAuth 2.0 JWT for chat and Apple Messages only. Sub claim auto-links Dataverse contact. Custom portal JWT is a dev task. Token expiry on long sessions.
-- **[Data Masking](11-security-and-compliance/feature-data-masking.md)** — Two separate mechanisms: regex rules for chat/async (max 10), sensitive variable masking for voice agents (Copilot Studio). Neither is automatic — must be explicitly configured.
-- **[Screen Recording](11-security-and-compliance/feature-screen-recording.md)** — Full screen capture via desktop companion app. No default retention policy — configure bulk delete job at go-live. Legal compliance is client's responsibility.
-
----
-
-*Last updated: 2026-04-30 · Entries dated Feb–Apr 2026 are in the New & Updated section above · Older entries roll into the main reference*
+*Last updated: 2026-04-30*

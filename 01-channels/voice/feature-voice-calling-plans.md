@@ -1,0 +1,42 @@
+# Microsoft Calling Plans
+
+**Category:** Voice Channel Setup
+**Applies To:** Standalone / Embedded
+**Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-calling-plan
+
+## What it does
+Microsoft Calling Plans (also called Teams Phone) are pre-provisioned PSTN access bundled with Microsoft 365. Instead of managing ACS separately, you use your organisational phone numbers within Teams Phone licensing to handle inbound and outbound calls in D365 Contact Center. Numbers are managed in the Microsoft 365 admin center.
+
+## Key facts
+- Requires Teams Phone licence (SKU: MCOCALL) for each concurrent agent, or a Calling Plan add-on for users who don't need full Teams features
+- Numbers provisioned in Teams Phone are automatically available to D365; no separate ACS resource needed
+- Geographic availability is limited to ~20 countries; ACS PSTN offers more territories
+- Call recording is handled by Teams recording infrastructure; no separate ACS charges
+- Number porting is managed by Microsoft (typically 2–4 weeks); can reuse existing numbers from other Microsoft services
+- Calling Plans support does not include call-by-call routing logic; D365 workstreams handle that
+- Concurrent call limits are tied to Teams Phone licensing; each licence covers 1 concurrent call on average
+- Cannot mix Calling Plans and ACS PSTN on the same D365 instance; choose one model
+
+## When to use / skip
+Use Calling Plans if your organisation already has Teams Phone licenses, you want integrated Teams/D365 calling, or you operate in a supported country with no complex porting requirements. Skip if you need to reuse non-Teams PSTN numbers, require global reach beyond the supported geographies, or operate a high-volume contact center (Calling Plans per-concurrent-call pricing becomes expensive at scale).
+
+## Configuration decisions
+- **Licensing model:** Determine if you'll licence agents with full Teams Phone or Calling Plan add-ons only
+- **Number acquisition:** Buy new numbers from Microsoft or port existing numbers in
+- **Auto-attendant routing:** Decide if calls route through Teams Auto-Attendant or direct to D365 queue
+- **Call forwarding:** Configure whether unanswered calls forward to voicemail, another queue, or an on-call agent
+- **Caller ID:** Choose which number displays for outbound calls (main DID or agent extension)
+- **Regional availability:** Confirm your countries are supported; Calling Plans have gaps (some EU countries, Asia-Pacific regions)
+
+## Gotchas
+- Calling Plan pricing scales poorly for large contact centres; cost-per-call exceeds ACS PSTN above ~50 concurrent calls
+- Teams client updates sometimes disrupt Calling Plans integration; test updates in UAT first
+- Number porting *into* Calling Plans can fail if the number is associated with other Microsoft services; requires coordination
+- Concurrent call limits are soft; exceeding them causes new calls to fail or route to voicemail instead of queuing
+- Teams Phone and Direct Routing cannot coexist on the same tenant; if you need both, use ACS PSTN instead
+- Calling Plans do not support SIP trunking; you cannot bring your own carrier numbers
+- Outbound Calling Plan calls show the provisioned DID, not the agent's extension, by default; cannot customise per-agent
+
+---
+
+*Source last updated: 2026-04-30 | Review when: Teams Phone licensing model changes or geographic availability expands*
