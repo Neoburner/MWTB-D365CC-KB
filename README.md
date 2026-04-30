@@ -2,7 +2,7 @@
 
 Internal consultant reference for Dynamics 365 Contact Center and Customer Service. One doc per feature. No sales copy — just what it does, when to use it, and what will catch you out.
 
-**127 features documented** across 11 categories. Coverage is ongoing.
+**136 features documented** across 11 categories. Coverage is ongoing.
 
 ---
 
@@ -40,6 +40,10 @@ Docs link back to the Microsoft Learn source and include a review trigger note a
 | [Music on Hold](01-channels/voice/feature-voice-music-on-hold.md) | Custom audio upload, supported formats, admin center location |
 | [Phone Number Management & Porting](01-channels/voice/feature-voice-phone-number-management.md) | ACS vs Direct Routing numbers, porting timeline, release impact |
 | [Desktop Companion App (Embedded Voice)](01-channels/voice/feature-desktop-companion-app.md) | Windows app for embedded deployments, Intune/SCCM requirement |
+| [Enhanced Dial Pad for DTMF Tones](01-channels/voice/feature-enhanced-dial-pad-dtmf.md) | Admin-enabled DTMF Broadcast toggle; faster tone delivery to IVRs and PSTN |
+| [Callback Deduplication](01-channels/voice/feature-callback-deduplication.md) | Configurable deduplication of overflow callback requests by caller/channel/queue |
+| [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | Customer opt-out captured by voice agent; consent travels through escalation to rep |
+| [Secure Consult/Transfer for PSTN and IVR](01-channels/voice/feature-secure-consult-transfer-pstn.md) | ⚠️ Preview — auto-pauses recording on external PSTN consult; DTMF passthrough |
 
 ### Digital Messaging
 | Doc | What it covers |
@@ -58,6 +62,8 @@ Docs link back to the Microsoft Learn source and include a review trigger note a
 | [Microsoft Teams Channel](01-channels/digital-messaging/feature-teams-channel.md) | Internal employee support, bot manifest, Teams app deployment |
 | [Custom Messaging Channel (Direct Line)](01-channels/digital-messaging/feature-custom-messaging-channel.md) | Azure Bot Framework Direct Line, Copilot Studio requirement |
 | [Pre-Conversation Survey](01-channels/digital-messaging/feature-pre-conversation-survey.md) | Chat only, 10-question limit, exact context key names |
+| [Infobip SMS Channel](01-channels/digital-messaging/feature-sms-infobip.md) | Infobip as third SMS provider; configured in Messaging accounts alongside ACS/Twilio |
+| [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | Outbound SMS via CCaaS API, Customer Insights Journeys, MCP, or file upload |
 
 ### Self-Service
 | Doc | What it covers |
@@ -85,6 +91,7 @@ Docs link back to the Microsoft Learn source and include a review trigger note a
 | [Preferred Agent Routing](02-routing/feature-preferred-agent-routing.md) | Skills bypassed, push-mode only |
 | [Record Routing](02-routing/feature-record-routing.md) | 5-minute cycle, capacity release, security permissions |
 | [Routing Diagnostics](02-routing/feature-routing-diagnostics.md) | ⚠️ Deprecated — enable in UAT from day one |
+| [Queue Availability API](02-routing/feature-queue-availability-api.md) | Real-time queue-level rep availability and wait times via API; two variants by context |
 
 ---
 
@@ -101,6 +108,7 @@ Docs link back to the Microsoft Learn source and include a review trigger note a
 | [Wrap-Up / After Contact Work](03-agent-experience/feature-wrap-up-acw.md) | ACW timer modes, capacity interaction, disposition codes |
 | [Real-Time Translation](03-agent-experience/feature-real-time-translation.md) | Azure AI Translator, chat only, agent language detection |
 | [Conversation Diagnostics](03-agent-experience/feature-conversation-diagnostics.md) | Per-conversation routing trace, error flags, agent + supervisor access |
+| [Cancel Voice Consult with External Number](03-agent-experience/feature-cancel-voice-consult.md) | Cancel consult/transfer during connecting phase; extends to PSTN and Teams users |
 
 ---
 
@@ -196,6 +204,7 @@ Docs link back to the Microsoft Learn source and include a review trigger note a
 | [Record Identification](09-administration/feature-record-identification.md) | Exact context key names, active status only |
 | [Role Persona Mapping](09-administration/feature-role-persona-mapping.md) | Custom roles, three-step grant process |
 | [Data Retention & Purge Policies](09-administration/feature-data-retention.md) | Bulk delete jobs, no native retention policy, storage growth risk |
+| [Service Operations Agent](09-administration/feature-service-operations-agent.md) | ⚠️ Preview — AI assistant for configuring channels, routing, queues via natural language |
 
 ---
 
@@ -243,7 +252,7 @@ The following features are identified in the batch audit checklist but not yet d
 - Routing: percent-based routing (partially covered in route-to-queue doc), priority-based routing
 - Agent experience: swarming, email threading, internal notes & tags, customer summary/360 view, multi-session handling overview
 - Copilot: AI-suggested similar cases, AI-suggested knowledge articles, responsible AI controls
-- Supervisor: service operations agent (AI), supervisor extensibility (custom metrics)
+- Supervisor: supervisor extensibility (custom metrics)
 - WFM: external data import for forecasting, agent feedback & coaching
 - Analytics: custom dashboards/extensibility, data export to Azure Data Lake, Power BI embedded, SLA management
 - Administration: locale/language settings, geo-redundancy & failover, email configuration (Exchange/EWS admin setup), licensing management
@@ -252,4 +261,4 @@ The following features are identified in the batch audit checklist but not yet d
 
 ---
 
-*Last updated: 2026-04-30 · 127 features documented*
+*Last updated: 2026-04-30 · 136 features documented*

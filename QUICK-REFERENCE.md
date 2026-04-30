@@ -10,6 +10,15 @@ Single-pane view of every documented feature.
 
 | Date | Feature | What changed / why it's here |
 |------|---------|------------------------------|
+| 2026-04-30 | [Enhanced Dial Pad for DTMF Tones](01-channels/voice/feature-enhanced-dial-pad-dtmf.md) | New doc — faster, reliable DTMF; admin-enable via DTMF Broadcast |
+| 2026-04-30 | [Cancel Voice Consult with External Number](03-agent-experience/feature-cancel-voice-consult.md) | New doc — cancel consult/transfer during ringing; automatic, no config |
+| 2026-04-30 | [Infobip SMS Channel](01-channels/digital-messaging/feature-sms-infobip.md) | New doc — Infobip as third SMS provider alongside ACS and Twilio |
+| 2026-04-30 | [Callback Deduplication](01-channels/voice/feature-callback-deduplication.md) | New doc — prevent duplicate callbacks from same caller in overflow |
+| 2026-04-30 | [Queue Availability API](02-routing/feature-queue-availability-api.md) | New doc — real-time rep availability and wait times via API |
+| 2026-04-30 | [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | New doc — GDPR-aligned opt-out recording, consent travels through escalation |
+| 2026-04-30 | [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | New doc — outbound SMS via CCaaS API, Journeys, MCP, or file upload |
+| 2026-04-30 | [Service Operations Agent](09-administration/feature-service-operations-agent.md) | ⚠️ Preview — AI assistant for admin config; GA May 2026 |
+| 2026-04-30 | [Secure Consult/Transfer for PSTN and IVR](01-channels/voice/feature-secure-consult-transfer-pstn.md) | ⚠️ Preview — auto-pause recording on external PSTN transfer; GA Jun 2026 |
 | 2026-04-30 | [ACS PSTN Integration](01-channels/voice/feature-voice-acs-pstn.md) | New doc — ACS resource setup, number acquisition |
 | 2026-04-30 | [Direct Routing (Bring Your Own Carrier)](01-channels/voice/feature-voice-direct-routing.md) | New doc — SBC requirements, SIP carrier via ACS |
 | 2026-04-30 | [Microsoft Calling Plans](01-channels/voice/feature-voice-calling-plans.md) | New doc — Teams Phone numbers in Contact Center |
