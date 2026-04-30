@@ -4,6 +4,8 @@ Internal consultant reference for Dynamics 365 Contact Center and Customer Servi
 
 **136 features documented** across 11 categories. Coverage is ongoing.
 
+→ **[Full feature reference](FEATURES.md)** — single-page view with gotchas, new additions, and the complete list
+
 ---
 
 ## How to use
@@ -17,6 +19,53 @@ Each doc follows the same structure:
 - **Gotchas** — things that will catch you out on a real project
 
 Docs link back to the Microsoft Learn source and include a review trigger note at the bottom.
+
+---
+
+## What's New — April 2026
+
+New features and breaking changes. Grouped by area; "Applies to" shows channel scope and any deployment restriction.
+
+### ⚠️ Breaking Changes
+
+| Feature | What changed | Action required |
+|---------|-------------|-----------------|
+| [WhatsApp Channel](01-channels/digital-messaging/feature-whatsapp-channel.md) | BSUID deprecation — **existing integrations break June 2026** | Migrate BSUID before June 2026 |
+| [Recording & Transcription](01-channels/voice/feature-voice-recording-transcription.md) | Azure Event Grid is now required for recording upload | Provision Event Grid and update config |
+
+### Voice
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Enhanced Dial Pad for DTMF Tones](01-channels/voice/feature-enhanced-dial-pad-dtmf.md) | Faster, reliable DTMF tone delivery to IVRs and PSTN | Voice · All deployments |
+| [Callback Deduplication](01-channels/voice/feature-callback-deduplication.md) | Prevents duplicate overflow callbacks from the same caller/channel/queue | Voice · All deployments |
+| [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | Customer opt-out captured by voice agent; consent travels through escalation | Voice · All deployments |
+| [Secure Consult/Transfer for PSTN and IVR](01-channels/voice/feature-secure-consult-transfer-pstn.md) `⚠️ Preview` | Auto-pauses recording during external PSTN consult; DTMF passthrough | Voice · All deployments |
+
+### Digital Messaging
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Infobip SMS Channel](01-channels/digital-messaging/feature-sms-infobip.md) | Infobip as a third SMS provider alongside ACS and Twilio | SMS · All deployments |
+| [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | Outbound SMS via CCaaS API, Customer Journeys, MCP, or file upload | SMS · All deployments |
+
+### Routing
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Queue Availability API](02-routing/feature-queue-availability-api.md) | Real-time rep availability and wait times per queue | All channels · All deployments |
+
+### Agent Experience
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Cancel Voice Consult with External Number](03-agent-experience/feature-cancel-voice-consult.md) | Cancel a consult or transfer during the ringing phase; extends to PSTN and Teams users | Voice · All deployments |
+
+### Administration
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Service Operations Agent](09-administration/feature-service-operations-agent.md) `⚠️ Preview · GA May 2026` | AI assistant for configuring channels, routing, and queues via natural language | All channels · Standalone |
 
 ---
 
