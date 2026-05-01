@@ -6,6 +6,16 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 ---
 
+## 🆕 New & Updated — May 2026
+
+| Date | Feature | What changed / why it's here |
+|------|---------|------------------------------|
+| 2026-05-01 | [Custom Voice for Voice Agents](01-channels/self-service/feature-custom-voice-voice-agents.md) | New doc — custom neural voice for IVR agents; GA Feb 27, 2026 |
+| 2026-05-01 | [Proactive Voice Engagement](01-channels/voice/feature-proactive-voice-engagement.md) | New doc — outbound calling with AMD, predictive/preview dial, SIP outcomes; GA Mar 2026 |
+| 2026-05-01 | [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | New doc — forms, suggested replies, adaptive cards for chat and WhatsApp; GA Mar 30, 2026 |
+| 2026-05-01 | [Speaker-Wise Split Recordings](01-channels/voice/feature-speaker-split-recordings.md) | New doc — colour-coded per-speaker recording tracks in closed conversation view |
+| 2026-05-01 | [Customer Feedback Surveys](10-integration-and-extensibility/feature-surveys.md) | Deprecation noted — post-call survey toggle on voice workstream Language tab removed Aug 2025 |
+
 ## 🆕 New & Updated — Feb to Apr 2026
 
 | Date | Feature | What changed / why it's here |

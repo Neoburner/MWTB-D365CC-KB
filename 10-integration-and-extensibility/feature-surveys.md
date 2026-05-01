@@ -31,6 +31,7 @@ Use on any deployment where the client wants CSAT or NPS measurement. Essential 
 - **`MCS_CSAT` variable naming is critical.** Different variable name = no analytics. Verify during Copilot Studio setup, not go-live.
 - **Case resolution survey flow is off by default.** Enable it explicitly in Power Automate. Consistently forgotten in case-channel deployments.
 - **Never copy survey agents between environments.** They look fine but won't work. Recreate in each environment.
+- **Deprecated August 01, 2025:** The post-call survey toggle on the **Language** tab of the voice workstream in Copilot Service admin center has been removed. Configure post-call surveys using Copilot Studio directly instead. See [deprecations page](https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/deprecations-contact-center).
 
 ---
 

@@ -2,7 +2,7 @@
 
 Internal consultant reference for Dynamics 365 Contact Center and Customer Service. One doc per feature. No sales copy — just what it does, when to use it, and what will catch you out.
 
-**136 features documented** across 11 categories. Coverage is ongoing.
+**140 features documented** across 11 categories. Coverage is ongoing.
 
 → **[Full feature reference](FEATURES.md)** — single-page view with gotchas, new additions, and the complete list
 
@@ -19,6 +19,32 @@ Each doc follows the same structure:
 - **Gotchas** — things that will catch you out on a real project
 
 Docs link back to the Microsoft Learn source and include a review trigger note at the bottom.
+
+---
+
+## What's New — May 2026
+
+New features and breaking changes.
+
+### Voice & Self-Service
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Custom Voice for Voice Agents](01-channels/self-service/feature-custom-voice-voice-agents.md) | Custom neural voice for IVR agents; requires Microsoft approval (limited access) | Voice · Standalone |
+| [Proactive Voice Engagement](01-channels/voice/feature-proactive-voice-engagement.md) | Outbound calling with AMD, predictive/preview dial, SIP outcomes | Voice · Standalone |
+| [Speaker-Wise Split Recordings](01-channels/voice/feature-speaker-split-recordings.md) | Per-speaker colour-coded recording tracks in closed conversation view | Voice · Both |
+
+### Digital Messaging
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | Forms, suggested replies, adaptive cards for live chat and WhatsApp | Digital · Both |
+
+### ⚠️ Deprecations
+
+| Feature | What changed | Action required |
+|---------|-------------|-----------------|
+| [Customer Feedback Surveys](10-integration-and-extensibility/feature-surveys.md) | Post-call survey toggle on voice workstream Language tab removed August 2025 | Configure post-call surveys via Copilot Studio directly |
 
 ---
 
@@ -75,6 +101,8 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | Doc | What it covers |
 |-----|---------------|
 | [Voice Channel Overview](01-channels/voice/feature-voice-channel-overview.md) | Architecture, prerequisites, network assessment |
+| [Proactive Voice Engagement](01-channels/voice/feature-proactive-voice-engagement.md) | Outbound calling with AMD, predictive/preview dial, SIP outcomes, Customer Insights Journeys integration |
+| [Speaker-Wise Split Recordings](01-channels/voice/feature-speaker-split-recordings.md) | Colour-coded per-speaker recording tracks in closed conversation view; no separate config |
 | [ACS PSTN Integration](01-channels/voice/feature-voice-acs-pstn.md) | ACS resource setup, number acquisition, ACS-to-D365 connection |
 | [Direct Routing (Bring Your Own Carrier)](01-channels/voice/feature-voice-direct-routing.md) | SBC requirements, SIP carrier connection via ACS |
 | [Microsoft Calling Plans](01-channels/voice/feature-voice-calling-plans.md) | Teams Phone numbers in Contact Center, geographic availability |
@@ -113,6 +141,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Pre-Conversation Survey](01-channels/digital-messaging/feature-pre-conversation-survey.md) | Chat only, 10-question limit, exact context key names |
 | [Infobip SMS Channel](01-channels/digital-messaging/feature-sms-infobip.md) | Infobip as third SMS provider; configured in Messaging accounts alongside ACS/Twilio |
 | [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | Outbound SMS via CCaaS API, Customer Insights Journeys, MCP, or file upload |
+| [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | Forms, suggested replies, adaptive cards for live chat and WhatsApp; GA Mar 30, 2026 |
 
 ### Self-Service
 | Doc | What it covers |
@@ -120,6 +149,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [IVR / Voice Agents](01-channels/self-service/feature-ivr-voice-agents.md) | Copilot Studio IVR, 1-hour call limit, NLU+ |
 | [Customer Assist Agent (AI Self-Service)](01-channels/self-service/feature-customer-assist-agent.md) | Autonomous AI agent, Copilot credits, voice + digital, escalation |
 | [Bot-to-Agent Escalation](01-channels/self-service/feature-bot-escalation.md) | Context transfer at handoff, variable mapping, agent notification |
+| [Custom Voice for Voice Agents](01-channels/self-service/feature-custom-voice-voice-agents.md) | Custom neural voice for IVR agents; limited access, requires Microsoft approval; GA Feb 27, 2026 |
 
 ---
 
@@ -310,4 +340,4 @@ The following features are identified in the batch audit checklist but not yet d
 
 ---
 
-*Last updated: 2026-04-30 · 136 features documented*
+*Last updated: 2026-05-01 · 140 features documented*
