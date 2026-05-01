@@ -189,9 +189,7 @@ Paste this in full into the Teams action's Adaptive Card field. The `@{...}` exp
 
 Once your PA flow is saved and you have the trigger URL:
 
-1. Open `/Users/neoburner/Documents/Claude/Scheduled/d365cc-feature-monitor/SKILL.md`
-2. In Step 9, replace `[YOUR_PA_HTTP_TRIGGER_URL]` with the URL from PA
-3. Save — that's it. Next time the monitor runs and finds something, the Teams card fires automatically
+The PA trigger URL is already wired into the SKILL.md. No further configuration needed — the next monitor run that finds new features will fire the Teams card automatically.
 
 ---
 
