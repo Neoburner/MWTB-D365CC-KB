@@ -1,6 +1,6 @@
 # Power Automate → Teams Notification: KB Feature Alerts
 
-**Purpose:** When the Cowork `d365cc-feature-monitor` task finds and documents new D365 CC features, it POSTs a JSON payload directly to a Power Automate HTTP trigger. PA formats that into a rich Adaptive Card and posts it to your Teams channel.
+**Purpose:** When the Cowork `d365cc-feature-monitor` task finds and documents new D365 CC features, it POSTs a JSON payload directly to a Power Automate HTTP trigger. PA formats it into a rich Adaptive Card and posts it to your Teams channel.
 
 No GitHub webhook involved — Cowork fires the POST itself at the end of each run, the same way it calls Pushover.
 
@@ -43,9 +43,9 @@ In the trigger, paste this JSON schema into **"Request Body JSON Schema"**:
 {
   "type": "object",
   "properties": {
-    "date": { "type": "string" },
-    "new_feature_count": { "type": "integer" },
-    "repo_url": { "type": "string" },
+    "date":               { "type": "string" },
+    "new_feature_count":  { "type": "integer" },
+    "repo_url":           { "type": "string" },
     "features": {
       "type": "array",
       "items": {
@@ -53,6 +53,7 @@ In the trigger, paste this JSON schema into **"Request Body JSON Schema"**:
         "properties": {
           "name":     { "type": "string" },
           "category": { "type": "string" },
+          "emoji":    { "type": "string" },
           "url":      { "type": "string" },
           "summary":  { "type": "string" }
         }
@@ -62,7 +63,7 @@ In the trigger, paste this JSON schema into **"Request Body JSON Schema"**:
 }
 ```
 
-Save the trigger. PA generates the **HTTP POST URL** — copy it. This is what goes into `[YOUR_PA_HTTP_TRIGGER_URL]` in the SKILL.md.
+Save the trigger. PA generates the **HTTP POST URL**. The PA trigger URL is already wired into the SKILL.md.
 
 ---
 
@@ -86,13 +87,15 @@ Name this loop `Loop_features`.
 
 Inside, add **Append to array variable**:
 - Variable: `docLines`
-- Value:
+- Value (type this into the expression editor):
+
 ```
-@{concat('• **', items('Loop_features')?['category'], '** → [', items('Loop_features')?['name'], '](', items('Loop_features')?['url'], ')  \n_', items('Loop_features')?['summary'], '_')}
+@{concat(items('Loop_features')?['emoji'], ' **[', items('Loop_features')?['name'], '](', items('Loop_features')?['url'], ')**', '\n', items('Loop_features')?['category'], '\n_', items('Loop_features')?['summary'], '_')}
 ```
 
-This builds one formatted line per feature, e.g.:
-> `• **05-copilot-and-ai** → [Agent Assist Suggestions](https://github.com/...)  `
+This produces one block per feature, e.g.:
+> `✨ **[Agent Assist Suggestions](https://github.com/...)**`
+> `05-copilot-and-ai`
 > `_Real-time suggestions surfaced to agents during active conversations_`
 
 ---
@@ -114,112 +117,175 @@ Add action: **Microsoft Teams → Post card in a chat or channel**
 - **Post as:** Flow bot
 - **Post in:** Channel
 - **Team / Channel:** select yours
-- **Adaptive Card:** paste the JSON below
+- **Adaptive Card:** paste the full JSON from Part 2 below
 
 ---
 
 ## Part 2 — Adaptive Card JSON
 
-Paste this in full into the Teams action's Adaptive Card field. The `@{...}` expressions resolve at runtime from the PA dynamic content.
+Paste this in full into the Teams action's Adaptive Card field.
 
 ```json
 {
   "type": "AdaptiveCard",
-  "version": "1.4",
+  "version": "1.5",
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "body": [
     {
       "type": "Container",
-      "style": "emphasis",
+      "style": "accent",
       "bleed": true,
       "items": [
         {
-          "type": "TextBlock",
-          "text": "D365 Contact Center — Knowledge Base",
-          "weight": "Bolder",
-          "size": "Medium"
-        },
-        {
-          "type": "TextBlock",
-          "text": "New feature docs added",
-          "spacing": "None",
-          "isSubtle": true
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "verticalContentAlignment": "Center",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4OBTl",
+                  "size": "Medium",
+                  "style": "Default",
+                  "altText": "Dynamics 365 Contact Center"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "verticalContentAlignment": "Center",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "📚 D365 Contact Center KB",
+                  "weight": "Bolder",
+                  "size": "Large",
+                  "color": "Light",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "✅ New feature docs landed",
+                  "size": "Small",
+                  "color": "Light",
+                  "spacing": "None"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
     {
-      "type": "FactSet",
-      "facts": [
+      "type": "Container",
+      "style": "emphasis",
+      "spacing": "None",
+      "items": [
         {
-          "title": "Date",
-          "value": "@{triggerBody()?['date']}"
-        },
-        {
-          "title": "New docs",
-          "value": "@{triggerBody()?['new_feature_count']}"
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "🗓️  @{triggerBody()?['date']}",
+                  "size": "Small",
+                  "isSubtle": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "📄  @{triggerBody()?['new_feature_count']} new doc(s)",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right",
+                  "color": "Accent"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
     {
-      "type": "TextBlock",
-      "text": "**Documents added:**",
-      "wrap": true,
-      "spacing": "Medium"
-    },
-    {
-      "type": "TextBlock",
-      "text": "@{outputs('DocListText')}",
-      "wrap": true,
-      "spacing": "Small"
+      "type": "Container",
+      "spacing": "Medium",
+      "separator": true,
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "**What landed**",
+          "size": "Medium",
+          "weight": "Bolder"
+        },
+        {
+          "type": "TextBlock",
+          "text": "@{outputs('DocListText')}",
+          "wrap": true,
+          "spacing": "Small"
+        }
+      ]
     }
   ],
   "actions": [
     {
       "type": "Action.OpenUrl",
-      "title": "View KB on GitHub",
-      "url": "@{triggerBody()?['repo_url']}"
+      "title": "📖  Open Knowledge Base",
+      "url": "@{triggerBody()?['repo_url']}",
+      "style": "positive"
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "🆕  What's New",
+      "url": "@{concat(triggerBody()?['repo_url'], '/blob/main/README.md')}",
+      "style": "default"
     }
   ]
 }
 ```
 
----
-
-## Part 3 — Wire it into the Cowork task
-
-Once your PA flow is saved and you have the trigger URL:
-
-The PA trigger URL is already wired into the SKILL.md. No further configuration needed — the next monitor run that finds new features will fire the Teams card automatically.
+> **Note on the header image:** The image URL points to a Microsoft CDN asset. If it stops rendering, swap in any publicly accessible PNG — e.g. your company logo or the Microsoft Dynamics 365 icon from their partner portal. The card degrades gracefully if the image 404s.
 
 ---
 
-## What the Teams card looks like
+## What the card looks like
 
 ```
-┌─────────────────────────────────────────────────┐
-│ D365 Contact Center — Knowledge Base            │
-│ New feature docs added                          │
-├─────────────────────────────────────────────────┤
-│ Date      2026-05-01                            │
-│ New docs  2                                     │
-├─────────────────────────────────────────────────┤
-│ Documents added:                                │
-│                                                 │
-│ • 05-copilot-and-ai → Agent Assist Suggestions  │
-│   Real-time suggestions surfaced during calls   │
-│                                                 │
-│ • 06-ai-agents → Autonomous Case Resolution     │
-│   AI agent that resolves cases end-to-end       │
-├─────────────────────────────────────────────────┤
-│ [View KB on GitHub]                             │
-└─────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│  [D365 icon]  📚 D365 Contact Center KB              │  ← accent (blue)
+│               ✅ New feature docs landed              │
+├──────────────────────────────────────────────────────┤
+│  🗓️ 2026-05-01              📄 2 new doc(s)          │  ← emphasis (grey)
+├──────────────────────────────────────────────────────┤
+│  What landed                                         │
+│                                                      │
+│  ✨ Agent Assist Suggestions          (linked)       │
+│  05-copilot-and-ai                                   │
+│  Real-time suggestions surfaced during calls         │
+│                                                      │
+│  🧠 Autonomous Case Resolution        (linked)       │
+│  06-ai-agents                                        │
+│  AI agent that resolves cases end-to-end             │
+├──────────────────────────────────────────────────────┤
+│  [📖 Open Knowledge Base]  [🆕 What's New]          │
+└──────────────────────────────────────────────────────┘
 ```
 
 ---
 
 ## Known Gotchas
 
-- **PA HTTP trigger URL contains a SAS token** — treat it as a secret. Don't commit it to the public repo; it lives only in the SKILL.md (which isn't in the repo).
-- **Adaptive Card markdown links** — Teams renders `[text](url)` in TextBlocks with `wrap: true`. If links appear as plain text, switch to one `Action.OpenUrl` button per doc as a fallback.
-- **`try/except` in the Cowork POST** — a PA error or timeout won't abort the KB run. Check the PA run history if cards stop appearing.
+- **PA HTTP trigger URL contains a SAS token** — treat it as a secret. It lives only in the SKILL.md (not committed to the public repo).
+- **Adaptive Card markdown links** — Teams renders `[text](url)` in TextBlocks with `wrap: true`. If links appear as plain text, open the card in the [Adaptive Cards Designer](https://adaptivecards.io/designer/) and verify.
+- **`try/except` in the Cowork POST** — a PA error or timeout won't abort the KB run. Check the PA run history in make.powerautomate.com if cards stop appearing.
 - **PA free plan** allows 6,000 runs/day. Each KB monitor run = one PA run. No concern.
