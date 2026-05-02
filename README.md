@@ -2,7 +2,7 @@
 
 Internal consultant reference for Dynamics 365 Contact Center and Customer Service. One doc per feature. No sales copy — just what it does, when to use it, and what will catch you out.
 
-**140 features documented** across 11 categories. Coverage is ongoing.
+**143 features documented** across 11 categories. Coverage is ongoing.
 
 → **[Full feature reference](FEATURES.md)** — single-page view with gotchas, new additions, and the complete list
 
@@ -45,6 +45,7 @@ New features and breaking changes.
 | Feature | What changed | Action required |
 |---------|-------------|-----------------|
 | [Customer Feedback Surveys](10-integration-and-extensibility/feature-surveys.md) | Post-call survey toggle on voice workstream Language tab removed August 2025 | Configure post-call surveys via Copilot Studio directly |
+| [Copilot Draft a Chat Response](05-copilot-and-ai/feature-copilot-draft-chat-response.md) | Preview feature removed 14 July 2025 | None — use Copilot Help Pane instead |
 
 ---
 
@@ -142,6 +143,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Infobip SMS Channel](01-channels/digital-messaging/feature-sms-infobip.md) | Infobip as third SMS provider; configured in Messaging accounts alongside ACS/Twilio |
 | [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | Outbound SMS via CCaaS API, Customer Insights Journeys, MCP, or file upload |
 | [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | Forms, suggested replies, adaptive cards for live chat and WhatsApp; GA Mar 30, 2026 |
+| [Enhanced Chat Widget](01-channels/digital-messaging/feature-enhanced-chat-widget.md) | ⚠️ Preview — faster load, modern look, expanded branding; new workstream script tag; GA Sep 2026 |
 
 ### Self-Service
 | Doc | What it covers |
@@ -217,6 +219,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Copilot Plugins](05-copilot-and-ai/feature-copilot-plugins.md) | ⚠️ Preview — 15-min publish delay |
 | [Verbatim Responses](05-copilot-and-ai/feature-copilot-verbatim-responses.md) | ⚠️ Preview — Ask a Question only, KB manager configures |
 | [Real-Time Sentiment Analysis](05-copilot-and-ai/feature-realtime-sentiment.md) | 1-10 scale, live conversation display, Azure AI dependency |
+| [Copilot Draft a Chat Response](05-copilot-and-ai/feature-copilot-draft-chat-response.md) | ⚠️ Deprecated — removed Jul 2025; see Copilot Help Pane for equivalent |
 
 ---
 
@@ -261,6 +264,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Bot / Self-Service Analytics](08-analytics-and-reporting/feature-bot-analytics.md) | Containment rate, escalation rate, Copilot Studio dependency |
 | [Customer Sentiment Analytics](08-analytics-and-reporting/feature-sentiment-analytics.md) | Historical sentiment trends, 1-10 scale, requires sentiment enabled |
 | [Topics Analytics (AI-Clustered)](08-analytics-and-reporting/feature-topics-analytics.md) | AI conversation clustering, topic-level KPIs, Customer Intent Agent link |
+| [Segment-Level Metrics Across Queues](08-analytics-and-reporting/feature-segment-level-metrics.md) | Per-queue wait time, SLA adherence, and abandonment tracking across multi-queue interactions; GA May 2026 |
 
 ---
 
@@ -311,6 +315,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Audit Logging](11-security-and-compliance/feature-audit-logging.md) | Power Platform audit, Purview, routing table audit |
 | [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) | Voice spam, auto-block threshold |
 | [Chat Authentication](11-security-and-compliance/feature-chat-authentication.md) | OAuth 2.0 JWT, portal sign-in, context passing |
+| [Enhanced Customer Authentication](11-security-and-compliance/feature-enhanced-authentication.md) | OAuth 2.0 + JWT, mid-conversation auth, Copilot Studio alignment; GA Sep 2026 |
 | [Data Masking](11-security-and-compliance/feature-data-masking.md) | Chat regex rules + voice sensitive variable masking |
 | [Screen Recording](11-security-and-compliance/feature-screen-recording.md) | Desktop companion app, full-screen capture, retention |
 | [RBAC / Security Roles](11-security-and-compliance/feature-rbac-security-roles.md) | OOB role set, three-tier structure, Dataverse + persona + experience profile |
@@ -340,4 +345,4 @@ The following features are identified in the batch audit checklist but not yet d
 
 ---
 
-*Last updated: 2026-05-01 · 140 features documented*
+*Last updated: 2026-05-02 · 143 features documented*

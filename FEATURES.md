@@ -10,6 +10,11 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | What changed / why it's here |
 |------|---------|------------------------------|
+| 2026-05-02 | [Segment-Level Metrics Across Queues](08-analytics-and-reporting/feature-segment-level-metrics.md) | New doc — per-queue wait time, SLA, abandonment tracking; GA May 2026. **Note: changes existing metric calculations — flag with ops team** |
+| 2026-05-02 | [Enhanced Chat Widget](01-channels/digital-messaging/feature-enhanced-chat-widget.md) | New doc — faster load, modern look, new workstream script tag; Preview May 2026 / GA Sep 2026 |
+| 2026-05-02 | [Enhanced Customer Authentication](11-security-and-compliance/feature-enhanced-authentication.md) | New doc — OAuth 2.0, mid-conversation auth, Copilot Studio alignment; GA Sep 2026 |
+| 2026-05-02 | [Copilot Draft a Chat Response](05-copilot-and-ai/feature-copilot-draft-chat-response.md) | ⚠️ Deprecated — removed 14 Jul 2025; no migration path, replaced by Copilot Help Pane |
+| 2026-05-02 | [Voice Channel — Overview & Architecture](01-channels/voice/feature-voice-channel-overview.md) | Deprecation noted — local hosting removed for Switzerland (Oct 2024), India & Japan (Sep 2024) |
 | 2026-05-01 | [Custom Voice for Voice Agents](01-channels/self-service/feature-custom-voice-voice-agents.md) | New doc — custom neural voice for IVR agents; GA Feb 27, 2026 |
 | 2026-05-01 | [Proactive Voice Engagement](01-channels/voice/feature-proactive-voice-engagement.md) | New doc — outbound calling with AMD, predictive/preview dial, SIP outcomes; GA Mar 2026 |
 | 2026-05-01 | [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | New doc — forms, suggested replies, adaptive cards for chat and WhatsApp; GA Mar 30, 2026 |
