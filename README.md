@@ -20,6 +20,8 @@ Each doc follows the same structure:
 
 Docs link back to the Microsoft Learn source and include a review trigger note at the bottom.
 
+This is generated using a custom Agentic framework that draws on my experience, tone, and voice, and includes my edits where I felt appropriate. Please use it as a guide rather than a definitive source. I hope it helps! - Ben
+
 ---
 
 ## What's New — May 2026
