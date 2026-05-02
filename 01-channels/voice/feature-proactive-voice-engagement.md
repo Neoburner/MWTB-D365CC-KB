@@ -35,6 +35,15 @@ Use this for any scenario where you need the platform to initiate voice contact 
 - Predictive dial can spike concurrent call volume unexpectedly. Make sure your PSTN capacity and queue configuration can absorb it.
 - Proactive engagement analytics reports are separate from the standard Historical Analytics dashboard — you need to check the proactive engagement tables, not look in the default dashboards.
 
+## Consultant notes
+
+## Consultant notes
+
+- Licence mapping is where proactive voice projects go wrong early. Single-channel campaigns are within Contact Center. Multi-step cross-channel journeys need Customer Insights Journeys licensed and provisioned. Get this confirmed in writing before scoping — a mid-project licence conversation kills momentum.
+- Predictive dial capacity planning is consistently underestimated. If the campaign dials ahead of agent availability, you can spike concurrent active calls well beyond what your PSTN capacity or queue configuration expects. Run a load estimate before go-live and sanity-check it with ops.
+- Answering machine detection accuracy varies by target phone type, carrier, and region. Build a fallback strategy for AMD false positives (voicemails that get classified as answered) and false negatives (live answers that get classified as AMD). Set the client's expectation that AMD is "mostly right" not "always right" before they build KPIs around it.
+
+
 ---
 
 *Review when Customer Insights Journeys integration patterns mature — the MCP server trigger for AI agent-led proactive engagement is still preview as of 2026wave1.*

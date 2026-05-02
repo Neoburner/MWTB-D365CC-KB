@@ -38,6 +38,15 @@ Use this to acquire, release, and port numbers as you scale. Skip only if you ma
 - **Geographic restrictions apply.** Some countries forbid cross-border routing (EU data residency). Local numbers must stay local.
 - **Released numbers orphan workstreams.** Workstream still references the number. D365 won't clean that up automatically.
 
+## Consultant notes
+
+## Consultant notes
+
+- Number porting is almost always on the critical path for voice go-lives. Start the LOA process with the client's existing carrier as early as possible — in parallel with everything else, not sequentially. US and EU estimates of 1–3 weeks are optimistic; allow 4 weeks and have a contingency plan if it slips.
+- "Released numbers are permanent" needs to be said out loud in handover training, not just written in documentation. The most expensive number management mistake is releasing a live number because someone thought they were doing a housekeeping exercise. Put a peer review step on number releases in your ops runbook.
+- Build a small buffer pool of spare numbers before go-live and don't release them for at least 90 days after cutover. You'll need them for failover testing, additional agent lines, and the inevitable "we forgot to include this team" conversation two weeks post-launch.
+
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if LNP regulations shift or ACS adds new geographies*

@@ -29,6 +29,15 @@ Use surveys on virtually every chat deployment. They're the simplest way to feed
 - User Consent link format is fragile. The `[link text](URL)` markdown must be exact. Test in the live widget during UAT—formatting errors show as raw markdown.
 - No branching or conditional logic. If the client wants different follow-up questions based on an initial answer, survey can't do it—you need an AI agent or IVR.
 
+## Consultant notes
+
+## Consultant notes
+
+- Pre-conversation surveys are the easiest way to get intent-based routing working on day one — a simple "What do you need help with?" dropdown with four options beats a custom AI classification model for most clients at go-live. Push for simplicity here.
+- Survey question abandonment is real. Every extra question loses a percentage of customers. Challenge any client who wants more than three questions — make them justify each one. The fewer questions, the higher completion.
+- The survey question name matching requirement for record identification is the gotcha that breaks the most basic implementations. Build a naming convention document as part of project setup (Name, Email, Phone, CaseNumber) and enforce it — don't leave it to individual admin judgment.
+
+
 ---
 
 *Source last updated: 2026-01-20 | Worth checking again if pre-conversation survey expands to other channels or gains conditional logic*

@@ -31,6 +31,15 @@ Skip it if your outbound SMS is purely one-way notification (no reply expected) 
 - File-based upload for bulk sends is handy for batch campaigns but doesn't support real-time context passing in the same way the API does. Test context handoff specifically for the trigger method you're using.
 - SMS opt-out handling is still your responsibility. Proactive SMS doesn't automatically suppress sends to customers who've opted out of SMS communications — that has to be managed in your CRM or customer data layer before the send is triggered.
 
+## Consultant notes
+
+## Consultant notes
+
+- Opt-out suppression is your problem, not D365's. Before any proactive SMS goes live, confirm with the client that their CRM or data layer is suppressing sends to opted-out customers before the trigger fires. This is the compliance landmine that causes the most post-go-live panic, and it's entirely outside the platform.
+- The separate outbound workstream requirement catches everyone the first time. It's not obvious from the docs that your inbound SMS workstream won't handle outbound-initiated conversations — they're different workstream types. Build the outbound workstream into your setup checklist.
+- For any client doing proactive SMS at meaningful volume, get legal sign-off on the message content, opt-out mechanism, and consent basis before go-live — especially in GDPR jurisdictions or the US (TCPA). The technical setup is the easy part.
+
+
 ---
 
 *Worth checking whether the proactive engagement API gains voice channel support in the next wave — the pattern is being extended channel by channel.*

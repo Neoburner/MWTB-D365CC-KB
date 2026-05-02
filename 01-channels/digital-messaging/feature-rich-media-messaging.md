@@ -34,6 +34,15 @@ Use this when you want to collect structured data during a live chat without ask
 - No versioning of templates out of the box. If you update a template mid-project, there's no rollback.
 - The customer response from a form comes back as structured data, but how that's stored or routed depends on your Copilot Studio / Power Automate handling — plan this before go-live.
 
+## Consultant notes
+
+## Consultant notes
+
+- Template governance is the post-go-live problem nobody scopes. Who creates new templates? Who reviews them? Who has admin access to change them? No built-in approval workflow means you need a process. Get this agreed and documented before handover — otherwise you'll get a support call three months later when someone pushed a broken adaptive card to production.
+- The WhatsApp 3-button limit catches clients who design flows on desktop without testing on mobile. Build the WhatsApp flows within the constraint from day one rather than retrofitting.
+- Adaptive card JSON is not a no-code skill. If the client's admin team is expected to maintain custom JSON templates post-go-live, either train them specifically or design the templates to only use the standard form controls (forms, suggested replies) that have a UI in admin center. Don't leave raw JSON maintenance to someone who isn't comfortable editing it.
+
+
 ---
 
 *Check whether rich media template support expands to SMS or Teams in 2026wave2.*

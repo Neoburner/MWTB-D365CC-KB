@@ -29,6 +29,15 @@ Skip it if you're in a jurisdiction where recording disclosure is achieved by a 
 - Declined consent means no transcription for the entire session. AI features that depend on transcription (Copilot summaries, sentiment analysis, real-time suggestions) will be unavailable for those calls. Factor that into your quality and reporting expectations.
 - "Consent travels through escalation" sounds clean but requires the voice agent to pass the consent flag correctly in the context handoff. Test this explicitly in UAT — the context variable name matters and varies by Copilot Studio implementation.
 
+## Consultant notes
+
+## Consultant notes
+
+- This is a legal-led feature. Before designing the consent flow, get the legal requirement documented — which jurisdiction, what the consent basis is, whether verbal consent is sufficient or a DTMF key press is required, and what the consequence of declining is. The technical implementation is straightforward once the legal brief exists.
+- The biggest architecture oversight is assuming consent capture works on all call paths. If any callers can reach a rep directly (no IVR, direct dial, Teams escalation), the consent step doesn't fire. Map every inbound path before declaring this feature covers your compliance obligation.
+- Test the consent context variable handoff in Copilot Studio explicitly — the variable name must match exactly between the bot topic and the D365 recording configuration. A mismatch means recording runs despite the customer declining, which is the compliance failure you're trying to avoid.
+
+
 ---
 
 *Worth revisiting as regulators clarify AI-generated transcript requirements — the consent model may need extending to cover AI-derived data, not just the raw recording.*

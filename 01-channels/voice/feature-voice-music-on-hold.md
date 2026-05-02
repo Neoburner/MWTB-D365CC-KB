@@ -37,6 +37,15 @@ Use custom MOH to reinforce brand, reduce perceived wait time, or meet accessibi
 - **Audio glitches if the Azure region is far away.** No way to specify which region hosts your file.
 - **MOH cannot be turned off.** Calls always hear something — Microsoft default if you don't upload custom.
 
+## Consultant notes
+
+## Consultant notes
+
+- Custom MOH looks like a simple request but audio production creates delay. The client needs to source or record the audio, get it approved (often requires marketing sign-off), and then convert it to the correct format. Start this process in parallel with other setup work — don't wait until the week before go-live.
+- The no version history / overwrite risk is worth flagging explicitly in handover docs. Clients who update their on-hold message months later and accidentally upload a corrupt file will be on the Microsoft default with no way to roll back. Keep a copy of every approved audio file in a shared folder outside D365.
+- Hold experience has a disproportionate impact on customer satisfaction relative to the effort to get it right. If average hold time is over 60 seconds, a simple 90-second branded message with a queue position update is worth the production effort — it noticeably reduces abandonment perception.
+
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if audio storage limits increase or spatial audio ships*

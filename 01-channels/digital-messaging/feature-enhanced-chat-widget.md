@@ -30,6 +30,15 @@ Worth switching to once GA if you care about chat load performance or need more 
 - "Enhanced media support" is vague in the release plan — get clarity on what file types and media embeds are supported before committing to this in a contract.
 - The preview period (May–Sep 2026) is relatively short. If you're planning a deployment between now and Sep 2026, factor in whether to start on the old widget or go straight to preview.
 
+## Consultant notes
+
+## Consultant notes
+
+- Don't commit to using the preview widget for a client go-live before September 2026. Preview features can change or slip. If a deployment is going live between May and September 2026, start on the existing widget and plan a post-GA switch — it's lower risk than debugging preview behaviour under go-live pressure.
+- "Enhanced media support" being vague in the release plan is a yellow flag if you're putting specific file type or rich content requirements in a contract. Get written confirmation from Microsoft or wait for GA docs before promising it to a client.
+- Web team coordination on the script tag switch is almost always forgotten until late. Flag it explicitly in the project plan — it's not just an admin center change, it's a website deployment that the client's web team needs to release. The timeline is rarely a week.
+
+
 ---
 
 *Worth revisiting when the GA notes land in Sep 2026 to confirm full customisation option list and any DOM changes.*

@@ -47,6 +47,15 @@ Use the companion app for embedded Contact Centre deployments (Salesforce, Servi
 - **Uninstall leaves junk in the registry.** Full cleanup requires manual registry work. Reinstalls may be incomplete.
 - **No VDI version exists.** For Citrix or VMware Horizon, the app has to be in the VDI image, not the client machine. Contact Microsoft for guidance.
 
+## Consultant notes
+
+## Consultant notes
+
+- Ask about VDI and Citrix in discovery, not in UAT. This is the most common late-breaking blocker for embedded voice deployments. If agents use Citrix or VMware Horizon, the companion app architecture changes entirely — the app goes in the VDI image, not the client machine, and there are audio driver and network path implications that need scoping separately.
+- Admin privilege for install is a showstopper in locked-down enterprise environments. Confirm whether Intune or SCCM is available before scoping the rollout approach. Some clients can't do self-service install and need IT to visit every desk — account for that in the go-live timeline.
+- Audio quality issues post-go-live almost always trace back to the local network, not the app. Run ACS network diagnostics from actual agent workstations (not the server room) before go-live. Satellite, congested Wi-Fi, and corporate proxy configurations are the usual culprits and they only show up when you test from the right seat.
+
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if agents report audio issues, Contact Centre breaks compatibility with the app, or if macOS/Linux support ships*

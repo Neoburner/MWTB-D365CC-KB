@@ -29,6 +29,15 @@ Skip configuration only if your callback volumes are so low that duplicates have
 - If you use queue ID in the key, transferring a work item between queues could affect deduplication behaviour — the caller could end up with a valid second callback from the destination queue.
 - The "play custom message in loop" option requires a recorded audio file or text-to-speech content. Don't configure this in a hurry — the message should include an accurate wait time estimate, which requires real-time data to be useful.
 
+## Consultant notes
+
+## Consultant notes
+
+- Configure this for any voice deployment where callback overflow is in scope — it's a quick admin center setting with a disproportionate operational benefit. Duplicate callbacks create artificial queue depth and waste rep capacity; the fix takes 10 minutes.
+- The deduplication TTL gap in the docs is a genuine concern. Test the edge case in UAT: caller requests callback, calls back 2 hours later — does D365 treat it as a duplicate or a new request? Know the answer before ops asks it at go-live.
+- If you're configuring the "play custom message in loop" option, book the audio production into your project plan early. It needs a script, a recording, and a review cycle — it's never a same-day task, and clients almost always underestimate how long it takes to get a branded recording approved.
+
+
 ---
 
 *Revisit after wave 2 to see if deduplication extends to non-voice callback channels.*
