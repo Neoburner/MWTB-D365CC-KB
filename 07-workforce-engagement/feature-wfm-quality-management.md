@@ -46,6 +46,12 @@ Use Quality Management for subjective standards (empathy, accuracy, brand voice)
 - **Sample size matters:** 10 calls per agent per month with 500+ calls total = unrepresentative sample.
 - **Old conversations get archived:** Calls >90 days old may not be available for re-review. Plan for this if audits matter.
 
+## Consultant notes
+
+- Scorecard design is the most important decision in the entire QM setup, and it's the one that gets the least time in most projects. Spend a session with the QA team lead and at least one experienced supervisor defining the criteria and weights before you build anything. A scorecard that doesn't reflect how the client actually evaluates quality will be quietly abandoned within three months.
+- Distinguish this from the Quality Evaluation Agent clearly in handover. The AI agent (`feature-quality-evaluation-agent.md`) auto-scores all conversations and is good for volume coverage. WFM Quality Management is for human-reviewed scoring, calibration, and coaching on a sample. Both have value; they're doing different jobs. Clients who have both often use AI scores as the trigger for human review — flag as high-risk by AI, validated by a QA analyst.
+- Calibration sessions need to be in the operational playbook, not just the initial setup guide. Without regular calibration, scores drift. Two QA analysts who score the same call 20 points apart will produce unreliable trend data. Build a quarterly calibration session into whatever cadence the client runs their QA reviews.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this if: QA variance exceeds 10%, an agent appeals, or AI and manual scores diverge*

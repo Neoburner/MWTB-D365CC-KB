@@ -38,6 +38,12 @@ Use proactive chat to reduce friction for new visitors or people stuck on a page
 - High-frequency triggers (like "scroll past 10%") spam customers with invitations; set realistic thresholds.
 - If an agent doesn't respond within the routing timeout, the invitation expires and the visitor sees "no agents available."
 
+## Consultant notes
+
+- Proactive chat sounds compelling in discovery and generates noise in production unless the trigger rules are very specifically designed. Push back hard on "trigger on 30 seconds on any page" type requirements — that's how you get invitation spam.
+- The agent capacity implication gets missed. If a proactive invite fires and no agent picks it up within the routing timeout, the customer sees "no agents available" — which is worse than no invitation at all. Confirm the queue has headroom before enabling.
+- If the client's website has a restrictive Content Security Policy, proactive chat will silently fail to load the widget. Test the widget on the actual production domain early, not just a staging environment with relaxed headers.
+
 ---
 
 *Source last updated: 2026-02-13 | Worth checking again if chat widget version changes or you spot trigger accuracy issues*

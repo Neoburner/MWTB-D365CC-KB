@@ -35,6 +35,12 @@ Use during live operations to spot staffing gaps, detect SLA breaches, monitor C
 - **Queue depth ≠ understaffing.** Could be longer AHT, system delays, or complexity shifts.
 - **Aggregation hides imbalance.** An "80% service level" across a queue might hide one agent handling all the complex calls while others sit idle on simple ones.
 
+## Consultant notes
+
+- The 5–10 minute refresh lag matters when supervisors try to use this for real-time intervention. It's an operational tool for tactical decisions, not a true live feed. Set that expectation in supervisor training or they'll assume the numbers are current when they're not.
+- CSAT skew from only counting completed surveys is worth flagging to whoever owns KPI definitions. If leadership benchmarks against the intraday CSAT score, they're looking at an optimistic subset. Make sure that's understood before targets are set.
+- "Aggregation hides imbalance" is the one to raise in supervisor training. An 80% service level across a queue can hide one agent carrying all the complex calls while others handle simple ones. Supervisors need to drill into agent-level views, not just queue totals.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting when staffing model changes, SLA or CSAT baselines are updated, or supervisors give feedback on metric usefulness*

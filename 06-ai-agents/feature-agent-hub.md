@@ -22,6 +22,11 @@ None — Agent Hub is a portal/navigation surface, not a configuration screen.
 ## Gotchas
 - **Not a configuration screen.** Admins expecting to set up an AI agent need to follow the links to the relevant feature areas. Document the correct setup paths to avoid confusion.
 
+## Consultant notes
+
+- Clients and admins expect this to be a configuration screen and spend time looking for things they can't do here. Orient new admins quickly: Agent Hub is where you understand the landscape and navigate to the right places, not where you configure anything. Put this in the handover documentation explicitly to avoid first-day confusion.
+- Useful for onboarding yourself to a new Contact Center environment — follow the links from Hub to understand what's deployed and what isn't. Keep that use case in mind when you're picking up an existing implementation.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after Agent Hub gains direct configuration capabilities*

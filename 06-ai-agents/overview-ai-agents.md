@@ -77,6 +77,12 @@ These agents automate specific service workflows. Some are available in Contact 
 - **Availability varies significantly.** Case Management Agent and Customer Knowledge Management Agent are Customer Service only. Service Operations Agent is in preview. Quality Evaluation Agent and Customer Intent Agent are available in Contact Center. Don't promise capabilities that are CS-only in a Contact Center standalone deployment.
 - **These agents work best as a layered stack, not as point solutions.** Customer Intent discovers what customers ask about → Knowledge Management keeps articles current → Quality Evaluation assesses interaction quality → Agent Insights measures the outcomes. Positioning them together as a continuous improvement loop resonates better with clients than explaining each one in isolation.
 
+## Consultant notes
+
+- The taxonomy map is genuinely necessary before any client walkthrough of this area. "Contact center agents" and "autonomous service agents" are overlapping labels in Microsoft's documentation that describe different but related things. Produce a one-page visual before the first feature demo or the client will spend the session confused about which "agent" they're looking at.
+- Availability gaps catch people: Case Management Agent and Customer Knowledge Management Agent are Customer Service-only. Service Operations Agent is Preview. Don't promise Contact Center capabilities that live in Customer Service or Preview without explicitly flagging it during scoping.
+- The continuous improvement loop framing (Intent → Knowledge → Quality → Insights) resonates better with clients than explaining each agent individually. Use it in discovery to position the full picture before diving into individual features.
+
 ---
 
 *Generated: 2026-04-30 | Review when: Service Operations Agent exits preview, or new agent types added to the taxonomy*

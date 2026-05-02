@@ -26,6 +26,12 @@ Use if the client has an existing Azure Bot Framework investment or needs lower-
 - **User-Assigned Managed Identity is required.** Client secret authentication isn't supported. Non-obvious Azure requirement that can block setup.
 - **Routing loop prevention is automatic.** If the agent stops receiving conversations after escalating, check whether it's in the same queue it's routing to.
 
+## Consultant notes
+
+- Default to Copilot Studio for any new bot build unless the client has an existing Azure Bot Framework investment worth preserving. The Azure path has more setup complexity and is the less-supported forward direction for D365 Contact Center.
+- User-Assigned Managed Identity is the Azure-specific requirement that needs an Azure admin, not just a Power Platform admin. Get Azure admin involvement confirmed upfront — it's a different team in most enterprise clients and has its own access and approval process.
+- If a client is mid-Azure-bot build when this path is discussed, check whether the Chat channel or the D365 Omnichannel extension has been registered. Both are needed and the setup order matters.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after Azure agent gains voice channel support*

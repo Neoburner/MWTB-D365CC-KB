@@ -35,6 +35,12 @@ Use holiday schedules for all public holidays and company-specific closures. Def
 - Deleting a holiday schedule doesn't delete the Operating Hours record, but removing the link disables holiday routing for that queue.
 - Holiday schedules apply only to customer-facing routing. Agent shift management and scheduling tools don't auto-recognize holidays.
 
+## Consultant notes
+
+- The one-schedule-per-Operating-Hours-record rule creates more maintenance overhead than clients expect in multi-region deployments. An EMEA client with separate UK, German, and French holiday calendars needs three separate holiday schedules maintained annually. Make sure the client's operations team understands this at handover — the volume of manual entry required is not obvious from the configuration screen.
+- Establish the annual update deadline in the handover documentation rather than leaving it as a general reminder. "Update before end of October for the following year" gives whoever inherits the system a concrete target. Without it, the update happens in mid-December under time pressure or gets missed entirely.
+- If the client uses WFM scheduling, note explicitly that holiday schedules only affect customer-facing routing — they don't automatically feed into WFM shift plans or agent scheduling. If a public holiday means reduced staffing, the WFM side still needs to be updated separately. This is particularly relevant for deployments where both routing and WFM are in scope.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this: Your organisation adds new public holidays or changes calendar structure*

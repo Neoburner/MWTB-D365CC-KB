@@ -28,6 +28,12 @@ Use for embedded-in-Salesforce only. If the client uses D365 CRM as their system
 - **Back up Dataverse first.** Existing contacts can get duplicated or overwritten if the environment's dirty. Do this before sync.
 - **Column mapping is a data architecture call.** Get the Salesforce admin involved — custom field mappings need both sides understood.
 
+## Consultant notes
+
+- The one-way sync constraint needs to be understood by anyone who is designing Contact Center agent actions or AI agent capabilities. If macros, Power Automate flows, or Copilot Studio agents update contact or account records in Dataverse, those changes will not appear in Salesforce — which means the Salesforce team may overwrite them on the next sync cycle or simply never see them. Design with this limitation explicitly in mind and document which system of record applies to each field.
+- The Dataverse backup step is easy to skip on the assumption that the environment is clean. It rarely is. Even dev/UAT environments accumulate test records, sample data, or imported contacts that can interact unpredictably with the sync. Back up before configuring the connector, every time.
+- Column mapping requires the Salesforce admin and the D365 consultant to work through it together — it's a data architecture conversation, not a config form. Custom Salesforce fields need a corresponding Dataverse field of a compatible type, and the mapping direction has to make sense for how each field is used in practice. Trying to drive this from the D365 side without Salesforce input produces mappings that look correct but break in practice.
+
 ---
 
 *Source last updated: 2026-02-18 | Check this: Bidirectional sync supported, or additional CRM connectors added*

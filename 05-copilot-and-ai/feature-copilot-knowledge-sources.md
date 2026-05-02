@@ -29,6 +29,12 @@ Use when knowledge extends beyond D365 KB — SharePoint docs, policies, product
 - **Preview status.** Not production-critical for regulated industries until GA. Configuration and behaviour are subject to change.
 - **Copilot connectors ≠ Graph connectors.** Confusing naming. Clients asking about "Copilot connectors" as knowledge sources need to redirect to Graph connectors instead.
 
+## Consultant notes
+
+- Custom instructions being silently bypassed when Copilot Studio sources are in use creates a noticeable inconsistency in rep experience. If reps notice Copilot responding differently to the same question depending on which source answered it, this is why. Make sure the client understands this before extending to Copilot Studio sources.
+- Preview status means this shouldn't be in production scope for regulated industries without an explicit client sign-off acknowledging the risk. Don't deploy it as a standard feature — position it as a roadmap item until GA.
+- Copilot connectors vs Graph connectors naming confusion is real. Clients and partners referring to "Copilot connectors" as a knowledge source need redirecting to the Graph connector path. Worth clarifying in any pre-sales or discovery conversation where this feature comes up.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after feature reaches GA or additional knowledge source types are supported*

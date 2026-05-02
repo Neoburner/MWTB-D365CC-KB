@@ -28,6 +28,12 @@ Use on any deployment where reps need to reference internal knowledge during con
 - **Portal URL configuration requires a portal with matching org domain first.** You can't configure the URL format before the portal exists—this dependency surprises clients who want rep-sharing before the portal is live.
 - **Suggest-as-you-type requires knowledge articles in Published state**—draft articles don't appear in suggestions.
 
+## Consultant notes
+
+- Portal dependency for rep-to-customer article sharing needs to be surfaced in requirements, not design. "We'll build the portal later" means that capability doesn't work at go-live, and clients rarely make the connection between the two features until they test it.
+- Article publishing state is one to include in the content management handover to the KB team. Draft articles don't appear in suggest-as-you-type. If the client's team publishes articles slowly or keeps drafts as working documents, reps won't see them — and there's no error to diagnose.
+- Search mode (any vs all) is worth a quick conversation with the client's KB team. The right choice depends on how articles are written and how specific rep search queries tend to be. Large libraries with long articles benefit from `all`; smaller, niche-topic libraries are better on `any`.
+
 ---
 
 *Source last updated: 2026-01-29 | Review when: External search provider list expanded or federated search configuration changes*

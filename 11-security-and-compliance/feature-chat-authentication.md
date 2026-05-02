@@ -28,6 +28,12 @@ Use when the client has an authenticated portal and wants to route/prioritise ba
 - **Custom status codes break auto-linkage silently.** Non-active status codes fail with no error. Audit contact status codes before relying on auto-identification.
 - **JWT expiry on long portal sessions.** Customer logs in, browses for an hour, opens chat—token's expired. Work with portal team on token refresh or authentication fails intermittently.
 
+## Consultant notes
+
+- The custom JWT signing service is a development task that belongs in the portal team's scope, not the D365 team's scope. If the D365 admin is expected to build this, they can't — they configure the auth settings in admin center and provide the public key endpoint requirement; the portal team builds the token issuance. Get both teams in the same room to agree on the interface contract (JWT claims, signing algorithm, key rotation process) before anyone builds anything.
+- JWT token expiry on long portal sessions is the silent intermittent failure that's hard to diagnose post-go-live. A customer who logs in, spends time on the portal, and then opens chat will get an authentication failure if their token has expired and the portal hasn't refreshed it. Work through the token refresh behaviour with the portal team during design — it's easier to design a refresh mechanism upfront than to diagnose the intermittent auth failure in production.
+- Audit contact status codes before relying on auto-identification. This is quick to do and catches the common issue where an organisation has custom lifecycle states (Prospect, Archived, Former Customer) on their contact records. Any contact not in Active status won't get auto-linked, and there won't be an error — the rep just won't see the pre-populated customer record. Knowing this upfront means the client can decide whether to address the status codes or accept manual linking for those segments.
+
 ---
 
 *Source last updated: 2026-01-22 | Check this: Additional channels gain authentication support, or Power Apps portals authentication mechanism changes*

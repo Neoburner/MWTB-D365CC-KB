@@ -28,6 +28,12 @@ Use when there is a custom recommendation engine or external knowledge system to
 - **Don't plan around the deprecated native AI suggestions.** Any client reference to "smart assist suggesting knowledge articles" is functionality that no longer exists. The replacement is Copilot's Ask a Question.
 - **Copilot Studio agents cannot be used here.** Smart assist is Azure Bot Service only. Non-obvious constraint that surprises teams standardised on Copilot Studio.
 
+## Consultant notes
+
+- The deprecation of native AI suggestions needs to be in every discovery conversation where smart assist is mentioned. Clients referencing "smart suggest," "article suggestions," or "similar cases" are describing functionality that no longer exists. The replacement path is Copilot's Ask a Question — redirect them there.
+- Azure Bot Service only (Copilot Studio not supported) is non-obvious for teams that have standardised on Copilot Studio for everything else. Raise it before anyone starts building — discovering it mid-sprint when the bot is already half-built is not a good day.
+- For most new deployments the answer to "do we need smart assist?" is now "use Copilot instead." Reserve custom smart assist bots for clients with specialist recommendation engines or external knowledge systems that have no Copilot integration.
+
 ---
 
 *Source last updated: 2026-04-15 | Review when: Copilot Studio support added for smart assist, or feature further deprecated*

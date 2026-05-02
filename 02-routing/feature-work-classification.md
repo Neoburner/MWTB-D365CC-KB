@@ -30,6 +30,12 @@ Required for any routing deployment beyond trivial single-queue setups. Classifi
 - **Rerouted items accumulate skills.** When a work item is rerouted after a transfer, it goes through classification again and skills append (not replace). Over-tagged items match agents incorrectly or not at all with Exact Match.
 - **The 10-ruleset limit is rarely a problem with clean design.** If you're approaching it, classification design is handling too many edge cases that belong elsewhere.
 
+## Consultant notes
+
+- Rating model consistency is worth auditing before go-live even if you're confident in the setup. It's a 10-minute check in the skill configuration and it prevents the type of silent failure that's genuinely difficult to diagnose in production.
+- The rerouted-items-accumulate-skills behaviour is one to cover explicitly in the admin handover. If an agent transfers a conversation and it goes back through classification, skills stack rather than reset. Over-tagged items with Exact Match either get assigned to the wrong person or stay stuck.
+- Start rule-based at go-live, revisit ML later. Don't promise Intelligent Skill Finder as part of a go-live scope unless 12 months of clean, labelled conversation data is already available and you've audited it.
+
 ---
 
 *Source last updated: 2025-07-09 | Review when: New classification rule types or limit changes in release notes*

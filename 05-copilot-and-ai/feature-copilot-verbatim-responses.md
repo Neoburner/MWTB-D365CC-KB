@@ -28,6 +28,12 @@ Use for content where exact wording is legally, regulatorily, or contractually r
 - **Knowledge managers configure this, not Copilot admins.** Requires editing published articles. Make sure knowledge managers understand the tagging mechanisms (`doNotSummarize` keyword and Verbatim icon) and have KB editor access.
 - **Preview status.** Tagging methods and behaviour are subject to change before GA.
 
+## Consultant notes
+
+- This is a knowledge management team task, not a Copilot admin task. Whoever owns the KB needs to understand the `doNotSummarize` tag and the Verbatim section icon — it's done in article editing, not in the admin centre. Include KB editors in the Copilot training, not just Copilot admins.
+- Identify and tag compliance-critical articles before Copilot is enabled for reps, not after. Discovering that Copilot has been paraphrasing legal disclaimers for two weeks in production is an uncomfortable conversation. Build the tagging work into the pre-go-live checklist.
+- Section-level verbatim is usually preferable to full-article verbatim. Most articles have a mix of general information (fine to paraphrase) and specific terms or procedures (require verbatim). Section tagging is more precise and gives Copilot room to be useful on the rest of the article.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after feature reaches GA or additional verbatim tagging methods are added*

@@ -27,6 +27,12 @@ Use for any messaging-heavy contact centre. Most valuable for teams with high vo
 - **Locale mismatch silently hides replies.** If a quick reply's locale doesn't match the channel's language setting, reps won't see it. Common cause of "why can't I see my quick replies?" tickets post-go-live.
 - **Custom context key slugs render blank if the variable isn't populated.** If the conversation doesn't have the context key set (no pre-survey response, no API call), the slug resolves to empty string—the rep sends a message with a blank where the value should be.
 
+## Consultant notes
+
+- Locale mismatch is the most common "why can't I see my quick replies" ticket after go-live. Check locale settings on both the replies and the channel language configuration as part of go-live verification — it takes two minutes and prevents a confusing post-launch report.
+- Custom context key slugs rendering blank when the variable isn't populated is worth testing explicitly in UAT with empty or missing pre-survey responses. A rep sending a greeting with a blank where the customer name should be is a noticeable quality issue that erodes the point of having quick replies.
+- Tag taxonomy design matters for usability far more than most admins expect. Tags that reflect how reps think about an interaction (Greeting / Hold / Closing / Legal Disclosure) are searched and used. Tags that reflect the admin's internal categorisation logic aren't.
+
 ---
 
 *Source last updated: 2025-06-26 | Review when: New slug types supported or workstream scoping behaviour changes*

@@ -24,6 +24,11 @@ Enable on any deployment with AI agents to track deflection rates and quality. E
 ## Gotchas
 - **Quality score won't populate without Quality Evaluation Agent.** The KPI is linked to that feature — enable both together or expect a blank metric.
 
+## Consultant notes
+
+- Quality score being blank without Quality Evaluation Agent active is the most common report complaint. When scoping AI agent analytics, plan both features together — they're only useful in combination.
+- KPI goal thresholds should be set in consultation with the client's operations and AI team, not as a default. An ambitious autonomous rate target that the agent can't realistically reach demoralises the team and generates questions about whether the agent is working. Set conservative initial targets and tune upwards with data.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after dashboard expands to embedded deployment or new KPI types are added*

@@ -30,6 +30,12 @@ Turn on the full suite if the client wants self-service scheduling. You can roll
 - **Time-off requests silently break if manager isn't assigned.** Reps need a manager on their user record. Catch this during user setup, not at go-live.
 - **Auto-reject on the acceptance deadline is a snare.** If reps aren't accepting schedules, they auto-reject and supervisors have to re-publish. Watch acceptance rates closely in the first weeks.
 
+## Consultant notes
+
+- Define the shift activity type library before building the first schedule. Customer-facing, break, training, and admin are the standard four — agree these with the client's operations lead and lock them down. Activity type names are visible to reps in the calendar, so "Admin" means something different to a contact centre than it does to corporate IT.
+- The acceptance deadline default is aggressive for initial rollouts. Reps who haven't used WFM scheduling before will miss the notification. Set it longer in the first cycle (7+ days), communicate explicitly via their usual channel (Teams, email), and monitor acceptance rates before tightening it.
+- Phased rollout works well here: base scheduling first, then add shift bidding and swapping once supervisors are comfortable with the core workflow. Turning everything on at once creates a training overhead that typically results in half the features being ignored.
+
 ---
 
 *Source last updated: 2026-04-27 | Check this if: New scheduling features ship, or the UI changes*

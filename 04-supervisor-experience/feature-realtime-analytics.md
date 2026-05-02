@@ -26,6 +26,12 @@ Standard in any supervisor deployment. Real-time analytics gives supervisors the
 - **Voice real-time analytics must be explicitly enabled** even after you've set up the voice channel. It's a separate checkbox in Operations → Insights → Real-time Analytics. Easy to miss at go-live.
 - **Customised apps need manual nav setup.** If the Copilot Service workspace app has been customised, the reports won't appear in navigation without the App Designer steps. Check before go-live testing.
 
+## Consultant notes
+
+- Voice real-time analytics as a separate checkbox is the one to add to your go-live verification checklist. It's not enabled by default when you configure voice, and supervisors sitting in front of a blank voice report section is a common post-go-live surprise.
+- Customised workspace apps needing manual App Designer nav setup is the one that bites projects with heavily customised apps. Verify reports appear in the custom app navigation during UAT — don't assume they will.
+- Give supervisors training on what the metrics mean, not just where to find them. "High AHT" or a sentiment drop doesn't tell a supervisor what to do. Train the interpretation and the intervention, not just the feature.
+
 ---
 
 *Source last updated: 2026-02-19 | Check this after new report types are added or Contact Center-specific reports change*

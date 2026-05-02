@@ -29,6 +29,12 @@ Required config on any deployment with more than one team or one queue. Consult 
 - **FetchXML filters are off by default.** In multi-team orgs, reps can see all teams' queues and reps in the consult/transfer panel without filtering. Visibility and compliance risk that's easy to miss.
 - **Consult inbox view is not OOB.** Reps in high-consult-volume roles need to track active consults. Won't have a view unless explicitly configured.
 
+## Consultant notes
+
+- FetchXML filters being off by default is the multi-team deployment risk that's easy to miss. Without filters, reps can see and transfer to queues across all teams and business units — which is both an operational problem (accidental misdirects) and potentially a compliance one. Enable filters on any deployment with more than one team from day one.
+- Wrap-up after transfer requiring workstream config is one to add to the setup checklist. The toggle alone does nothing. It's a two-step dependency that's easy to tick off as complete when it isn't.
+- Consult to queue should be enabled by default on most deployments. Requiring reps to know which specific person is available for a consult doesn't scale — consult-to-queue removes that cognitive overhead and routes to the best available rep automatically.
+
 ---
 
 *Source last updated: 2026-01-23 | Review when: Consult/transfer options expanded for voice-specific scenarios*

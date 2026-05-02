@@ -29,6 +29,12 @@ Use on any workstream where you want automated triage, deflection, or self-servi
 - **Publish first.** Unpublished agents don't appear in the agent picker. Publish in Copilot Studio first.
 - **Missing `CloseOmnichannelConversation` on voice = hung calls.** For voice, every exit path must set this variable. Otherwise calls hang without closing properly.
 
+## Consultant notes
+
+- One agent per workstream is the constraint that gets pushed on most. Clients want different bot topics for different scenarios routed through the same workstream — the answer is to design the workstream structure to accommodate the agent, not the other way around. Have that conversation in the design phase, not when someone's trying to add a second bot to a workstream in UAT.
+- Context variable mapping on escalation is worth investing design time in. Without it, the agent receives the handoff cold — no customer name, no intent, no what-the-bot-discovered. A well-designed escalation passes everything the rep needs to pick up smoothly. Design it alongside the bot topics, not as an afterthought.
+- `CloseOmnichannelConversation` on every voice exit path is the one to verify in UAT explicitly. Every topic that can end a voice conversation needs it. Missing it causes calls to hang without closing, which surfaces in production as a wave of ghost sessions.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after multi-agent per workstream support is added or inactivity timeout becomes configurable*

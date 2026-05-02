@@ -33,6 +33,12 @@ Turn this on for any standalone deployment that needs staffing forecasts. Enable
 - **24-hour data lag catches everyone.** Tell the client up front — enable this, then wait a day for data to appear.
 - **This is not the same as WFM forecasting** (`feature-wfm-forecasting-capacity.md`). Both exist. This AI report does SLA/concurrency modelling. WFM forecasting plugs into capacity plans and scenario modelling.
 
+## Consultant notes
+
+- Enable this early in the project, not at go-live. More historical data equals a better model. Turning it on during UAT rather than the day of go-live gives the model a few weeks of training data and avoids the "the forecast looks wrong" conversation in the first post-go-live week.
+- Concurrency misconfiguration is the accuracy killer to verify upfront. Ask the client's ops team how many conversations a chat rep actually handles simultaneously, not how many the system allows. If reps regularly take 3 simultaneous chats and concurrency is set to 1, the staffing demand output is meaningless.
+- This is not the same as WFM forecasting — they do different things. If the client asks "which one should we use?" the answer is usually both, but for different purposes: this for SLA/demand modelling, WFM forecasting for capacity planning and schedule building.
+
 ---
 
 *Source last updated: 2025-06-30 | Check this if: Forecast rolls out to embedded, or range limits change*

@@ -27,6 +27,12 @@ Run this on every UAT → Production migration. Test the sequence during the pro
 - **What's not migrated matters as much as what is.** Skill finder, presence, queue membership, and role persona mapping all need manual attention. Assign an owner for each before migration day.
 - **Test in staging first.** Running this for the first time on go-live is high-risk. FetchXML filtering and entity privilege checks will surface issues that need troubleshooting time.
 
+## Consultant notes
+
+- Run the migration at least once into a staging or pre-prod environment before the UAT-to-production run. First-time migrations nearly always surface at least one entity privilege issue or FetchXML filter problem that needs diagnosing. Having those resolved in staging means the production migration can proceed with confidence. Discovering them on go-live day does not go well.
+- Build the post-migration manual checklist before migration day, not after. Operating hours, intelligent skill finder, presence settings, queue membership, and role persona mapping all need to be recreated or verified in the target environment — assign an owner to each item explicitly. If it's not owned, it doesn't get done, and the person who finds out is usually the first agent who tries to log in.
+- The separate channel migration guide requirement is easy to overlook — there isn't one unified migration process for all channels. If the deployment has voice, live chat, and SMS, you'll be following three separate guides in sequence. Factor that into the migration window estimate. A multi-channel migration that looks like a 2-hour job on paper can take 4–5 hours when you add up each channel's sequence.
+
 ---
 
 *Source last updated: 2026-03-18 | Check this: Configuration Migration tool updates to include currently excluded items*

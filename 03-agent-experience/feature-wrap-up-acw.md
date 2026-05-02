@@ -34,6 +34,12 @@ Use ACW when you have post-call processes: quality assurance notes, capture cust
 - Metrics can be skewed. "Average Handle Time" may exclude wrap-up by default, making agents seem faster than they are.
 - Conversation close and wrap-up close are separate events. Failing to track the difference obscures process inefficiencies.
 
+## Consultant notes
+
+- Disposition code enforcement via form validation, not training, is the lesson most clients learn post-go-live when reporting shows incomplete data. If dispositions matter for QA or analytics, make them required fields — don't rely on agent discipline to complete optional ones consistently.
+- Wrap-up timer duration should be set based on actual post-call work timing from the client's current process, not a guess. 2 minutes is too short for complex cases; 10 minutes inflates queue wait times unnecessarily. Ask the operations team what their current after-call work actually looks like.
+- The presence/capacity during wrap-up distinction is worth explaining carefully in the supervisor training. Agents can appear available on the presence indicator while their capacity is still consumed in wrap-up — that discrepancy between what the real-time dashboard shows and what actually routes through causes confusion for supervisors monitoring live.
+
 ---
 
 *Source last updated: 2026-04-30 | Review when: Configuration changes, after agent feedback on timer duration, or during AHT baseline reviews*

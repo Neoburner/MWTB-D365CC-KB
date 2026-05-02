@@ -35,6 +35,12 @@ Use for payment conversations only with a separate PCI-DSS Level 1 payment syste
 - ACS recordings are outside Dataverse — manage ACS residency separately.
 - Agents with direct Blob Storage or Dataverse access can bypass masking. Restrict recording storage access.
 
+## Consultant notes
+
+- D365 Contact Center is not PCI-DSS Level 1 certified as a platform. The correct architecture for payment handling is to route card data collection through an external PCI-compliant payment system and pass a token back to D365. This is a design conversation that needs to happen with the client's compliance team before any payment flow is built — not after the build is complete. If a client is expecting D365 to handle card numbers directly, that expectation needs to be corrected early.
+- The distinction between what masking does in chat (stored transcript only, not the live session) and what it does in voice (pauses recording and transcription) is important for the compliance story. Agents handling chat payments can still see unmasked card numbers during the live conversation — masking only protects the stored record. For clients who need agents to never see card data, the design must route payment collection through an external IVR or iframe payment widget, not through the D365 chat interface.
+- Get a QSA (Qualified Security Assessor) involved if the client is targeting formal PCI-DSS certification. This doc covers the technical controls available in D365, but formal PCI certification requires documented architecture, scoping decisions, and evidence that the controls work as claimed. That's a compliance exercise that sits outside the Contact Center implementation scope.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this: PCI-DSS requirements update or Microsoft releases native payment tokenization*

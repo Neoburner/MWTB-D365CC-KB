@@ -31,6 +31,12 @@ Use on any deployment with unified routing. Capacity profiles are the standard a
 - **Record routing capacity doesn't auto-release.** For email/task/record routing, reps accumulate stale items that count against capacity indefinitely. Document the queue item deactivation process in your operational runbook.
 - **Assignment blocking forces Busy-DND automatically.** Supervisors and reps may not understand why a rep's status changed without manual action. Brief supervisors on this behaviour before go-live.
 
+## Consultant notes
+
+- Treat the reset frequency decision as permanent from the moment you create the profile — because it is. The design conversation about Immediate vs. End of day needs to happen before anything is built. For mixed deployments (voice + email + chat on the same reps), you'll typically need separate profiles per channel type with different reset settings. Design the profile matrix first, then build.
+- The record routing capacity release issue is the one that generates the most post-go-live operational questions. Reps working cases or emails don't get automatic capacity release when they finish — items stay allocated until manually deactivated. This is non-obvious to operations teams, and if it isn't in the runbook, supervisors will wonder why reps keep showing as Busy when they appear to have no open work. Write the deactivation process into the handover documentation explicitly.
+- The Busy-DND auto-set behaviour needs to be explained to supervisors before go-live. If a rep's status flips to Busy-DND and the supervisor doesn't know why, the assumption is usually a tech fault rather than a capacity limit being reached. A five-minute briefing on what capacity profile blocking looks like in practice prevents that confusion.
+
 ---
 
 *Source last updated: 2026-02-03 | Check this: Capacity profile reset options expanded, or automatic capacity release added for record routing*

@@ -33,6 +33,12 @@ Use on any deployment where the client wants automated QA, consistent scoring, o
 - **"Enable AI agents" is in Power Platform admin, not D365.** If Quality Evaluation Agent won't activate, check this setting — easy to miss.
 - **Compliance obligation:** Reps must know interactions may be monitored, recorded, and scored. Legal requirement in many jurisdictions — build into project governance.
 
+## Consultant notes
+
+- Evaluation criteria design needs to come from the client's QA team, not from you. Generic criteria (was the agent polite, did they resolve the issue) produce generic scores that nobody acts on. Invest time in a criteria workshop before any configuration starts — the framework is the whole point.
+- Scoring threshold needing a sign-off before enabling is one to document formally. What constitutes "good quality" at this organisation is a business decision, not a technical one. Get written sign-off from the quality lead before enabling — the threshold can't change without remediation.
+- The prerequisites checklist (three must-show-Ready) is the silent failure. Walk through all three during setup, not just the D365 toggle. The "Enable AI agents" being in Power Platform admin is the one that most commonly gets missed.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this after email evaluation exits preview or new record types are added*

@@ -30,6 +30,12 @@ Queues are required for every routing deployment — they are the fundamental un
 - **Always configure a fallback queue per workstream.** Without it, routing errors cause work items to vanish silently.
 - **Design queues before workstreams.** Common mistake: build them reactively and end up with duplicate, inconsistently named queues.
 
+## Consultant notes
+
+- Queue design on paper first is non-negotiable. Every project where queues get built reactively ends up with poorly named duplicates, inconsistent priority numbers, and settings that contradict each other. One whiteboard session before anyone touches the admin centre saves days of cleanup.
+- Queue type being permanent is worth putting on a printed checklist for the config sprint. If a client adds a voice channel six months after go-live, they'll need a voice queue regardless of what exists. Think ahead in the design phase.
+- Fallback queue per workstream is the quiet gap. Miss it and routing errors drop work silently — no error, no alert, just items disappearing. Always configure it and verify it explicitly via routing diagnostics in UAT.
+
 ---
 
 *Source last updated: 2026-03-25 | Review when: New assignment methods released or overflow management updates*

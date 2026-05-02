@@ -29,6 +29,12 @@ Every deployment uses session templates. OOB defaults are a reasonable starting 
 - **Design session templates and agent scripts together.** The session template determines which script loads — they're tightly coupled. Don't finalise templates before script requirements are clear.
 - **Unique name prefix is easy to violate.** Agree on a prefix convention early (e.g. `cc_`) and document it.
 
+## Consultant notes
+
+- The "reps can't close additional tabs" behaviour is the one that causes the most friction post-go-live if the template design wasn't thought through properly. Every tab that gets added to a template during an "it might be useful" conversation becomes permanent workspace clutter. Push back on scope creep in template design — one anchor tab plus one genuinely necessary additional tab is the right starting point for most scenarios.
+- Design session templates and agent scripts in the same design session, not sequentially. The session template controls which script loads and under what conditions, so finalising templates without knowing the script structure means potential rework. If agent scripts are still being written when session templates are being built, at minimum agree the script names and trigger conditions before committing the template configuration.
+- Agree on a naming convention for the `<prefix>_<name>` format at the start of the build phase and enforce it. Three to four character prefix based on client or project initials is typical. If multiple consultants are working on the build without a documented convention, you'll end up with inconsistent names that are awkward to fix later without reconfiguring workstream associations.
+
 ---
 
 *Source last updated: 2025-08-19 | Check this: Session template capabilities expand or new OOB templates added*

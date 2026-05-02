@@ -26,6 +26,12 @@ Enable all four unless you have a specific operational reason to restrict one. F
 - **Toggles alone aren't enough.** Supervisors also need the Ongoing Conversations dashboard to use these controls. Both must be configured — see `feature-supervisor-conversation-controls.md`.
 - **Force Close has no confirmation prompt** in some channel contexts — train supervisors on when and how to use it before go-live.
 
+## Consultant notes
+
+- Verify direct role assignment in UAT, not during go-live. Most D365 deployments use team-based role assignments for everything else, so it's easy to assume Omnichannel supervisor works the same way. It doesn't, and discovering it during go-live week is avoidable.
+- Enable all four controls unless there's a specific operational reason not to. Force Close being limited to senior supervisors is a reasonable operational policy — but implement it as a process decision, not a system restriction, since there's no per-role toggle.
+- QA programmes need Monitor enabled explicitly. It's grouped with the other controls and easy to miss if QA wasn't front of mind when this configuration was done. Verify it's on if the client has a quality monitoring programme.
+
 ---
 
 *Source last updated: 2025-06-17 | Check this after new supervisor action types are added or Force Close becomes per-channel configurable*

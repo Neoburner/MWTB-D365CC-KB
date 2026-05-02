@@ -26,6 +26,12 @@ Required for any deployment where supervisors need to actively manage live conve
 - **Direct role assignment, not teams.** The Omnichannel supervisor role must be assigned directly to each user — team membership doesn't work here. Catches out deployments that assign roles via teams or security groups.
 - **QA programmes need Monitor enabled explicitly.** Supervisor Monitor is the enabler for live call listening and chat monitoring. If you have a QA team, confirm this is on as part of the QA workflow design — it's a separate toggle.
 
+## Consultant notes
+
+- Both steps being required is the most common supervisor control gap. Toggles alone without dashboard access means supervisors can't reach the controls. Dashboard access without toggles means they can see conversations but can't act. Verify both during UAT as a single test scenario.
+- Document the operational use case for each control type before go-live, not just the configuration. Supervisors who force-close a live call without understanding the customer impact are a real risk. A one-page "when and how to use each control" guide saves headaches.
+- This doc and `feature-supervisor-controls.md` cover the same feature from different angles — they exist as a combined reference precisely because the two-step setup is where implementations go wrong. Use both during handover.
+
 ---
 
 *Source last updated: 2026-01-28 | Check this after supervisor controls expand to embedded deployment or new control types are added*

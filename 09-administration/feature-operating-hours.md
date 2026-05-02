@@ -27,6 +27,12 @@ Use on any deployment where the contact centre doesn't operate 24/7 or needs to 
 - **The "Out of operation hours" queue overflow condition is created automatically and cannot be deleted** — only the action can be changed. If it appears unexpectedly, operating hours were attached to the queue.
 - **Holidays are easy to miss post-go-live.** Without an established process, agents will receive calls on bank holidays because nobody configured the date. Establish ownership during handover.
 
+## Consultant notes
+
+- The calendar entity migration limitation is one of the few things in Contact Center that can't be included in a solution file. Put operating hours explicitly on the manual steps list for UAT-to-production migration — it's easy to miss when everything else is deployment-automated. The first time it gets forgotten is usually when a go-live happens to fall the week after a bank holiday and the routing silently drops contacts outside business hours.
+- Establish who owns holiday calendar maintenance during handover, not as an afterthought. The most common failure mode is that nobody gets nominated, the project team moves on, and Q4 bank holidays are missing from the calendar because the operations team assumed someone else was handling it. Name a specific person and document the annual update cadence — "update by 31 October for the following calendar year" is the kind of instruction that actually gets followed.
+- One record per distinct schedule is the right design principle. Trying to handle multiple schedule patterns (e.g. different hours for specialist teams, out-of-hours cover rotations) in a single operating hours record leads to fragile configurations and confusing overflow routing. Keep schedules simple and discrete, and create additional records as needed.
+
 ---
 
 *Source last updated: 2026-03-18 | Check this: Calendar entity export/import support added, or operating hours relocated in admin center*

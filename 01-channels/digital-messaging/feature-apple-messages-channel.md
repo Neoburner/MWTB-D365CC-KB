@@ -28,6 +28,12 @@ Use Apple Messages if the customer base has high Apple device penetration and yo
 - Two parties must move before you can do anything. Apple approval and Microsoft support escalation are out of your control. Build buffer into the timeline.
 - Authentication and Apple Pay can ship in a second phase—the channel goes live without them, but you'll need them fully configured to use them.
 
+## Consultant notes
+
+- Start Apple Business Register onboarding at project kick-off, not during the implementation phase. That's not a suggestion — it's a hard constraint. Registration plus Microsoft support backend onboarding can take three to four weeks, and neither is in your control.
+- This is the most underestimated channel for project planning. Everyone assumes it'll be like setting up a WhatsApp or Facebook channel. The external dependency chain is completely different. If it's in scope, give it its own entry on the project RAID log from week one.
+- Apple Pay and rich messages are almost always deferred to a second phase in practice. If the client asks for them upfront, scope them as optional phase 2 work with a clear dependency on the base channel being stable first.
+
 ---
 
 *Source last updated: 2026-01-15 | Revisit when Apple onboarding becomes self-service, or new rich message types land*

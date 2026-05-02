@@ -25,6 +25,12 @@ Turn on both together if the client needs WFM-integrated staffing planning, espe
 - **WFM Forecasting ≠ AI Agent Forecasting report.** Different tools, different UX. WFM forecasting plugs into capacity planning. AI report has SLA/concurrency config but no capacity plan integration. Sophisticated shops use both.
 - **Capacity planning won't work without Forecasting.** Enable both at once.
 
+## Consultant notes
+
+- The two-tool story is the main thing to land with clients early. Omnichannel conversation forecasting (`feature-conversation-forecasting.md`) handles SLA and concurrency modelling. WFM forecasting handles volume prediction and feeds capacity planning. They're not duplicates — they serve different audiences (ops reporting vs. workforce planning). If you let the client discover this mid-project, you'll spend time explaining why they appear to have overlapping features.
+- If the client has an existing WFM tool (Verint, NICE, Calabrio), explore whether they want to replace it or run WFM forecasting alongside it for Contact Center-specific volumes. The export capability supports the latter, but you'll need to agree on a single source of truth for headcount decisions.
+- Enable both Forecasting and Capacity planning together from the start. Enabling Forecasting alone and coming back to Capacity planning later means the client runs part of the workflow for weeks without the planning output — that makes it hard to validate the forecast quality in context.
+
 ---
 
 *Source last updated: 2026-04-16 | Check this if: New WFM features drop, or capacity planning integrations expand*

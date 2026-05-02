@@ -44,6 +44,12 @@ Turn this on for every standalone deployment — it's your main view of conversa
 - **Report bookmark permissions get forgotten.** Supervisors saving filtered views need explicit Create/Read/Write/Delete on Report Bookmark — it's not in the standard Read grant.
 - **Bot add-on is mandatory.** Without it, the Bot dashboard mixes bot and human agents together. Enable it for any Copilot deployment.
 
+## Consultant notes
+
+- Enable this at the start of UAT, not the end. The 24-hour delay combined with enabling on the final UAT day or at go-live means the client enters the first week of production with no historical data. Enable it early, run through the dashboard with the supervisor team during UAT, and they'll arrive at go-live with two to four weeks of baseline data to compare against.
+- Walk through the add-on checkbox matrix with the client during the analytics configuration session. Base toggle on its own leaves the Bot and Proactive Outbound dashboards invisible. For any deployment with a Copilot agent, enabling the bot add-on is non-negotiable — without it, the Bot dashboard can't separate bot containment from human handling, which makes the core deflection metric useless.
+- Report bookmark permissions are the support ticket that arrives three weeks post-go-live. Supervisors will save filtered views, log off, come back the next day and find them gone — and raise it as a bug. Bake the bookmark entity permission into the security role template for supervisor roles before go-live. It's not in the default Read grant and it won't be obvious from the standard role documentation.
+
 ---
 
 *Source last updated: 2026-01-23 | Check this if: New analytics dashboards ship, or Proactive Outbound/Bot-Intent reach Customer Service*

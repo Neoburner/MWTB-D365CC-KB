@@ -31,6 +31,12 @@ Enable from day one in UAT and keep enabled in production until a replacement to
 - **Storage accumulates silently.** In high-volume environments, diagnostics data can consume significant Dataverse storage. Build a purge schedule into the operational runbook from go-live.
 - **The deprecation is real but no replacement exists yet.** Don't build long-term workflows dependent on this tool, but don't disable it until a replacement is confirmed.
 
+## Consultant notes
+
+- Enable from day one in UAT and make verifying the trace part of the UAT test process for every routing scenario. Seeing the right agent got the work isn't enough — the trace tells you which rules actually fired, which were skipped, and why. That's what you need to sign off the routing design with confidence.
+- Build the purge schedule into the operational runbook at handover. High-volume environments will accumulate significant Dataverse storage silently. It's the type of ongoing maintenance that gets forgotten until someone notices storage costs have crept up.
+- Deprecated but still the only tool. Don't disable it until a confirmed replacement exists. Document its status in the handover so the client doesn't switch it off thinking it's redundant.
+
 ---
 
 *Source last updated: 2025-04-29 | Review when: Deprecation timeline confirmed or replacement tooling released*

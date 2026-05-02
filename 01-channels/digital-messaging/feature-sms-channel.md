@@ -27,6 +27,12 @@ Use SMS for inbound customer messages and proactive notifications (appointment r
 - Toll-free verification is time-sensitive and out of your control. Submit the ACS application early—unverified numbers get higher carrier filtering. Don't defer to the final week.
 - Twilio migration uses a separate path. If migrating from Twilio SMS to ACS, use `migrate-config-data-for-sms-channel`, not the standard configuration flow.
 
+## Consultant notes
+
+- Rep-initiated outbound SMS comes up on almost every project where SMS is in scope. Cover it explicitly in the first channel scoping call — clients assume reps can text customers from the workspace; the requirement for a Power Automate flow surprises them.
+- Toll-free verification lead time needs to be built into the project plan as a fixed milestone, not a later-phase task. 3–6 weeks is the real-world range; submitting in the last fortnight of the project isn't recoverable.
+- If the client is already on Twilio for something else, it's usually easier to stay on Twilio for SMS rather than migrate to ACS. Avoid re-platforming unless there's a good reason.
+
 ---
 
 *Source last updated: 2026-02-08 | Worth checking again if direct outbound SMS is added to workspace, or new SMS providers become available*

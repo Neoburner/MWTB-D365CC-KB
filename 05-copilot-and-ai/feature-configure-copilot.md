@@ -28,6 +28,12 @@ Required first step. Every Copilot capability flows through this configuration.
 - **Custom roles are a blocker.** If the client uses custom security roles, Copilot won't work until explicit privileges are added. Audit roles early.
 - **Opt-out is irreversible.** Training data deletes immediately. Never use opt-out as a troubleshooting step.
 
+## Consultant notes
+
+- Cross-region data movement is a Power Platform admin task, not an admin centre task. For non-NA deployments, get the Power Platform admin involved early — this is often a separate IT team and their approval process has lead time.
+- Opt-out being irreversible needs to be in the admin handover in bold. The natural instinct when troubleshooting a Copilot issue is to reset something. Opting out is not a reset — it permanently deletes training data. Diagnose first, always.
+- Experience profiles are the right tool for controlling which Copilot features reach which rep populations. Resist the temptation to just enable everything globally — starting with conversation summaries and Ask a Question, then phasing in email and case summary, gives the client time to adopt each feature properly.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after Copilot GA expands to additional regions*

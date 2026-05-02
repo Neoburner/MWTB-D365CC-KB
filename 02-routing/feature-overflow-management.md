@@ -33,6 +33,12 @@ Always configure overflow for production deployments. Without it, customers wait
 - **Voice post-queue actions are restricted for transferred/overflowed items.** A call that's already been transferred or overflowed once can only be transferred again or sent to an external number—not callback or voicemail. Plan multi-hop scenarios accordingly.
 - **AI-powered immediate overflow is Preview.** Don't use in production for regulated environments yet.
 
+## Consultant notes
+
+- Out-of-hours overflow is the UAT test that almost never gets run because testing happens during business hours. Build it explicitly into the UAT test plan and force a test by temporarily adjusting operating hours to simulate closed. "We'll test it after go-live" isn't acceptable for an overflow path that goes straight to End call or Voicemail.
+- Rule-specific overrides for VIP or priority customers are worth raising in requirements if the client has any tiered service model. It's a clean solution that avoids the overhead of a separate VIP queue just to get different overflow behaviour.
+- Direct callback is usually the highest-value voice overflow action for most contact centres. If the client defaults to "End call" because it seems simpler, walk through the abandonment and CSAT impact — the conversation usually changes.
+
 ---
 
 *Source last updated: 2026-04-27 | Review when: AI-powered immediate overflow reaches GA or new overflow action types added*

@@ -32,6 +32,12 @@ Use this if your organisation has a strong brand voice and the automated IVR exp
 - If the Azure AI Speech resource is in a different region than your D365 Contact Center tenant, you may hit latency or data residency constraints.
 - **Not the same as voice style.** Standard voice profiles in D365 already let you tweak speaking speed, pitch, and style — custom voice is a completely separate thing requiring CNV training. Make sure the client actually needs CNV before going down that path.
 
+## Consultant notes
+
+- The limited access approval gate is a hard project dependency. Don't scope custom voice into a project timeline without first confirming that the Microsoft application has been submitted and ideally approved. The standard voice profiles (speaking speed, pitch, style) cover the vast majority of brand requirements without needing CNV — check whether those suffice before going down this path.
+- Confirm the client actually needs custom neural voice vs standard voice customisation. "Custom voice" in client conversations often means "can we make it sound less robotic" — which standard voice styles can handle. CNV is for "we want our brand voice actress to voice the IVR" — a fundamentally different requirement.
+- Azure AI Speech resource ownership needs to be confirmed early. This sits outside D365 administration and involves both an Azure admin and a separate approval/training pipeline. Two teams minimum, both need to know their part.
+
 ---
 
 *Worth revisiting as Microsoft expands the approved use case list — currently quite restricted to enterprise and regulated industry scenarios.*

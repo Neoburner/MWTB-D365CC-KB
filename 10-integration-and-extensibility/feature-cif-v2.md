@@ -36,6 +36,12 @@ Use CIF v2 for third-party telephony, VoIP, or comms platforms not available nat
 - Transfers between native channels and CIF v2 are app-to-app only, not cross-integration
 - Page refresh = new session; old one orphans. Session ID is iframe-unique.
 
+## Consultant notes
+
+- CIF v2 is the right choice when the client has a telephony or communication platform that isn't available as a native Contact Center channel and can't be replaced. The integration overhead is significant — iframe sandboxing, API authentication, session event handling — so it needs a developer, not just a configurator. Scope it accordingly and don't promise it as a "configuration task" in the project plan.
+- Never build new integrations on CIF v1. It's deprecated and still technically available, which means clients on old Omnichannel implementations may have it in place and may ask to extend it. If CIF v1 is in scope, the recommendation should be migration to v2, not new development on a deprecated framework.
+- The silent failure behaviour — CIF v2 widget crashes not breaking other channels — sounds reassuring but creates a diagnostic problem. Reps lose their third-party telephony widget without an obvious error, and the first symptom is usually "the phone has stopped working." Implement a visible fallback UI and logging to Application Insights so the failure is discoverable without relying on a rep to report it clearly.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this: Microsoft releases CIF v2 feature updates or deprecates legacy CIF v1*

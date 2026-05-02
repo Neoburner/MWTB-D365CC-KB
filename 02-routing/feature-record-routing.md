@@ -31,6 +31,12 @@ Use for any deployment where cases or email activities need intelligent routing 
 - **Rep security permissions must be audited before go-live.** A custom Omnichannel role without Case Read access silently fails and closes the work item with no useful error.
 - **Enable unified routing in dev/staging first.** The solution import can impact SQL load. Never enable in production without testing staging first.
 
+## Consultant notes
+
+- Security permissions audit before go-live is one I'd block the go-live on if it hasn't been done. Silent work item failure with no useful error message is a genuinely bad production issue to diagnose. Confirm Case Read (and any other routed record type) is in the agent security role before UAT starts.
+- The 5-minute assignment cycle needs to be raised in requirements, not at go-live. If the client has P1 escalation SLAs measured in minutes, the cycle time is a problem that needs a Power Automate trigger workaround — and that's a design conversation, not a config one.
+- Enable unified routing on staging first and run the solution import during off-peak hours. It's the kind of step that's easy to rush at the end of a project and regret if SQL load spikes on a shared production environment.
+
 ---
 
 *Source last updated: 2025-09-16 | Review when: New record types supported or assignment cycle timing changes*

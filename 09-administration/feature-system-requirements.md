@@ -38,6 +38,12 @@ None — this is a requirements reference; decisions are on the client side (bro
 - **Geo-specific CDN URL must match the correct region.** Wrong CDN causes intermittent widget failures that are hard to diagnose.
 - **Check ACS regional availability for international clients** before committing to voice or SMS.
 
+## Consultant notes
+
+- Send the URL allowlist to the client's network team at the start of the project, not the end. Enterprise firewall change requests typically take two to three weeks to process through IT governance. Missing this step by one week has blocked more go-lives than any technical issue I've seen. Get it in their hands in discovery and follow up.
+- Third-party cookie blocking is worth testing explicitly in the client's actual environment — not just on your demo machine. Group policy settings vary by organisation, and it's not always obvious whether cookies are being blocked until presence stops updating mid-UAT. Run the browser check on a standard-issue client laptop before UAT begins.
+- For any international deployment, ACS regional availability is a hard constraint to verify before signing off on the solution design. It's not something you can work around if the region isn't supported — voice and SMS simply won't provision. Check the ACS product page for the current region list; it expands periodically.
+
 ---
 
 *Source last updated: 2026-01-30 | Check this: New browser support added, network requirements updated, or ACS regional availability changes*

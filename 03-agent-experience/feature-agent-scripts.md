@@ -27,6 +27,12 @@ Use for any contact centre with structured interaction flows: compliance disclos
 - **Scripts only appear in Copilot Service workspace.** Customer Service Hub doesn't show the Productivity Pane.
 - **Expression-based default selection is evaluated once at session open.** It doesn't dynamically switch scripts mid-conversation if context changes.
 
+## Consultant notes
+
+- Build scripts and macros together, not separately. A script that's all text-only steps is something reps start ignoring within a week. The real value is macro-backed steps that actually do the work — open the record, pre-fill the form, link the case. Design them in parallel.
+- Expression-based default script selection is worth designing upfront if multiple teams or customer segments share a session type. Retrofitting conditional script selection after go-live means touching session templates that agents are already used to — do it right in the design phase.
+- Copilot Service workspace being mandatory is the implicit blocker to check if any agents are on Customer Service Hub at go-live. Scripts simply won't appear for them and you'll spend time diagnosing something that isn't a config error.
+
 ---
 
 *Source last updated: 2025-04-14 | Review when: Script step types expanded or dynamic mid-conversation script switching supported*

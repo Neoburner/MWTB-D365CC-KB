@@ -41,6 +41,12 @@ Use the agent for high-volume repetitive work—password resets, balance checks,
 - Cost visibility is aggregated-only, not per-call. Hard to calculate ROI per customer.
 - Custom logic limits: The agent can't call legacy APIs or do complex multi-step transactions. Escalate those to humans with context.
 
+## Consultant notes
+
+- Scope the "intents the agent can resolve independently" list very carefully in discovery. Clients almost always want the agent to do more than it reliably can on day one. A short, high-confidence intent list that works well is worth more than a broad one that escalates 70% of the time and frustrates customers.
+- Copilot credit consumption needs a cost estimate in the solution design. It's easy to underestimate at scale — check the per-interaction cost against expected volumes before the client commits to the business case.
+- Model updates from Microsoft changing agent behaviour without warning is the operational risk to cover in the handover. The client's ops team needs a periodic review process for agent accuracy, not just a one-time go-live sign-off.
+
 ---
 
 *Source last updated: 2026-04-30 | Revisit after Copilot Studio model updates, if escalation queue performance changes, or agent resolution drops below target*

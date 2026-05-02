@@ -32,6 +32,12 @@ Required for every deployment — all reps need user management setup before rou
 - **Direct assignment for security roles.** Teams/groups-based assignment doesn't work for persona mapping. Enterprise clients with group-based provisioning need a parallel direct-assignment process. Surface this during security design.
 - **Queue membership for record routing.** Don't add reps directly to queues used for record routing — those queues use a different assignment mechanism. Adding them the wrong way causes unexpected behaviour.
 
+## Consultant notes
+
+- Bookable Resource creation belongs in the new starter onboarding runbook, not just the initial project setup guide. The initial setup is fine — every project does it during build. What gets missed is the operational process: a new rep joins six months post-go-live, gets a D365 user account, and nobody creates the Bookable Resource because it's not in anyone's onboarding checklist. They sit in the queue list on paper but receive zero work items. It's usually diagnosed via a support ticket two weeks later. Put it in the runbook now.
+- The direct security role assignment requirement needs to be raised with the client's IT team during security design, not at the point of go-live testing. If the client manages access exclusively through Azure AD groups or D365 owner teams, they'll need a parallel process for the direct grants that Omnichannel persona mapping requires. That's an IT process change, not a D365 config task, and it takes time to implement properly.
+- The capacity approach decision (unit-based vs. profile-based) should be made once and documented clearly. Mixing them in the same environment is officially unsupported and produces unpredictable routing behaviour. If you're building on an existing environment that was originally set up with unit-based capacity, establish whether migrating to profile-based is in scope before you start designing workstreams.
+
 ---
 
 *Source last updated: 2026-04-15 | Check this: Enhanced User Management adds new bulk capabilities, or Bookable Resource requirement changes*

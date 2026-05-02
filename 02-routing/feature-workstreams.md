@@ -31,6 +31,12 @@ Required for every routing deployment. Every channel type and instance needs a w
 - **Bot handoff context variables must be configured before attaching a Copilot Studio agent.** Without them, agents start conversations cold—the bot's data doesn't carry over.
 - **Asynchronous plug-ins must be enabled** (`DisabledForAsyncProcessing = No`) in some orgs—disabled async plug-ins silently break workstream creation. Check before you start setup.
 
+## Consultant notes
+
+- Push vs Pick needs a proper conversation in requirements, not a quick checkbox. Clients from non-contact-centre backgrounds often don't understand the difference until you walk through a scenario with them. "A chat pops up automatically on your screen" vs "you see a list and choose your next item" lands better than reading the definitions.
+- Wrap-up capacity blocking catches people because "Always block" sounds restrictive but is almost always the right default. If a client asks for "Don't block" because they want throughput, explain the overload scenario first — agents getting new work mid-wrap-up is a problem, not a feature.
+- Check the async plug-ins setting at the start of any new org setup rather than when you hit a workstream creation error. It's quick to verify and the failure it produces is confusing enough that you don't want to diagnose it mid-sprint.
+
 ---
 
 *Source last updated: 2026-02-16 | Review when: Workstream type changes or work distribution mode becomes editable post-creation*

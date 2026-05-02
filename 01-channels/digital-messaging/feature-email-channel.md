@@ -37,6 +37,12 @@ Use email when you want to capture email inquiries into case management. Ideal i
 - Email headers and metadata (SPF, DKIM) aren't visible to agents and can't be used for filtering.
 - Unicode and special characters in subject lines may not render correctly after processing.
 
+## Consultant notes
+
+- Exchange admin access is the dependency that always slows email channel setup down. Get the Exchange team involved from the first project call, not the implementation sprint. They have their own change management process and a two-week notice period can kill your timeline.
+- Email threading failure on closed cases is an ops issue worth covering in client training. If a customer replies to a closed case email, it creates a new orphaned record. The client's support team needs a process for catching and relinking these.
+- Response time SLA expectations need to be set realistically. Email is async and the processing delay is real — SLA metrics should be measured in hours, not the minutes clients sometimes expect from watching chat.
+
 ---
 
 *Source last updated: 2026-04-30 | Revisit if a feature deprecation notice lands or Exchange version support changes*

@@ -36,6 +36,12 @@ Implement a data retention policy from day one of production. Set a baseline ret
 - If you archive conversations before deleting, the archive copy is permanent. Ensure your cold storage account has a retention policy too.
 - Bulk delete doesn't remove custom fields or extensions. Custom conversation fields get deleted with the conversation, but not if you only archive.
 
+## Consultant notes
+
+- Data retention is consistently left to post-go-live and consistently generates storage cost surprises at the 6–12 month mark. Set up the bulk delete jobs and Azure lifecycle policies during the build phase — not after go-live. An unmanaged Contact Center environment accumulates conversation records, transcripts, and voice recordings faster than most clients expect, and the cost of getting ahead of it is much lower than cleaning it up later.
+- The voice recording and conversation record deletion are completely separate operations. Clients who delete Dataverse conversation records to manage storage and then find the Azure Blob voice recordings still growing have missed this split. The data retention design needs to cover both surfaces explicitly, with separate Azure lifecycle policies for ACS voice recordings and any screen recording storage. Document both in the handover.
+- For clients in regulated industries (financial services, healthcare, legal), involve the client's legal or compliance team in the retention design before anything is configured. Mandatory minimum retention periods, legal hold requirements, and jurisdiction-specific data residency rules will override the default retention approach. Don't design this in isolation from the compliance team — it's one of the areas where getting it wrong has real consequences.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this: Your storage costs spike or compliance requirements mandate shorter retention periods*

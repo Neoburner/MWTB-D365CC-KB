@@ -25,6 +25,12 @@ None beyond the enable toggle — routing behaviour derives from published shift
 - **Test with one rep first.** Pick a test user with a known shift, verify work blocks outside shift hours, then roll out.
 - **Time-off auto-blocking is the win here.** Show this in the handover: approve time-off → rep automatically disappears from routing for that period.
 
+## Consultant notes
+
+- The sequencing dependency here is harder than it looks in practice. You need WFM set up, schedules published, shift bookings confirmed, and *then* shift-based routing enabled — in that order. If any step is incomplete, enabling the toggle early locks reps out of routing silently. Put the enable step explicitly at the end of the WFM go-live checklist, not the beginning.
+- Use the one-rep test approach religiously before rolling out to the team. Pick someone with a clear shift boundary (e.g., 9–5), verify that work stops routing to them outside those hours, then approve a time-off period and confirm they disappear from routing automatically. That test sequence validates the three main behaviours in ten minutes.
+- The time-off auto-blocking story is one of the cleaner WFM wins to demonstrate in the handover. Supervisors are used to manually removing agents from queue membership when they're off — showing that approving time-off handles this automatically tends to land well.
+
 ---
 
 *Source last updated: 2025-04-14 | Check this if: Shift-based routing rolls out to embedded, or WFM routing integrations expand*

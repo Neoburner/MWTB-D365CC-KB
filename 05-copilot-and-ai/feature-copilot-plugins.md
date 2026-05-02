@@ -28,6 +28,12 @@ Use when reps need Copilot to reach into external systems or run complex process
 - **15-minute publish delay.** Reps won't see the plugin immediately after enabling. Factor this into testing and training.
 - **Custom connector must exist first.** If the Power Automate connector isn't built yet, the plugin can't be configured. Easy to miss when scoping the work.
 
+## Consultant notes
+
+- Preview status applies here as with all Preview Copilot features — regulated production deployments need explicit client sign-off before this goes live. Flag it as a roadmap feature until GA.
+- Custom connector as a prerequisite for custom connector plugins is the dependency that gets missed in project planning. If the Power Automate connector doesn't exist yet, building it is a separate piece of work that needs its own scope entry.
+- The 15-minute publish delay is worth noting in the training plan. Trainers enabling plugins during a live session and then waiting for them to appear creates unnecessary confusion if it's not expected.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after feature reaches GA or new plugin types are added*

@@ -36,6 +36,12 @@ Turn this on if you have active bots (Copilot Studio, Azure Bot Service, or cust
 - **Custom bots need instrumentation.** They may not auto-report escalation and resolution signals.
 - **Voice and bot analytics are separate toggles.** Enable both if you need both.
 
+## Consultant notes
+
+- Containment rate is the headline metric every client with a bot wants to report, and this dashboard is where it comes from. That makes the configuration accuracy critical — if escalation signals aren't explicitly configured, the containment figure is understated, which either flatters the bot unfairly or masks a performance problem depending on which direction the error goes. Verify the escalation signal configuration with a test conversation before treating the containment rate as reliable.
+- Custom bots are the high-risk case here. Copilot Studio agents and Azure Bot Service bots have relatively predictable instrumentation behaviour. Custom bots built on third-party frameworks or legacy platforms often don't emit the right signals without additional development. Confirm instrumentation requirements with the bot development team early — don't assume the analytics will just work.
+- Archive the bot analytics reports before decommissioning any bot. Clients who retire a Copilot Studio agent mid-project to rebuild it lose historical containment and escalation data permanently. If historical performance data matters for the business case, pull and save the relevant reports before disconnecting.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this if: Bot implementation changes or new topics emerge*

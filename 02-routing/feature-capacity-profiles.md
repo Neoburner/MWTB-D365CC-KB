@@ -30,6 +30,12 @@ Use capacity profiles for all new implementations. Unit-based capacity is the le
 - **Record/activity capacity doesn't release automatically.** Reps and supervisors must deactivate the queue item or clear Worked By—rarely intuitive and often missed in training.
 - **Don't mix capacity profiles and capacity units in the same org.** Behaviour becomes unpredictable.
 
+## Consultant notes
+
+- Reset frequency confirmation needs to be on the sign-off checklist before any profiles are created. It's permanent, the options sound similar until you explain the difference with a concrete scenario, and recreating profiles after agents are assigned to them is painful.
+- Record and activity capacity not releasing automatically is counter-intuitive and catches clients every time in UAT. "I closed the case, why is my capacity still full?" — train on it explicitly and put the correct close process in the ops runbook, not just the handover document.
+- Don't mix capacity profiles and capacity units in the same org. If the client has any legacy unit-based setup, clean it up before implementing profiles. The unpredictable behaviour when both coexist is difficult to explain to anyone.
+
 ---
 
 *Source last updated: 2026-02-03 | Review when: Reset frequency becomes editable or new capacity management options released*

@@ -29,6 +29,12 @@ Use WhatsApp if it's a significant channel in the customer's market—high relev
 - The 24-hour template boundary catches reps out. Free-form messaging works in testing, then fails in production when a customer doesn't reply for a day. Train reps and have templates ready before launch.
 - ACS resource must connect to only one D365 organisation. Reusing it across multiple D365 environments won't work.
 
+## Consultant notes
+
+- The June 2026 BSUID change needs an active audit on any project currently live or in late implementation. Any routing rule or flow using `msdyn_CustomerPhoneNumber` for WhatsApp is a ticking clock. Don't wait for clients to report it broken.
+- Event Grid Entra authentication is the step that blocks the most setups. It almost always hits an IT security approval queue. Put it in the project plan as a named dependency on day one — not as a config step in week four.
+- WhatsApp message templates need to be designed, written, submitted, and approved before go-live — not after. Build this into the pre-go-live checklist and give the client enough lead time to draft them.
+
 ---
 
 *Source last updated: 2026-04-17 | Revisit after BSUID migration (June 2026), or when WhatsApp rich media templates launch*

@@ -30,6 +30,12 @@ Use when work needs to be matched to agents with specific capabilities — langu
 - **Exact Match can leave items unassigned.** If no agent has all required skills (shift changes, absences), the item sits in queue indefinitely. Plan for this with a fallback skill relaxation rule or timed overflow action.
 - **ML classification needs training data.** Intelligent Skill Finder isn't useful on day one—it needs historical conversation data to become accurate. Start with logical rules and revisit ML models after 6–12 months of data.
 
+## Consultant notes
+
+- Skill taxonomy size discipline matters long-term. A 50-skill taxonomy is a maintenance nightmare — agent profiles go stale, classification rules drift, and skills that made sense at go-live become meaningless a year later. Push for the smallest taxonomy that covers real routing requirements and add to it based on need.
+- Who maintains agent skill profiles post go-live needs to be a named person with a defined process, not an assumption left in the handover document. It's the piece most likely to be undefined and the first thing that causes misrouting three months after go-live.
+- Test Exact Match with a queue where no agent has the required skill before go-live. Confirm the overflow or fallback behaviour explicitly. Silent unassignment is the failure mode and you want to know how it presents before a real customer hits it.
+
 ---
 
 *Source last updated: 2025-05-09 | Review when: New skill matching options or AI Builder language support changes*

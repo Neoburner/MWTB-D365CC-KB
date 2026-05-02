@@ -33,6 +33,12 @@ Use on any deployment where the client wants CSAT or NPS measurement. Essential 
 - **Never copy survey agents between environments.** They look fine but won't work. Recreate in each environment.
 - **Deprecated August 01, 2025:** The post-call survey toggle on the **Language** tab of the voice workstream in Copilot Service admin center has been removed. Configure post-call surveys using Copilot Studio directly instead. See [deprecations page](https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/deprecations-contact-center).
 
+## Consultant notes
+
+- The Dataverse connection setup in Power Apps is the step that blocks survey publishing and is consistently missed because it sits in a completely different app from where everything else is configured. Add it as an explicit item on the survey setup checklist — "configure the Microsoft Dataverse connection reference for MCS Survey in Power Apps Default Solution" — rather than expecting it to be discovered from the documentation. Without it, the survey won't publish and the workstream dropdown will be empty.
+- `MCS_CSAT` variable naming is the kind of constraint that sounds trivial and causes real problems. If the Copilot Studio developer uses a different variable name for the CSAT score, the historical analytics dashboard will show blank CSAT data. Verify the variable name in the Copilot Studio setup during build, not during UAT when you're checking analytics for the first time.
+- Recreate survey agents in each environment from scratch — don't copy them. This runs counter to every other piece of environment migration advice in D365 and it catches people out every time. A copied survey agent looks fully functional but won't work in the target environment. Add this to the environment migration runbook with a clear note explaining why copying is the wrong approach.
+
 ---
 
 *Source last updated: 2026-01-13 | Check this: Survey feature expands to embedded deployment, or new survey analytics added*

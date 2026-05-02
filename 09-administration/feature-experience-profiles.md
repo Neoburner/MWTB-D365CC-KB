@@ -31,6 +31,12 @@ Every deployment uses experience profiles — OOB defaults work for simple singl
 - **Setting a profile as default removes all role-based assignments from it.** If role assignments exist and you set it as default, they're gone.
 - **Team membership doesn't work for profile assignment** — direct security role assignment only. Enterprise clients relying on security groups/teams need a parallel direct-assignment process.
 
+## Consultant notes
+
+- Experience profiles are where the "Copilot isn't showing up" support ticket usually starts. Check the profile Productivity pane settings before going anywhere else in the troubleshooting tree. It's enabled environment-wide, it's licensed, and yet it's not visible — nine times out of ten it's the profile toggle. Make it the first item in any Copilot access diagnostic.
+- Design the profile taxonomy against capability requirements, not the org chart. Clients instinctively want a profile per team ("we want a Billing Team profile and a Cancellations Team profile") even when both teams need identical tools. Profiles based on distinct capability differences (chat-only agents vs. voice+chat agents, standard reps vs. supervisors) are easier to maintain and result in fewer near-identical profiles drifting out of sync post-go-live.
+- The "setting as default removes role-based assignments" behaviour is the one most likely to cause an incident during profile reorganisation post-go-live. If a client decides to restructure their profiles months after go-live, this gotcha will catch someone out. Add it to the admin knowledge transfer so whoever inherits the environment knows about it.
+
 ---
 
 *Source last updated: 2026-04-03 | Check this: New productivity pane tools added, or profile assignment logic changes*

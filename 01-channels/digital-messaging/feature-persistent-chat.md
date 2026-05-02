@@ -36,6 +36,12 @@ Use persistent chat for complex issues that span multiple days or when customer 
 - Agent notes and tags persist, but custom conversation attributes may not if the schema changes.
 - Conversations running 30+ days can cause queue performance issues; consider archiving old ones.
 
+## Consultant notes
+
+- Authentication infrastructure is the dealbreaker for this feature. If the client doesn't have a working auth system (Azure AD B2C, portal login, or equivalent), persistent chat is off the table regardless of how much they want it. Check this in discovery, not design.
+- Clients almost always assume persistent chat means the same agent every time. It doesn't unless the original agent happens to be available. Set that expectation clearly before the client sees the feature in a demo.
+- Long-lived persistent conversations can skew SLA reporting — a 10-day open conversation doesn't mean the same thing as a 10-day standard case. Worth flagging to whoever owns the SLA definitions before design is finalised.
+
 ---
 
 *Source last updated: 2026-04-30 | Revisit when your auth system changes or conversation retention policy updates*

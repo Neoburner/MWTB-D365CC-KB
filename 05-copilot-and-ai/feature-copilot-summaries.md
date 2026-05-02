@@ -29,6 +29,12 @@ Enable conversation summaries on virtually all deployments — immediate value f
 - **Bot transcripts aren't included.** If a Copilot Studio IVR agent handled the customer before rep handoff, that part isn't in the summary. Summary starts from rep involvement, not customer first contact.
 - **Custom case forms need extra config.** If the client customised the case form layout, case summaries won't appear without additional PowerApps settings.
 
+## Consultant notes
+
+- Bot transcript not being included in summaries is the gap that surprises clients most during UAT. A customer who spent 5 minutes with a Copilot Studio IVR before being transferred gets a summary that starts from when the agent joined — that context is invisible. Train agents on this so they know to ask the customer for context they may not have.
+- Exclusion list for automated emails is worth building before go-live. If the client has automated notification senders (order confirmations, shipping updates, billing alerts) and doesn't configure exclusions, case summaries become paragraph-length summaries of notification chains rather than the actual customer issue.
+- On-join is the highest-value trigger for most deployments — it directly benefits the agent receiving a transferred or escalated conversation. Enable that first and evaluate whether on-end adds value separately.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after case summary comes to embedded deployment or bot transcripts are included automatically*

@@ -28,6 +28,12 @@ Available on any licensed D365 Contact Center or Customer Service deployment. Th
 - **Don't opt out to troubleshoot.** Opt-out deletes all training data immediately with no recovery. Diagnose first.
 - **GA vs Preview readiness.** For non-NA regions, all Copilot features are Preview. Clients in regulated industries outside North America should know this before betting production on it.
 
+## Consultant notes
+
+- Custom role audit should be a named go-live blocker, not a nice-to-have. If the client has any custom security roles, Copilot won't work until the privileges are explicitly added. Run the audit during the build sprint, not go-live week.
+- Never opt out to troubleshoot. This is worth putting in the admin handover document and repeating in any training. Opt-out deletes all training data immediately with no recovery path — it's not a reset button.
+- For clients outside North America, have the GA vs Preview conversation explicitly during discovery. Regulated industries in Preview regions need to know what that means for production readiness before they commit Copilot to a live contact centre.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after Copilot GA expands to additional regions or case summary comes to embedded*

@@ -43,6 +43,12 @@ Enable to give agents live feedback on customer emotion. Helps them spot frustra
 - **Customers may notice it.** Some find visible sentiment scoring intrusive during the conversation.
 - **AI makes mistakes.** Misinterprets sarcasm, context, and informal language — expect occasional false positives and negatives.
 
+## Consultant notes
+
+- Test non-English accuracy explicitly if the client has multilingual queues before go-live. Sentiment scoring on non-English messages is significantly less reliable and a low score for a perfectly polite message in a less-common language is not something you want to explain during a QA review.
+- Real-time sentiment for agents vs supervisor-triggered alerts are two different use cases configured in different places (see `feature-sentiment-alerts.md` for the supervisor side). Make sure the client understands both surfaces and which one serves which purpose.
+- In high-volume, fast-paced channels like chat, the sentiment indicator can add cognitive overhead rather than value. Pilot it with a specific agent group before rolling out org-wide, and ask agents directly whether it's helping or distracting.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting when agent feedback indicates sentiment accuracy issues or Azure AI service capacity is reached*

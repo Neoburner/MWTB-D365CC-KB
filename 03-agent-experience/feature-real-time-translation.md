@@ -35,6 +35,12 @@ Use real-time translation in multicultural or multilingual contact centers where
 - Translated canned responses are not automatically handled. Teams must separately translate knowledge base articles if agents rely on them.
 - The feature does not translate customer context or interaction history. Agents still see metadata in English, which causes confusion.
 
+## Consultant notes
+
+- Per-character Azure billing catches clients off guard at scale. If the client has significant multilingual chat volumes, build a rough monthly cost estimate into the solution design sign-off — "it looked free in the trial" is not a conversation you want at month-end.
+- Quick replies and knowledge articles don't translate automatically. If the client uses either heavily, they'll need separate localised versions for each language in scope. Factor that content work into the project plan.
+- This covers chat only — not voice. If a client asks about translation across all channels, the voice and chat features are configured separately and behave differently (see the voice real-time translation doc for the voice-specific notes).
+
 ---
 
 *Source last updated: 2026-04-30 | Review when: Language support expansion, cost reviews, or agent feedback on translation accuracy*

@@ -30,6 +30,12 @@ Required for any routing deployment. Every work item must be routed to a queue �
 - **A well-designed route-to-queue ruleset is short.** If you have 20+ rules, classification rulesets aren't doing enough work. Complex routing logic belongs in classification, not here. Route-to-queue should be simple: "if X equals Y, go to queue Z."
 - **Test every rule permutation.** Misrouted items in production are hard to diagnose retroactively if diagnostics weren't enabled from day one.
 
+## Consultant notes
+
+- A well-designed route-to-queue ruleset is short. If you're approaching 10+ rules, classification upstream isn't doing enough work. Complex routing logic belongs in classification rulesets — route-to-queue should be simple: "if topic equals X, go to queue Y."
+- Hit-all vs Hit-first needs to be explicitly decided and documented in the design. Hit-all is the right default for most deployments, but admins maintaining rules post-go-live often don't understand the distinction. Document it clearly in the handover.
+- Test every rule permutation in UAT and verify via routing diagnostics, not just by checking where the work landed. The trace tells you which rules actually fired — confirming the right agent got the work isn't the same as confirming the right rule matched.
+
 ---
 
 *Source last updated: 2025-04-21 | Review when: New hit policy options or percentage routing queue limit changes*

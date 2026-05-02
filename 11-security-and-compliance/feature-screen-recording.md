@@ -30,6 +30,12 @@ Use when the client needs full interaction capture for QA, regulated industry co
 - **Desktop companion is an ongoing IT task.** Install on every rep's machine, keep current. Use endpoint management (Intune/SCCM). One-time installs create gaps.
 - **Entire screen scope is broad.** Captures other apps, personal browser tabs, internal systems. Document this in employee disclosure/consent.
 
+## Consultant notes
+
+- Get legal review done before screen recording is enabled, not during UAT. Recording employee screens during work hours touches employment law (varies significantly by jurisdiction — UK, EU, US states all handle it differently), data protection obligations, and potentially works council or union agreements in unionised environments. This is a decision that needs to be documented as client-approved, not assumed to be acceptable because the feature exists.
+- Configure the bulk delete job for the Screen Recordings table on day one of production. There is no default retention policy, and screen recordings are large files. Without a job running, storage costs will climb in the background and won't be obvious until someone notices the Azure bill. Treating retention as a post-go-live activity is a pattern that consistently causes storage incidents at the three to six month mark.
+- The desktop companion app is an ongoing IT estate management task, not a one-time install. New reps, rebuilt machines, and OS updates will all create gaps in coverage over time. If the client doesn't have endpoint management (Intune, SCCM) already deploying and updating the companion app automatically, the screen recording coverage will degrade gradually without anyone noticing. This needs to be in the IT onboarding runbook and managed as ongoing infrastructure.
+
 ---
 
 *Source last updated: 2026-03-05 | Check this: Screen recording expands to embedded deployment, or cloud-based recording option added*

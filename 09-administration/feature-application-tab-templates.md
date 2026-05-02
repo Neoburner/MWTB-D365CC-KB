@@ -32,6 +32,12 @@ Use on any deployment where reps should automatically see supporting context (cu
 - **Iframe blocking is silent.** A third-party website that blocks iframes shows an error page to the rep, not a warning during configuration. Test every external URL in an iframe first.
 - **Tab templates are referenced by session templates** — design tabs first, then session templates. They're reusable across multiple session types.
 
+## Consultant notes
+
+- Design application tab templates before session templates, not after. Session templates reference tab templates by association — you can't complete the session template configuration without the tabs already existing. Most project plans get this the right way round, but it's easy to conflate the two during discovery and end up designing them out of order.
+- Test every third-party website URL for iframe compatibility before building the tab template around it. The iframe blocking failure is silent in configuration — you won't see the error until a rep tries to open the session. Some enterprise tools (certain CRM portals, billing systems, older intranets) block iframe embedding by design and will never work as application tabs. Confirm with the client's IT team if there's any doubt.
+- The `validateRecord=True` parameter should be added by default any time you're using an Entity record tab where the record might not always exist — which is most of the time in practice. The alternative (accidentally opening a blank create form in front of a customer) is the kind of UX failure that gets escalated to the project manager on day one of go-live. Add the parameter as standard rather than waiting to find out whether it's needed.
+
 ---
 
 *Source last updated: 2025-05-05 | Check this: New page types added or embedded deployment support extended*

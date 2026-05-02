@@ -37,6 +37,12 @@ Use in customer-experience-focused operations (SaaS, consumer services, hospital
 - **"I understand" gaming.** Sentiment improves artificially when agents apologise or repeat empathy phrases, even if the core issue isn't fixed.
 - **~1–2 minute delay.** Real-time intervention isn't actually instantaneous due to model processing lag.
 
+## Consultant notes
+
+- Threshold tuning after go-live is normal and expected. Set the expectation with the client that the first 2–4 weeks in production are the tuning period. The initial threshold will almost certainly generate either too many alerts or too few until real conversation data informs a better setting.
+- "I understand" gaming is real enough to mention in agent coaching, carefully framed. Sentiment scores improve when agents use empathy phrases regardless of whether the underlying issue is resolved. Supervisors need to know this when interpreting alert patterns.
+- Supervisor ratio matters for whether this feature delivers value. At 1 supervisor per 200+ agents, alerts will stack up faster than they can be acted on. If the client's supervisor coverage is thin, set expectations about alert response rate before positioning this as a real-time intervention tool.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting after threshold tuning, sentiment model updates, or supervisor feedback on alert accuracy*

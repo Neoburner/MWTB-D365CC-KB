@@ -36,6 +36,12 @@ Use multi-region if you have customers across geographies and must meet data loc
 - EU Dataverse doesn't guarantee GDPR compliance — you must implement DSR processes and data deletion.
 - Legacy conversations in non-EU Dataverse can't move to EU without export/re-import. No built-in migration.
 
+## Consultant notes
+
+- The environment region decision needs to be made in discovery, documented, and locked. You cannot move a Dataverse environment to a different region post-deployment — the only path is export and re-import, which means downtime, data risk, and potential loss of configuration. For any client with EU customers or data residency requirements, confirm the Dataverse region and ACS region together before provisioning anything.
+- ACS and Dataverse residency are separate choices and they need to match for compliance purposes. A Dataverse environment in West Europe with an ACS resource in US East creates a cross-border data flow for voice recordings. For EU-regulated clients, both resources should be in the same EU region, and this needs to be documented in the Data Processing Agreement. Confirm both are aligned before go-live — changing ACS post-provisioning means rebuilding the voice channel.
+- "EU Dataverse does not guarantee GDPR compliance" is the statement that occasionally surprises clients who've been told that choosing an EU region ticks the GDPR box. Data residency is a necessary condition for some GDPR requirements, not a sufficient one. DSR processes, data deletion procedures, consent tracking, and data processing documentation are all separate obligations. Make sure the client's compliance team understands the difference and that the project scope reflects what's actually needed for GDPR, not just what region the environment is in.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this: Azure regions expand or Microsoft adds regional AI services availability*

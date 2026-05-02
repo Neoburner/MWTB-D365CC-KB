@@ -33,6 +33,12 @@ Use when defining who does what (take conversations, monitor teams, configure qu
 - No Omnichannel persona = no agent interface load, even with valid Dataverse role.
 - Pre-2022 roles may lack Omnichannel privilege sets. Check they've been updated.
 
+## Consultant notes
+
+- The three-tier model (Dataverse role + Omnichannel persona + experience profile) is the one most likely to be misunderstood in security design workshops. Clients often assume a single role assignment covers all three layers. Walk through a concrete example: an agent needs (1) the Dataverse CSR role for case visibility, (2) the Omnichannel Agent persona to load the workspace, and (3) an experience profile to control which tools they see. Each layer is configured in a different place and by a different mechanism.
+- The "Omnichannel Agent alone doesn't grant Contact/Case visibility" limitation catches deployments that need reps to work cases as well as conversations. If the client's reps will be looking up customer records, creating cases, or logging outcomes in Dataverse entities during conversations, they'll also need the Customer Service Representative role. Clarify whether this is in scope during the role design session — adding it post-go-live requires a security change and UAT verification.
+- Experience profiles control UI feature visibility but not API access. If the client has custom tabs built on the JavaScript SDK, those custom tabs can call the API regardless of what's hidden in the experience profile. This is a security design consideration if there are any features the client wants to restrict at a functional level rather than just visually — those restrictions need to be enforced at the API/Dataverse permission layer, not the experience profile layer.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this: Major security vulnerability released or role inheritance rules change*

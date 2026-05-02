@@ -30,6 +30,12 @@ Use IVR when the client wants automated triage, self-service resolution, or inte
 - SIP X-header context passing needs Direct Routing. If the client uses ACS managed numbers and needs legacy IVR context, you'll need Direct Routing for this.
 - NLU+ keeps data inside the D365 boundary. For strict data residency, NLU+ is right. Standard NLU sends intent processing to Copilot Studio infrastructure.
 
+## Consultant notes
+
+- Build the transfer-to-agent path first, not the self-service content. Most IVR projects get three weeks into bot design before confirming that escalation actually connects a call to a rep. Test the full handoff path end-to-end before designing any self-service topics — it's the foundation everything else depends on.
+- NLU+ for data residency should be on the checklist question for regulated clients. If the client has data residency requirements, standard NLU sending intent processing outside the D365 boundary could be a problem. Raise it in discovery, not after go-live.
+- DTMF vs natural language is a genuine design choice, not a default. Noisy call environments, older demographics, and structured data entry (account numbers, dates) all favour DTMF. Don't default to natural language just because it sounds more modern.
+
 ---
 
 *Source last updated: 2026-03-12 | Worth checking again when generative AI orchestration reaches GA, or if SIP context passing extends to ACS managed numbers*

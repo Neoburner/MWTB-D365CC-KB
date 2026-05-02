@@ -33,6 +33,12 @@ Default for web-based support. Use for any public-facing or portal-embedded supp
 - Domain restriction defaults to off. Without it, anyone with the embed script can route chats to your queues. Enable this before go-live.
 - Pre-conversation survey question names must exactly match context variable keys for routing. See `feature-pre-conversation-survey.md` for the required key names.
 
+## Consultant notes
+
+- Domain restriction defaulting to off is the kind of thing that gets missed in a busy config sprint and then looks bad post-go-live. Make it a checklist item before UAT, not something you spot during a security review.
+- Pre-conversation survey key names matching context variables exactly is an easy one to get wrong. A single typo routes conversations to the wrong queue with no obvious error. Test the full routing path end-to-end before UAT sign-off.
+- Screen sharing and co-browse expectations should be settled in the design phase. Clients nearly always assume they're built in to the chat widget — correct this early so it doesn't become a scope gap late in the project.
+
 ---
 
 *Source last updated: 2026-03-10 | Worth checking again after native screen sharing lands, or if persistent chat support expands to unauthenticated users*

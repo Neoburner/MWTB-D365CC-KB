@@ -28,6 +28,12 @@ Always relevant — presence is core to routing. Custom presence statuses are us
 - **Review Allowed Presences on workstreams alongside custom presence.** Creating a custom "Busy – Admin" status mapped to Busy means nothing if the workstream excludes Busy from Allowed Presences.
 - **Capacity profile Assignment Blocking forces Busy-DND automatically.** If supervisors see unexpected Busy-DND on a rep, check whether a capacity profile limit was hit.
 
+## Consultant notes
+
+- Agree the custom presence taxonomy with the client's operations team before building anything — and confirm the base status mapping for each one is correct. "Training", "Admin", "Break", and "Lunch" as custom labels all have clear intended routing behaviour, but that mapping needs to be explicit, not assumed. A training status mapped to Available is the kind of mistake that surfaces in the first week of go-live when agents in training keep receiving work items.
+- Review custom presence statuses alongside workstream Allowed Presences in the same session. Both settings affect routing eligibility and they interact directly. Creating a full set of meaningful custom statuses without checking whether the relevant base statuses are permitted on each workstream produces a presence model that looks correct but doesn't behave as expected.
+- The custom presence taxonomy needs to be documented in the operational handover, not just the technical build guide. Supervisors need to understand what each custom status means for routing eligibility — particularly for statuses like "Busy – Wrap-up" or "Busy – Admin" where the intent is to temporarily block assignment without the rep being formally unavailable.
+
 ---
 
 *Source last updated: 2025-06-11 | Check this: New base statuses added or presence API behaviour changes*

@@ -30,6 +30,12 @@ Almost all deployments use one of the OOB methods. Use Custom only when out-of-t
 - **The decline limit matters operationally.** If agents miss notifications at go-live (common), items can get stuck after 3 decline cycles. Configure deliberately and test the decline flow in UAT.
 - **Dynamic Prioritisation is Preview.** Don't use in production for regulated environments yet.
 
+## Consultant notes
+
+- Simulate the decline flow in UAT before go-live. Go-live week is when agents are learning the workspace and notification sounds — 3 misses is easy to hit accidentally. Know exactly what happens to a work item after 3 declines before the first real customer call.
+- Custom assignment is a maintenance burden that almost never gets accounted for in post-go-live support scoping. If a client is asking for it, challenge them hard: if a simple classification tweak combined with an OOB method covers the requirement, take that path. Custom rulesets become orphaned config quickly.
+- Dynamic Prioritisation is worth watching for GA but don't put it in any production scope while it's Preview, particularly in regulated environments.
+
 ---
 
 *Source last updated: 2026-04-27 | Review when: Dynamic Prioritisation reaches GA or new assignment methods released*

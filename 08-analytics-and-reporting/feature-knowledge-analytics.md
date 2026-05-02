@@ -26,6 +26,12 @@ Turn this on for any deployment with a knowledge base. Search term insights show
 - **Feedback scores are blank if rep feedback isn't enabled** in Knowledge Management. Check that first.
 - **This is the main feedback loop for Copilot quality.** High-volume searches with no results = articles you need to write or fix.
 
+## Consultant notes
+
+- The search term insights dashboard is the most useful thing in this section and the one most likely to be left disabled. Enable both toggles at once — there is no good reason to have Article insights without Search term insights, and the no-result search data is the single best indicator of knowledge gaps you'll get from the system without any extra effort from the team.
+- Check that rep feedback is enabled in Knowledge Management settings before enabling this analytics report. If it isn't, the feedback scores column is blank and the client will conclude the analytics aren't working. It's a two-minute check during UAT but easy to skip if you're working through a long configuration list.
+- Frame search term insights in the handover as a content improvement tool, not just a usage report. A high-volume search term that returns no results is an article that needs to be written. A term that returns three articles but has low open rates suggests the article titles or metadata don't match how reps describe the problem. That framing tends to drive actual knowledge base maintenance rather than just leaving the dashboard open.
+
 ---
 
 *Source last updated: 2025-06-20 | Check this if: Customer-facing search analytics ship, or new quality signals appear*

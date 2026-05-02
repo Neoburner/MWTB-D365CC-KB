@@ -27,6 +27,12 @@ Required for any deployment that includes WFM scheduling, forecasting, capacity 
 - **Bookable Resource is the killer gotcha.** It's separate from a D365 user account. Every scheduled rep needs one. Bake it into your user onboarding runbook.
 - **Everything else depends on this setup working first.** Forecasting, scheduling, shift-based routing — none of it runs without the WFM package and proper user config.
 
+## Consultant notes
+
+- WFM not being bundled with Contact Center is the assumption gap to close in pre-sales. Clients frequently expect WFM to be included and discover the separate installation (and sometimes separate licensing) mid-project. Confirm both in discovery.
+- Bookable Resource creation per rep belongs in the user onboarding runbook, not just in the initial setup guide. New starters who don't get a Bookable Resource record are silently excluded from scheduling and shift-based routing — with no obvious error to diagnose.
+- This setup doc is the prerequisite for everything else in the WFM section. There's no point reading the forecasting, scheduling, or quality management docs until this one is working correctly end-to-end.
+
 ---
 
 *Source last updated: 2026-04-27 | Check this if: WFM becomes available for embedded, or the installation flow changes*

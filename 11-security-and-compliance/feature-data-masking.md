@@ -39,6 +39,12 @@ Chat masking: use on any deployment where sensitive data may appear in chat (car
 - **10-rule limit is tight** for multiple data types (cards, NHS numbers, tax IDs). Plan the rule set during design, not after go-live.
 - **First question edge case:** customer responses to the first question may not redact due to timing at conversation start. All subsequent sensitive responses redact normally.
 
+## Consultant notes
+
+- Make the distinction between chat masking and voice masking explicit in the solution design. They're completely separate mechanisms, they cover different channels, and they need to be configured independently. For any deployment handling sensitive data across both voice and chat (payment cards, NHS numbers, personal identifiers), both need to be in scope. A client who thinks they've ticked the "data masking" box by configuring one may not realise the other channel is unmasked.
+- For voice agents, the "no auto-detection" constraint means you need to review the entire Copilot Studio topic design for any place where a customer could volunteer sensitive data. It's not just the topics designed to collect card numbers — it's also the general enquiry topics where a customer might mention their date of birth, account number, or other personal data unprompted. Work through the topic map with the bot designer and flag every input variable that could receive sensitive content.
+- Plan the 10-rule limit in the design phase. For regulated industries handling multiple types of sensitive data (card numbers, NHS numbers, NI numbers, account numbers, dates of birth), the limit requires careful prioritisation. OOB rules take 3 slots (credit card, email, SSN), leaving 7 for custom patterns. If the client needs more than 7 custom patterns, they'll need to combine patterns or accept some gaps — that's a compliance risk decision for the client, not a technical workaround.
+
 ---
 
 *Source last updated: 2025-10-15 | Check this: Voice sensitive masking extends to digital channels, or chat masking rule limit increases*

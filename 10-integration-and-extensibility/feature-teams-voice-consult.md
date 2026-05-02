@@ -30,6 +30,12 @@ Use when reps pull in internal SMEs during live calls. High value for technical 
 - **Network allowlisting has two parts:** ACS IPs and Teams/Skype for Business Online IPs. Both need approval. Raise this in discovery.
 - **Teams federation PowerShell is a blocking task.** Often a different person. The `Set-CsTeamsAcsFederationConfiguration` command blocks everything.
 
+## Consultant notes
+
+- Build the full Enterprise Voice user list during discovery, not during UAT. Every SME who needs to receive transferred calls requires Enterprise Voice enabled explicitly — it's not inherited from the Teams licence or any group setting. In larger organisations, identifying all the subject matter experts who need to be on the list takes time. Getting the list wrong means reps can't transfer to specific SMEs at go-live, which is the kind of failure that's highly visible to the client.
+- The ACS–Teams federation PowerShell step is the one most likely to be on a critical path with an unfamiliar person on the other end. It's a Teams tenant-level change (`Set-CsExternalAccessPolicy` and `Set-CsTeamsAcsFederationConfiguration`) that typically sits with the Microsoft 365 or Azure team, not the D365 project team. Identify who can run it, confirm they're available in the project window, and test it with a single user before go-live.
+- Agree the fallback workflow for when a Teams SME doesn't answer — there's no voicemail, no forwarding, the call simply fails. Reps need to know this and have a documented alternative (try another SME, escalate to a supervisor queue, offer a callback). Build it into the call handling guidance rather than leaving it as an undocumented edge case for agents to discover live.
+
 ---
 
 *Source last updated: 2026-02-05 | Check this: Feature expands to embedded deployment, or ACS–Teams federation configuration changes*

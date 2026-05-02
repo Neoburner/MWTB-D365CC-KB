@@ -27,6 +27,12 @@ Configure format on any deployment with conversation summaries. Structured forma
 - **One global setting for all reps.** If teams have different needs (tech vs billing), the format is a compromise. Design for the highest-volume team and train the rest on interpretation.
 - **Error Codes is a pattern hint, not exact matching.** Sample codes help Copilot recognise similar codes — spend 10 minutes populating this with client-specific codes during setup.
 
+## Consultant notes
+
+- One global format for all teams is the design constraint that will cause discussion on any multi-team deployment. The compromise position is to design for the highest-volume or most complex team and train the others on how to interpret the output. It's not ideal but it's the current reality.
+- Error Codes pattern hints are worth spending time on during setup. Populating the sample list with the client's actual error codes — even 10–15 specific ones — dramatically improves how well Copilot extracts them from conversation text. This is a 15-minute task with outsized impact.
+- Structured format with "remove unfound information" on is the recommended default for most deployments. Paragraph format is harder for reps to scan quickly during a handoff, which is the primary use case for summaries.
+
 ---
 
 *Source last updated: 2026-03-26 | Check this after additional structured categories are added or per-workstream format configuration is supported*

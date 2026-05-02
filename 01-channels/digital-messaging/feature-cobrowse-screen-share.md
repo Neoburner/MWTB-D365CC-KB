@@ -39,6 +39,12 @@ Use co-browse for visual problems: button navigation, form-filling, confusion ab
 - Agent misclicks are visible to the customer; training is essential.
 - Co-browse doesn't work on mobile browsers or app chat—only desktop web. Tell customers upfront.
 
+## Consultant notes
+
+- Most clients want co-browse because it looks good in demos. The third-party provider licensing cost often kills it when they see the actual numbers. Have the vendor pricing conversation before it becomes a design assumption that's hard to remove.
+- CSP and iframe restrictions on the client's website are the most common technical blocker. Test the provider's script on the actual production domain early in the project — not on a dev environment with relaxed headers.
+- Agent training is non-negotiable before go-live. Agents who take control without explaining what they're doing genuinely alarm customers. Include a co-browse scenario in UAT and make sure agents narrate what they're doing.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth checking again after a third-party provider change or security compliance update*

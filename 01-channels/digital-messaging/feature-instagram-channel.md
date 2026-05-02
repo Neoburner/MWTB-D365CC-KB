@@ -40,6 +40,12 @@ Use Instagram if the customer base is active there and you want to meet them whe
 - Customer conversations may include spam or inappropriate content; train agents on quick assessment and escalation.
 - Agents can't delete customer messages; conversation history is permanent and visible to the customer.
 
+## Consultant notes
+
+- Instagram looks like Facebook on the surface (same Meta account, same Dev Portal) but has different rules, different approval processes, and different content restrictions. Don't let familiarity with the Facebook channel create false confidence here.
+- Story reply expectations are a consistent client assumption to correct early. Instagram users reach out via story replies expecting it to land in support. It doesn't route to Contact Center — only inbox DMs do. Worth putting an auto-reply or redirect message in the channel description.
+- The media attachment metadata limitation matters for long-term case management. Customer photos stored on Meta's servers aren't guaranteed to persist. If the client needs attachments for compliance or evidence purposes, they need a separate file capture process — this isn't handled natively.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth checking again if Meta API version changes or the 24-hour window policy updates*

@@ -28,6 +28,12 @@ Unified routing is mandatory for D365 Contact Center and Customer Service routin
 - **Copilot Service workspace is mandatory.** Agents on Customer Service Hub won't receive work. Non-obvious blocker for hybrid rollouts where some agents haven't migrated yet.
 - **Start simple.** Most clients try to replicate all existing routing complexity on day one. Start with 3–5 queues and basic rule-based classification. ML and complex skill taxonomies come later, after you have real data.
 
+## Consultant notes
+
+- Queue structure design is the decision everything downstream depends on. Get it wrong and you're reworking workstreams, classification rules, and capacity profiles weeks later. Push for a complete queue architecture sign-off on paper before anyone touches the admin centre.
+- The instinct on every project is to replicate the full complexity of the existing system on day one. That complexity is usually a workaround for limitations that don't apply in D365. Challenge it — start with 3–5 queues and basic classification, then add complexity based on real data.
+- USD as a hard blocker needs to come up in pre-sales, not after kick-off. If a client is on Unified Service Desk and nobody flagged it before the project started, that's a scope conversation waiting to happen.
+
 ---
 
 *Source last updated: 2026-04-15 | Worth revisiting when: Routing architecture changes in release wave plans*

@@ -42,6 +42,12 @@ Use escalation to filter simple issues through automation first (reduce agent lo
 - Agent presence status lags 30+ seconds in Contact Center. Escalations might reach unavailable agents and cause queue delays.
 - Handoff transcript can be incomplete if the bot crashes or loses connection mid-conversation.
 
+## Consultant notes
+
+- Variable name mismatch breaking data transfer is the integration defect that's entirely avoidable with a 30-minute mapping exercise. Define the variable-to-D365-field mapping in the design document and verify it with a test transfer in a non-production environment before UAT.
+- Escalation rate monitoring is worth building into the client's operational runbook from go-live. If the bot escalates too eagerly, it adds queue load without providing deflection value. If it escalates too rarely, customers get stuck in dead-end loops. Both are fixable once you have the data, but you need monitoring to see it.
+- Bot-to-agent handoff UX matters. A smooth escalation where the agent can see what the bot discovered is materially different from a cold transfer where the customer repeats everything. Make sure the handoff summary template is designed and tested as part of UAT, not treated as optional.
+
 ---
 
 *Source last updated: 2026-04-30 | Revisit if escalation rate exceeds 30% of bot interactions, agent Handle Time climbs after escalation, or queue SLAs breach*

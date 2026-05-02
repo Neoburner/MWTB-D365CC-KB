@@ -32,6 +32,12 @@ Use on any deployment where the client wants automated deflection, intent-based 
 - **Copilot agent integration is a studio step.** Not just a D365 toggle. Plan as dev work: open Copilot Studio, add Intent-based suggestions component collection, publish. Allow time for this.
 - **Chat and lines of business mismatch silently.** If chats route to the wrong line of business, check whether the workstream name is in the line of business rules.
 
+## Consultant notes
+
+- Intent quality governance is the long-term operational commitment that often gets missed in scoping. Intents left in "Pending" state without review gradually degrade deflection accuracy. Build an approval process and a named owner for the intent library into the operational handover.
+- The Copilot Studio step for agent integration is a separate dev task. When planning Customer Assist Agent integration with intents, allow time for the Copilot Studio component collection to be added and published — it's not a D365 admin toggle, it's a studio build step.
+- Run the simulation before full discovery. It uses the last 1,000 records and gives you a preview of what intent granularity will look like — useful for having the "how many intents do you actually need?" conversation with the client before committing to a full run.
+
 ---
 
 *Source last updated: 2026-04-14 | Check this after cases are added as an intent discovery source or intent-based routing expands*

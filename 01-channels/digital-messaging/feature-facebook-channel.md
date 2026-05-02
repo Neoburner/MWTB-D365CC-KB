@@ -28,6 +28,12 @@ Use Facebook if Messenger is a real customer channel in the client's market. Ski
 - Token expiry is silent. Page access tokens expire with no visible error in the admin center. Set up a 60-day refresh reminder in your ops runbook.
 - Message tag requires both D365 and Facebook enabled. The workstream Behaviors toggle alone isn't enough—the Facebook Developer Portal must also have the human agent tag on. Miss either side and the 7-day window breaks.
 
+## Consultant notes
+
+- Development mode blocking real customers is the single most common Facebook UAT failure. "Move to live mode" belongs on every go-live checklist — it's a 30-second task that's easy to forget when you're in the middle of a busy cutover.
+- Token expiry needs to be in the client's ops runbook as a recurring calendar task, not just a footnote in the handover document. It expires silently, breaks the channel, and then someone notices a week later when customer messages have been going nowhere. A 60-day reminder is the fix.
+- Business Asset User Profile Access approval is manual and can take weeks. If the client needs customer names to display (not just IDs), initiate this Facebook approval at the start of the project, not during configuration.
+
 ---
 
 *Source last updated: 2026-01-20 | Worth checking again if Facebook API changes affect webhooks, or the token lifecycle changes*

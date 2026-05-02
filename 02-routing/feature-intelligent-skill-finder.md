@@ -39,6 +39,12 @@ Use Intelligent Skill Finder when you have diverse, evolving customer requests t
 - Hybrid routing (rules + ML coexisting) can create confusion if rules aren't fully deprecated. Conversations matching both need clear tiebreaker logic.
 - Model explainability is limited. Supervisors and agents want to know *why* a conversation was routed to them, but you may only get keyword relevance scores.
 
+## Consultant notes
+
+- This is the feature most likely to be oversold in pre-sales and undersupported by actual data at go-live. Before committing to ML routing in a project scope, audit the historical conversation data for volume (500+ per skill is the floor), quality, and labelling consistency. If the audit fails, it's a post-go-live roadmap item, not a go-live deliverable.
+- Logical rules first, ML later is the right sequencing almost every time. Use 6–12 months post-go-live as the benchmark for revisiting ML routing — by then you have clean labelled data and real business feedback on where rules are breaking down.
+- Effort estimation creating agent cherry-picking incentives is worth flagging to the client's operations lead before enabling it. Agents who can see conversation complexity scores will optimise for simple ones. Whether that's a problem depends on how performance is measured.
+
 ---
 
 *Source last updated: 2026-04-30 | Review when: Skill taxonomy changes, new product launches, monthly accuracy reviews, or agent feedback on classification fairness*

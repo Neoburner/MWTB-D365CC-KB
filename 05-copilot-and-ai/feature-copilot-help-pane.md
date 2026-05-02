@@ -30,6 +30,12 @@ Standard in any Copilot deployment. Ask a Question replaces the old Smart Assist
 - **Custom instructions are bypassed with Copilot Studio sources.** If the client switches to extended sources (SharePoint, uploaded files), custom instructions won't apply. Make this clear during setup.
 - **KB content takes up to 24 hours to refresh.** Newly published articles won't show up immediately. Set expectations — publish new articles at least a day before Copilot testing.
 
+## Consultant notes
+
+- Custom instructions are worth investing real time in for any client with a distinct communication style. The default Copilot tone is competent but generic — even 30 minutes of custom instruction writing (tone, prohibited phrases, formatting preferences) noticeably improves the quality of Ask a Question responses for that client's context.
+- KB refresh being daily is a prep item: publish all articles at least 24 hours before any Copilot testing starts. Discovering this during UAT when reps can't find freshly published articles is an avoidable delay.
+- Proactive insights should be piloted with a small group before rolling out to all agents. In a busy contact centre it can feel intrusive — answers surfacing when the rep hasn't asked for help yet disrupts flow for experienced agents. Newer agents tend to value it more.
+
 ---
 
 *Source last updated: check Microsoft Learn | Check this after custom instructions extend to Copilot Studio sources or proactive insights GA*

@@ -42,6 +42,12 @@ Use Intraday Management if you run high-variability operations (support, sales, 
 - **Approval bottlenecks:** Manager unavailable to sign off on OT? Request hangs, defeating the purpose.
 - **Adherence vs break extension trade-off:** Extra breaks boost staffing but tank adherence scores. Reconcile with compensation.
 
+## Consultant notes
+
+- Intraday Management is where WFM value becomes visible to supervisors — it's the thing they'll actually open every morning. Spend time in the handover walking the supervisor through a live session rather than handing over a config guide. The gap indicators and same-day actions are intuitive once you've seen them, but the relationship between this view and the forecast isn't obvious from documentation alone.
+- The lack of forward-looking alerts is the main operational gap to discuss with the client. The view tells you what the situation is now, not what's coming. For high-variability environments, supervisors need to develop a habit of checking 30–60 minutes ahead against the forecast, rather than reacting when the gap is already red.
+- Agree the overtime approval workflow before go-live. If the approval chain is the team leader, and the team leader is also managing a live queue, you'll get approval bottlenecks at the exact moment you can least afford them. Some clients will want to grant supervisors direct OT approval authority without escalation — document the decision and the rationale.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this if: SLA breaches track with staffing gaps, forecast accuracy falls below 80%, or supervisors aren't acting on recommendations*

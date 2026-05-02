@@ -25,6 +25,12 @@ Use when the client stays on Salesforce or ServiceNow. This stacks Contact Cente
 - **ServiceNow: check for OpenFrame.** Some instances don't have it installed. Confirm before you commit to the timeline.
 - **Context passing is custom work.** If the client wants the widget to know which case the rep has open, that's a dev task, not config.
 
+## Consultant notes
+
+- The two-admin dependency is the main timeline risk. The D365 admin can get the widget URL in five minutes; the Salesforce or ServiceNow admin then needs to configure their side, and their availability and change management processes may add weeks. Identify both parties in discovery and get the Salesforce/ServiceNow admin involved early — don't treat it as something to sort out when the D365 side is done.
+- Context passing between the CRM and the widget is consistently underestimated. Clients often assume that because the widget is embedded in Salesforce, it will automatically know which case or account is open. It won't — that requires custom development on the Salesforce or ServiceNow side to pass context to the widget. Get clarity on whether this is in scope during discovery and estimate the development effort accordingly. The out-of-box embed gives you the conversation widget, not a contextually-aware integration.
+- For ServiceNow deployments, confirm the OpenFrame plugin status before committing to the timeline. If it isn't installed, that's a ServiceNow admin task with its own change management and testing cycle. Some enterprise ServiceNow instances have a slow plugin approval process — finding this out mid-project is a scheduling problem.
+
 ---
 
 *Source last updated: 2026-02-12 | Check this: Additional CRM embeddings supported, or Salesforce API version requirement changes*

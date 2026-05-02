@@ -25,6 +25,12 @@ Use if the client has M365 Copilot licences and reps need to query service data 
 - **English-only is a real constraint.** Don't pitch this as multilingual to clients with non-English reps.
 - **Dual Copilot icon is confusing.** Warn reps upfront or it generates support tickets.
 
+## Consultant notes
+
+- Two admin teams needing to coordinate is the delay that catches projects. Confirm who owns M365 admin and who owns D365 admin at the start of the project. If they're different teams (common in enterprise), get them introduced early and document which step each team owns.
+- Confirm the M365 Copilot licence count before positioning this feature. The licensing is per user and separate from D365, which often means a smaller rollout population than the client initially expects when they see the cost.
+- English-only is a hard constraint worth calling out explicitly if the client has non-English speaking reps. Don't let multilingual assumptions survive into the design phase.
+
 ---
 
 *Source last updated: 2026-04-07 | Check this after Service Agent exits preview, multilingual support is added, or licensing requirements change*

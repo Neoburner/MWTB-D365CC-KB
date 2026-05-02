@@ -33,6 +33,12 @@ Use Entra ID SSO in all deployments. Reduces credential overhead, aligns with M3
 - Embedded deployments need the embedding app (Salesforce/ServiceNow) to pass Entra ID context correctly. Misconfiguration breaks SSO.
 - B2B guests may see reduced scope if parent tenant has guest access restrictions.
 
+## Consultant notes
+
+- The immediate account revocation on Entra ID account disablement is the HR offboarding story to tell the client's IT team during handover. There's no grace period — a rep whose account is disabled in Entra ID loses access instantly and any in-flight conversations are dropped. The IT offboarding process for leavers should account for this: supervisors need to know that contact center access revocation happens at the same moment as the broader M365 account disable, not separately.
+- MFA lockout recovery needs to be in the IT support runbook before go-live. An agent who has their MFA factor removed or loses their authenticator device is locked out of Contact Center as completely as they're locked out of any other M365 app. The recovery process (MFA reset by IT helpdesk) should be documented and tested — finding out the recovery path doesn't work on the morning of go-live isn't the right time to discover it.
+- For embedded deployments (Salesforce or ServiceNow), confirm that the embedding app passes Entra ID context correctly in the integration testing phase. If the Salesforce SSO configuration doesn't correctly forward the Entra ID session to the Contact Center widget iframe, agents will get auth errors when opening the widget even though they're logged into Salesforce. This is a cross-system configuration issue that requires both the D365 admin and the Salesforce/ServiceNow admin to diagnose.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this: Entra ID MFA requirements change or embedding app updates identity handling*

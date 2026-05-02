@@ -31,6 +31,12 @@ Don't rely on it as your sole config mechanism for complex or non-standard setup
 - The agent explains rationale behind recommendations, which is genuinely useful — but if you disagree with its reasoning, override manually. It won't know about your client's specific constraints.
 - Access is admin-only. Service designers or consultants without full admin access won't be able to use it directly. Plan for who does the driving in workshops.
 
+## Consultant notes
+
+- Treat the Service Operations Agent as an acceleration tool, not a replacement for knowing the platform. Its natural language config generation is genuinely useful for standard pattern setups — getting a workstream scaffolded quickly in a workshop, or checking configuration diagnostics without navigating five menu levels. It's less useful for anything bespoke or where the client's requirements don't map neatly to defaults.
+- The review step is non-negotiable. The agent's output is a first draft, and the generated config should be verified against the design documentation before committing. For routing and queue rules especially — where a wrong setting silently misdirects conversations — treat it like any generated code: useful starting point, needs human review before it goes anywhere near production.
+- This is worth showing to clients who will be doing their own post-go-live admin. The diagnostic capability alone — surfacing configuration mismatches without manual inspection — is useful for an operations team maintaining the environment without a consultant on hand. Include it in the admin handover as a troubleshooting resource, not just a setup shortcut.
+
 ---
 
 *Worth revisiting at GA (May 2026) to see what's changed between preview and production — the scope of supported tasks typically expands.*

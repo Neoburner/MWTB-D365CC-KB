@@ -43,6 +43,12 @@ Use adherence tracking if you have compliance rules (financial, healthcare) or t
 - **Partial-day schedules trip people up:** Agent with 10 AM-6 PM shift clocks in at 9:50 AM. System shows poor adherence until 10 AM.
 - **No ML for scheduling suggestions:** Adherence data is tracked, not used to auto-suggest better shifts. Manual review only.
 
+## Consultant notes
+
+- Set the adherence threshold in conversation with the operations team, not on your own judgement. 95% sounds reasonable until you learn the centre has a 10-minute shift-end courtesy window that the system will flag as non-adherence. Agree what the score actually measures and what the exceptions are before publishing results to management.
+- The presence sync lag is real and will generate false positives in the first weeks. Coach supervisors to treat marginal deviations with scepticism initially — the system needs time to establish baseline patterns before adherence reporting is reliable enough to act on.
+- Reason code backdating is an audit trail problem for regulated clients. If the client is in financial services or healthcare, flag this limitation explicitly and agree a policy for retrospective tagging before go-live. Some clients will want supervisor pre-approval for absence coding rather than post-hoc logging.
+
 ---
 
 *Source last updated: 2026-04-30 | Check this if: Adherence rates drop, compliance audit flags it, or absence codes need updating*

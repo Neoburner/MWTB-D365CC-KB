@@ -27,6 +27,12 @@ Use for relationship-manager or account rep models where continuity matters — 
 - **Skills are bypassed for preferred reps.** A preferred rep with the wrong skills still gets the work. For clients using preferred routing alongside strict skill compliance, this needs explicit acceptance.
 - **The matrix is manually maintained.** No automated sync with CRM account ownership. Build a process for keeping preferred rep mappings current as staff turn over—stale mappings silently route to ex-employees or wrong reps.
 
+## Consultant notes
+
+- The matrix maintenance process is the part that always gets forgotten at handover. Preferred rep mappings go stale fast — staff turn over, accounts change hands, reps move teams. Build a data management process (who maintains it, how often it's reviewed) into the operational handover as a named task with a named owner.
+- Skills being bypassed for preferred reps needs to be an explicit acceptance sign-off if the client uses skill compliance routing. A preferred rep with the wrong language skill or technical certification still gets the work. If that's a compliance issue for the client, this feature isn't suitable for those scenarios without a workaround.
+- This is most valuable for relationship-manager or account-based selling models. For volume contact centres, the maintenance overhead rarely justifies the continuity benefit — push back early if the use case doesn't clearly fit.
+
 ---
 
 *Source last updated: 2026-02-19 | Review when: Pick-mode support added or bulk configuration tooling introduced*

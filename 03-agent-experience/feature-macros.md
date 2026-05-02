@@ -29,6 +29,12 @@ Use whenever a rep performs the same sequence of manual steps repeatedly — ope
 - **No branching within a macro.** Complex conditional logic (e.g. different actions based on case category) requires separate macros triggered by conditional script steps, not a single branching macro.
 - **Macro names are visible to reps.** Use self-documenting names ("Link Case to Conversation", not "Macro_001")—reps see them in the Productivity Pane and script steps.
 
+## Consultant notes
+
+- "Start macro execution" being mandatory is literally the first thing to cover when training client admins to build their own macros. It's the mistake everyone makes on their first attempt and the resulting error isn't obvious about why the macro failed.
+- Macro naming is worth enforcing from day one. Once a production org has "Macro_001" and "New Macro (3)" proliferating, it's painful to clean up. Push for self-documenting names in the naming convention you hand over.
+- Flow Connector for external systems vs native Productivity Automation for Dataverse is a clean architectural boundary worth setting in the design document. It stops people building Power Automate flows for things that can be done natively, and vice versa.
+
 ---
 
 *Source last updated: 2025-05-05 | Review when: New predefined automation action categories added, or Flow Connector capabilities expanded*
