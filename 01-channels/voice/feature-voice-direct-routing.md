@@ -38,6 +38,12 @@ Use Direct Routing if you've got a carrier relationship you want to keep, own yo
 - Media encryption (SRTP) adds CPU overhead on the SBC; ensure SBC is sized for your concurrent call volume
 - Inbound number translations (DID mapping) must match D365 workstream expectations; mismatched DIDs route calls to the wrong queue silently
 
+## Consultant notes
+
+- Check the ACS-certified SBC vendor list in pre-sales, not during implementation. If the client's existing SBC isn't on it, that's a blocker — not a workaround. Finding out mid-project is painful.
+- Scope clarity on who owns the SBC layer is essential. Direct Routing adds a dependency outside D365, and the line between "D365 problem" and "SBC problem" gets blurry fast. Get it in the SOW before anyone starts configuring anything.
+- First-time one-way audio is almost always a firewall or NAT issue on the SBC side. Don't spend three hours in D365 logs before confirming the SBC is actually passing media correctly.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if ACS updates the SBC vendor list or Direct Routing quotas shift*

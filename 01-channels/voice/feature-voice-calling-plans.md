@@ -37,6 +37,12 @@ Go with Calling Plans if you've already got Teams Phone licences, want Teams and
 - Calling Plans do not support SIP trunking; you cannot bring your own carrier numbers
 - Outbound Calling Plan calls show the provisioned DID, not the agent's extension, by default; cannot customise per-agent
 
+## Consultant notes
+
+- "We already have Teams licences" is not the same as "we already have calling-capable Teams licences." Check the actual SKU in pre-sales — it saves an awkward conversation mid-project when the licensing gap surfaces.
+- The cost argument matters at scale. If you're recommending Calling Plans for a centre above 50 concurrent calls, run the numbers first. The per-call pricing can comfortably exceed ACS PSTN at that volume.
+- Clients often expect deeper Teams integration than Calling Plans actually delivers. "Can agents work in Teams as normal?" depends entirely on their licensing setup. Set expectations early rather than letting the demo do the selling.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if Teams Phone licensing shifts or geographic coverage expands*

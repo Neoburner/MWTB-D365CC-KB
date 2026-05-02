@@ -28,6 +28,12 @@ Needed if reps have to make outbound calls — callbacks on cases, proactive not
 - **The 20-minute delay is real.** After you add a rep to a queue, they can't make calls for 20 minutes. Plan for that in onboarding and UAT.
 - **Personal numbers create a support headache.** If the client goes that route, they need to manage reassignments when staff leave. This admin cost often gets missed in scoping.
 
+## Consultant notes
+
+- The 20-minute delay after adding a rep to a queue will bite you during UAT every time unless you document it upfront. Put it in the UAT guide and tell the client's test team before they start clicking.
+- Personal numbers almost always sound more appealing to clients than they actually are in practice. The staff turnover / number reassignment admin cost gets missed in scoping. Worth talking through the operational overhead before committing to that model.
+- Separate capacity profiles for inbound and outbound from day one, regardless of what the client thinks they need. Untangling mixed profiles after go-live is not a conversation anyone enjoys.
+
 ---
 
 *Source last updated: 2026-02-20 | Worth revisiting if the outbound dialer goes GA or personal number management gets upgraded*

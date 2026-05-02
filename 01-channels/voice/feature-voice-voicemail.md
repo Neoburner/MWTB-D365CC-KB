@@ -32,6 +32,12 @@ Include voicemail on most voice deployments — gives customers a way to leave a
 - **Reps need to be in the individual voicemail queue.** If direct-number reps aren't in the Default Individual Voicemail Queue, voicemails never get delivered. Always verify this after setting up direct numbers.
 - **IVR can't send to voicemail directly.** Customers can't go straight to voicemail from an AI agent — they hit the rep layer first. Design your call flow accordingly.
 
+## Consultant notes
+
+- The operating hours gotcha is one to verify on every voice deployment, not just when voicemail is the obvious priority. It's easy to set operating hours at workstream level "temporarily" during setup and forget to move them — and then voicemail silently never fires.
+- Voicemail is almost always in scope even when the client hasn't mentioned it. Ask the question in discovery: "What happens when a customer calls outside of hours or when all agents are busy?" If the answer isn't thought through, voicemail is probably the solution.
+- The IVR-to-voicemail path is a common client assumption that doesn't work. Customers can't go straight from an AI agent to voicemail — they have to hit the rep layer first. Design the call flow with that in mind or it'll surface as a gap in UAT.
+
 ---
 
 *Source last updated: 2026-02-08 | Worth revisiting if individual voicemail prompts become customisable or voicemail routing to voice queues ships*

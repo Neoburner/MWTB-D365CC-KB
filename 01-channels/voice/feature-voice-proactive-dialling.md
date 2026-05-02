@@ -41,6 +41,12 @@ Predictive dialling is for high-volume campaigns (collections, surveys, appointm
 - **Junk in the contact list tanks efficiency.** Disconnected numbers, wrong format — validate and deduplicate before you start.
 - **Carrier SIP codes matter.** Some carriers don't send voicemail detection codes. You'll need workarounds.
 
+## Consultant notes
+
+- DNC compliance gets treated as a client responsibility but invariably lands on the implementation team when something goes wrong. Agree in the SOW who's responsible for DNC list validation and document it clearly. One call to the wrong number is an expensive lesson.
+- Predictive mode sells well in discovery ("maximum agent efficiency") but clients often underestimate the workforce impact. Agents handling high volumes of unexpected live connections burn out faster. Worth raising in the requirements phase, not post-go-live.
+- Power Automate failures are the silent killer for outbound campaigns — no alerts, dialling just stops. Build in some form of monitoring or alerting on the workflow before handing over to the client.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if outbound automation expands or Copilot Agents integrate with dialling*

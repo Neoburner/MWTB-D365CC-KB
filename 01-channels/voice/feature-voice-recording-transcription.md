@@ -32,6 +32,12 @@ Essential for almost all voice deployments. Transcripts are required for Copilot
 - **Consent and compliance is the client's legal problem, not yours.** The system can play an announcement, but whether that satisfies legal requirements is a legal question. Get written legal sign-off before you enable automatic recording in regulated industries.
 - **Storage scales fast.** 1,000 calls/day at 20 min each ≈ 10 GB/day. Size the Dataverse storage properly in your solution design.
 
+## Consultant notes
+
+- Event Grid registration belongs on your voice channel setup checklist as a mandatory step, not something you discover is missing when recordings don't appear. It's quick to do and painful to forget.
+- Get legal sign-off on recording consent in writing before you enable anything in a regulated sector. Doesn't matter that the system can play an announcement — whether that satisfies the legal requirement in that jurisdiction is not your call to make.
+- Storage sizing is easy to underestimate. Run a quick estimate based on the client's expected call volume and length in your solution design — 1,000 calls a day adds up fast, and Dataverse storage isn't cheap to expand after the fact.
+
 ---
 
 *Source last updated: 2026-02-15 | Worth revisiting if recording storage options shift or translation language support expands*

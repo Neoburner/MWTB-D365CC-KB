@@ -30,6 +30,7 @@ Go with native voice if the client wants telephony managed inside D365, no separ
 - **Network assessment is not optional.** Run ACS network tests from agent workstation locations. VPN, proxy, and firewall configurations frequently degrade voice quality in ways that only appear at go-live.
 - **Existing voice workstreams need migration for enhanced voice.** If the client has existing voice workstreams, assess migration before the next wave — don't leave this until problems surface.
 - **IVR design is a separate workstream.** Copilot Studio agent design for voice IVR has its own complexity and timeline. Don't roll it into the channel setup estimate.
+- **Deprecated: local hosting of the voice channel has been removed.** Switzerland lost local hosting October 2024; India and Japan September 2024. If you're working with a client that had locally hosted voice in those regions, they need to be on global cloud deployment now. See [Deprecations in Dynamics 365 Contact Center](https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/deprecations-contact-center).
 
 ---
 

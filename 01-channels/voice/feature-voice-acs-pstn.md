@@ -36,6 +36,12 @@ Choose ACS PSTN if you want Microsoft-managed PSTN with no carrier wrangling. It
 - Deleting the ACS resource from Azure does not unlink it from D365 automatically; remove the link in D365 admin centre first to avoid orphaned references
 - PSTN costs accrue per minute; bulk pricing tiers exist but are only visible after your first 10K minutes/month—budget conservatively
 
+## Consultant notes
+
+- The question that always slows provisioning down: "who manages your Azure subscription?" If it's a central IT team that hasn't touched ACS before, add buffer. Number provisioning delays are almost always an Azure approval or admin access issue, not a D365 issue.
+- Clients consistently underestimate DID quantity because they're thinking total headcount, not concurrent calls. Push back on this early with a quick concurrent call estimate before purchase — numbers can't be easily cancelled mid-cycle.
+- ACS PSTN is the right default for most net-new deployments. Only deviate if the client has a carrier relationship they actively want to preserve, or has a country requirement ACS doesn't cover.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if ACS pricing shifts or new voice features ship*

@@ -38,6 +38,12 @@ Use callbacks if you've got traffic spikes, seasonal peaks, or average hold time
 - **Agent unavailability orphans callbacks.** If the assigned agent goes unavailable, the callback may hang or auto-reassign. Clarify how this works.
 - **Callback reporting is custom.** Abandonment rates, completion rates — not in the standard dashboards. You'll build them yourself.
 
+## Consultant notes
+
+- Callback reporting requirements always surface in UAT, usually as a surprise. Scope them during requirements — standard dashboards don't cover abandonment or completion rates, so if the client wants those, it's a custom Power BI build. Better to know that in advance.
+- The invalid number silent failure is worth a specific mention during client handover. They need a process for validating customer numbers before they hit the queue — otherwise failed callbacks just disappear with no visibility.
+- Callback slot limits are per-queue, which means the mental model of "we've got capacity" can be wrong if you've got multiple queues all sharing assumptions. Worth walking through the maths with the client during design.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if callback automation expands or Copilot Agents integrate with callback*

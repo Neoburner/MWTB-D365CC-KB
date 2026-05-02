@@ -30,6 +30,12 @@ Essential for any inbound voice deployment. Every inbound number has to bind to 
 - **Post-call survey lives in Behaviours, not as a separate step.** If you need it, link it during channel setup now. Easy to miss otherwise.
 - **Test all inbound paths before go-live.** Voice routing issues are a nightmare to debug remotely. Build a test call plan covering every number, every language, and every operating hours scenario and run it through UAT.
 
+## Consultant notes
+
+- The multi-language vs. multiple numbers decision almost always needs to happen during discovery, not design. Clients tend to have a strong opinion once they understand the implications, and retrofitting the wrong choice mid-build wastes time.
+- Post-call survey needs to be scoped before configuration starts. It's wired in during the Behaviours step, not added on afterwards — easy to skip in a busy build phase and then have to backtrack.
+- Build a test call plan for UAT that explicitly covers every number, every language, and every operating hours scenario. Voice routing issues are difficult to debug remotely and the last thing you want to find in go-live week.
+
 ---
 
 *Source last updated: 2026-03-10 | Worth revisiting if enhanced voice rolls out to more regions or anonymous inbound stops being Direct Routing only*

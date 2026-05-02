@@ -47,6 +47,12 @@ Use real-time translation if you've got multilingual customers but can't hire bi
 - **Storage doubles with bilingual transcripts.** Original + translated = 2x storage. Plan for archive costs.
 - **Dialect variations cause problems.** Latin American vs. Spain Spanish, Modern Standard vs. regional Arabic, Indian vs. UK English. Test with your real customer base.
 
+## Consultant notes
+
+- This feature demos brilliantly and then disappoints in production. The 2–4 second latency per exchange is enough to make natural conversation feel awkward. Set expectations with the client before any live calls happen, not after.
+- Specialist or regulated work (legal, medical, financial) — recommend a human interpreter regardless of what the feature can technically do. The accuracy isn't there for high-stakes language, and liability sits with whoever recommended the tool.
+- Azure metered billing catches clients off guard. Build a rough cost estimate based on expected translated minutes into your solution design sign-off. "It looked free" is not a conversation you want at month-end invoice time.
+
 ---
 
 *Source last updated: 2026-04-30 | Worth revisiting if translation escalations hit 5%, translated-call CSAT drops, or you need new language pairs*
