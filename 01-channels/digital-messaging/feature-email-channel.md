@@ -22,7 +22,7 @@ Routes customer email to agents in Contact Center and tracks it as case records.
 Use email when you want to capture email inquiries into case management. Ideal if customers email you outside of a contact form. Skip it if primary intake is web forms, chat, or phone. Email is async and slower than chat but works well for complex issues needing documentation and longer response windows.
 
 ## Configuration decisions
-- Which Exchange mailbox(es) to use for incoming customer email—dedicated per queue or shared?
+- Which Exchange mailbox(es) to use for incoming customer email: dedicated per queue or shared?
 - Email threading behavior: automatic grouping of replies or new case per email?
 - Attachment storage location: inline in conversation or linked file storage?
 - Email forwarding rules: auto-respond to confirm receipt, or silent receipt?
@@ -41,7 +41,7 @@ Use email when you want to capture email inquiries into case management. Ideal i
 
 - Exchange admin access is the dependency that always slows email channel setup down. Get the Exchange team involved from the first project call, not the implementation sprint. They have their own change management process and a two-week notice period can kill your timeline.
 - Email threading failure on closed cases is an ops issue worth covering in client training. If a customer replies to a closed case email, it creates a new orphaned record. The client's support team needs a process for catching and relinking these.
-- Response time SLA expectations need to be set realistically. Email is async and the processing delay is real — SLA metrics should be measured in hours, not the minutes clients sometimes expect from watching chat.
+- Response time SLA expectations need to be set realistically. Email is async and the processing delay is real: SLA metrics should be measured in hours, not the minutes clients sometimes expect from watching chat.
 
 ---
 

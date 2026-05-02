@@ -9,27 +9,27 @@ Predefined message templates reps insert into messaging conversations with a sin
 
 ## Key facts
 - Dynamic slug formats: `{FullName{Customer}}`, `{FirstName{Customer}}`, `{LastName{Customer}}`, `{FullName{Agent}}`, `{FirstName{Agent}}`, `{LastName{Agent}}`, `{Nickname{Agent}}`
-- Custom context key slugs: `{OCContext.<contextKey>}` — populated from context variables on the conversation
-- Locale-specific — each quick reply has a locale; reps only see replies matching the channel language setting
-- **Workstream association** scopes visibility — replies not associated with a workstream are visible in all workstreams
+- Custom context key slugs: `{OCContext.<contextKey>}`: populated from context variables on the conversation
+- Locale-specific: each quick reply has a locale; reps only see replies matching the channel language setting
+- **Workstream association** scopes visibility: replies not associated with a workstream are visible in all workstreams
 - Tags group replies for rep navigation (e.g. "Greeting", "Hold", "Closing")
 - Replies can be created or edited directly from the conversation panel by reps (if permitted)
 
 ## When to use / skip
-Use for any messaging-heavy contact centre. Most valuable for teams with high volumes of similar interactions — greetings, hold messages, legal disclosures, FAQs. Lower value for highly variable technical support where canned responses rarely fit.
+Use for any messaging-heavy contact centre. Most valuable for teams with high volumes of similar interactions, greetings, hold messages, legal disclosures, FAQs. Lower value for highly variable technical support where canned responses rarely fit.
 
 ## Configuration decisions
-- Workstream scoping — scope replies to workstreams when different teams need different reply libraries; leave unscoped for org-wide replies
-- Tag taxonomy — design tags to match how reps think about replies (by interaction phase, by topic, by team) rather than by internal admin categories
-- Custom context key slugs — requires context variables to be configured on the workstream; coordinate with the routing/workstream design
+- Workstream scoping: scope replies to workstreams when different teams need different reply libraries; leave unscoped for org-wide replies
+- Tag taxonomy: design tags to match how reps think about replies (by interaction phase, by topic, by team) rather than by internal admin categories
+- Custom context key slugs: requires context variables to be configured on the workstream; coordinate with the routing/workstream design
 
 ## Gotchas
 - **Locale mismatch silently hides replies.** If a quick reply's locale doesn't match the channel's language setting, reps won't see it. Common cause of "why can't I see my quick replies?" tickets post-go-live.
-- **Custom context key slugs render blank if the variable isn't populated.** If the conversation doesn't have the context key set (no pre-survey response, no API call), the slug resolves to empty string—the rep sends a message with a blank where the value should be.
+- **Custom context key slugs render blank if the variable isn't populated.** If the conversation doesn't have the context key set (no pre-survey response, no API call), the slug resolves to empty string: the rep sends a message with a blank where the value should be.
 
 ## Consultant notes
 
-- Locale mismatch is the most common "why can't I see my quick replies" ticket after go-live. Check locale settings on both the replies and the channel language configuration as part of go-live verification — it takes two minutes and prevents a confusing post-launch report.
+- Locale mismatch is the most common "why can't I see my quick replies" ticket after go-live. Check locale settings on both the replies and the channel language configuration as part of go-live verification: it takes two minutes and prevents a confusing post-launch report.
 - Custom context key slugs rendering blank when the variable isn't populated is worth testing explicitly in UAT with empty or missing pre-survey responses. A rep sending a greeting with a blank where the customer name should be is a noticeable quality issue that erodes the point of having quick replies.
 - Tag taxonomy design matters for usability far more than most admins expect. Tags that reflect how reps think about an interaction (Greeting / Hold / Closing / Legal Disclosure) are searched and used. Tags that reflect the admin's internal categorisation logic aren't.
 

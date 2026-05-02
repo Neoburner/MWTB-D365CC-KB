@@ -17,7 +17,7 @@ Real-time operational dashboard for supervisors to monitor queue health, agent p
 - Supports exporting snapshots for shift handoff or escalation documentation
 
 ## When to use / skip
-Use during live operations to spot staffing gaps, detect SLA breaches, monitor CSAT trends, and make intraday adjustments. Check it several times per shift (start, mid-shift, end). Skip if you've got a small team (<20 agents) or stable demand with minimal intraday swings. Don't use it for compliance reporting or exec presentations — use Real-Time Analytics for that.
+Use during live operations to spot staffing gaps, detect SLA breaches, monitor CSAT trends, and make intraday adjustments. Check it several times per shift (start, mid-shift, end). Skip if you've got a small team (<20 agents) or stable demand with minimal intraday swings. Don't use it for compliance reporting or exec presentations, use Real-Time Analytics for that.
 
 ## Configuration decisions
 - **Dashboard refresh frequency:** Accept default 5–10 minutes or adjust based on operational tempo (faster refresh = more server load)
@@ -28,7 +28,7 @@ Use during live operations to spot staffing gaps, detect SLA breaches, monitor C
 - **Alert routing:** Configure if/how low CSAT or SLA breach alerts notify supervisors (dashboard notification, email, SMS)
 
 ## Gotchas
-- **It's a snapshot, not analysis.** A spike in queue length could be staffing, outage, or demand — you still need to diagnose.
+- **It's a snapshot, not analysis.** A spike in queue length could be staffing, outage, or demand: you still need to diagnose.
 - **Data is 5–10 minutes stale.** Decisions based on "current" numbers are already behind by the refresh lag.
 - **CSAT skew.** Only completed surveys count; incomplete ones are excluded, which pushes the score up artificially.
 - **SLA rates improve late shift.** If the SLA target is 24 hours and it's 11pm, fewer conversations can breach today anyway.

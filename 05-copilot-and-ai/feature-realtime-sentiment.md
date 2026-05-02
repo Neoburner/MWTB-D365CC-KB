@@ -34,14 +34,14 @@ Enable to give agents live feedback on customer emotion. Helps them spot frustra
 
 ## Gotchas
 
-- **Azure AI service costs.** Per-message processing incurs charges — budget accordingly.
+- **Azure AI service costs.** Per-message processing incurs charges: budget accordingly.
 - **Accuracy depends on message clarity.** Single-word messages or abbreviations score inaccurately.
 - **Voice adds latency.** Call transcription adds 5–10 seconds to sentiment display.
 - **Non-English scores are unreliable.** Customers typing in other languages may get inaccurate or neutral scores.
 - **~2–5 second lag.** Scores update behind message sends, reducing perceived responsiveness.
 - **Disabling doesn't wipe history.** Turning off sentiment removes live indicators but keeps historical data.
 - **Customers may notice it.** Some find visible sentiment scoring intrusive during the conversation.
-- **AI makes mistakes.** Misinterprets sarcasm, context, and informal language — expect occasional false positives and negatives.
+- **AI makes mistakes.** Misinterprets sarcasm, context, and informal language: expect occasional false positives and negatives.
 
 ## Consultant notes
 

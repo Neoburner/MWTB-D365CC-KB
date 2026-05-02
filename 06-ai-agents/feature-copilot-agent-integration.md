@@ -8,31 +8,31 @@
 Connects a Copilot Studio agent to D365 Contact Center workstreams so it can handle conversations autonomously before escalating to a human rep. Supports chat, voice, and social channels.
 
 ## Key facts
-- **One agent per workstream** — you cannot assign multiple agents to a single workstream
-- **Push mode only** — agent assignment is automatic; pick mode is not supported for bot workstreams
-- **Classic Copilot Studio agents are not supported in enhanced voice workstreams** — must use modern (generative) agents for voice
-- **30-minute inactivity auto-close** — if the customer goes silent and the bot doesn't escalate, the conversation closes automatically after 30 minutes
+- **One agent per workstream**: you cannot assign multiple agents to a single workstream
+- **Push mode only**: agent assignment is automatic; pick mode is not supported for bot workstreams
+- **Classic Copilot Studio agents are not supported in enhanced voice workstreams**: must use modern (generative) agents for voice
+- **30-minute inactivity auto-close**: if the customer goes silent and the bot doesn't escalate, the conversation closes automatically after 30 minutes
 - On escalation, the bot passes the full conversation transcript and any context variables to the receiving rep's session
 - **Voice end-of-conversation:** use the `CloseOmnichannelConversation` context variable in the Copilot Studio topic to signal D365 to end the call cleanly; without it, the voice session may not terminate correctly
 - Agent must be published in Copilot Studio before it can be selected in the workstream configuration
 
 ## When to use / skip
-Use on any workstream where you want automated triage, deflection, or self-service before handoff. Skip exclusively human workstreams — bots just add routing complexity.
+Use on any workstream where you want automated triage, deflection, or self-service before handoff. Skip exclusively human workstreams, bots just add routing complexity.
 
 ## Configuration decisions
-- Which context variables to pass from the bot on escalation — define these in the Copilot Studio topic and map them to D365 context keys; determines what data the rep sees on handoff
-- Whether to use modern vs classic agent — voice requires modern; for chat, classic works but modern is the forward path
-- Inactivity behaviour — the 30-minute auto-close is fixed; design bot topics to prompt the customer before that threshold if needed
+- Which context variables to pass from the bot on escalation: define these in the Copilot Studio topic and map them to D365 context keys; determines what data the rep sees on handoff
+- Whether to use modern vs classic agent: voice requires modern; for chat, classic works but modern is the forward path
+- Inactivity behaviour: the 30-minute auto-close is fixed; design bot topics to prompt the customer before that threshold if needed
 
 ## Gotchas
-- **Classic agents blocked on enhanced voice.** If you can't see a bot in the voice workstream picker, it's probably classic — migrate or rebuild it as modern.
+- **Classic agents blocked on enhanced voice.** If you can't see a bot in the voice workstream picker, it's probably classic: migrate or rebuild it as modern.
 - **Publish first.** Unpublished agents don't appear in the agent picker. Publish in Copilot Studio first.
 - **Missing `CloseOmnichannelConversation` on voice = hung calls.** For voice, every exit path must set this variable. Otherwise calls hang without closing properly.
 
 ## Consultant notes
 
-- One agent per workstream is the constraint that gets pushed on most. Clients want different bot topics for different scenarios routed through the same workstream — the answer is to design the workstream structure to accommodate the agent, not the other way around. Have that conversation in the design phase, not when someone's trying to add a second bot to a workstream in UAT.
-- Context variable mapping on escalation is worth investing design time in. Without it, the agent receives the handoff cold — no customer name, no intent, no what-the-bot-discovered. A well-designed escalation passes everything the rep needs to pick up smoothly. Design it alongside the bot topics, not as an afterthought.
+- One agent per workstream is the constraint that gets pushed on most. Clients want different bot topics for different scenarios routed through the same workstream: the answer is to design the workstream structure to accommodate the agent, not the other way around. Have that conversation in the design phase, not when someone's trying to add a second bot to a workstream in UAT.
+- Context variable mapping on escalation is worth investing design time in. Without it, the agent receives the handoff cold: no customer name, no intent, no what-the-bot-discovered. A well-designed escalation passes everything the rep needs to pick up smoothly. Design it alongside the bot topics, not as an afterthought.
 - `CloseOmnichannelConversation` on every voice exit path is the one to verify in UAT explicitly. Every topic that can end a voice conversation needs it. Missing it causes calls to hang without closing, which surfaces in production as a wave of ghost sessions.
 
 ---

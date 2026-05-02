@@ -17,7 +17,7 @@ Conversation Diagnostics is a per-conversation troubleshooting and visibility to
 - Agents can share diagnostic information with supervisors or compliance teams for escalation documentation
 
 ## When to use / skip
-Use Conversation Diagnostics when an agent is confused about why they received a conversation, when a conversation took an unexpected path, or when investigating quality issues related to skill mismatch. Supervisors use it to coach agents on routing logic or to troubleshoot why customers were escalated multiple times. Skip it if your routing is simple (single queue, no skills) — the output will be minimal and add no value. Do not use it as a performance metric tool; it is not designed for bulk analytics.
+Use Conversation Diagnostics when an agent is confused about why they received a conversation, when a conversation took an unexpected path, or when investigating quality issues related to skill mismatch. Supervisors use it to coach agents on routing logic or to troubleshoot why customers were escalated multiple times. Skip it if your routing is simple (single queue, no skills), the output will be minimal and add no value. Do not use it as a performance metric tool; it is not designed for bulk analytics.
 
 ## Configuration decisions
 - **Visibility permissions:** Define which agent roles can view their own conversation diagnostics vs. supervisors viewing all
@@ -37,8 +37,8 @@ Use Conversation Diagnostics when an agent is confused about why they received a
 ## Consultant notes
 
 - The distinction between Conversation Diagnostics (per-conversation, agent/supervisor-facing) and Routing Diagnostics (aggregate, admin-facing) is worth clarifying in handover documentation. They're different tools for different audiences and the naming confuses people.
-- Business logic exposure is worth thinking about in the security design. Detailed diagnostics surface routing rule names and skill hierarchy information — some clients consider that internal config to be sensitive, particularly in multi-BU or franchise deployments where teams shouldn't know each other's routing setup.
-- Useful for coaching, not performance measurement. It's a troubleshooting and explanation tool. Don't let supervisors try to use it as a productivity metric — the data it surfaces isn't structured for that and the interpretations will be wrong.
+- Business logic exposure is worth thinking about in the security design. Detailed diagnostics surface routing rule names and skill hierarchy information: some clients consider that internal config to be sensitive, particularly in multi-BU or franchise deployments where teams shouldn't know each other's routing setup.
+- Useful for coaching, not performance measurement. It's a troubleshooting and explanation tool. Don't let supervisors try to use it as a productivity metric: the data it surfaces isn't structured for that and the interpretations will be wrong.
 
 ---
 

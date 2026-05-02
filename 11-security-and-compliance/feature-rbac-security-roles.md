@@ -17,7 +17,7 @@ D365 Contact Center security is enforced through a three-tier role structure: Da
 - The Omnichannel Administrator persona does not automatically grant admin access to Dynamics; must also assign System Administrator or System Customizer role
 
 ## When to use / skip
-Use when defining who does what (take conversations, monitor teams, configure queues, view analytics). Don't build custom roles from scratch — OOB personas are heavily optimized. Don't assign System Administrator to all agents — grant minimal Omnichannel persona + base role.
+Use when defining who does what (take conversations, monitor teams, configure queues, view analytics). Don't build custom roles from scratch, OOB personas are heavily optimized. Don't assign System Administrator to all agents, grant minimal Omnichannel persona + base role.
 
 ## Configuration decisions
 - Separate Omnichannel Agent from Omnichannel Supervisor by team, not by agent count: both roles are licensed per-seat
@@ -27,8 +27,8 @@ Use when defining who does what (take conversations, monitor teams, configure qu
 - Supervisors managing reports across multiple business units may need User-level scope on the Omnichannel Supervisor role
 
 ## Gotchas
-- New roles take effect after sign-out/sign-in — cached permissions persist.
-- Experience profiles don't restrict API access — JavaScript SDK calls work even if UI is hidden.
+- New roles take effect after sign-out/sign-in: cached permissions persist.
+- Experience profiles don't restrict API access: JavaScript SDK calls work even if UI is hidden.
 - Omnichannel Agent role alone doesn't grant Account/Contact/Case visibility. Agents operate on channel/routing context only.
 - No Omnichannel persona = no agent interface load, even with valid Dataverse role.
 - Pre-2022 roles may lack Omnichannel privilege sets. Check they've been updated.
@@ -36,8 +36,8 @@ Use when defining who does what (take conversations, monitor teams, configure qu
 ## Consultant notes
 
 - The three-tier model (Dataverse role + Omnichannel persona + experience profile) is the one most likely to be misunderstood in security design workshops. Clients often assume a single role assignment covers all three layers. Walk through a concrete example: an agent needs (1) the Dataverse CSR role for case visibility, (2) the Omnichannel Agent persona to load the workspace, and (3) an experience profile to control which tools they see. Each layer is configured in a different place and by a different mechanism.
-- The "Omnichannel Agent alone doesn't grant Contact/Case visibility" limitation catches deployments that need reps to work cases as well as conversations. If the client's reps will be looking up customer records, creating cases, or logging outcomes in Dataverse entities during conversations, they'll also need the Customer Service Representative role. Clarify whether this is in scope during the role design session — adding it post-go-live requires a security change and UAT verification.
-- Experience profiles control UI feature visibility but not API access. If the client has custom tabs built on the JavaScript SDK, those custom tabs can call the API regardless of what's hidden in the experience profile. This is a security design consideration if there are any features the client wants to restrict at a functional level rather than just visually — those restrictions need to be enforced at the API/Dataverse permission layer, not the experience profile layer.
+- The "Omnichannel Agent alone doesn't grant Contact/Case visibility" limitation catches deployments that need reps to work cases as well as conversations. If the client's reps will be looking up customer records, creating cases, or logging outcomes in Dataverse entities during conversations, they'll also need the Customer Service Representative role. Clarify whether this is in scope during the role design session: adding it post-go-live requires a security change and UAT verification.
+- Experience profiles control UI feature visibility but not API access. If the client has custom tabs built on the JavaScript SDK, those custom tabs can call the API regardless of what's hidden in the experience profile. This is a security design consideration if there are any features the client wants to restrict at a functional level rather than just visually: those restrictions need to be enforced at the API/Dataverse permission layer, not the experience profile layer.
 
 ---
 

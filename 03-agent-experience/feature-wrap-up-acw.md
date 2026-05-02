@@ -11,7 +11,7 @@ Wrap-up (ACW) is the period after an agent ends a conversation where they comple
 - Wrap-up timer can be disabled entirely, set to auto-end after N minutes, or require supervisor intervention to close
 - Agent presence during wrap-up (e.g., "Wrap-Up," "Away," or still "Busy") is a separate setting from capacity; an agent can consume capacity while in wrap-up or be unavailable for routing
 - Disposition codes are user-configurable and often required for compliance, quality assurance, or reporting workflows
-- The conversation itself closes independently of wrap-up closure — an agent can still do wrap-up work after the customer has disconnected
+- The conversation itself closes independently of wrap-up closure: an agent can still do wrap-up work after the customer has disconnected
 - Wrap-up is tracked in agent availability reports and affects queue wait time perception (agents in wrap-up are not available for inbound)
 - Capacity is not automatically released when wrap-up starts; you must configure capacity behavior separately
 
@@ -23,7 +23,7 @@ Use ACW when you have post-call processes: quality assurance notes, capture cust
 - **Capacity release timing:** Decide if agents release capacity immediately upon conversation end, or only after wrap-up closes
 - **Required fields:** Define which fields (notes, disposition, tags) are mandatory vs. optional to balance compliance needs with agent friction
 - **Default disposition code:** Pre-select a "no disposition" or "resolved" code to reduce clicks for simple cases
-- **Presence state during wrap-up:** Align with business rules—some centers keep agents "Busy" to prevent new assignments, others shift to "Away" for visibility
+- **Presence state during wrap-up:** Align with business rules: some centers keep agents "Busy" to prevent new assignments, others shift to "Away" for visibility
 - **Timer enforcement:** If auto-end is enabled, set duration based on average post-call work time (typically 2–5 minutes) to avoid timeout frustration
 
 ## Gotchas
@@ -36,9 +36,9 @@ Use ACW when you have post-call processes: quality assurance notes, capture cust
 
 ## Consultant notes
 
-- Disposition code enforcement via form validation, not training, is the lesson most clients learn post-go-live when reporting shows incomplete data. If dispositions matter for QA or analytics, make them required fields — don't rely on agent discipline to complete optional ones consistently.
+- Disposition code enforcement via form validation, not training, is the lesson most clients learn post-go-live when reporting shows incomplete data. If dispositions matter for QA or analytics, make them required fields: don't rely on agent discipline to complete optional ones consistently.
 - Wrap-up timer duration should be set based on actual post-call work timing from the client's current process, not a guess. 2 minutes is too short for complex cases; 10 minutes inflates queue wait times unnecessarily. Ask the operations team what their current after-call work actually looks like.
-- The presence/capacity during wrap-up distinction is worth explaining carefully in the supervisor training. Agents can appear available on the presence indicator while their capacity is still consumed in wrap-up — that discrepancy between what the real-time dashboard shows and what actually routes through causes confusion for supervisors monitoring live.
+- The presence/capacity during wrap-up distinction is worth explaining carefully in the supervisor training. Agents can appear available on the presence indicator while their capacity is still consumed in wrap-up: that discrepancy between what the real-time dashboard shows and what actually routes through causes confusion for supervisors monitoring live.
 
 ---
 

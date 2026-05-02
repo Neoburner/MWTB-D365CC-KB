@@ -18,16 +18,16 @@ Phone Number Management covers the full lifecycle of DIDs in D365 Contact Center
 - One DID can route to multiple queues via call flows (e.g., 1-800-SUPPORT → IVR → English queue or Spanish queue)
 
 ## When to use / skip
-Use this to acquire, release, and port numbers as you scale. Skip only if you manage numbers in a carrier portal and never bring them into D365 (rare — usually Direct Routing with carrier-managed DIDs).
+Use this to acquire, release, and port numbers as you scale. Skip only if you manage numbers in a carrier portal and never bring them into D365 (rare, usually Direct Routing with carrier-managed DIDs).
 
 ## Configuration decisions
-- **Number quantity** — Calc based on concurrent calls and geography. 10 agents × 4 calls each = 40 numbers for overflow.
-- **Geography** — Pick regions that match your customer base. Local numbers get better answer rates.
-- **Toll-free vs. geographic** — Toll-free costs more but reaches further; geographic numbers are cheaper.
-- **Porting timeline** — Plan for low-traffic periods. Allow 3–4 weeks, test routing before cutover.
-- **LNP paperwork** — Get a Letter of Authorization (LOA) from your current carrier before you port.
-- **Fallback routing** — Set up overflow numbers and backup queues before you release old numbers.
-- **Reserve pool** — Don't release numbers immediately. Keep a small pool handy for failover.
+- **Number quantity**: Calc based on concurrent calls and geography. 10 agents × 4 calls each = 40 numbers for overflow.
+- **Geography**: Pick regions that match your customer base. Local numbers get better answer rates.
+- **Toll-free vs. geographic**: Toll-free costs more but reaches further; geographic numbers are cheaper.
+- **Porting timeline**: Plan for low-traffic periods. Allow 3–4 weeks, test routing before cutover.
+- **LNP paperwork**: Get a Letter of Authorization (LOA) from your current carrier before you port.
+- **Fallback routing**: Set up overflow numbers and backup queues before you release old numbers.
+- **Reserve pool**: Don't release numbers immediately. Keep a small pool handy for failover.
 
 ## Gotchas
 - **LNP rejects if account details don't match.** Verify account holder name and address with the old carrier first.
@@ -42,7 +42,7 @@ Use this to acquire, release, and port numbers as you scale. Skip only if you ma
 
 ## Consultant notes
 
-- Number porting is almost always on the critical path for voice go-lives. Start the LOA process with the client's existing carrier as early as possible — in parallel with everything else, not sequentially. US and EU estimates of 1–3 weeks are optimistic; allow 4 weeks and have a contingency plan if it slips.
+- Number porting is almost always on the critical path for voice go-lives. Start the LOA process with the client's existing carrier as early as possible: in parallel with everything else, not sequentially. US and EU estimates of 1–3 weeks are optimistic; allow 4 weeks and have a contingency plan if it slips.
 - "Released numbers are permanent" needs to be said out loud in handover training, not just written in documentation. The most expensive number management mistake is releasing a live number because someone thought they were doing a housekeeping exercise. Put a peer review step on number releases in your ops runbook.
 - Build a small buffer pool of spare numbers before go-live and don't release them for at least 90 days after cutover. You'll need them for failover testing, additional agent lines, and the inevitable "we forgot to include this team" conversation two weeks post-launch.
 

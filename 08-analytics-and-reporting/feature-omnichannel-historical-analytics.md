@@ -8,12 +8,12 @@
 Conversation-level analytics across all channels: Summary, Conversation, Queue, Agent, Voice, Voicemail, Bot, and (standalone-only) Proactive Outbound and Bot-Intent dashboards. AI-discovered topic clustering groups conversations automatically. Each add-on dashboard requires a separate enable checkbox.
 
 ## Key facts
-- **Standalone only** — not available in Contact Center embedded
+- **Standalone only**: not available in Contact Center embedded
 - **Base toggle must be on before any add-on reports appear**
-- Metrics are available **24 hours after first enable** — not immediately
+- Metrics are available **24 hours after first enable**: not immediately
 - Add-on reports (Voice, Voicemail, Bot, Advanced Bot, Proactive Outbound, Intent) each have separate checkboxes
 - **Bot analytics add-on required** to separate bot-handled from human-handled conversations; without it, the Bot dashboard shows all agents aggregated
-- **Advanced bot analytics:** up to 15 custom Copilot Studio variables for structured reporting (line of business, product, etc.) — requires variables to be configured in Copilot Studio first
+- **Advanced bot analytics:** up to 15 custom Copilot Studio variables for structured reporting (line of business, product, etc.): requires variables to be configured in Copilot Studio first
 - Default access: System Administrator, Omnichannel Administrator, Omnichannel Supervisor, CSR Manager
 - Custom role access requires Read privilege on specific Dataverse entities per dashboard (see table below)
 - **Report bookmark permissions** (`Report Bookmark` entity Create/Read/Write/Delete) must be granted separately if supervisors need to save filtered views
@@ -31,24 +31,24 @@ Conversation-level analytics across all channels: Summary, Conversation, Queue, 
 | Knowledge analytics | `msdyn_dataanalyticsreport_ksinsights` |
 
 ## When to use / skip
-Turn this on for every standalone deployment — it's your main view of conversation and channel performance. Pair it with CS historical analytics for case data. Enable add-ons based on what channels you're running.
+Turn this on for every standalone deployment, it's your main view of conversation and channel performance. Pair it with CS historical analytics for case data. Enable add-ons based on what channels you're running.
 
 ## Configuration decisions
-- **Bot analytics add-on** — enable for any deployment with a Copilot agent; required for meaningful bot containment measurement
-- **Advanced bot analytics custom variables** — if the client needs to slice bot performance by product/region/segment, scope this as a Copilot Studio development task; 15-variable limit
-- **Which users need analytics access** — security role configuration required for non-default roles; don't forget bookmark entity permissions
+- **Bot analytics add-on**: enable for any deployment with a Copilot agent; required for meaningful bot containment measurement
+- **Advanced bot analytics custom variables**: if the client needs to slice bot performance by product/region/segment, scope this as a Copilot Studio development task; 15-variable limit
+- **Which users need analytics access**: security role configuration required for non-default roles; don't forget bookmark entity permissions
 
 ## Gotchas
 - **24-hour delay surprises everyone.** Enable during UAT, not at go-live, or you lose day one of production data.
 - **Base toggle must be on first.** Add-ons won't show without it.
-- **Report bookmark permissions get forgotten.** Supervisors saving filtered views need explicit Create/Read/Write/Delete on Report Bookmark — it's not in the standard Read grant.
+- **Report bookmark permissions get forgotten.** Supervisors saving filtered views need explicit Create/Read/Write/Delete on Report Bookmark: it's not in the standard Read grant.
 - **Bot add-on is mandatory.** Without it, the Bot dashboard mixes bot and human agents together. Enable it for any Copilot deployment.
 
 ## Consultant notes
 
 - Enable this at the start of UAT, not the end. The 24-hour delay combined with enabling on the final UAT day or at go-live means the client enters the first week of production with no historical data. Enable it early, run through the dashboard with the supervisor team during UAT, and they'll arrive at go-live with two to four weeks of baseline data to compare against.
-- Walk through the add-on checkbox matrix with the client during the analytics configuration session. Base toggle on its own leaves the Bot and Proactive Outbound dashboards invisible. For any deployment with a Copilot agent, enabling the bot add-on is non-negotiable — without it, the Bot dashboard can't separate bot containment from human handling, which makes the core deflection metric useless.
-- Report bookmark permissions are the support ticket that arrives three weeks post-go-live. Supervisors will save filtered views, log off, come back the next day and find them gone — and raise it as a bug. Bake the bookmark entity permission into the security role template for supervisor roles before go-live. It's not in the default Read grant and it won't be obvious from the standard role documentation.
+- Walk through the add-on checkbox matrix with the client during the analytics configuration session. Base toggle on its own leaves the Bot and Proactive Outbound dashboards invisible. For any deployment with a Copilot agent, enabling the bot add-on is non-negotiable: without it, the Bot dashboard can't separate bot containment from human handling, which makes the core deflection metric useless.
+- Report bookmark permissions are the support ticket that arrives three weeks post-go-live. Supervisors will save filtered views, log off, come back the next day and find them gone: and raise it as a bug. Bake the bookmark entity permission into the security role template for supervisor roles before go-live. It's not in the default Read grant and it won't be obvious from the standard role documentation.
 
 ---
 

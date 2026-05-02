@@ -9,11 +9,11 @@ Real-time translation automatically translates messages between an agent and cus
 
 ## Key facts
 - Requires Azure Cognitive Services (Azure AI Translator) provisioned and linked to your D365 environment; there is a per-translation cost
-- Supported channel: **chat only** — not available for voice, email, or social channels
+- Supported channel: **chat only**: not available for voice, email, or social channels
 - Language detection is automatic for incoming customer messages; agent language can be configured per agent or inferred from their region settings
 - Translated messages appear alongside original text in the conversation; agents can see both for context
 - Translation quality depends on Azure's model; technical jargon, slang, or context-dependent phrases may require human review
-- Does *not* translate agent knowledge base articles, canned responses, or UI labels — only live conversation text
+- Does *not* translate agent knowledge base articles, canned responses, or UI labels: only live conversation text
 - Conversation history and translations are retained in the conversation record for quality assurance and auditing
 
 ## When to use / skip
@@ -37,9 +37,9 @@ Use real-time translation in multicultural or multilingual contact centers where
 
 ## Consultant notes
 
-- Per-character Azure billing catches clients off guard at scale. If the client has significant multilingual chat volumes, build a rough monthly cost estimate into the solution design sign-off — "it looked free in the trial" is not a conversation you want at month-end.
+- Per-character Azure billing catches clients off guard at scale. If the client has significant multilingual chat volumes, build a rough monthly cost estimate into the solution design sign-off: "it looked free in the trial" is not a conversation you want at month-end.
 - Quick replies and knowledge articles don't translate automatically. If the client uses either heavily, they'll need separate localised versions for each language in scope. Factor that content work into the project plan.
-- This covers chat only — not voice. If a client asks about translation across all channels, the voice and chat features are configured separately and behave differently (see the voice real-time translation doc for the voice-specific notes).
+- This covers chat only: not voice. If a client asks about translation across all channels, the voice and chat features are configured separately and behave differently (see the voice real-time translation doc for the voice-specific notes).
 
 ---
 

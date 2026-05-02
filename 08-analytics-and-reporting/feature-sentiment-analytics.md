@@ -38,7 +38,7 @@ Turn this on if you want to track customer satisfaction trends and spot problem 
 
 ## Consultant notes
 
-- Enable this at the same time as real-time sentiment — they're separate toggles but related capabilities. Clients who enable real-time sentiment for supervisor views and forget historical sentiment analytics lose the trend data that would let them identify whether sentiment is improving or declining over time. They're not interchangeable; you need both.
+- Enable this at the same time as real-time sentiment: they're separate toggles but related capabilities. Clients who enable real-time sentiment for supervisor views and forget historical sentiment analytics lose the trend data that would let them identify whether sentiment is improving or declining over time. They're not interchangeable; you need both.
 - Voice sentiment accuracy depends entirely on transcription quality. If the client's voice transcription has low accuracy (common with thick accents, industry jargon, or poor audio quality), sentiment scoring for voice will be unreliable. Set expectations around this clearly, particularly for clients who plan to use sentiment analytics as a quality or performance metric for voice agents.
 - Azure AI language service costs are worth flagging for high-volume deployments. Sentiment scoring at scale adds up, and it's often not in the initial cost model. Check the estimated monthly conversation volume and run the numbers before go-live so the client isn't surprised by the Azure bill in month two.
 

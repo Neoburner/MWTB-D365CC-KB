@@ -5,24 +5,24 @@
 **Source:** [learn.microsoft.com/.../configure-work-classification](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-work-classification)
 
 ## What it does
-First stage of unified routing. Adds enrichment data to work items before any routing decision — attaches skills, sets priority, assigns capacity profiles, or writes any custom attribute. Rules evaluate conditions ("if X, then set attribute Y to value Z"). Runs before route-to-queue rules and agent assignment.
+First stage of unified routing. Adds enrichment data to work items before any routing decision, attaches skills, sets priority, assigns capacity profiles, or writes any custom attribute. Rules evaluate conditions ("if X, then set attribute Y to value Z"). Runs before route-to-queue rules and agent assignment.
 
 ## Key facts
 - Max **10 rulesets per workstream**; max **100 rule items per ruleset**; max **5 output attributes per rule item**
-- Evaluation order: rulesets run top to bottom; within each ruleset, first match executes and control moves to next ruleset (classification stops at first match per ruleset — unlike route-to-queue which evaluates all rules)
+- Evaluation order: rulesets run top to bottom; within each ruleset, first match executes and control moves to next ruleset (classification stops at first match per ruleset: unlike route-to-queue which evaluates all rules)
 - Output values set by earlier rulesets can be referenced as conditions in later rulesets (chaining)
-- Rule types: logical (conditions), skill classification (logical), skill classification (ML — Intelligent Skill Finder), capacity profile rules, sentiment prediction (Preview)
-- ML-based classification requires AI Builder — regional availability limitations; requires a trained and published model
-- **Skill rating model in classification rules must match** the rating model on agent skill profiles — mismatch causes silent assignment failure
-- When a rerouted work item goes through classification again, skills are **appended** (not replaced) — can result in over-tagging
+- Rule types: logical (conditions), skill classification (logical), skill classification (ML: Intelligent Skill Finder), capacity profile rules, sentiment prediction (Preview)
+- ML-based classification requires AI Builder: regional availability limitations; requires a trained and published model
+- **Skill rating model in classification rules must match** the rating model on agent skill profiles: mismatch causes silent assignment failure
+- When a rerouted work item goes through classification again, skills are **appended** (not replaced): can result in over-tagging
 
 ## When to use / skip
-Required for any routing deployment beyond trivial single-queue setups. Classification is where routing intelligence lives — the quality of what arrives at the assignment stage is entirely determined by classification.
+Required for any routing deployment beyond trivial single-queue setups. Classification is where routing intelligence lives, the quality of what arrives at the assignment stage is entirely determined by classification.
 
 ## Configuration decisions
-- Ruleset chain design — how many rulesets, what each one handles (topic → customer tier → priority → capacity profile), and what order they run in
-- Logical vs ML rules — logical rules at go-live, ML rules after 6–12 months of training data
-- Whether to use sentiment prediction (Preview) — not recommended for production in regulated environments yet
+- Ruleset chain design: how many rulesets, what each one handles (topic → customer tier → priority → capacity profile), and what order they run in
+- Logical vs ML rules: logical rules at go-live, ML rules after 6–12 months of training data
+- Whether to use sentiment prediction (Preview): not recommended for production in regulated environments yet
 
 ## Gotchas
 - **Classification stops at first match per ruleset; route-to-queue evaluates all rules.** Catches admins maintaining rules post go-live. Document explicitly in the handover.

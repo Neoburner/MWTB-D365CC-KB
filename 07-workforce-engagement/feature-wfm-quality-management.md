@@ -5,7 +5,7 @@
 **Source:** [Configure WFM Quality Management - Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-wfm-quality-management)
 
 ## What it does
-WFM Quality Management is the module for manually scoring agent conversations against a defined quality rubric. Supervisors or QA analysts select sampled conversations (voice or digital), evaluate them against a scorecard with weighted criteria, and assign scores. These scores feed into agent performance reporting, coaching plans, and can influence compensation decisions. Quality Management is separate from—and complementary to—the Quality Evaluation Agent AI feature, which auto-scores all conversations.
+WFM Quality Management is the module for manually scoring agent conversations against a defined quality rubric. Supervisors or QA analysts select sampled conversations (voice or digital), evaluate them against a scorecard with weighted criteria, and assign scores. These scores feed into agent performance reporting, coaching plans, and can influence compensation decisions. Quality Management is separate from, and complementary to, the Quality Evaluation Agent AI feature, which auto-scores all conversations.
 
 ## Key facts
 - Scorecard-based evaluation: Define custom criteria (e.g., "professionalism," "problem resolution," "empathy") with weighted scores
@@ -20,7 +20,7 @@ WFM Quality Management is the module for manually scoring agent conversations ag
 - Quality Evaluation Agent AI comparison: AI auto-scores all conversations in real-time; Quality Management provides human validation on a subset for calibration and coaching specificity
 
 ## When to use / skip
-Use Quality Management for subjective standards (empathy, accuracy, brand voice) that AI can't grade reliably, or when supervisors need to coach from real conversations. Essential for regulated industries (financial, healthcare) that need demonstrable quality audits. Skip if you're optimising for speed and volume only, or if you don't have QA capacity to sample consistently — sampling without follow-up is a compliance risk.
+Use Quality Management for subjective standards (empathy, accuracy, brand voice) that AI can't grade reliably, or when supervisors need to coach from real conversations. Essential for regulated industries (financial, healthcare) that need demonstrable quality audits. Skip if you're optimising for speed and volume only, or if you don't have QA capacity to sample consistently, sampling without follow-up is a compliance risk.
 
 ## Configuration decisions
 - **Scorecard design**: Define 5–10 key criteria and their relative weights (e.g., "Professionalism" = 30%, "Problem Resolution" = 40%, "Empathy" = 30%)
@@ -49,7 +49,7 @@ Use Quality Management for subjective standards (empathy, accuracy, brand voice)
 ## Consultant notes
 
 - Scorecard design is the most important decision in the entire QM setup, and it's the one that gets the least time in most projects. Spend a session with the QA team lead and at least one experienced supervisor defining the criteria and weights before you build anything. A scorecard that doesn't reflect how the client actually evaluates quality will be quietly abandoned within three months.
-- Distinguish this from the Quality Evaluation Agent clearly in handover. The AI agent (`feature-quality-evaluation-agent.md`) auto-scores all conversations and is good for volume coverage. WFM Quality Management is for human-reviewed scoring, calibration, and coaching on a sample. Both have value; they're doing different jobs. Clients who have both often use AI scores as the trigger for human review — flag as high-risk by AI, validated by a QA analyst.
+- Distinguish this from the Quality Evaluation Agent clearly in handover. The AI agent (`feature-quality-evaluation-agent.md`) auto-scores all conversations and is good for volume coverage. WFM Quality Management is for human-reviewed scoring, calibration, and coaching on a sample. Both have value; they're doing different jobs. Clients who have both often use AI scores as the trigger for human review: flag as high-risk by AI, validated by a QA analyst.
 - Calibration sessions need to be in the operational playbook, not just the initial setup guide. Without regular calibration, scores drift. Two QA analysts who score the same call 20 points apart will produce unreliable trend data. Build a quarterly calibration session into whatever cadence the client runs their QA reviews.
 
 ---

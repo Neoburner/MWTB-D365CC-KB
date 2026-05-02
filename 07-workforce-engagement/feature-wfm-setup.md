@@ -5,32 +5,32 @@
 **Source:** [learn.microsoft.com/.../wfm-package-installation](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/wfm-package-installation)
 
 ## What it does
-WFM is a separate installable app — not bundled with Contact Center. You'll need to install it explicitly and configure user access before any WFM features work.
+WFM is a separate installable app, not bundled with Contact Center. You'll need to install it explicitly and configure user access before any WFM features work.
 
 ## Key facts
 - Installed via Power Platform admin center → Environments → Resources → Dynamics 365 Apps → **Workforce Management for Customer Service**
 - After installation, **Workforce management** section appears in Copilot Service admin center under Operations
-- **Standalone only** — not available in embedded deployments
+- **Standalone only**: not available in embedded deployments
 - User setup sequence: assign Omnichannel roles (Supervisor or Agent) → create/assign skills → create **Bookable Resource** per rep → configure work hours
-- **One Bookable Resource record required per representative** — without it, scheduling, shift assignment, and shift-based routing won't function
-- Bookable resource time zone must match the rep's actual working time zone — critical for distributed teams
+- **One Bookable Resource record required per representative**: without it, scheduling, shift assignment, and shift-based routing won't function
+- Bookable resource time zone must match the rep's actual working time zone: critical for distributed teams
 
 ## When to use / skip
-Required for any deployment that includes WFM scheduling, forecasting, capacity planning, or shift-based routing. Skip if the client has no WFM scope — the package adds no value without active use.
+Required for any deployment that includes WFM scheduling, forecasting, capacity planning, or shift-based routing. Skip if the client has no WFM scope, the package adds no value without active use.
 
 ## Configuration decisions
-- **Bookable resource time zone** — must reflect the rep's real working time zone, not server time zone
-- **Skills configuration** — must be done before scheduling is meaningful; skills drive shift activity matching
+- **Bookable resource time zone**: must reflect the rep's real working time zone, not server time zone
+- **Skills configuration**: must be done before scheduling is meaningful; skills drive shift activity matching
 
 ## Gotchas
 - **WFM doesn't ship with Contact Center.** Clients usually assume it does. Confirm licensing and add installation as a line item in the project plan.
 - **Bookable Resource is the killer gotcha.** It's separate from a D365 user account. Every scheduled rep needs one. Bake it into your user onboarding runbook.
-- **Everything else depends on this setup working first.** Forecasting, scheduling, shift-based routing — none of it runs without the WFM package and proper user config.
+- **Everything else depends on this setup working first.** Forecasting, scheduling, shift-based routing: none of it runs without the WFM package and proper user config.
 
 ## Consultant notes
 
 - WFM not being bundled with Contact Center is the assumption gap to close in pre-sales. Clients frequently expect WFM to be included and discover the separate installation (and sometimes separate licensing) mid-project. Confirm both in discovery.
-- Bookable Resource creation per rep belongs in the user onboarding runbook, not just in the initial setup guide. New starters who don't get a Bookable Resource record are silently excluded from scheduling and shift-based routing — with no obvious error to diagnose.
+- Bookable Resource creation per rep belongs in the user onboarding runbook, not just in the initial setup guide. New starters who don't get a Bookable Resource record are silently excluded from scheduling and shift-based routing: with no obvious error to diagnose.
 - This setup doc is the prerequisite for everything else in the WFM section. There's no point reading the forecasting, scheduling, or quality management docs until this one is working correctly end-to-end.
 
 ---

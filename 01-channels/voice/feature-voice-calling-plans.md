@@ -18,7 +18,7 @@ Microsoft Calling Plans (also called Teams Phone) are pre-provisioned PSTN acces
 - Cannot mix Calling Plans and ACS PSTN on the same D365 instance; choose one model
 
 ## When to use / skip
-Go with Calling Plans if you've already got Teams Phone licences, want Teams and D365 to talk to each other, or your country is on the supported list and porting is straightforward. Skip it if you need to reuse existing non-Teams PSTN numbers, need global coverage beyond the supported regions, or run a large contact centre — the per-call pricing gets savage at scale.
+Go with Calling Plans if you've already got Teams Phone licences, want Teams and D365 to talk to each other, or your country is on the supported list and porting is straightforward. Skip it if you need to reuse existing non-Teams PSTN numbers, need global coverage beyond the supported regions, or run a large contact centre, the per-call pricing gets savage at scale.
 
 ## Configuration decisions
 - **Licensing model:** Determine if you'll licence agents with full Teams Phone or Calling Plan add-ons only
@@ -39,7 +39,7 @@ Go with Calling Plans if you've already got Teams Phone licences, want Teams and
 
 ## Consultant notes
 
-- "We already have Teams licences" is not the same as "we already have calling-capable Teams licences." Check the actual SKU in pre-sales — it saves an awkward conversation mid-project when the licensing gap surfaces.
+- "We already have Teams licences" is not the same as "we already have calling-capable Teams licences." Check the actual SKU in pre-sales: it saves an awkward conversation mid-project when the licensing gap surfaces.
 - The cost argument matters at scale. If you're recommending Calling Plans for a centre above 50 concurrent calls, run the numbers first. The per-call pricing can comfortably exceed ACS PSTN at that volume.
 - Clients often expect deeper Teams integration than Calling Plans actually delivers. "Can agents work in Teams as normal?" depends entirely on their licensing setup. Set expectations early rather than letting the demo do the selling.
 

@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/persistent-chat
 
 ## What it does
-Chat conversations persist across browser sessions. Returning customers resume the same thread and see their history—no new case. Requires customer authentication to link repeat visits to the original conversation.
+Chat conversations persist across browser sessions. Returning customers resume the same thread and see their history, no new case. Requires customer authentication to link repeat visits to the original conversation.
 
 ## Key facts
 - Persistent chat requires customer identity authentication (via Azure AD B2C, custom OAuth, or D365 portal authentication)
@@ -40,7 +40,7 @@ Use persistent chat for complex issues that span multiple days or when customer 
 
 - Authentication infrastructure is the dealbreaker for this feature. If the client doesn't have a working auth system (Azure AD B2C, portal login, or equivalent), persistent chat is off the table regardless of how much they want it. Check this in discovery, not design.
 - Clients almost always assume persistent chat means the same agent every time. It doesn't unless the original agent happens to be available. Set that expectation clearly before the client sees the feature in a demo.
-- Long-lived persistent conversations can skew SLA reporting — a 10-day open conversation doesn't mean the same thing as a 10-day standard case. Worth flagging to whoever owns the SLA definitions before design is finalised.
+- Long-lived persistent conversations can skew SLA reporting: a 10-day open conversation doesn't mean the same thing as a 10-day standard case. Worth flagging to whoever owns the SLA definitions before design is finalised.
 
 ---
 

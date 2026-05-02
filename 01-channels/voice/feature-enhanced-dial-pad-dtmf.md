@@ -9,31 +9,31 @@ A redesigned dial pad that sends DTMF tones faster and more reliably during live
 
 ## Key facts
 - Enabled by admins in **Copilot Service admin center → Workspaces → Voice Call Experiences → DTMF Broadcast**
-- Off by default — requires explicit enable
+- Off by default: requires explicit enable
 - Applies to all voice calls once switched on, not per-workstream
 - DTMF tones reach external PSTN endpoints and IVR systems during transfers/consults
 - GA'd April 2026
 
 ## When to use / skip
-Use this if you're getting reports of DTMF inputs not registering during IVR navigation — particularly on transfers to payment systems or third-party IVRs. Also worth enabling if you're using the secure consult/transfer feature (DTMF to external endpoints is part of that flow).
+Use this if you're getting reports of DTMF inputs not registering during IVR navigation, particularly on transfers to payment systems or third-party IVRs. Also worth enabling if you're using the secure consult/transfer feature (DTMF to external endpoints is part of that flow).
 
 Skip it only if your voice workloads have no IVR navigation or external PSTN transfers, though there's little reason not to enable it.
 
 ## Configuration decisions
-- Enable globally via the DTMF Broadcast toggle — there's no per-workstream override
+- Enable globally via the DTMF Broadcast toggle: there's no per-workstream override
 - Test in UAT before enabling in prod; confirm IVR digit recognition at the external endpoint is working correctly
 
 ## Gotchas
 - If you're running the secure consult/transfer PSTN feature in parallel, DTMF Broadcast needs to be on for callers to navigate external IVRs during the secure leg. The two settings are independent; enabling one doesn't automatically enable the other.
-- The old dial pad is removed when this is enabled — there's no way to run both side by side. If reps report UI confusion, it's because the layout changed, not a bug.
+- The old dial pad is removed when this is enabled: there's no way to run both side by side. If reps report UI confusion, it's because the layout changed, not a bug.
 
 ## Consultant notes
 
 ## Consultant notes
 
-- If you're also configuring Secure Consult/Transfer for PSTN, enable this at the same time — the two features work together and you'll need DTMF broadcast on for customers to navigate external IVRs during the secure leg. They're separate admin settings; easy to configure one and forget the other.
-- Include a DTMF end-to-end test in your UAT script — dial into a queue, get connected as an agent, and verify that DTMF tones reach the external endpoint correctly. It's a two-minute test that saves a support call.
-- When this is enabled, the old dial pad UI is removed. Brief reps that the layout has changed in the release notes for the upgrade — otherwise you'll get "the dial pad is broken" tickets that are actually just UI confusion.
+- If you're also configuring Secure Consult/Transfer for PSTN, enable this at the same time: the two features work together and you'll need DTMF broadcast on for customers to navigate external IVRs during the secure leg. They're separate admin settings; easy to configure one and forget the other.
+- Include a DTMF end-to-end test in your UAT script: dial into a queue, get connected as an agent, and verify that DTMF tones reach the external endpoint correctly. It's a two-minute test that saves a support call.
+- When this is enabled, the old dial pad UI is removed. Brief reps that the layout has changed in the release notes for the upgrade: otherwise you'll get "the dial pad is broken" tickets that are actually just UI confusion.
 
 
 ---

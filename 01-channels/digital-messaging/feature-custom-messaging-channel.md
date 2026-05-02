@@ -20,7 +20,7 @@ Connects any messaging platform or custom chat interface to Contact Center via t
 - Supports rich message types: text, buttons, adaptive cards, quick replies, and custom JSON payloads
 
 ## When to use / skip
-Use custom messaging when you need brand control, deep app integration, or a platform not supported by pre-built channels—in-app support, branded web chat, voice assistants, Slack/Discord community support. Skip custom channels if you can use pre-built ones (chat, email, Teams); they're faster to configure and less overhead.
+Use custom messaging when you need brand control, deep app integration, or a platform not supported by pre-built channels, in-app support, branded web chat, voice assistants, Slack/Discord community support. Skip custom channels if you can use pre-built ones (chat, email, Teams); they're faster to configure and less overhead.
 
 ## Configuration decisions
 - Which platform or app will be the messaging client? (in-app, mobile, web, voice assistant, etc.)
@@ -37,7 +37,7 @@ Use custom messaging when you need brand control, deep app integration, or a pla
 - Conversation context is lost if the bot restarts or Direct Line drops; design for resilience and context reconstruction.
 - Custom channels don't appear in out-of-the-box dashboards; you'll build custom analytics and reporting.
 - WebSocket can get blocked by corporate firewalls; polling is more reliable but slower.
-- If bot deployment fails or scales down, the custom channel goes unavailable immediately—no fallback.
+- If bot deployment fails or scales down, the custom channel goes unavailable immediately: no fallback.
 - Adaptive cards and rich types are custom-rendered in your client; unsupported types degrade to plain text.
 - Custom channels need end-to-end testing (client + bot + D365); integration coverage is essential.
 
@@ -45,8 +45,8 @@ Use custom messaging when you need brand control, deep app integration, or a pla
 
 ## Consultant notes
 
-- Clients hear "custom messaging channel" and assume it means anything is possible with minimal effort. Scope it carefully upfront — this is a developer task (bot deployment, Direct Line integration, front-end UI), not a consultant configuration task. If the client doesn't have Azure/bot development resource confirmed, this feature shouldn't be in scope.
-- The most common production incident with custom channels is insecure token generation — the Direct Line token endpoint gets exposed without auth and the bot gets hijacked or flooded. Make security review of the token endpoint a mandatory sign-off before go-live.
+- Clients hear "custom messaging channel" and assume it means anything is possible with minimal effort. Scope it carefully upfront: this is a developer task (bot deployment, Direct Line integration, front-end UI), not a consultant configuration task. If the client doesn't have Azure/bot development resource confirmed, this feature shouldn't be in scope.
+- The most common production incident with custom channels is insecure token generation: the Direct Line token endpoint gets exposed without auth and the bot gets hijacked or flooded. Make security review of the token endpoint a mandatory sign-off before go-live.
 - Always challenge the requirement first. Nine times out of ten the client wants custom branding or a non-standard platform, not a genuinely custom protocol. Check whether a pre-built channel (live chat widget with CSS overrides, WhatsApp Business) actually meets the need before committing to Direct Line complexity.
 - The 1 KB message size limit will hit you in production if you're passing conversation context or metadata through the message payload. Design the context handoff via a separate mechanism (Dataverse, Azure Storage) before you discover the limit under load.
 

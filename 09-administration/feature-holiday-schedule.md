@@ -17,7 +17,7 @@ Holiday schedules define dates when your contact centre is closed or operating u
 - Holiday schedules do not adjust agent schedules or time off; they only affect customer-facing routing
 
 ## When to use / skip
-Use holiday schedules for all public holidays and company-specific closures. Define them at queue creation to avoid routing gaps. Don't hardcode holiday overflow in routing rules — use the holiday schedule + routing combination. Re-enter holidays annually; build it into Q4 planning to avoid Jan 1 surprises.
+Use holiday schedules for all public holidays and company-specific closures. Define them at queue creation to avoid routing gaps. Don't hardcode holiday overflow in routing rules, use the holiday schedule + routing combination. Re-enter holidays annually; build it into Q4 planning to avoid Jan 1 surprises.
 
 ## Configuration decisions
 - Create one master holiday schedule per region/timezone and link it to all Operating Hours in that region
@@ -37,9 +37,9 @@ Use holiday schedules for all public holidays and company-specific closures. Def
 
 ## Consultant notes
 
-- The one-schedule-per-Operating-Hours-record rule creates more maintenance overhead than clients expect in multi-region deployments. An EMEA client with separate UK, German, and French holiday calendars needs three separate holiday schedules maintained annually. Make sure the client's operations team understands this at handover — the volume of manual entry required is not obvious from the configuration screen.
+- The one-schedule-per-Operating-Hours-record rule creates more maintenance overhead than clients expect in multi-region deployments. An EMEA client with separate UK, German, and French holiday calendars needs three separate holiday schedules maintained annually. Make sure the client's operations team understands this at handover: the volume of manual entry required is not obvious from the configuration screen.
 - Establish the annual update deadline in the handover documentation rather than leaving it as a general reminder. "Update before end of October for the following year" gives whoever inherits the system a concrete target. Without it, the update happens in mid-December under time pressure or gets missed entirely.
-- If the client uses WFM scheduling, note explicitly that holiday schedules only affect customer-facing routing — they don't automatically feed into WFM shift plans or agent scheduling. If a public holiday means reduced staffing, the WFM side still needs to be updated separately. This is particularly relevant for deployments where both routing and WFM are in scope.
+- If the client uses WFM scheduling, note explicitly that holiday schedules only affect customer-facing routing: they don't automatically feed into WFM shift plans or agent scheduling. If a public holiday means reduced staffing, the WFM side still needs to be updated separately. This is particularly relevant for deployments where both routing and WFM are in scope.
 
 ---
 

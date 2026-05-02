@@ -18,7 +18,7 @@ D365 Contact Center provides tools and processes to fulfill GDPR data subject ri
 - Pseudonymization: Available via Dataverse field-level security; you can mask customer identity in transcripts without deleting the conversation
 
 ## When to use / skip
-Use for all EU customers and anyone who requests their data. Set up a GDPR coordinator role and define a DSAR workflow. Don't ignore DSAR requests — fines are substantial (up to 4% revenue). Automate deletion of old recordings (>12 months). Include AI-derived content in DSAR exports.
+Use for all EU customers and anyone who requests their data. Set up a GDPR coordinator role and define a DSAR workflow. Don't ignore DSAR requests, fines are substantial (up to 4% revenue). Automate deletion of old recordings (>12 months). Include AI-derived content in DSAR exports.
 
 ## Configuration decisions
 - Create a Power Platform DSR request queue: define who receives DSAR requests and assigns them to the data handler
@@ -40,8 +40,8 @@ Use for all EU customers and anyone who requests their data. Set up a GDPR coord
 ## Consultant notes
 
 - Establish the DSAR workflow and assign role ownership before go-live. The 30-day response window starts from the day the request is received, not from when someone decides to act on it. Without a documented process and named owners, DSAR requests tend to sit in an inbox while the relevant parties work out who's responsible. That's a compliance failure waiting to happen. Define the coordinator, data handler, and legal hold officer roles explicitly and document the process in the operational handover.
-- The multi-surface deletion requirement is what makes erasure requests more complex than clients expect. Deleting a Dataverse conversation record does not delete the ACS audio recording, screen recordings in Blob Storage, AI-generated summaries, or Copilot transcriptions — each needs to be addressed separately. Work through the full data map with the client and document the deletion steps for each storage layer. Clients who assume that deleting the Dataverse record is sufficient will have an incomplete erasure process.
-- D365 Contact Center has no built-in consent tracking. If the client needs to demonstrate that they had lawful basis for processing a customer's contact centre interaction data, that tracking needs to exist outside D365 — in a consent management system, a CRM, or a custom Dataverse table. If this is in scope, it's a design task that should be addressed in discovery, not something the client discovers they need after the system is live and they receive their first regulatory query.
+- The multi-surface deletion requirement is what makes erasure requests more complex than clients expect. Deleting a Dataverse conversation record does not delete the ACS audio recording, screen recordings in Blob Storage, AI-generated summaries, or Copilot transcriptions: each needs to be addressed separately. Work through the full data map with the client and document the deletion steps for each storage layer. Clients who assume that deleting the Dataverse record is sufficient will have an incomplete erasure process.
+- D365 Contact Center has no built-in consent tracking. If the client needs to demonstrate that they had lawful basis for processing a customer's contact centre interaction data, that tracking needs to exist outside D365: in a consent management system, a CRM, or a custom Dataverse table. If this is in scope, it's a design task that should be addressed in discovery, not something the client discovers they need after the system is live and they receive their first regulatory query.
 
 ---
 

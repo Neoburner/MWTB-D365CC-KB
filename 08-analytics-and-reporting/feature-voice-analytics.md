@@ -34,7 +34,7 @@ Turn this on if you run voice and need voice metrics separate from other channel
 ## Consultant notes
 
 - Voice analytics is frequently missed during the analytics configuration pass because the main Omnichannel historical analytics toggle gives the impression that all channels are covered. It isn't. If voice is in scope, add the voice analytics toggle explicitly to your go-live configuration checklist as a separate line item.
-- The 24-hour lag matters most for voice because AHT and abandon rate are the metrics that operations teams watch most closely in the first post-go-live week. Enable this during UAT so the dashboard is already populated by go-live — arriving at day one with no AHT data for a voice deployment creates unnecessary noise.
+- The 24-hour lag matters most for voice because AHT and abandon rate are the metrics that operations teams watch most closely in the first post-go-live week. Enable this during UAT so the dashboard is already populated by go-live: arriving at day one with no AHT data for a voice deployment creates unnecessary noise.
 - For mixed-channel deployments, the separate voice dashboard is worth showing to the supervisor team alongside Omnichannel historical analytics. Voice metrics tell a different story from digital channels (longer AHT, different abandon patterns, CSAT drivers vary). The client should be reviewing them separately, not just in aggregate.
 
 ---

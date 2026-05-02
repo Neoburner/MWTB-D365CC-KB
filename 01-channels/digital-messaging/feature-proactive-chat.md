@@ -19,7 +19,7 @@ Automatically invites website visitors to chat based on trigger rules (time on p
 - Requires Copilot Studio or a custom bot connected via Direct Line for bot-assisted proactive chat
 
 ## When to use / skip
-Use proactive chat to reduce friction for new visitors or people stuck on a page—pricing, high-abandonment product pages, checkout. Skip it if your team can't handle the volume. Also skip if traffic is low or sessions are short; the rules won't trigger often enough to matter.
+Use proactive chat to reduce friction for new visitors or people stuck on a page, pricing, high-abandonment product pages, checkout. Skip it if your team can't handle the volume. Also skip if traffic is low or sessions are short; the rules won't trigger often enough to matter.
 
 ## Configuration decisions
 - Which page(s) will trigger proactive chat? Single landing page, all product pages, or specific URLs?
@@ -40,8 +40,8 @@ Use proactive chat to reduce friction for new visitors or people stuck on a page
 
 ## Consultant notes
 
-- Proactive chat sounds compelling in discovery and generates noise in production unless the trigger rules are very specifically designed. Push back hard on "trigger on 30 seconds on any page" type requirements — that's how you get invitation spam.
-- The agent capacity implication gets missed. If a proactive invite fires and no agent picks it up within the routing timeout, the customer sees "no agents available" — which is worse than no invitation at all. Confirm the queue has headroom before enabling.
+- Proactive chat sounds compelling in discovery and generates noise in production unless the trigger rules are very specifically designed. Push back hard on "trigger on 30 seconds on any page" type requirements: that's how you get invitation spam.
+- The agent capacity implication gets missed. If a proactive invite fires and no agent picks it up within the routing timeout, the customer sees "no agents available": which is worse than no invitation at all. Confirm the queue has headroom before enabling.
 - If the client's website has a restrictive Content Security Policy, proactive chat will silently fail to load the widget. Test the widget on the actual production domain early, not just a staging environment with relaxed headers.
 
 ---

@@ -14,14 +14,14 @@ Autonomous AI agent in Contact Center that handles entire customer interactions 
 - Handles intent recognition, entity extraction, and contextual responses automatically
 - Can collect customer information, verify identity, and resolve common scenarios
 - Escalates to human agents with full conversation context and collected variables
-- Distinct from Customer Intent Agent feature—this agent provides end-to-end resolution, not just intent classification
+- Distinct from Customer Intent Agent feature: this agent provides end-to-end resolution, not just intent classification
 - Requires Copilot Studio environment provisioned and connected to Contact Center
 - Agent performance and resolution rates visible in analytics/reporting dashboard
 - Supports skill-based routing rules for intelligent escalation decisions
 - Conversation history and AI-generated summaries passed to human agent on handoff
 
 ## When to use / skip
-Use the agent for high-volume repetitive work—password resets, balance checks, appointment scheduling, simple billing. It cuts first-contact resolution and agent load. Skip it if the use case needs deep compliance review, complex reasoning over sensitive data, or frequent agent interruptions. Also avoid it where customers expect human-only experience—complaint escalations, complex account disputes, high-touch segments.
+Use the agent for high-volume repetitive work, password resets, balance checks, appointment scheduling, simple billing. It cuts first-contact resolution and agent load. Skip it if the use case needs deep compliance review, complex reasoning over sensitive data, or frequent agent interruptions. Also avoid it where customers expect human-only experience, complaint escalations, complex account disputes, high-touch segments.
 
 ## Configuration decisions
 - **Intent recognition scope**: Define which customer intents the agent can resolve independently vs. escalate immediately (e.g., billing questions escalate, password resets resolve)
@@ -44,7 +44,7 @@ Use the agent for high-volume repetitive work—password resets, balance checks,
 ## Consultant notes
 
 - Scope the "intents the agent can resolve independently" list very carefully in discovery. Clients almost always want the agent to do more than it reliably can on day one. A short, high-confidence intent list that works well is worth more than a broad one that escalates 70% of the time and frustrates customers.
-- Copilot credit consumption needs a cost estimate in the solution design. It's easy to underestimate at scale — check the per-interaction cost against expected volumes before the client commits to the business case.
+- Copilot credit consumption needs a cost estimate in the solution design. It's easy to underestimate at scale: check the per-interaction cost against expected volumes before the client commits to the business case.
 - Model updates from Microsoft changing agent behaviour without warning is the operational risk to cover in the handover. The client's ops team needs a periodic review process for agent accuracy, not just a one-time go-live sign-off.
 
 ---

@@ -9,27 +9,27 @@ Grants supervisors the ability to directly act on live conversations: silently m
 
 ## Key facts
 - Four independent toggles: **Supervisor Monitor**, **Supervisor Assign**, **Supervisor Transfer**, **Force Close**
-- All are **off by default** — must be explicitly enabled
+- All are **off by default**: must be explicitly enabled
 - Enabled at: Copilot Service admin center → Operations → Insights → Ongoing conversation insights → Manage
-- **Omnichannel supervisor role must be directly assigned to the user** — team-based role assignment does not work for these permissions
-- Force Close applies to both voice and messaging — no channel-specific scoping
-- Dashboard access (Ongoing Conversations) is a separate configuration from the permission toggles — both must be done
+- **Omnichannel supervisor role must be directly assigned to the user**: team-based role assignment does not work for these permissions
+- Force Close applies to both voice and messaging: no channel-specific scoping
+- Dashboard access (Ongoing Conversations) is a separate configuration from the permission toggles: both must be done
 
 ## When to use / skip
-Enable all four unless you have a specific operational reason to restrict one. Force Close is the most sensitive — consider limiting it to senior supervisors if the client wants tighter control.
+Enable all four unless you have a specific operational reason to restrict one. Force Close is the most sensitive, consider limiting it to senior supervisors if the client wants tighter control.
 
 ## Configuration decisions
-- Whether to enable Force Close for all supervisors or restrict it to senior roles — note: this is a global toggle, not per-role; restriction is done via process/policy rather than system config
+- Whether to enable Force Close for all supervisors or restrict it to senior roles: note: this is a global toggle, not per-role; restriction is done via process/policy rather than system config
 
 ## Gotchas
 - **Direct role assignment only.** Team-based role assignments work for most D365 features but not for Omnichannel supervisor permissions. Verify during UAT.
-- **Toggles alone aren't enough.** Supervisors also need the Ongoing Conversations dashboard to use these controls. Both must be configured — see `feature-supervisor-conversation-controls.md`.
-- **Force Close has no confirmation prompt** in some channel contexts — train supervisors on when and how to use it before go-live.
+- **Toggles alone aren't enough.** Supervisors also need the Ongoing Conversations dashboard to use these controls. Both must be configured: see `feature-supervisor-conversation-controls.md`.
+- **Force Close has no confirmation prompt** in some channel contexts: train supervisors on when and how to use it before go-live.
 
 ## Consultant notes
 
 - Verify direct role assignment in UAT, not during go-live. Most D365 deployments use team-based role assignments for everything else, so it's easy to assume Omnichannel supervisor works the same way. It doesn't, and discovering it during go-live week is avoidable.
-- Enable all four controls unless there's a specific operational reason not to. Force Close being limited to senior supervisors is a reasonable operational policy — but implement it as a process decision, not a system restriction, since there's no per-role toggle.
+- Enable all four controls unless there's a specific operational reason not to. Force Close being limited to senior supervisors is a reasonable operational policy: but implement it as a process decision, not a system restriction, since there's no per-role toggle.
 - QA programmes need Monitor enabled explicitly. It's grouped with the other controls and easy to miss if QA wasn't front of mind when this configuration was done. Verify it's on if the client has a quality monitoring programme.
 
 ---

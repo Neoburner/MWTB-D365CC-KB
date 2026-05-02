@@ -37,7 +37,7 @@ Use adherence tracking if you have compliance rules (financial, healthcare) or t
 - **Presence sync lag:** Agent status from Teams, Slack, or phone can take 1-5 minutes to reflect. Adherence calculations use last-known status, not live state.
 - **Scheduled breaks are logged, not enforced:** If an agent skips their break, it shows as out-of-adherence, but the system won't force them to take it.
 - **Reason codes can be backdated:** Supervisors tag reasons after the fact (agent calls in sick 2 hours into shift). This skews historical data.
-- **Exceptions need manual override:** Fire alarm, facility closure, emergency training — all need supervisor intervention. No auto-detection.
+- **Exceptions need manual override:** Fire alarm, facility closure, emergency training: all need supervisor intervention. No auto-detection.
 - **Adherence doesn't factor in customer impact:** Agent stays past shift-end to finish a call, marked out-of-adherence, even though it's the right move.
 - **Reports lag real-time:** Analytics dashboard is 15-30 min behind. Real-time view is current but less detail.
 - **Partial-day schedules trip people up:** Agent with 10 AM-6 PM shift clocks in at 9:50 AM. System shows poor adherence until 10 AM.
@@ -46,7 +46,7 @@ Use adherence tracking if you have compliance rules (financial, healthcare) or t
 ## Consultant notes
 
 - Set the adherence threshold in conversation with the operations team, not on your own judgement. 95% sounds reasonable until you learn the centre has a 10-minute shift-end courtesy window that the system will flag as non-adherence. Agree what the score actually measures and what the exceptions are before publishing results to management.
-- The presence sync lag is real and will generate false positives in the first weeks. Coach supervisors to treat marginal deviations with scepticism initially — the system needs time to establish baseline patterns before adherence reporting is reliable enough to act on.
+- The presence sync lag is real and will generate false positives in the first weeks. Coach supervisors to treat marginal deviations with scepticism initially: the system needs time to establish baseline patterns before adherence reporting is reliable enough to act on.
 - Reason code backdating is an audit trail problem for regulated clients. If the client is in financial services or healthcare, flag this limitation explicitly and agree a policy for retrospective tagging before go-live. Some clients will want supervisor pre-approval for absence coding rather than post-hoc logging.
 
 ---

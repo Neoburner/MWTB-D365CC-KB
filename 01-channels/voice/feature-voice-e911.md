@@ -18,15 +18,15 @@ Emergency calling (E911 in North America, 999 in UK, 112 in EU) compliance confi
 - E911 configuration is country-specific; different rules apply per jurisdiction (US vs. Canada vs. EU)
 
 ## When to use / skip
-Use E911 wherever emergency calling is regulated. Skip only in unregulated territories (rare) or if you're running a private PBX with no PSTN access. Default to enabled — disabling it needs legal approval.
+Use E911 wherever emergency calling is regulated. Skip only in unregulated territories (rare) or if you're running a private PBX with no PSTN access. Default to enabled, disabling it needs legal approval.
 
 ## Configuration decisions
-- **Location database** — Use ACS default or integrate a third-party service (Intrado, Emergency Reporting, etc.).
-- **Location accuracy** — Office address, regional office, or street-level (street-level is more accurate but needs mobile location services).
-- **Location refresh frequency** — Real-time for office-based agents, periodic for remote workers.
-- **Fallback address** — What to use if you can't pin down an agent's location.
-- **Emergency contact** — Who the PSAP can ring if they need more info (facility manager, etc.).
-- **Jurisdiction** — Explicitly set the country/region for correct PSAP routing.
+- **Location database**: Use ACS default or integrate a third-party service (Intrado, Emergency Reporting, etc.).
+- **Location accuracy**: Office address, regional office, or street-level (street-level is more accurate but needs mobile location services).
+- **Location refresh frequency**: Real-time for office-based agents, periodic for remote workers.
+- **Fallback address**: What to use if you can't pin down an agent's location.
+- **Emergency contact**: Who the PSAP can ring if they need more info (facility manager, etc.).
+- **Jurisdiction**: Explicitly set the country/region for correct PSAP routing.
 
 ## Gotchas
 - **Location caching persists.** Agent moves offices, but the old location sticks around for 5–10 minutes.
@@ -41,8 +41,8 @@ Use E911 wherever emergency calling is regulated. Skip only in unregulated terri
 
 ## Consultant notes
 
-- Treat E911 as a non-negotiable compliance item from day one. It goes on the project checklist alongside licence confirmation and data residency — not as an afterthought in the week before go-live.
-- Remote and hybrid agents are the hardest part of the E911 problem. Get HR or facilities to provide registered home office addresses early in the project — you'll need them for location registration. Don't assume agents will self-register accurately.
+- Treat E911 as a non-negotiable compliance item from day one. It goes on the project checklist alongside licence confirmation and data residency: not as an afterthought in the week before go-live.
+- Remote and hybrid agents are the hardest part of the E911 problem. Get HR or facilities to provide registered home office addresses early in the project: you'll need them for location registration. Don't assume agents will self-register accurately.
 - The number porting / E911 registration loss is a known gotcha that catches people who port numbers after initial setup. Add "re-verify E911 registration after any number porting" to your post-porting checklist. It takes five minutes to check and saves a regulatory incident.
 
 

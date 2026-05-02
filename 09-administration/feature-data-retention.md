@@ -18,7 +18,7 @@ D365 Contact Center has no built-in automated retention policy. You manually con
 - Archival is an alternative to deletion; you can export conversations to cold storage (Blob Storage) before deleting
 
 ## When to use / skip
-Implement a data retention policy from day one of production. Set a baseline retention period — 12 months for conversations, 6 months for voice recordings — to balance cost and compliance. Don't skip this; unmanaged growth leads to storage costs and GDPR risks. If you have legal holds or compliance requirements, use a tiered policy (delete 12-month-old records except those flagged Legal Hold).
+Implement a data retention policy from day one of production. Set a baseline retention period, 12 months for conversations, 6 months for voice recordings, to balance cost and compliance. Don't skip this; unmanaged growth leads to storage costs and GDPR risks. If you have legal holds or compliance requirements, use a tiered policy (delete 12-month-old records except those flagged Legal Hold).
 
 ## Configuration decisions
 - Define retention period by data type: conversation records (12 months), voice recordings (6 months), screen recordings (3 months)
@@ -38,9 +38,9 @@ Implement a data retention policy from day one of production. Set a baseline ret
 
 ## Consultant notes
 
-- Data retention is consistently left to post-go-live and consistently generates storage cost surprises at the 6–12 month mark. Set up the bulk delete jobs and Azure lifecycle policies during the build phase — not after go-live. An unmanaged Contact Center environment accumulates conversation records, transcripts, and voice recordings faster than most clients expect, and the cost of getting ahead of it is much lower than cleaning it up later.
+- Data retention is consistently left to post-go-live and consistently generates storage cost surprises at the 6–12 month mark. Set up the bulk delete jobs and Azure lifecycle policies during the build phase: not after go-live. An unmanaged Contact Center environment accumulates conversation records, transcripts, and voice recordings faster than most clients expect, and the cost of getting ahead of it is much lower than cleaning it up later.
 - The voice recording and conversation record deletion are completely separate operations. Clients who delete Dataverse conversation records to manage storage and then find the Azure Blob voice recordings still growing have missed this split. The data retention design needs to cover both surfaces explicitly, with separate Azure lifecycle policies for ACS voice recordings and any screen recording storage. Document both in the handover.
-- For clients in regulated industries (financial services, healthcare, legal), involve the client's legal or compliance team in the retention design before anything is configured. Mandatory minimum retention periods, legal hold requirements, and jurisdiction-specific data residency rules will override the default retention approach. Don't design this in isolation from the compliance team — it's one of the areas where getting it wrong has real consequences.
+- For clients in regulated industries (financial services, healthcare, legal), involve the client's legal or compliance team in the retention design before anything is configured. Mandatory minimum retention periods, legal hold requirements, and jurisdiction-specific data residency rules will override the default retention approach. Don't design this in isolation from the compliance team: it's one of the areas where getting it wrong has real consequences.
 
 ---
 

@@ -5,7 +5,7 @@
 **Source:** https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/intelligent-skill-finder
 
 ## What it does
-Uses machine learning to automatically classify work items and assign skills based on conversation content, without manual rule configuration. Trains on historical data, learns intent and problem patterns, and applies inferred skills to new conversations. Coexists with rule-based classification—rules handle known cases, ML handles ambiguous or novel scenarios.
+Uses machine learning to automatically classify work items and assign skills based on conversation content, without manual rule configuration. Trains on historical data, learns intent and problem patterns, and applies inferred skills to new conversations. Coexists with rule-based classification, rules handle known cases, ML handles ambiguous or novel scenarios.
 
 ## Key facts
 - Requires minimum historical data: 500–1,000 conversations per skill with good skill labeling to train a model with reasonable accuracy
@@ -35,14 +35,14 @@ Use Intelligent Skill Finder when you have diverse, evolving customer requests t
 - Model drift happens naturally as customer behaviour, products, or language changes. Retraining is essential but adds overhead.
 - Confidence scores aren't calibrated to business risk. A 90% confident prediction can still be wrong 10% of the time, which hits customer satisfaction.
 - The model reflects historical bias. If certain skills were over-assigned to certain agents or queues historically, the model learns and perpetuates that.
-- Effort estimation can create unintended incentives—agents cherry-picking "simple" conversations, complex cases languishing.
+- Effort estimation can create unintended incentives: agents cherry-picking "simple" conversations, complex cases languishing.
 - Hybrid routing (rules + ML coexisting) can create confusion if rules aren't fully deprecated. Conversations matching both need clear tiebreaker logic.
 - Model explainability is limited. Supervisors and agents want to know *why* a conversation was routed to them, but you may only get keyword relevance scores.
 
 ## Consultant notes
 
 - This is the feature most likely to be oversold in pre-sales and undersupported by actual data at go-live. Before committing to ML routing in a project scope, audit the historical conversation data for volume (500+ per skill is the floor), quality, and labelling consistency. If the audit fails, it's a post-go-live roadmap item, not a go-live deliverable.
-- Logical rules first, ML later is the right sequencing almost every time. Use 6–12 months post-go-live as the benchmark for revisiting ML routing — by then you have clean labelled data and real business feedback on where rules are breaking down.
+- Logical rules first, ML later is the right sequencing almost every time. Use 6–12 months post-go-live as the benchmark for revisiting ML routing: by then you have clean labelled data and real business feedback on where rules are breaking down.
 - Effort estimation creating agent cherry-picking incentives is worth flagging to the client's operations lead before enabling it. Agents who can see conversation complexity scores will optimise for simple ones. Whether that's a problem depends on how performance is measured.
 
 ---

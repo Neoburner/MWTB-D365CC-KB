@@ -1,11 +1,11 @@
 # Apple Messages for Business Channel
 
-**Category:** Channels — Digital Messaging
+**Category:** Channels: Digital Messaging
 **Applies To:** Standalone + embedded
 **Source:** [learn.microsoft.com/.../configure-apple-messages-for-business-channel](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-apple-messages-for-business-channel)
 
 ## What it does
-Customers contact support via Apple Messages on iPhone, iPad, and Mac. Supports rich messaging: file attachments, Apple Pay, interactive elements. Async—conversations persist between sessions.
+Customers contact support via Apple Messages on iPhone, iPad, and Mac. Supports rich messaging: file attachments, Apple Pay, interactive elements. Async, conversations persist between sessions.
 
 ## Key facts
 - **Not self-service.** Requires external Apple Business Register onboarding + Microsoft Support involvement before any D365 config can begin
@@ -16,21 +16,21 @@ Customers contact support via Apple Messages on iPhone, iPad, and Mac. Supports 
 - Account ID cannot be encrypted if customer-managed keys are in use
 
 ## When to use / skip
-Use Apple Messages if the customer base has high Apple device penetration and you want to meet them in the native app. Skip if the base is mixed-platform—the onboarding overhead isn't justified unless Apple users are significant.
+Use Apple Messages if the customer base has high Apple device penetration and you want to meet them in the native app. Skip if the base is mixed-platform, the onboarding overhead isn't justified unless Apple users are significant.
 
 ## Configuration decisions
-- Whether to enable Apple Pay — requires a payment profile and separate setup; scope this as a distinct work item if in scope
-- Whether to require authentication — OAuth 2.0 OpenID Connect needs an Entra ID app registration (or equivalent IdP); this is an IT security team task, not an admin center task
-- Rich message types to enable — assess which interactive elements add value vs add complexity
+- Whether to enable Apple Pay: requires a payment profile and separate setup; scope this as a distinct work item if in scope
+- Whether to require authentication: OAuth 2.0 OpenID Connect needs an Entra ID app registration (or equivalent IdP); this is an IT security team task, not an admin center task
+- Rich message types to enable: assess which interactive elements add value vs add complexity
 
 ## Gotchas
 - Longest lead time of any digital channel. Apple Business Register registration, MSP selection, and Microsoft Support backend onboarding take weeks before you can touch D365 config. Start Apple onboarding at project kick-off, not during implementation.
 - Two parties must move before you can do anything. Apple approval and Microsoft support escalation are out of your control. Build buffer into the timeline.
-- Authentication and Apple Pay can ship in a second phase—the channel goes live without them, but you'll need them fully configured to use them.
+- Authentication and Apple Pay can ship in a second phase: the channel goes live without them, but you'll need them fully configured to use them.
 
 ## Consultant notes
 
-- Start Apple Business Register onboarding at project kick-off, not during the implementation phase. That's not a suggestion — it's a hard constraint. Registration plus Microsoft support backend onboarding can take three to four weeks, and neither is in your control.
+- Start Apple Business Register onboarding at project kick-off, not during the implementation phase. That's not a suggestion: it's a hard constraint. Registration plus Microsoft support backend onboarding can take three to four weeks, and neither is in your control.
 - This is the most underestimated channel for project planning. Everyone assumes it'll be like setting up a WhatsApp or Facebook channel. The external dependency chain is completely different. If it's in scope, give it its own entry on the project RAID log from week one.
 - Apple Pay and rich messages are almost always deferred to a second phase in practice. If the client asks for them upfront, scope them as optional phase 2 work with a clear dependency on the base channel being stable first.
 

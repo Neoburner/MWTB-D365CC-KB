@@ -8,25 +8,25 @@
 Dashboard tracking AI agent (bot) performance: autonomous resolution rates, quality scores, conversation and case handling metrics. Configurable KPI goals for autonomous rate and quality score. Accessed in Copilot Service workspace.
 
 ## Key facts
-- Contact Center standalone only — not available in embedded or Customer Service
+- Contact Center standalone only: not available in embedded or Customer Service
 - Enabled at: Copilot Service admin center → Operations → Insights → Agent insights → Enable toggle
 - KPIs for conversations: **Autonomous rate** (% closed by AI without rep) and **Quality score** (links to Quality Evaluation Agent settings)
 - KPIs for cases: similar structure to conversations
 - Quality score KPI requires Quality Evaluation Agent to be configured separately before it populates
-- Dashboard reflects AI agent activity only — does not include human rep performance (use Omnichannel historical analytics for combined views)
+- Dashboard reflects AI agent activity only: does not include human rep performance (use Omnichannel historical analytics for combined views)
 
 ## When to use / skip
 Enable on any deployment with AI agents to track deflection rates and quality. Essential for clients who want to measure ROI from AI agent investment.
 
 ## Configuration decisions
-- KPI goal thresholds — set realistic targets based on the type of queries the AI agent handles; overly ambitious targets are demotivating
+- KPI goal thresholds: set realistic targets based on the type of queries the AI agent handles; overly ambitious targets are demotivating
 
 ## Gotchas
-- **Quality score won't populate without Quality Evaluation Agent.** The KPI is linked to that feature — enable both together or expect a blank metric.
+- **Quality score won't populate without Quality Evaluation Agent.** The KPI is linked to that feature: enable both together or expect a blank metric.
 
 ## Consultant notes
 
-- Quality score being blank without Quality Evaluation Agent active is the most common report complaint. When scoping AI agent analytics, plan both features together — they're only useful in combination.
+- Quality score being blank without Quality Evaluation Agent active is the most common report complaint. When scoping AI agent analytics, plan both features together: they're only useful in combination.
 - KPI goal thresholds should be set in consultation with the client's operations and AI team, not as a default. An ambitious autonomous rate target that the agent can't realistically reach demoralises the team and generates questions about whether the agent is working. Set conservative initial targets and tune upwards with data.
 
 ---

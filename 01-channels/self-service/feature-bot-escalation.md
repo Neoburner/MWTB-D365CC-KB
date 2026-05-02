@@ -20,7 +20,7 @@ Hand off conversations from an automated bot to a live agent in Contact Center, 
 - Handoff latency typically 2-5 seconds depending on network and queue congestion
 
 ## When to use / skip
-Use escalation to filter simple issues through automation first (reduce agent load) while routing complex issues to specialists without friction. Example: bot collects account info and issue summary, escalates disputes directly. Skip it if the bot rarely escalates (pointless bot), or if you need synchronous co-control where agent and bot both act in the same conversation—D365 doesn't support that. The bot must hand off completely.
+Use escalation to filter simple issues through automation first (reduce agent load) while routing complex issues to specialists without friction. Example: bot collects account info and issue summary, escalates disputes directly. Skip it if the bot rarely escalates (pointless bot), or if you need synchronous co-control where agent and bot both act in the same conversation, D365 doesn't support that. The bot must hand off completely.
 
 ## Configuration decisions
 - **Escalation trigger logic**: Define bot conditions that mandate escalation vs. those that allow the bot to attempt resolution again

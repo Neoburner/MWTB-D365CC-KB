@@ -12,7 +12,7 @@
 
 ## Description
 
-Dynamics 365 Contact Center uses a unified architecture of specialized AI agents, each mapped to a critical outcome in the contact center — customer self-service, representative productivity, interaction quality, and operational management. Two overlapping taxonomies are used by Microsoft documentation: the **contact center agent** taxonomy (Customer Assist, Quality Assurance, Service Operations) and the **autonomous service agent** taxonomy (Customer Intent, Case Management, Customer Knowledge Management, Quality Evaluation). Understanding both is necessary to navigate the configuration surface.
+Dynamics 365 Contact Center uses a unified architecture of specialized AI agents, each mapped to a critical outcome in the contact center, customer self-service, representative productivity, interaction quality, and operational management. Two overlapping taxonomies are used by Microsoft documentation: the **contact center agent** taxonomy (Customer Assist, Quality Assurance, Service Operations) and the **autonomous service agent** taxonomy (Customer Intent, Case Management, Customer Knowledge Management, Quality Evaluation). Understanding both is necessary to navigate the configuration surface.
 
 ---
 
@@ -71,9 +71,9 @@ These agents automate specific service workflows. Some are available in Contact 
 
 ## Implementation Notes
 
-> *Consultant perspective — add your own notes here*
+> *Consultant perspective: add your own notes here*
 
-- **The naming taxonomy is genuinely confusing.** Microsoft uses "contact center agents" (Customer Assist, QA, Service Operations) as the macro framework, but the documentation also covers "autonomous agents" (Customer Intent, Case Management, KM, Quality Evaluation) which sit in a different area of the admin center. Map this out for the client as a visual before the feature walkthrough — otherwise they'll conflate the two taxonomies.
+- **The naming taxonomy is genuinely confusing.** Microsoft uses "contact center agents" (Customer Assist, QA, Service Operations) as the macro framework, but the documentation also covers "autonomous agents" (Customer Intent, Case Management, KM, Quality Evaluation) which sit in a different area of the admin center. Map this out for the client as a visual before the feature walkthrough: otherwise they'll conflate the two taxonomies.
 - **Availability varies significantly.** Case Management Agent and Customer Knowledge Management Agent are Customer Service only. Service Operations Agent is in preview. Quality Evaluation Agent and Customer Intent Agent are available in Contact Center. Don't promise capabilities that are CS-only in a Contact Center standalone deployment.
 - **These agents work best as a layered stack, not as point solutions.** Customer Intent discovers what customers ask about → Knowledge Management keeps articles current → Quality Evaluation assesses interaction quality → Agent Insights measures the outcomes. Positioning them together as a continuous improvement loop resonates better with clients than explaining each one in isolation.
 

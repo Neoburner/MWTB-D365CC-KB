@@ -22,30 +22,30 @@ Proactive dialling modes automate outbound calls to customers from a list. Predi
 Predictive dialling is for high-volume campaigns (collections, surveys, appointment reminders) where efficiency is worth agent stress. Progressive is for consultative outbound (sales, support callbacks, proactive reach) where quality beats volume. Skip both if inbound calling handles your load or if you're not doing outbound at all.
 
 ## Configuration decisions
-- **Predictive vs Progressive** — Predictive: efficiency but higher stress. Progressive: quality but lower agent adoption.
-- **Predictive ratio** — Use 3:1 for decent-quality lists; 5:1 if your list is dodgy (high failure rate).
-- **Outcome handling** — Wire up Power Automate logic for each SIP outcome: voicemail, retry timing, escalation.
-- **Agent assignment** — Batch assign (balanced round-robin) or dynamic based on availability. Your choice.
-- **Voicemail detection** — ACS can distinguish live voice from greeting. Costs extra per call.
-- **Recording consent** — Make sure customers have signed off; add a disclaimer message if needed.
-- **Do-Not-Call (DNC) compliance** — Integrate with the DNC registry (US FTC, GDPR consent logs) before you start dialling. Violations carry fines.
-- **Retry strategy** — Set max retries and intervals (e.g., retry 3 times over 24 hours for no-answer).
+- **Predictive vs Progressive**: Predictive: efficiency but higher stress. Progressive: quality but lower agent adoption.
+- **Predictive ratio**: Use 3:1 for decent-quality lists; 5:1 if your list is dodgy (high failure rate).
+- **Outcome handling**: Wire up Power Automate logic for each SIP outcome: voicemail, retry timing, escalation.
+- **Agent assignment**: Batch assign (balanced round-robin) or dynamic based on availability. Your choice.
+- **Voicemail detection**: ACS can distinguish live voice from greeting. Costs extra per call.
+- **Recording consent**: Make sure customers have signed off; add a disclaimer message if needed.
+- **Do-Not-Call (DNC) compliance**: Integrate with the DNC registry (US FTC, GDPR consent logs) before you start dialling. Violations carry fines.
+- **Retry strategy**: Set max retries and intervals (e.g., retry 3 times over 24 hours for no-answer).
 
 ## Gotchas
 - **Voicemail detection fails sometimes.** Some systems fool it and connect to the agent anyway. Agent hears "please leave a message" mid-greeting.
 - **SIP codes vary wildly by carrier.** Some carriers return generic 5xx for everything, making retry logic imprecise.
 - **Dropped calls in Predictive mode kill efficiency.** Caller hangs up during the agent greeting, wasting a dial attempt. High drop rates destroy your gains.
-- **Power Automate failures are silent.** Empty contact list, workflow error — dialling just stops. No alerting to admins.
+- **Power Automate failures are silent.** Empty contact list, workflow error: dialling just stops. No alerting to admins.
 - **DNC violations are expensive.** One call to a DNC-listed number = $500–$1500 fine in the US. Strict compliance is non-negotiable.
 - **Bad predictive ratios cause compliance issues.** Misconfigure dials-per-agent and excessive call drops follow.
-- **Junk in the contact list tanks efficiency.** Disconnected numbers, wrong format — validate and deduplicate before you start.
+- **Junk in the contact list tanks efficiency.** Disconnected numbers, wrong format: validate and deduplicate before you start.
 - **Carrier SIP codes matter.** Some carriers don't send voicemail detection codes. You'll need workarounds.
 
 ## Consultant notes
 
 - DNC compliance gets treated as a client responsibility but invariably lands on the implementation team when something goes wrong. Agree in the SOW who's responsible for DNC list validation and document it clearly. One call to the wrong number is an expensive lesson.
 - Predictive mode sells well in discovery ("maximum agent efficiency") but clients often underestimate the workforce impact. Agents handling high volumes of unexpected live connections burn out faster. Worth raising in the requirements phase, not post-go-live.
-- Power Automate failures are the silent killer for outbound campaigns — no alerts, dialling just stops. Build in some form of monitoring or alerting on the workflow before handing over to the client.
+- Power Automate failures are the silent killer for outbound campaigns: no alerts, dialling just stops. Build in some form of monitoring or alerting on the workflow before handing over to the client.
 
 ---
 

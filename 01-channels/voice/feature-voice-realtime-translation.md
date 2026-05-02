@@ -18,28 +18,28 @@ Real-Time Translation for voice calls provides live translation of conversations
 - No special agent training required; agent speaks normally, system handles audio routing
 - Licensing: Separate Azure Cognitive Services charges apply (per minute of translated audio, not per call)
 - Translation accuracy depends on audio quality, accents, background noise, and language pair; less common language pairs may be less accurate
-- Does not translate written chat, SMS, or email—only voice calls
+- Does not translate written chat, SMS, or email: only voice calls
 
 ## When to use / skip
-Use real-time translation if you've got multilingual customers but can't hire bilingual agents, or want to expand geographically without local hiring. Skip it if everyone speaks the same language, or if your call volume is low enough that hiring bilinguals is cheaper. Also skip it for specialized or regulated work (legal, medical) where accuracy and liability matter — hire a human interpreter instead.
+Use real-time translation if you've got multilingual customers but can't hire bilingual agents, or want to expand geographically without local hiring. Skip it if everyone speaks the same language, or if your call volume is low enough that hiring bilinguals is cheaper. Also skip it for specialized or regulated work (legal, medical) where accuracy and liability matter, hire a human interpreter instead.
 
 ## Configuration decisions
-- **Language pairs** — Which pairs do you enable? English ↔ Spanish, English ↔ Mandarin, etc.
-- **Translation triggers** — Automatic (detect language, translate immediately) or agent-initiated (request mid-call).
-- **Failover** — If translation fails, callback with an interpreter, escalate to a bilingual agent, or apologise and hang up.
-- **Transcript storage** — Contact Centre table, external CRM, or both.
-- **Retention policy** — How long to keep translated transcripts? Compliance may force longer retention.
-- **Quality thresholds** — When does translation accuracy drop enough to escalate or flag for review.
-- **Customer disclosure** — Tell them translation is active ("Your call will be translated for accessibility").
-- **Recording disclosure** — GDPR, CCPA: inform them about recording + translation.
-- **Dialect testing** — Test with real customers before rollout. Accents matter.
+- **Language pairs**: Which pairs do you enable? English ↔ Spanish, English ↔ Mandarin, etc.
+- **Translation triggers**: Automatic (detect language, translate immediately) or agent-initiated (request mid-call).
+- **Failover**: If translation fails, callback with an interpreter, escalate to a bilingual agent, or apologise and hang up.
+- **Transcript storage**: Contact Centre table, external CRM, or both.
+- **Retention policy**: How long to keep translated transcripts? Compliance may force longer retention.
+- **Quality thresholds**: When does translation accuracy drop enough to escalate or flag for review.
+- **Customer disclosure**: Tell them translation is active ("Your call will be translated for accessibility").
+- **Recording disclosure**: GDPR, CCPA: inform them about recording + translation.
+- **Dialect testing**: Test with real customers before rollout. Accents matter.
 
 ## Gotchas
 - **Latency kills call flow.** A 2–4 second delay per exchange makes conversations feel clunky. People talk over each other.
-- **Colloquialisms and jargon don't translate well.** Slang, technical terms, regional expressions — the AI can mess these up.
-- **Homophones trip up translation.** "Bear" vs. "bare" — context helps but it's not foolproof.
+- **Colloquialisms and jargon don't translate well.** Slang, technical terms, regional expressions: the AI can mess these up.
+- **Homophones trip up translation.** "Bear" vs. "bare": context helps but it's not foolproof.
 - **Accents degrade speech recognition first.** Thick accents or dialects reduce the accuracy of speech-to-text before translation even happens.
-- **Names and numbers get mangled.** Proper names, order numbers, account IDs — agents must verify these.
+- **Names and numbers get mangled.** Proper names, order numbers, account IDs: agents must verify these.
 - **Agents can't switch languages.** The agent can't suddenly speak the customer's language to build rapport. They're stuck in their own language.
 - **Hold music and IVR prompts don't translate.** Only the live conversation translates. Customers in queue or on hold hear untranslated content.
 - **Voice data goes to Azure.** Customer audio is sent to Azure services for translation. Check data residency and GDPR compliance.
@@ -50,7 +50,7 @@ Use real-time translation if you've got multilingual customers but can't hire bi
 ## Consultant notes
 
 - This feature demos brilliantly and then disappoints in production. The 2–4 second latency per exchange is enough to make natural conversation feel awkward. Set expectations with the client before any live calls happen, not after.
-- Specialist or regulated work (legal, medical, financial) — recommend a human interpreter regardless of what the feature can technically do. The accuracy isn't there for high-stakes language, and liability sits with whoever recommended the tool.
+- Specialist or regulated work (legal, medical, financial): recommend a human interpreter regardless of what the feature can technically do. The accuracy isn't there for high-stakes language, and liability sits with whoever recommended the tool.
 - Azure metered billing catches clients off guard. Build a rough cost estimate based on expected translated minutes into your solution design sign-off. "It looked free" is not a conversation you want at month-end invoice time.
 
 ---

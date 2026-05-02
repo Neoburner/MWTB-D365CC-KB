@@ -30,7 +30,7 @@ Use in customer-experience-focused operations (SaaS, consumer services, hospital
 
 ## Gotchas
 - **Sentiment is probabilistic.** Can misfire on sarcasm, frustrated politeness (calm but angry), or domain-specific wording (e.g., "terrible" used positively).
-- **Single low scores are often temporary.** A customer frustrated one moment but happy after clarification — don't over-react to one alert.
+- **Single low scores are often temporary.** A customer frustrated one moment but happy after clarification: don't over-react to one alert.
 - **Text-based only.** Tone, pauses, and non-verbal cues aren't captured, so voice accuracy is reduced.
 - **Agent sentiment isn't flagged.** Only customer sentiment triggers alerts. Agent rudeness needs separate quality monitoring.
 - **Threshold tuning is critical.** Too low = alert fatigue. Too high = you miss the at-risk conversations.

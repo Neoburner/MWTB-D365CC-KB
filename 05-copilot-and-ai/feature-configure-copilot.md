@@ -8,11 +8,11 @@
 Top-level admin controls: opt in/out, manage regional data movement, enable features by rep population via experience profiles, configure agents, and assign role permissions.
 
 ## Key facts
-- **Opt-in required** before any Copilot feature is available; opting out erases all training data with no recovery — do not opt out casually
+- **Opt-in required** before any Copilot feature is available; opting out erases all training data with no recovery: do not opt out casually
 - **GA in North America only**; all other regions are Preview (affects enterprise production readiness decisions)
 - Regions with in-region Azure OpenAI (US, AU, IN, UK, GCC): no cross-region data movement needed; all other regions must enable data movement in Power Platform admin center
-- **Custom security roles require explicit Copilot privileges** — default CSR role has all privileges; custom roles don't inherit them
-- Admin Management agent is **Preview** — not recommended for production without evaluation
+- **Custom security roles require explicit Copilot privileges**: default CSR role has all privileges; custom roles don't inherit them
+- Admin Management agent is **Preview**: not recommended for production without evaluation
 - Data sharing for Copilot features: when enabled, Microsoft may review customer data to improve Copilot; data is not used to train Azure OpenAI foundation models
 - Copilot interaction transcripts stored in `msdyn_copilottranscriptdata` (optional, downloadable via API)
 
@@ -20,9 +20,9 @@ Top-level admin controls: opt in/out, manage regional data movement, enable feat
 Required first step. Every Copilot capability flows through this configuration.
 
 ## Configuration decisions
-- Cross-region data movement — confirm with the client whether their Power Platform admin center has this enabled or needs to be enabled for non-NA regions
-- Experience profiles — use to granularly control which Copilot features are available to which rep populations (e.g. case summary only for senior agents)
-- Data sharing consent — discuss with the client before enabling; it has data governance implications
+- Cross-region data movement: confirm with the client whether their Power Platform admin center has this enabled or needs to be enabled for non-NA regions
+- Experience profiles: use to granularly control which Copilot features are available to which rep populations (e.g. case summary only for senior agents)
+- Data sharing consent: discuss with the client before enabling; it has data governance implications
 
 ## Gotchas
 - **Custom roles are a blocker.** If the client uses custom security roles, Copilot won't work until explicit privileges are added. Audit roles early.
@@ -30,9 +30,9 @@ Required first step. Every Copilot capability flows through this configuration.
 
 ## Consultant notes
 
-- Cross-region data movement is a Power Platform admin task, not an admin centre task. For non-NA deployments, get the Power Platform admin involved early — this is often a separate IT team and their approval process has lead time.
-- Opt-out being irreversible needs to be in the admin handover in bold. The natural instinct when troubleshooting a Copilot issue is to reset something. Opting out is not a reset — it permanently deletes training data. Diagnose first, always.
-- Experience profiles are the right tool for controlling which Copilot features reach which rep populations. Resist the temptation to just enable everything globally — starting with conversation summaries and Ask a Question, then phasing in email and case summary, gives the client time to adopt each feature properly.
+- Cross-region data movement is a Power Platform admin task, not an admin centre task. For non-NA deployments, get the Power Platform admin involved early: this is often a separate IT team and their approval process has lead time.
+- Opt-out being irreversible needs to be in the admin handover in bold. The natural instinct when troubleshooting a Copilot issue is to reset something. Opting out is not a reset: it permanently deletes training data. Diagnose first, always.
+- Experience profiles are the right tool for controlling which Copilot features reach which rep populations. Resist the temptation to just enable everything globally: starting with conversation summaries and Ask a Question, then phasing in email and case summary, gives the client time to adopt each feature properly.
 
 ---
 

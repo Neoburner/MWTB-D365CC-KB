@@ -25,15 +25,15 @@ The Desktop Companion App is a Windows-based application that agents install loc
 Use the companion app for embedded Contact Centre deployments (Salesforce, ServiceNow, custom CRM) that need voice. Skip it for Standalone Contact Centre or chat-only/email-only deployments.
 
 ## Configuration decisions
-- **Deployment** — Manual, SCCM, or Intune. Intune is simplest for cloud-first orgs.
-- **Updates** — Auto-update or pin to a version and test before rollout.
-- **Firewall** — Whitelist Contact Centre domain and media relay servers.
-- **Proxy** — Route through corporate proxy if needed (usually auto-detected).
-- **QoS** — If you have QoS, tag audio streams from the companion app for priority.
-- **Logging** — Enable verbose logging for troubleshooting. Plan to clean up the logs.
-- **Uninstall policy** — Can agents remove it, or lock it down with MDM?
-- **Multi-device** — If agents work from different machines, install on each.
-- **Pilot testing** — Test new versions with a small group before org-wide rollout.
+- **Deployment**: Manual, SCCM, or Intune. Intune is simplest for cloud-first orgs.
+- **Updates**: Auto-update or pin to a version and test before rollout.
+- **Firewall**: Whitelist Contact Centre domain and media relay servers.
+- **Proxy**: Route through corporate proxy if needed (usually auto-detected).
+- **QoS**: If you have QoS, tag audio streams from the companion app for priority.
+- **Logging**: Enable verbose logging for troubleshooting. Plan to clean up the logs.
+- **Uninstall policy**: Can agents remove it, or lock it down with MDM?
+- **Multi-device**: If agents work from different machines, install on each.
+- **Pilot testing**: Test new versions with a small group before org-wide rollout.
 
 ## Gotchas
 - **Audio drivers break audio.** Some driver updates cause dropout. Keep a list of known-good driver versions.
@@ -51,8 +51,8 @@ Use the companion app for embedded Contact Centre deployments (Salesforce, Servi
 
 ## Consultant notes
 
-- Ask about VDI and Citrix in discovery, not in UAT. This is the most common late-breaking blocker for embedded voice deployments. If agents use Citrix or VMware Horizon, the companion app architecture changes entirely — the app goes in the VDI image, not the client machine, and there are audio driver and network path implications that need scoping separately.
-- Admin privilege for install is a showstopper in locked-down enterprise environments. Confirm whether Intune or SCCM is available before scoping the rollout approach. Some clients can't do self-service install and need IT to visit every desk — account for that in the go-live timeline.
+- Ask about VDI and Citrix in discovery, not in UAT. This is the most common late-breaking blocker for embedded voice deployments. If agents use Citrix or VMware Horizon, the companion app architecture changes entirely: the app goes in the VDI image, not the client machine, and there are audio driver and network path implications that need scoping separately.
+- Admin privilege for install is a showstopper in locked-down enterprise environments. Confirm whether Intune or SCCM is available before scoping the rollout approach. Some clients can't do self-service install and need IT to visit every desk: account for that in the go-live timeline.
 - Audio quality issues post-go-live almost always trace back to the local network, not the app. Run ACS network diagnostics from actual agent workstations (not the server room) before go-live. Satellite, congested Wi-Fi, and corporate proxy configurations are the usual culprits and they only show up when you test from the right seat.
 
 

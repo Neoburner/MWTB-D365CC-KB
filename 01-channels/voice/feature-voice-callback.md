@@ -21,13 +21,13 @@ Callback allows customers waiting in a voice queue to request a callback instead
 Use callbacks if you've got traffic spikes, seasonal peaks, or average hold time over 2 minutes. They cut abandonment and CSAT improves. Skip if you always have agents ready or don't have outbound dialling capacity to spare.
 
 ## Configuration decisions
-- **Wait-time threshold** — When do you offer callback? (30 sec to 10 min typical).
-- **Callback slot limit** — How many pending callbacks before you stop accepting them per queue? (50–200 common).
-- **Callback message** — What does the customer hear when offered a callback.
-- **Scheduled callback window** — Business hours and slot availability (next day, 10am–5pm only, etc.).
-- **Retry logic** — Does callback retry once, multiple times, or just abandon if the customer doesn't answer.
-- **Priority** — Do new callbacks jump ahead of new inbound calls or queue at the back.
-- **Agent assignment** — Route back to the original agent or use standard queue assignment.
+- **Wait-time threshold**: When do you offer callback? (30 sec to 10 min typical).
+- **Callback slot limit**: How many pending callbacks before you stop accepting them per queue? (50–200 common).
+- **Callback message**: What does the customer hear when offered a callback.
+- **Scheduled callback window**: Business hours and slot availability (next day, 10am–5pm only, etc.).
+- **Retry logic**: Does callback retry once, multiple times, or just abandon if the customer doesn't answer.
+- **Priority**: Do new callbacks jump ahead of new inbound calls or queue at the back.
+- **Agent assignment**: Route back to the original agent or use standard queue assignment.
 
 ## Gotchas
 - **Callback requests die if the customer hangs up before confirming.** No partial confirmation recovery.
@@ -36,12 +36,12 @@ Use callbacks if you've got traffic spikes, seasonal peaks, or average hold time
 - **Slots are per-queue.** 10 queues with a 100-slot limit = 1,000 total callbacks possible. Easy to not realise you've blown past capacity.
 - **Callback prompts use text-to-speech.** Custom audio requires ACS recording setup.
 - **Agent unavailability orphans callbacks.** If the assigned agent goes unavailable, the callback may hang or auto-reassign. Clarify how this works.
-- **Callback reporting is custom.** Abandonment rates, completion rates — not in the standard dashboards. You'll build them yourself.
+- **Callback reporting is custom.** Abandonment rates, completion rates: not in the standard dashboards. You'll build them yourself.
 
 ## Consultant notes
 
-- Callback reporting requirements always surface in UAT, usually as a surprise. Scope them during requirements — standard dashboards don't cover abandonment or completion rates, so if the client wants those, it's a custom Power BI build. Better to know that in advance.
-- The invalid number silent failure is worth a specific mention during client handover. They need a process for validating customer numbers before they hit the queue — otherwise failed callbacks just disappear with no visibility.
+- Callback reporting requirements always surface in UAT, usually as a surprise. Scope them during requirements: standard dashboards don't cover abandonment or completion rates, so if the client wants those, it's a custom Power BI build. Better to know that in advance.
+- The invalid number silent failure is worth a specific mention during client handover. They need a process for validating customer numbers before they hit the queue: otherwise failed callbacks just disappear with no visibility.
 - Callback slot limits are per-queue, which means the mental model of "we've got capacity" can be wrong if you've got multiple queues all sharing assumptions. Worth walking through the maths with the client during design.
 
 ---
