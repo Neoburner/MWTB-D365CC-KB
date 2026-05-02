@@ -43,8 +43,6 @@ Use custom messaging when you need brand control, deep app integration, or a pla
 
 ## Consultant notes
 
-## Consultant notes
-
 - Clients hear "custom messaging channel" and assume it means anything is possible with minimal effort. Scope it carefully upfront: this is a developer task (bot deployment, Direct Line integration, front-end UI), not a consultant configuration task. If the client doesn't have Azure/bot development resource confirmed, this feature shouldn't be in scope.
 - The most common production incident with custom channels is insecure token generation: the Direct Line token endpoint gets exposed without auth and the bot gets hijacked or flooded. Make security review of the token endpoint a mandatory sign-off before go-live.
 - Always challenge the requirement first. Nine times out of ten the client wants custom branding or a non-standard platform, not a genuinely custom protocol. Check whether a pre-built channel (live chat widget with CSS overrides, WhatsApp Business) actually meets the need before committing to Direct Line complexity.

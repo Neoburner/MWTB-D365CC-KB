@@ -27,8 +27,6 @@ This is an automatic platform improvement, you don't decide whether to use it. I
 
 ## Consultant notes
 
-## Consultant notes
-
 - Nothing to configure here: include it as a one-liner in rep training release notes for any deployment upgrading after April 2026. Agents who've been waiting for consult timeouts will appreciate knowing it exists.
 - The edge case to document for your QA team: if a rep cancels a consult leg that was already in a secure (paused recording) state, verify that recording resumes correctly on the original call. The interaction between cancel and the recording pause/resume logic is worth one UAT test case.
 

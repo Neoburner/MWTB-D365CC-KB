@@ -28,8 +28,6 @@ Use LINE only for clients in Japan, Thailand, Taiwan, or Southeast Asia where it
 
 ## Consultant notes
 
-## Consultant notes
-
 - If a client outside Japan, Thailand, Taiwan, or Southeast Asia asks for LINE, find out who they're actually trying to reach. It's usually a specific customer segment (e.g. Japanese expats, APAC regional teams): confirm that before putting the channel in scope, because it adds disproportionate complexity for a small user base.
 - Manual contact record linking is the silent data quality problem across all social channels in D365, not just LINE. Make it part of onboarding training and build a Dataverse view that shows conversations with no linked contact, so supervisors can audit compliance.
 - In regulated industries (financial services, healthcare), the data residency and privacy disclosure requirement for LINE needs to go through the client's DPO or legal team before the channel is enabled. Don't treat it as an implementation detail: it can hold up go-live.

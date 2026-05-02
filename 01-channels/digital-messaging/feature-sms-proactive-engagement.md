@@ -33,8 +33,6 @@ Skip it if your outbound SMS is purely one-way notification (no reply expected),
 
 ## Consultant notes
 
-## Consultant notes
-
 - Opt-out suppression is your problem, not D365's. Before any proactive SMS goes live, confirm with the client that their CRM or data layer is suppressing sends to opted-out customers before the trigger fires. This is the compliance landmine that causes the most post-go-live panic, and it's entirely outside the platform.
 - The separate outbound workstream requirement catches everyone the first time. It's not obvious from the docs that your inbound SMS workstream won't handle outbound-initiated conversations: they're different workstream types. Build the outbound workstream into your setup checklist.
 - For any client doing proactive SMS at meaningful volume, get legal sign-off on the message content, opt-out mechanism, and consent basis before go-live: especially in GDPR jurisdictions or the US (TCPA). The technical setup is the easy part.

@@ -39,8 +39,6 @@ Use E911 wherever emergency calling is regulated. Skip only in unregulated terri
 
 ## Consultant notes
 
-## Consultant notes
-
 - Treat E911 as a non-negotiable compliance item from day one. It goes on the project checklist alongside licence confirmation and data residency: not as an afterthought in the week before go-live.
 - Remote and hybrid agents are the hardest part of the E911 problem. Get HR or facilities to provide registered home office addresses early in the project: you'll need them for location registration. Don't assume agents will self-register accurately.
 - The number porting / E911 registration loss is a known gotcha that catches people who port numbers after initial setup. Add "re-verify E911 registration after any number porting" to your post-porting checklist. It takes five minutes to check and saves a regulatory incident.

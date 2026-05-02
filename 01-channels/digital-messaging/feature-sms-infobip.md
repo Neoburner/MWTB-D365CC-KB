@@ -32,8 +32,6 @@ Skip it if the customer has no existing Infobip account, ACS is still the simple
 
 ## Consultant notes
 
-## Consultant notes
-
 - Infobip is most relevant when the client already has a relationship with them: existing number inventory, contracts, and account manager. In that case it saves a provider migration and is worth doing. If they have no existing Infobip account, ACS is the simpler default and there's no good reason to introduce a new vendor.
 - Don't assume provider swaps are like-for-like. If a client is moving from Twilio or ACS to Infobip, re-test the full inbound and outbound flow: webhook delivery, message formatting, and opt-out handling can all behave slightly differently. Allow UAT time for it.
 - Outbound proactive SMS via Infobip still requires the proactive engagement API setup separately. The Infobip channel configuration alone doesn't enable outbound initiation: this is a common misunderstanding when clients see "inbound and outbound messaging" in the docs.

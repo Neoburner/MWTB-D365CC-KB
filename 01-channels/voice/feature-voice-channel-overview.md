@@ -34,8 +34,6 @@ Go with native voice if the client wants telephony managed inside D365, no separ
 
 ## Consultant notes
 
-## Consultant notes
-
 - Telephony is always the highest-risk part of a D365 CC implementation. Schedule network validation, number porting, and IVR design at the start of the project, not after the core platform is configured. These three items are almost always on the critical path and they all have dependencies outside your control.
 - Network assessment from actual agent workstation locations is the most commonly skipped step and the most common cause of post-go-live audio quality problems. HQ network tests don't cover remote agents, satellite workers, or congested office Wi-Fi. Run ACS diagnostics from representative desks before sign-off.
 - IVR design (Copilot Studio voice agent) is a separate workstream from channel setup and consistently underestimated. If voice IVR is in scope, treat it as its own mini-project with its own timeline, designer, and sign-off process: don't roll it into "configure the voice channel" on the project plan.

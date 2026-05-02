@@ -30,8 +30,6 @@ This is a quality management and compliance review feature. Use it if supervisor
 
 ## Consultant notes
 
-## Consultant notes
-
 - This needs zero configuration once recording is enabled: don't over-engineer it. The only action is making sure your QA team and supervisors know the split view is there and how to use it. Include it in the supervisor onboarding materials.
 - Brief the QA team that speakers are labelled by channel role (agent/customer), not by name. The transcript has name attribution; the waveform view doesn't. Analysts who expect to see "Sarah - Agent" in the waveform will be confused if you don't set expectations.
 - Three-way consult scenarios (agent + customer + external) are the edge case to test in UAT. The third participant may show as a separate speaker track or may be merged depending on how the conference leg is set up. Know the behaviour before the QA team discovers it in a coaching session.

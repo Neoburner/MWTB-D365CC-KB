@@ -39,8 +39,6 @@ Turn this on to auto-discover what customers are calling about and find improvem
 
 ## Consultant notes
 
-## Consultant notes
-
 - Topics Analytics is a strong demo feature: the "look, AI found your top 10 contact reasons automatically" moment lands well. But set expectations about the 30–60 day warm-up period before meaningful clusters emerge. Clients who expect actionable insights on day one will be disappointed.
 - The AI-generated topic names don't always map cleanly to the client's existing contact reason categories. That's fine: treat it as a discovery tool for finding gaps or emerging issues, not as a replacement for your existing classification taxonomy. Selling it as the latter creates a painful conversation when the categories don't line up.
 - Low-volume contact centres (< 100 conversations/day) get poor topic accuracy. If volume is that low, topics analytics adds more confusion than insight: a simple manual tagging approach on a small sample gives you cleaner data with less noise.

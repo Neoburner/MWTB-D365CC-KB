@@ -30,8 +30,6 @@ Use this if you're seeing SLA numbers that look fine at the conversation level b
 
 ## Consultant notes
 
-## Consultant notes
-
 - The metric shift at GA is a client communication issue as much as a technical one. Brief your ops stakeholders and reporting team before May 2026: conversation-level wait time and SLA numbers will change, and without context, those changes look like a platform problem. Get ahead of it with a short briefing note.
 - This is the feature that finally gives you the evidence for post-transfer wait time problems: something conversation-level analytics has always masked. If a client has been complaining that "something's wrong after transfers" but the top-level SLA looks fine, this is where you'll find the queue that's causing it.
 - Any custom Power BI or Data Export reports that join on conversation-level metrics should be reviewed against the new segment-level grain. Flag this with any client who has custom reporting built on the analytics data model.

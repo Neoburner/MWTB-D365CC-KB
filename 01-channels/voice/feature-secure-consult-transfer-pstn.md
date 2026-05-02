@@ -33,8 +33,6 @@ Skip it if your voice flows are self-contained within D365 Contact Center and ne
 
 ## Consultant notes
 
-## Consultant notes
-
 - PCI DSS is almost always the business driver here, and that means your compliance team needs to validate the implementation, not just the project team. Get the PCI requirement documented before designing the flow: the scope of what counts as a "secure leg" may be broader than just card payments.
 - Don't put this in a production scope before June 2026 GA if the client has zero tolerance for preview behaviour changes. It's close to GA but close isn't there. For clients who need PCI compliance day one, either scope around it or get explicit sign-off that preview in production is acceptable.
 - The DTMF Broadcast dependency is the most common configuration miss. Both settings are independent, both need enabling, and both need testing end-to-end. Put them as a paired item on your admin checklist.

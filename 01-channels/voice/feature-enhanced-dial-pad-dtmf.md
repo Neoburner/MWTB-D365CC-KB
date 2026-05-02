@@ -29,8 +29,6 @@ Skip it only if your voice workloads have no IVR navigation or external PSTN tra
 
 ## Consultant notes
 
-## Consultant notes
-
 - If you're also configuring Secure Consult/Transfer for PSTN, enable this at the same time: the two features work together and you'll need DTMF broadcast on for customers to navigate external IVRs during the secure leg. They're separate admin settings; easy to configure one and forget the other.
 - Include a DTMF end-to-end test in your UAT script: dial into a queue, get connected as an agent, and verify that DTMF tones reach the external endpoint correctly. It's a two-minute test that saves a support call.
 - When this is enabled, the old dial pad UI is removed. Brief reps that the layout has changed in the release notes for the upgrade: otherwise you'll get "the dial pad is broken" tickets that are actually just UI confusion.

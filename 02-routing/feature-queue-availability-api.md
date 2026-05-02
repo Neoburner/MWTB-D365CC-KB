@@ -31,8 +31,6 @@ Skip if your routing is simple and wait time estimation isn't a customer experie
 
 ## Consultant notes
 
-## Consultant notes
-
 - This is a powerful capability for IVR self-service, but it's brand new as of April 2026: no documented rate limits at launch. Test under realistic load before putting it in front of a high-volume IVR. An undocumented rate limit discovered at go-live will break your IVR's availability messaging.
 - The operating hours behaviour is a simple trap: the API returns zero available reps outside business hours, not an error. If your IVR logic branches on "no available reps," make sure it handles the after-hours case gracefully rather than routing everyone to the overflow queue at 8am on Saturday.
 - If you surface estimated wait times to customers in the IVR, word it carefully: "approximately X minutes" or "currently a short wait." Exact figures create unrealistic expectations. Volume spikes between the API call and the call connecting can double a wait time in 30 seconds.

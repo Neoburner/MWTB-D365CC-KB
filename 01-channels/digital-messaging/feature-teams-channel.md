@@ -41,8 +41,6 @@ Use Teams for internal IT support, employee self-service (benefits, policies, on
 
 ## Consultant notes
 
-## Consultant notes
-
 - IT admin coordination is almost always the blocker with Teams channel deployments, not the D365 configuration. The Teams app needs approval in the M365 admin center, which can take days or weeks if there's a change advisory board process. Get this on the IT project plan early rather than discovering it the week before go-live.
 - Off-hours handling is consistently forgotten. Agents finish their shift; employees keep sending Teams messages. Design the out-of-hours bot response before go-live and test it: agents arriving the next morning to a queue full of unacknowledged overnight messages is a bad look.
 - The Teams channel is genuinely useful for internal IT or HR support desks where employees already live in Teams all day. It reduces ticket submission friction significantly. But if the volume is low (< 50 conversations/day), the setup overhead may not be worth it compared to a simple email queue.

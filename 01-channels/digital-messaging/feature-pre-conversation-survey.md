@@ -31,8 +31,6 @@ Use surveys on virtually every chat deployment. They're the simplest way to feed
 
 ## Consultant notes
 
-## Consultant notes
-
 - Pre-conversation surveys are the easiest way to get intent-based routing working on day one: a simple "What do you need help with?" dropdown with four options beats a custom AI classification model for most clients at go-live. Push for simplicity here.
 - Survey question abandonment is real. Every extra question loses a percentage of customers. Challenge any client who wants more than three questions: make them justify each one. The fewer questions, the higher completion.
 - The survey question name matching requirement for record identification is the gotcha that breaks the most basic implementations. Build a naming convention document as part of project setup (Name, Email, Phone, CaseNumber) and enforce it: don't leave it to individual admin judgment.

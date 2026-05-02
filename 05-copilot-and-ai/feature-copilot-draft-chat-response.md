@@ -28,8 +28,6 @@ It no longer exists. If you're documenting or auditing a deployment that referen
 
 ## Consultant notes
 
-## Consultant notes
-
 - If you encounter this referenced in a client's existing internal documentation or runbooks from before mid-2025, update it. The feature is gone and any implementation guidance pointing to it is stale.
 - The Copilot Help Pane is the current equivalent, but it requires its own configuration in the experience profile: don't assume it's on by default in an environment that previously had Draft a Chat Response enabled. Check the experience profile settings explicitly.
 
