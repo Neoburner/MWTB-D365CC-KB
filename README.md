@@ -2,7 +2,7 @@
 
 Internal consultant reference for Dynamics 365 Contact Center and Customer Service. One doc per feature. No sales copy — just what it does, when to use it, and what will catch you out.
 
-**149 features documented** across 11 categories. Coverage is ongoing.
+**152 features documented** across 11 categories. Coverage is ongoing.
 
 → **[Full feature reference](FEATURES.md)** — single-page view with gotchas, new additions, and the complete list
 
@@ -60,6 +60,13 @@ New features and breaking changes.
 | Feature | What it adds | Applies to |
 |---------|-------------|------------|
 | [Deep Noise Suppression](03-agent-experience/feature-noise-suppression.md) | Org-level AI noise suppression on voice calls; filters both incoming and outgoing audio | Voice · Both |
+| [Agent Inbox Enhancements](03-agent-experience/feature-inbox-enhancements.md) | Configurable inbox card layout and conversation open behaviour for messaging channels; user group filtering; GA Oct 2025 | Both |
+
+### Workforce Engagement
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [WFM Adherence History](07-workforce-engagement/feature-wfm-adherence-history.md) | Historical adherence analytics — trend chart, metrics dashboard, activity summary view; GA May 2026 | Standalone |
 
 ### ⚠️ Deprecations
 
@@ -89,6 +96,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Callback Deduplication](01-channels/voice/feature-callback-deduplication.md) | Prevents duplicate overflow callbacks from the same caller/channel/queue | Voice · All deployments |
 | [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | Customer opt-out captured by voice agent; consent travels through escalation | Voice · All deployments |
 | [Secure Consult/Transfer for PSTN and IVR](01-channels/voice/feature-secure-consult-transfer-pstn.md) `⚠️ Preview` | Auto-pauses recording during external PSTN consult; DTMF passthrough | Voice · All deployments |
+| [Proactive Voice Personalisation](01-channels/voice/feature-proactive-voice-personalization.md) | Three dial modes (Copilot lead, preview, progressive), throttling/pacing, Copilot agent for outbound; GA Jan 2026 | Voice · Standalone |
 
 ### Digital Messaging
 
@@ -143,6 +151,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Callback Deduplication](01-channels/voice/feature-callback-deduplication.md) | Configurable deduplication of overflow callback requests by caller/channel/queue |
 | [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | Customer opt-out captured by voice agent; consent travels through escalation to rep |
 | [Secure Consult/Transfer for PSTN and IVR](01-channels/voice/feature-secure-consult-transfer-pstn.md) | ⚠️ Preview — auto-pauses recording on external PSTN consult; DTMF passthrough |
+| [Proactive Voice Personalisation](01-channels/voice/feature-proactive-voice-personalization.md) | Three dial modes (Copilot lead, preview, progressive), throttling/pacing rules, Copilot agent for outbound; GA Jan 2026 |
 
 ### Digital Messaging
 | Doc | What it covers |
@@ -211,6 +220,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Real-Time Translation](03-agent-experience/feature-real-time-translation.md) | Azure AI Translator, chat only, agent language detection |
 | [Conversation Diagnostics](03-agent-experience/feature-conversation-diagnostics.md) | Per-conversation routing trace, error flags, agent + supervisor access |
 | [Cancel Voice Consult with External Number](03-agent-experience/feature-cancel-voice-consult.md) | Cancel consult/transfer during connecting phase; extends to PSTN and Teams users |
+| [Agent Inbox Enhancements](03-agent-experience/feature-inbox-enhancements.md) | Configurable inbox card layout (add/remove/reorder fields) and conversation open behaviour for messaging channels; user group filtering; GA Oct 2025 |
 
 ---
 
@@ -270,6 +280,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Schedule Adherence & Tracking](07-workforce-engagement/feature-wfm-schedule-adherence.md) | Real-time schedule vs. presence comparison, adherence scoring |
 | [Intraday Management](07-workforce-engagement/feature-wfm-intraday.md) | Same-day staffing adjustments, forecast vs. actual headcount |
 | [Quality Management (Conversation Scoring)](07-workforce-engagement/feature-wfm-quality-management.md) | Manual QA scorecard, sampling, coaching workflow |
+| [WFM Adherence History](07-workforce-engagement/feature-wfm-adherence-history.md) | Historical adherence analytics — trend chart, metrics dashboard, activity summary; GA May 2026 |
 
 ---
 
@@ -297,7 +308,6 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Copilot Service Admin Center](09-administration/feature-copilot-service-admin-center.md) | Unified admin surface, adaptive site map |
 | [Provisioning Unified Routing](09-administration/feature-provisioning-unified-routing.md) | Auto in CC, manual in CS-only, root BU requirement |
 | [User Management](09-administration/feature-user-management.md) | Bookable Resource requirement, bulk management |
-| [Capacity Profiles](09-administration/feature-capacity-profiles.md) | Reset frequency permanent, assignment blocking |
 | [Experience Profiles](09-administration/feature-experience-profiles.md) | Workspace tool toggles, Copilot gating |
 | [Session Templates](09-administration/feature-session-templates.md) | Anchor tab, additional tabs, comm panel mode |
 | [Application Tab Templates](09-administration/feature-application-tab-templates.md) | Page types, slugs, OData parameters |
@@ -366,4 +376,4 @@ The following features are identified in the batch audit checklist but not yet d
 
 ---
 
-*Last updated: 2026-05-03 · 149 features documented*
+*Last updated: 2026-05-03 · 152 features documented*

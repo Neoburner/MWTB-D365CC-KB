@@ -10,6 +10,9 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | What changed / why it's here |
 |------|---------|------------------------------|
+| 2026-05-03 | [Agent Inbox Enhancements](03-agent-experience/feature-inbox-enhancements.md) | New doc — configurable inbox card layout and open behaviour for messaging channels; user group filtering; GA Oct 2025 |
+| 2026-05-03 | [Proactive Voice Personalisation](01-channels/voice/feature-proactive-voice-personalization.md) | New doc — three dial modes (Copilot lead, preview, progressive), throttling/pacing, Copilot agent for outbound; GA Jan 2026 |
+| 2026-05-03 | [WFM Adherence History](07-workforce-engagement/feature-wfm-adherence-history.md) | New doc — historical adherence analytics for supervisors; trend chart, metrics dashboard, activity summary; GA May 2026 |
 | 2026-05-03 | [Feedback Agent (Customer Feedback Survey Agent)](05-copilot-and-ai/feature-feedback-agent.md) | New doc — Copilot Studio-based survey agent; in-channel post-conversation feedback; GA Oct 2025 |
 | 2026-05-03 | [SIP X Header Support for Context Transfer](01-channels/voice/feature-sip-x-header-context-transfer.md) | New doc — passes up to 5 custom SIP headers (256 chars each) for Direct Routing deployments; GA Feb 2026 |
 | 2026-05-03 | [Custom Reporting Variables for Historical Bot Dashboard](08-analytics-and-reporting/feature-bot-analytics-custom-variables.md) | New doc — Copilot Studio variables surface in bot dashboard for LoB/campaign segmentation; GA Feb 2026 |
