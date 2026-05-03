@@ -7,5 +7,8 @@ push-log.txt
 BATCH-AUDIT-D365-Contact-Center.md
 git-push.sh
 
+# Redundant — FEATURES.md is the canonical "what's new" tracker
+QUICK-REFERENCE.md
+
 # Stale duplicate — canonical copy is in 02-routing/
 09-administration/feature-capacity-profiles.md
