@@ -6,3 +6,6 @@ push-log.txt
 
 BATCH-AUDIT-D365-Contact-Center.md
 git-push.sh
+
+# Stale duplicate — canonical copy is in 02-routing/
+09-administration/feature-capacity-profiles.md
