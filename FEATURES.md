@@ -10,6 +10,12 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | What changed / why it's here |
 |------|---------|------------------------------|
+| 2026-05-03 | [Feedback Agent (Customer Feedback Survey Agent)](05-copilot-and-ai/feature-feedback-agent.md) | New doc — Copilot Studio-based survey agent; in-channel post-conversation feedback; GA Oct 2025 |
+| 2026-05-03 | [SIP X Header Support for Context Transfer](01-channels/voice/feature-sip-x-header-context-transfer.md) | New doc — passes up to 5 custom SIP headers (256 chars each) for Direct Routing deployments; GA Feb 2026 |
+| 2026-05-03 | [Custom Reporting Variables for Historical Bot Dashboard](08-analytics-and-reporting/feature-bot-analytics-custom-variables.md) | New doc — Copilot Studio variables surface in bot dashboard for LoB/campaign segmentation; GA Feb 2026 |
+| 2026-05-03 | [Deep Noise Suppression](03-agent-experience/feature-noise-suppression.md) | New doc — org-level AI noise suppression for voice calls; GA Feb 2026 |
+| 2026-05-03 | [Audible Sound for Call Connection](03-agent-experience/feature-voice-call-connection-sound.md) | New doc — audio notification when agent's device is live; GA Nov 2025 |
+| 2026-05-03 | [Pre-Connection Audio Checks](03-agent-experience/feature-voice-pre-connection-audio.md) | New doc — audio device preheating to eliminate clipped greetings; GA Oct 2025 |
 | 2026-05-02 | [Segment-Level Metrics Across Queues](08-analytics-and-reporting/feature-segment-level-metrics.md) | New doc — per-queue wait time, SLA, abandonment tracking; GA May 2026. **Note: changes existing metric calculations — flag with ops team** |
 | 2026-05-02 | [Enhanced Chat Widget](01-channels/digital-messaging/feature-enhanced-chat-widget.md) | New doc — faster load, modern look, new workstream script tag; Preview May 2026 / GA Sep 2026 |
 | 2026-05-02 | [Enhanced Customer Authentication](11-security-and-compliance/feature-enhanced-authentication.md) | New doc — OAuth 2.0, mid-conversation auth, Copilot Studio alignment; GA Sep 2026 |

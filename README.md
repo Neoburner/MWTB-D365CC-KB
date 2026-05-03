@@ -2,7 +2,7 @@
 
 Internal consultant reference for Dynamics 365 Contact Center and Customer Service. One doc per feature. No sales copy — just what it does, when to use it, and what will catch you out.
 
-**143 features documented** across 11 categories. Coverage is ongoing.
+**149 features documented** across 11 categories. Coverage is ongoing.
 
 → **[Full feature reference](FEATURES.md)** — single-page view with gotchas, new additions, and the complete list
 
@@ -33,12 +33,33 @@ New features and breaking changes.
 | [Custom Voice for Voice Agents](01-channels/self-service/feature-custom-voice-voice-agents.md) | Custom neural voice for IVR agents; requires Microsoft approval (limited access) | Voice · Standalone |
 | [Proactive Voice Engagement](01-channels/voice/feature-proactive-voice-engagement.md) | Outbound calling with AMD, predictive/preview dial, SIP outcomes | Voice · Standalone |
 | [Speaker-Wise Split Recordings](01-channels/voice/feature-speaker-split-recordings.md) | Per-speaker colour-coded recording tracks in closed conversation view | Voice · Both |
+| [SIP X Header Support for Context Transfer](01-channels/voice/feature-sip-x-header-context-transfer.md) | Pass up to 5 custom SIP headers (256 chars each) between external systems and voice agents; Direct Routing only | Voice · Both |
+| [Pre-Connection Audio Checks](03-agent-experience/feature-voice-pre-connection-audio.md) | Device preheating before call connects to eliminate clipped greetings | Voice · Both |
+| [Audible Sound for Call Connection](03-agent-experience/feature-voice-call-connection-sound.md) | Audio notification when agent device is confirmed live | Voice · Both |
 
 ### Digital Messaging
 
 | Feature | What it adds | Applies to |
 |---------|-------------|------------|
 | [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | Forms, suggested replies, adaptive cards for live chat and WhatsApp | Digital · Both |
+
+### Copilot and AI
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Feedback Agent (Customer Feedback Survey Agent)](05-copilot-and-ai/feature-feedback-agent.md) | Copilot Studio-based post-conversation survey; stays in-channel, no redirect; generative AI question tailoring | Both |
+
+### Analytics and Reporting
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Custom Reporting Variables for Historical Bot Dashboard](08-analytics-and-reporting/feature-bot-analytics-custom-variables.md) | Copilot Studio variables surface as LoB/campaign dimensions in bot dashboard; question-node exit analysis | Both |
+
+### Agent Experience
+
+| Feature | What it adds | Applies to |
+|---------|-------------|------------|
+| [Deep Noise Suppression](03-agent-experience/feature-noise-suppression.md) | Org-level AI noise suppression on voice calls; filters both incoming and outgoing audio | Voice · Both |
 
 ### ⚠️ Deprecations
 
@@ -345,4 +366,4 @@ The following features are identified in the batch audit checklist but not yet d
 
 ---
 
-*Last updated: 2026-05-02 · 143 features documented*
+*Last updated: 2026-05-03 · 149 features documented*
