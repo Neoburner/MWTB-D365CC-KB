@@ -6,94 +6,108 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 ---
 
-## 🆕 New & Updated — May 2026
+## 2026 Wave 1 (April – September 2026)
 
-| Date | Feature | What changed / why it's here |
-|------|---------|------------------------------|
-| 2026-05-04 | [Customer Knowledge Management Agent](06-ai-agents/feature-customer-knowledge-management-agent.md) | New doc — autonomous AI agent that creates and updates KB articles from closed cases and conversations; semi/fully autonomous modes; GA Oct 2025 |
-| 2026-05-03 | [Agent Inbox Enhancements](03-agent-experience/feature-inbox-enhancements.md) | New doc — configurable inbox card layout and open behaviour for messaging channels; user group filtering; GA Oct 2025 |
-| 2026-05-03 | [Proactive Voice Personalisation](01-channels/voice/feature-proactive-voice-personalization.md) | New doc — three dial modes (Copilot lead, preview, progressive), throttling/pacing, Copilot agent for outbound; GA Jan 2026 |
-| 2026-05-03 | [WFM Adherence History](07-workforce-engagement/feature-wfm-adherence-history.md) | New doc — historical adherence analytics for supervisors; trend chart, metrics dashboard, activity summary; GA May 2026 |
-| 2026-05-03 | [Feedback Agent (Customer Feedback Survey Agent)](05-copilot-and-ai/feature-feedback-agent.md) | New doc — Copilot Studio-based survey agent; in-channel post-conversation feedback; GA Oct 2025 |
-| 2026-05-03 | [SIP X Header Support for Context Transfer](01-channels/voice/feature-sip-x-header-context-transfer.md) | New doc — passes up to 5 custom SIP headers (256 chars each) for Direct Routing deployments; GA Feb 2026 |
-| 2026-05-03 | [Custom Reporting Variables for Historical Bot Dashboard](08-analytics-and-reporting/feature-bot-analytics-custom-variables.md) | New doc — Copilot Studio variables surface in bot dashboard for LoB/campaign segmentation; GA Feb 2026 |
-| 2026-05-03 | [Deep Noise Suppression](03-agent-experience/feature-noise-suppression.md) | New doc — org-level AI noise suppression for voice calls; GA Feb 2026 |
-| 2026-05-03 | [Audible Sound for Call Connection](03-agent-experience/feature-voice-call-connection-sound.md) | New doc — audio notification when agent's device is live; GA Nov 2025 |
-| 2026-05-03 | [Pre-Connection Audio Checks](03-agent-experience/feature-voice-pre-connection-audio.md) | New doc — audio device preheating to eliminate clipped greetings; GA Oct 2025 |
-| 2026-05-02 | [Segment-Level Metrics Across Queues](08-analytics-and-reporting/feature-segment-level-metrics.md) | New doc — per-queue wait time, SLA, abandonment tracking; GA May 2026. **Note: changes existing metric calculations — flag with ops team** |
-| 2026-05-02 | [Enhanced Chat Widget](01-channels/digital-messaging/feature-enhanced-chat-widget.md) | New doc — faster load, modern look, new workstream script tag; Preview May 2026 / GA Sep 2026 |
-| 2026-05-02 | [Enhanced Customer Authentication](11-security-and-compliance/feature-enhanced-authentication.md) | New doc — OAuth 2.0, mid-conversation auth, Copilot Studio alignment; GA Sep 2026 |
-| 2026-05-02 | [Copilot Draft a Chat Response](05-copilot-and-ai/feature-copilot-draft-chat-response.md) | ⚠️ Deprecated — removed 14 Jul 2025; no migration path, replaced by Copilot Help Pane |
-| 2026-05-02 | [Voice Channel — Overview & Architecture](01-channels/voice/feature-voice-channel-overview.md) | Deprecation noted — local hosting removed for Switzerland (Oct 2024), India & Japan (Sep 2024) |
-| 2026-05-01 | [Custom Voice for Voice Agents](01-channels/self-service/feature-custom-voice-voice-agents.md) | New doc — custom neural voice for IVR agents; GA Feb 27, 2026 |
-| 2026-05-01 | [Proactive Voice Engagement](01-channels/voice/feature-proactive-voice-engagement.md) | New doc — outbound calling with AMD, predictive/preview dial, SIP outcomes; GA Mar 2026 |
-| 2026-05-01 | [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | New doc — forms, suggested replies, adaptive cards for chat and WhatsApp; GA Mar 30, 2026 |
-| 2026-05-01 | [Speaker-Wise Split Recordings](01-channels/voice/feature-speaker-split-recordings.md) | New doc — colour-coded per-speaker recording tracks in closed conversation view |
-| 2026-05-01 | [Customer Feedback Surveys](10-integration-and-extensibility/feature-surveys.md) | Deprecation noted — post-call survey toggle on voice workstream Language tab removed Aug 2025 |
+| GA Date | Feature | Notes |
+|---------|---------|-------|
+| 2026-04 | [Enhanced Dial Pad for DTMF Tones](01-channels/voice/feature-enhanced-dial-pad-dtmf.md) | Faster, reliable DTMF; admin-enable via DTMF Broadcast |
+| 2026-04-13 | [Cancel Voice Consult with External Number](03-agent-experience/feature-cancel-voice-consult.md) | Cancel consult/transfer during ringing; automatic, no config |
+| 2026-04 | [Infobip SMS Channel](01-channels/digital-messaging/feature-sms-infobip.md) | Infobip as third SMS provider alongside ACS and Twilio |
+| 2026-04 | [Callback Deduplication](01-channels/voice/feature-callback-deduplication.md) | Prevent duplicate callbacks from same caller in overflow |
+| 2026-04 | [Queue Availability API](02-routing/feature-queue-availability-api.md) | Real-time rep availability and wait times via API |
+| 2026-04 | [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | GDPR-aligned opt-out recording, consent travels through escalation |
+| 2026-04 | [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | Outbound SMS via CCaaS API, Journeys, MCP, or file upload |
+| 2026-05 | [WFM Adherence History](07-workforce-engagement/feature-wfm-adherence-history.md) | Historical adherence analytics for supervisors; trend chart, metrics dashboard, activity summary |
+| 2026-05 | [Segment-Level Metrics Across Queues](08-analytics-and-reporting/feature-segment-level-metrics.md) | Per-queue wait time, SLA, abandonment tracking. **Note: changes existing metric calculations — flag with ops team** |
+| 2026-05 | [Service Operations Agent](09-administration/feature-service-operations-agent.md) | ⚠️ Preview — AI assistant for admin config; entered public preview April 2026 |
+| 2026-06 | [Secure Consult/Transfer for PSTN and IVR](01-channels/voice/feature-secure-consult-transfer-pstn.md) | ⚠️ Preview — Auto-pause recording on external PSTN transfer; GA Jun 2026 |
+| 2026-09 | [Enhanced Chat Widget](01-channels/digital-messaging/feature-enhanced-chat-widget.md) | ⚠️ Preview — Faster load, modern look, new workstream script tag; Preview May 2026, GA Sep 2026 |
+| 2026-09 | [Enhanced Customer Authentication](11-security-and-compliance/feature-enhanced-authentication.md) | OAuth 2.0, mid-conversation auth, Copilot Studio alignment; GA Sep 2026 (planned, no preview) |
 
-## 🆕 New & Updated — Feb to Apr 2026
+## 2025 Wave 2 (October 2025 – March 2026)
 
-| Date | Feature | What changed / why it's here |
-|------|---------|------------------------------|
-| 2026-04-30 | [Enhanced Dial Pad for DTMF Tones](01-channels/voice/feature-enhanced-dial-pad-dtmf.md) | New doc — faster, reliable DTMF; admin-enable via DTMF Broadcast |
-| 2026-04-30 | [Cancel Voice Consult with External Number](03-agent-experience/feature-cancel-voice-consult.md) | New doc — cancel consult/transfer during ringing; automatic, no config |
-| 2026-04-30 | [Infobip SMS Channel](01-channels/digital-messaging/feature-sms-infobip.md) | New doc — Infobip as third SMS provider alongside ACS and Twilio |
-| 2026-04-30 | [Callback Deduplication](01-channels/voice/feature-callback-deduplication.md) | New doc — prevent duplicate callbacks from same caller in overflow |
-| 2026-04-30 | [Queue Availability API](02-routing/feature-queue-availability-api.md) | New doc — real-time rep availability and wait times via API |
-| 2026-04-30 | [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | New doc — GDPR-aligned opt-out recording, consent travels through escalation |
-| 2026-04-30 | [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | New doc — outbound SMS via CCaaS API, Journeys, MCP, or file upload |
-| 2026-04-30 | [Service Operations Agent](09-administration/feature-service-operations-agent.md) | ⚠️ Preview — AI assistant for admin config; GA May 2026 |
-| 2026-04-30 | [Secure Consult/Transfer for PSTN and IVR](01-channels/voice/feature-secure-consult-transfer-pstn.md) | ⚠️ Preview — auto-pause recording on external PSTN transfer; GA Jun 2026 |
-| 2026-04-30 | [ACS PSTN Integration](01-channels/voice/feature-voice-acs-pstn.md) | New doc — ACS resource setup, number acquisition |
-| 2026-04-30 | [Direct Routing (Bring Your Own Carrier)](01-channels/voice/feature-voice-direct-routing.md) | New doc — SBC requirements, SIP carrier via ACS |
-| 2026-04-30 | [Microsoft Calling Plans](01-channels/voice/feature-voice-calling-plans.md) | New doc — Teams Phone numbers in Contact Center |
-| 2026-04-30 | [Predictive / Progressive Dialling](01-channels/voice/feature-voice-proactive-dialling.md) | New doc — automated outbound dialling modes |
-| 2026-04-30 | [Real-Time Translation (Voice)](01-channels/voice/feature-voice-realtime-translation.md) | New doc — live audio translation, Azure AI Speech |
-| 2026-04-30 | [Callback (In-Queue & Scheduled)](01-channels/voice/feature-voice-callback.md) | New doc — callback workstream, capacity counting |
-| 2026-04-30 | [E911 Emergency Calling](01-channels/voice/feature-voice-e911.md) | New doc — regulatory requirement, location policy |
-| 2026-04-30 | [Music on Hold](01-channels/voice/feature-voice-music-on-hold.md) | New doc — custom audio upload, supported formats |
-| 2026-04-30 | [Phone Number Management & Porting](01-channels/voice/feature-voice-phone-number-management.md) | New doc — porting timeline, release impact |
-| 2026-04-30 | [Desktop Companion App (Embedded Voice)](01-channels/voice/feature-desktop-companion-app.md) | New doc — Windows app for embedded deployments |
-| 2026-04-30 | [Email Channel](01-channels/digital-messaging/feature-email-channel.md) | New doc — Exchange/EWS, threading, email routing |
-| 2026-04-30 | [Proactive Chat](01-channels/digital-messaging/feature-proactive-chat.md) | New doc — trigger rules, JS snippet, opt-out |
-| 2026-04-30 | [Persistent Chat](01-channels/digital-messaging/feature-persistent-chat.md) | New doc — auth requirement, multi-session threading |
-| 2026-04-30 | [Co-browse / Screen Share](01-channels/digital-messaging/feature-cobrowse-screen-share.md) | New doc — Surfly provider, consent prompt |
-| 2026-04-30 | [Instagram Direct Messages](01-channels/digital-messaging/feature-instagram-channel.md) | New doc — Meta Business Account, 24-hr window |
-| 2026-04-30 | [Microsoft Teams Channel](01-channels/digital-messaging/feature-teams-channel.md) | New doc — internal employee support via Teams chat |
-| 2026-04-30 | [Custom Messaging Channel (Direct Line)](01-channels/digital-messaging/feature-custom-messaging-channel.md) | New doc — Azure Bot Framework Direct Line |
-| 2026-04-30 | [Customer Assist Agent](01-channels/self-service/feature-customer-assist-agent.md) | New doc — autonomous AI agent, Copilot credits |
-| 2026-04-30 | [Bot-to-Agent Escalation](01-channels/self-service/feature-bot-escalation.md) | New doc — context transfer, variable mapping |
-| 2026-04-30 | [Intelligent Skill Finder](02-routing/feature-intelligent-skill-finder.md) | New doc — ML routing, training data requirement |
-| 2026-04-30 | [Wrap-Up / After Contact Work](03-agent-experience/feature-wrap-up-acw.md) | New doc — ACW timer modes, capacity interaction |
-| 2026-04-30 | [Real-Time Translation (Chat)](03-agent-experience/feature-real-time-translation.md) | New doc — Azure AI Translator, chat channels only |
-| 2026-04-30 | [Conversation Diagnostics](03-agent-experience/feature-conversation-diagnostics.md) | New doc — per-conversation routing trace |
-| 2026-04-30 | [Intraday Insights Dashboard](04-supervisor-experience/feature-intraday-insights.md) | New doc — same-day KPIs, differs from Real-Time Analytics |
-| 2026-04-30 | [Sentiment-Triggered Alerts](04-supervisor-experience/feature-sentiment-alerts.md) | New doc — threshold config, supervisor alerts |
-| 2026-04-30 | [Real-Time Sentiment Analysis](05-copilot-and-ai/feature-realtime-sentiment.md) | New doc — 1-10 scale, live conversation display |
-| 2026-04-30 | [Schedule Adherence & Tracking](07-workforce-engagement/feature-wfm-schedule-adherence.md) | New doc — real-time adherence scoring |
-| 2026-04-30 | [Intraday Management (WFM)](07-workforce-engagement/feature-wfm-intraday.md) | New doc — same-day staffing adjustments |
-| 2026-04-30 | [Quality Management (WFM)](07-workforce-engagement/feature-wfm-quality-management.md) | New doc — manual QA scorecard, sampling |
-| 2026-04-30 | [Voice Analytics Dashboard](08-analytics-and-reporting/feature-voice-analytics.md) | New doc — separate enable toggle, call metrics |
-| 2026-04-30 | [Bot / Self-Service Analytics](08-analytics-and-reporting/feature-bot-analytics.md) | New doc — containment rate, escalation rate |
-| 2026-04-30 | [Customer Sentiment Analytics](08-analytics-and-reporting/feature-sentiment-analytics.md) | New doc — historical sentiment trends |
-| 2026-04-30 | [Topics Analytics](08-analytics-and-reporting/feature-topics-analytics.md) | New doc — AI conversation clustering |
-| 2026-04-30 | [Holiday Schedule](09-administration/feature-holiday-schedule.md) | New doc — annual re-entry, Operating Hours linkage |
-| 2026-04-30 | [Data Retention & Purge Policies](09-administration/feature-data-retention.md) | New doc — no native policy, bulk delete jobs |
-| 2026-04-30 | [Channel Integration Framework v2](10-integration-and-extensibility/feature-cif-v2.md) | New doc — multi-session widget embedding |
-| 2026-04-30 | [Azure Event Grid Integration](10-integration-and-extensibility/feature-azure-event-grid.md) | New doc — conversation lifecycle events |
-| 2026-04-30 | [Omnichannel JavaScript SDK](10-integration-and-extensibility/feature-omnichannel-javascript-sdk.md) | New doc — agent-side context API |
-| 2026-04-30 | [RBAC / Security Roles](11-security-and-compliance/feature-rbac-security-roles.md) | New doc — three-tier role structure |
-| 2026-04-30 | [Agent SSO](11-security-and-compliance/feature-agent-sso.md) | New doc — Entra ID, MFA, embedded SSO |
-| 2026-04-30 | [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-compliance.md) | New doc — masking, DTMF suppression, shared responsibility |
-| 2026-04-30 | [Data Residency](11-security-and-compliance/feature-data-residency.md) | New doc — Dataverse region, ACS cross-region flows |
-| 2026-04-30 | [GDPR & Data Subject Requests](11-security-and-compliance/feature-gdpr.md) | New doc — DSR tools, right to erasure |
-| 2026-03-05 | [Screen Recording](11-security-and-compliance/feature-screen-recording.md) | Desktop companion app install, full-screen scope |
-| 2026-02-26 | [WhatsApp Channel](01-channels/digital-messaging/feature-whatsapp-channel.md) | June 2026 BSUID deprecation — action required |
-| 2026-02-26 | [Recording & Transcription](01-channels/voice/feature-voice-recording-transcription.md) | Event Grid now required for recording upload |
-| 2026-02-03 | [Outbound Messaging](10-integration-and-extensibility/feature-outbound-messaging.md) | Flow-only trigger confirmed for SMS + WhatsApp |
-| 2026-02-01 | [Copilot Plugins](05-copilot-and-ai/feature-copilot-plugins.md) | ⚠️ Preview — 15-min publish delay confirmed |
-| 2026-02-01 | [Verbatim Responses](05-copilot-and-ai/feature-copilot-verbatim-responses.md) | ⚠️ Preview — Ask a Question scope only |
-| 2026-02-01 | [Knowledge Sources](05-copilot-and-ai/feature-copilot-knowledge-sources.md) | ⚠️ Preview — Graph connectors clarified |
+| GA Date | Feature | Notes |
+|---------|---------|-------|
+| 2025-10 | [Customer Knowledge Management Agent](06-ai-agents/feature-customer-knowledge-management-agent.md) | Autonomous AI agent that creates and updates KB articles from closed cases; semi/fully autonomous modes |
+| 2025-10 | [Agent Inbox Enhancements](03-agent-experience/feature-inbox-enhancements.md) | Configurable inbox card layout and open behaviour for messaging channels; user group filtering |
+| 2025-10 | [Feedback Agent (Customer Feedback Survey Agent)](05-copilot-and-ai/feature-feedback-agent.md) | Copilot Studio-based survey agent; in-channel post-conversation feedback |
+| 2025-10 | [Pre-Connection Audio Checks](03-agent-experience/feature-voice-pre-connection-audio.md) | Audio device preheating to eliminate clipped greetings |
+| 2025-11 | [Audible Sound for Call Connection](03-agent-experience/feature-voice-call-connection-sound.md) | Audio notification when agent's device is live |
+| 2026-01 | [Proactive Voice Personalisation](01-channels/voice/feature-proactive-voice-personalization.md) | Three dial modes (Copilot lead, preview, progressive), throttling/pacing, Copilot agent for outbound |
+| 2026-02 | [Deep Noise Suppression](03-agent-experience/feature-noise-suppression.md) | Org-level AI noise suppression for voice calls |
+| 2026-02 | [SIP X Header Support for Context Transfer](01-channels/voice/feature-sip-x-header-context-transfer.md) | Passes up to 5 custom SIP headers (256 chars each) for Direct Routing deployments |
+| 2026-02 | [Custom Reporting Variables for Historical Bot Dashboard](08-analytics-and-reporting/feature-bot-analytics-custom-variables.md) | Copilot Studio variables surface in bot dashboard for LoB/campaign segmentation |
+| 2026-02-27 | [Custom Voice for Voice Agents](01-channels/self-service/feature-custom-voice-voice-agents.md) | Custom neural voice for IVR agents |
+| 2026-03 | [Proactive Voice Engagement](01-channels/voice/feature-proactive-voice-engagement.md) | Outbound calling with AMD, predictive/preview dial, SIP outcomes |
+| 2026-03-30 | [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | Forms, suggested replies, adaptive cards for chat and WhatsApp |
+| 2025 Wave 2 | [Speaker-Wise Split Recordings](01-channels/voice/feature-speaker-split-recordings.md) | Colour-coded per-speaker recording tracks in closed conversation view |
+| 2025 Wave 2 | [Copilot Plugins](05-copilot-and-ai/feature-copilot-plugins.md) | ⚠️ Preview — 15-min publish delay confirmed |
+| 2025 Wave 2 | [Verbatim Responses](05-copilot-and-ai/feature-copilot-verbatim-responses.md) | ⚠️ Preview — Ask a Question scope only |
+| 2025 Wave 2 | [Knowledge Sources](05-copilot-and-ai/feature-copilot-knowledge-sources.md) | ⚠️ Preview — Uses Graph connectors, not Copilot connectors |
+
+## 2024 Wave 1 (April 2024 – September 2024)
+
+Features available from the D365 Contact Center standalone launch.
+
+| GA Date | Feature | Notes |
+|---------|---------|-------|
+| 2024 Wave 1 | [Customer Assist Agent](01-channels/self-service/feature-customer-assist-agent.md) | Autonomous AI agent end-to-end, Copilot credits, voice + digital `[🔑 Licence]` |
+| 2024 Wave 1 | [Desktop Companion App (Embedded Voice)](01-channels/voice/feature-desktop-companion-app.md) | Windows app required for embedded voice, MDM deployment at scale |
+| 2024 Wave 1 | [Predictive / Progressive Dialling](01-channels/voice/feature-voice-proactive-dialling.md) | Automated outbound dialling modes |
+| 2024 Wave 1 | [Schedule Adherence & Tracking](07-workforce-engagement/feature-wfm-schedule-adherence.md) | Real-time D365 presence vs. schedule comparison, adherence score |
+| 2024 Wave 1 | [Intraday Management (WFM)](07-workforce-engagement/feature-wfm-intraday.md) | Same-day staffing adjustment view, distinct from supervisor Intraday Insights |
+| 2024 Wave 1 | [Quality Management (WFM)](07-workforce-engagement/feature-wfm-quality-management.md) | Manual QA scorecard, sampling logic, separate from Quality Evaluation Agent AI |
+| 2024 Wave 1 | [Screen Recording](11-security-and-compliance/feature-screen-recording.md) | Desktop companion app required; full-screen capture; no default retention — configure bulk delete before go-live |
+| 2024 Wave 1 | [WhatsApp Channel](01-channels/digital-messaging/feature-whatsapp-channel.md) | ACS-based WhatsApp; ⚠️ June 2026 BSUID change required — action required |
+
+## Earlier
+
+Core platform capabilities predating the D365 Contact Center standalone launch; available through Dynamics 365 Customer Service / Omnichannel for Customer Service.
+
+| GA Date | Feature | Notes |
+|---------|---------|-------|
+| Earlier | [ACS PSTN Integration](01-channels/voice/feature-voice-acs-pstn.md) | ACS resource setup, number acquisition |
+| Earlier | [Direct Routing (Bring Your Own Carrier)](01-channels/voice/feature-voice-direct-routing.md) | SBC requirements, SIP carrier via ACS |
+| Earlier | [Microsoft Calling Plans](01-channels/voice/feature-voice-calling-plans.md) | Teams Phone numbers in Contact Center `[🔑 Licence]` |
+| Earlier | [Real-Time Translation (Voice)](01-channels/voice/feature-voice-realtime-translation.md) | Live audio translation, Azure AI Speech |
+| Earlier | [Callback (In-Queue & Scheduled)](01-channels/voice/feature-voice-callback.md) | Callback workstream, capacity counting |
+| Earlier | [E911 Emergency Calling](01-channels/voice/feature-voice-e911.md) | Regulatory requirement, location policy |
+| Earlier | [Music on Hold](01-channels/voice/feature-voice-music-on-hold.md) | Custom audio upload, supported formats |
+| Earlier | [Phone Number Management & Porting](01-channels/voice/feature-voice-phone-number-management.md) | Porting timeline, release impact |
+| Earlier | [Email Channel](01-channels/digital-messaging/feature-email-channel.md) | Exchange/EWS, threading, email routing |
+| Earlier | [Proactive Chat](01-channels/digital-messaging/feature-proactive-chat.md) | Trigger rules, JS snippet, opt-out |
+| Earlier | [Persistent Chat](01-channels/digital-messaging/feature-persistent-chat.md) | Auth requirement, multi-session threading |
+| Earlier | [Co-browse / Screen Share](01-channels/digital-messaging/feature-cobrowse-screen-share.md) | Surfly provider, consent prompt |
+| Earlier | [Instagram Direct Messages](01-channels/digital-messaging/feature-instagram-channel.md) | Meta Business Account, 24-hr window |
+| Earlier | [Microsoft Teams Channel](01-channels/digital-messaging/feature-teams-channel.md) | Internal employee support via Teams chat |
+| Earlier | [Custom Messaging Channel (Direct Line)](01-channels/digital-messaging/feature-custom-messaging-channel.md) | Azure Bot Framework Direct Line |
+| Earlier | [Bot-to-Agent Escalation](01-channels/self-service/feature-bot-escalation.md) | Context transfer, variable mapping |
+| Earlier | [Intelligent Skill Finder](02-routing/feature-intelligent-skill-finder.md) | ML routing, training data requirement |
+| Earlier | [Wrap-Up / After Contact Work](03-agent-experience/feature-wrap-up-acw.md) | ACW timer modes, capacity interaction |
+| Earlier | [Real-Time Translation (Chat)](03-agent-experience/feature-real-time-translation.md) | Azure AI Translator, chat channels only |
+| Earlier | [Conversation Diagnostics](03-agent-experience/feature-conversation-diagnostics.md) | Per-conversation routing trace |
+| Earlier | [Intraday Insights Dashboard](04-supervisor-experience/feature-intraday-insights.md) | Same-day KPIs, differs from Real-Time Analytics |
+| Earlier | [Sentiment-Triggered Alerts](04-supervisor-experience/feature-sentiment-alerts.md) | Threshold config, supervisor alerts |
+| Earlier | [Real-Time Sentiment Analysis](05-copilot-and-ai/feature-realtime-sentiment.md) | 1-10 scale, live conversation display |
+| Earlier | [Voice Analytics Dashboard](08-analytics-and-reporting/feature-voice-analytics.md) | Separate enable toggle, call metrics |
+| Earlier | [Bot / Self-Service Analytics](08-analytics-and-reporting/feature-bot-analytics.md) | Containment rate, escalation rate |
+| Earlier | [Customer Sentiment Analytics](08-analytics-and-reporting/feature-sentiment-analytics.md) | Historical sentiment trends |
+| Earlier | [Topics Analytics](08-analytics-and-reporting/feature-topics-analytics.md) | AI conversation clustering |
+| Earlier | [Holiday Schedule](09-administration/feature-holiday-schedule.md) | Annual re-entry, Operating Hours linkage |
+| Earlier | [Data Retention & Purge Policies](09-administration/feature-data-retention.md) | No native policy, bulk delete jobs |
+| Earlier | [Channel Integration Framework v2](10-integration-and-extensibility/feature-cif-v2.md) | Multi-session widget embedding |
+| Earlier | [Azure Event Grid Integration](10-integration-and-extensibility/feature-azure-event-grid.md) | Conversation lifecycle events |
+| Earlier | [Omnichannel JavaScript SDK](10-integration-and-extensibility/feature-omnichannel-javascript-sdk.md) | Agent-side context API |
+| Earlier | [RBAC / Security Roles](11-security-and-compliance/feature-rbac-security-roles.md) | Three-tier role structure |
+| Earlier | [Agent SSO](11-security-and-compliance/feature-agent-sso.md) | Entra ID, MFA, embedded SSO |
+| Earlier | [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-compliance.md) | Masking, DTMF suppression, shared responsibility |
+| Earlier | [Data Residency](11-security-and-compliance/feature-data-residency.md) | Dataverse region, ACS cross-region flows |
+| Earlier | [GDPR & Data Subject Requests](11-security-and-compliance/feature-gdpr.md) | DSR tools, right to erasure |
+| Earlier | [Voice Channel — Overview & Architecture](01-channels/voice/feature-voice-channel-overview.md) | ⚠️ Deprecated — local hosting removed for Switzerland (Oct 2024), India & Japan (Sep 2024) |
+| Earlier | [Customer Feedback Surveys](10-integration-and-extensibility/feature-surveys.md) | ⚠️ Deprecated — post-call survey toggle on voice workstream Language tab removed Aug 2025 |
+| Earlier | [Copilot Draft a Chat Response](05-copilot-and-ai/feature-copilot-draft-chat-response.md) | ⚠️ Deprecated — removed 14 Jul 2025; no migration path, replaced by Copilot Help Pane |
+| Earlier | [Recording & Transcription](01-channels/voice/feature-voice-recording-transcription.md) | Event Grid now required for recording upload |
+| Earlier | [Outbound Messaging](10-integration-and-extensibility/feature-outbound-messaging.md) | Flow-only trigger confirmed for SMS + WhatsApp |
 
 ---
 
@@ -435,6 +449,6 @@ The single most important thing to know about each major area. Read this before 
 
 ---
 
-*127 features documented · New & Updated covers last 3 months · Entries graduate to main reference after 3 months*
+*127 features documented · Organised by Microsoft release wave · GA dates sourced from Microsoft release plans and product docs*
 
-*Last updated: 2026-04-30*
+*Last updated: 2026-05-05*
