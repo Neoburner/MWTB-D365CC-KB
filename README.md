@@ -2,7 +2,7 @@
 
 Internal consultant reference for Dynamics 365 Contact Center and Customer Service. One doc per feature. No sales copy — just what it does, when to use it, and what will catch you out.
 
-**152 features documented** across 11 categories. Coverage is ongoing.
+**153 features documented** across 11 categories. Coverage is ongoing.
 
 → **[Full feature reference](FEATURES.md)** — single-page view with gotchas, new additions, and the complete list
 
@@ -265,6 +265,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Quality Evaluation Agent](06-ai-agents/feature-quality-evaluation-agent.md) | 3 prerequisites, scoring permanent once enabled |
 | [Agent Insights Dashboard](06-ai-agents/feature-agent-insights-dashboard.md) | Standalone only, quality score dependency |
 | [Service Agent in M365 Copilot](06-ai-agents/feature-service-agent-m365.md) | M365 Copilot licence, English only, dual icon |
+| [Customer Knowledge Management Agent](06-ai-agents/feature-customer-knowledge-management-agent.md) | Autonomous KB article creation from cases; semi/fully autonomous modes; governance model critical |
 
 ---
 
@@ -376,4 +377,4 @@ The following features are identified in the batch audit checklist but not yet d
 
 ---
 
-*Last updated: 2026-05-03 · 152 features documented*
+*Last updated: 2026-05-04 · 153 features documented*

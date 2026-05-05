@@ -10,6 +10,7 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | What changed / why it's here |
 |------|---------|------------------------------|
+| 2026-05-04 | [Customer Knowledge Management Agent](06-ai-agents/feature-customer-knowledge-management-agent.md) | New doc — autonomous AI agent that creates and updates KB articles from closed cases and conversations; semi/fully autonomous modes; GA Oct 2025 |
 | 2026-05-03 | [Agent Inbox Enhancements](03-agent-experience/feature-inbox-enhancements.md) | New doc — configurable inbox card layout and open behaviour for messaging channels; user group filtering; GA Oct 2025 |
 | 2026-05-03 | [Proactive Voice Personalisation](01-channels/voice/feature-proactive-voice-personalization.md) | New doc — three dial modes (Copilot lead, preview, progressive), throttling/pacing, Copilot agent for outbound; GA Jan 2026 |
 | 2026-05-03 | [WFM Adherence History](07-workforce-engagement/feature-wfm-adherence-history.md) | New doc — historical adherence analytics for supervisors; trend chart, metrics dashboard, activity summary; GA May 2026 |
