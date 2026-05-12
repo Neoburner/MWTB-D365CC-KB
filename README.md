@@ -2,7 +2,7 @@
 
 Internal consultant reference for Dynamics 365 Contact Center and Customer Service. One doc per feature. No sales copy — just what it does, when to use it, and what will catch you out.
 
-**153 features documented** across 11 categories. Coverage is ongoing.
+**154 features documented** across 11 categories. Coverage is ongoing.
 
 → **[Full feature reference](FEATURES.md)** — single-page view with gotchas, new additions, and the complete list
 
@@ -109,6 +109,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 
 | Feature | What it adds | Applies to |
 |---------|-------------|------------|
+| [Conversation Orchestration (AI-Powered Playbooks)](02-routing/feature-conversation-orchestration.md) `⚠️ Preview` | Natural-language playbooks for dynamic queue prioritisation and overflow; watches wait time, agent availability, and transfer events in real time | All channels · Standalone |
 | [Queue Availability API](02-routing/feature-queue-availability-api.md) | Real-time rep availability and wait times per queue | All channels · All deployments |
 
 ### Agent Experience
@@ -203,6 +204,7 @@ New features and breaking changes. Grouped by area; "Applies to" shows channel s
 | [Record Routing](02-routing/feature-record-routing.md) | 5-minute cycle, capacity release, security permissions |
 | [Routing Diagnostics](02-routing/feature-routing-diagnostics.md) | ⚠️ Deprecated — enable in UAT from day one |
 | [Queue Availability API](02-routing/feature-queue-availability-api.md) | Real-time queue-level rep availability and wait times via API; two variants by context |
+| [Conversation Orchestration (AI-Powered Playbooks)](02-routing/feature-conversation-orchestration.md) | ⚠️ Preview — dynamic playbooks for real-time queue prioritisation and overflow; voice and chat only; PAYG billing |
 
 ---
 
@@ -370,11 +372,4 @@ The following features are identified in the batch audit checklist but not yet d
 - Copilot: AI-suggested similar cases, AI-suggested knowledge articles, responsible AI controls
 - Supervisor: supervisor extensibility (custom metrics)
 - WFM: external data import for forecasting, agent feedback & coaching
-- Analytics: custom dashboards/extensibility, data export to Azure Data Lake, Power BI embedded, SLA management
-- Administration: locale/language settings, geo-redundancy & failover, email configuration (Exchange/EWS admin setup), licensing management
-- Integration: CIF v1, Power Automate custom workflows, Power Apps integration, Copilot Studio deep integration, Azure AI services, CTI third-party, ServiceNow connector
-- Security: DLP policies, network security/IP allowlisting
-
----
-
-*Last updated: 2026-05-04 · 153 features documented*
+- Analytics: 

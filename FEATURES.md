@@ -6,6 +6,14 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 ---
 
+## 🆕 New & Updated
+
+| Date | Feature | Change |
+|------|---------|--------|
+| 2026-05-12 | [Conversation Orchestration (AI-Powered Playbooks)](02-routing/feature-conversation-orchestration.md) | New doc — AI-driven playbooks for dynamic queue prioritisation and overflow; public preview |
+
+---
+
 ## 2026 Wave 1 (April – September 2026)
 
 | GA Date | Feature | Notes |
@@ -445,10 +453,4 @@ The single most important thing to know about each major area. Read this before 
 
 - [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview; routing table audit is separate
 - [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) — Manual block list + auto-block threshold for spam detection
-- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion app required; full-screen capture; **no default retention** — configure bulk delete before go-live
-
----
-
-*127 features documented · Organised by Microsoft release wave · GA dates sourced from Microsoft release plans and product docs*
-
-*Last updated: 2026-05-05*
+- [Screen Recording](11-security-and-compliance/feature-screen-re
