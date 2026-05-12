@@ -1,7 +1,7 @@
 {
-  "last_check": "2026-05-08",
-  "last_ms_docs_commit_sha": "dc83dab04efd3525daa9f7999728ca4f77205f40",
-  "ms_release_plan_feature_count": 65,
+  "last_check": "2026-05-12",
+  "last_ms_docs_commit_sha": "8638103197f01c82d348ac97386027c4a550cc53",
+  "ms_release_plan_feature_count": 62,
   "suppressed_ms_slugs": {
     "administrator-experiences": "category section page, not a feature",
     "mask-sensitive-data-prevent-unauthorized-access": "covered by feature-data-masking.md",
@@ -149,7 +149,9 @@
     "use-infobip-as-sms-channel": "feature-sms-infobip.md",
     "use-representatives-commercial-proactive-engagement": "feature-sms-proactive-engagement.md",
     "use-service-operations-agent-simplify-setup-tasks": "feature-service-operations-agent.md",
-    "use-sms-channel-engage-customers-proactively": "feature-sms-proactive-engagement.md"
+    "use-sms-channel-engage-customers-proactively": "feature-sms-proactive-engagement.md",
+    "configure-conversation-orchestration": "feature-conversation-orchestration.md",
+    "configure-sms-channel-infobip": "feature-sms-infobip.md"
   },
   "documented_features": [
     "feature-accessibility.md",
@@ -190,6 +192,7 @@
     "feature-conversation-diagnostics.md",
     "feature-conversation-forecasting.md",
     "feature-conversation-intelligence-dashboard.md",
+    "feature-conversation-orchestration.md",
     "feature-copilot-agent-integration.md",
     "feature-copilot-analytics.md",
     "feature-copilot-draft-chat-response.md",
