@@ -25,6 +25,7 @@ Single-pane view of every documented feature. For the section-by-section index, 
 | 2026-04 | [Queue Availability API](02-routing/feature-queue-availability-api.md) | Real-time rep availability and wait times via API |
 | 2026-04 | [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | GDPR-aligned opt-out recording, consent travels through escalation |
 | 2026-04 | [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | Outbound SMS via CCaaS API, Journeys, MCP, or file upload |
+| 2026-04 | [Conversation Orchestration (AI-Powered Playbooks)](02-routing/feature-conversation-orchestration.md) | ⚠️ Preview — AI-driven playbooks for dynamic queue prioritisation and overflow; voice and chat only; PAYG billing |
 | 2026-05 | [WFM Adherence History](07-workforce-engagement/feature-wfm-adherence-history.md) | Historical adherence analytics for supervisors; trend chart, metrics dashboard, activity summary |
 | 2026-05 | [Segment-Level Metrics Across Queues](08-analytics-and-reporting/feature-segment-level-metrics.md) | Per-queue wait time, SLA, abandonment tracking. **Note: changes existing metric calculations — flag with ops team** |
 | 2026-05 | [Service Operations Agent](09-administration/feature-service-operations-agent.md) | ⚠️ Preview — AI assistant for admin config; entered public preview April 2026 |
@@ -252,6 +253,7 @@ The single most important thing to know about each major area. Read this before 
 
 - [Record Routing](02-routing/feature-record-routing.md) — 5-min polling cycle, capacity release on case resolve, security role requirement
 - [Routing Diagnostics](02-routing/feature-routing-diagnostics.md) — ⚠️ Deprecated but still useful — enable in every UAT environment
+- [Conversation Orchestration (AI-Powered Playbooks)](02-routing/feature-conversation-orchestration.md) — ⚠️ Preview — natural-language playbooks for dynamic queue prioritisation and overflow; watches wait time, agent availability, and transfer events in real time; voice and chat only; PAYG billing
 
 ---
 
@@ -446,11 +448,17 @@ The single most important thing to know about each major area. Read this before 
 
 - [Data Masking](11-security-and-compliance/feature-data-masking.md) — **Two independent systems** — chat regex rules (10 max) AND voice variable masking
 - [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-compliance.md) — Native masking + DTMF suppression; actual payment capture needs external PCI system
-- [Data Residency](11-security-and-compliance/feature-data-residency.md) — Dataverse region set at environment creation; ACS voice may process in different region
+- [Data Residency](11-security-and-compliance/feature-data-residency.md) — Dataverse region set at environment creation; ACS voice may process in different ron
 - [GDPR & Data Subject Requests](11-security-and-compliance/feature-gdpr.md) — Power Platform DSR tools cover Dataverse; ACS/recording data needs manual process
 
 **Monitoring & Control**
 
 - [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview; routing table audit is separate
 - [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) — Manual block list + auto-block threshold for spam detection
-- [Screen Recording](11-security-and-compliance/feature-screen-re
+- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion app required; full-screen capture; **no default retention** — configure bulk delete before go-live
+
+---
+
+*128 features documented · Organised by Microsoft release wave · GA dates sourced from Microsoft release plans and product docs*
+
+*Last updated: 2026-05-12*
