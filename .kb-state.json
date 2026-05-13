@@ -1,7 +1,7 @@
 {
-  "last_check": "2026-05-12",
+  "last_check": "2026-05-13",
   "last_ms_docs_commit_sha": "8638103197f01c82d348ac97386027c4a550cc53",
-  "ms_release_plan_feature_count": 62,
+  "ms_release_plan_feature_count": 64,
   "suppressed_ms_slugs": {
     "administrator-experiences": "category section page, not a feature",
     "mask-sensitive-data-prevent-unauthorized-access": "covered by feature-data-masking.md",
