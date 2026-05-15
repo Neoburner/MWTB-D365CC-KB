@@ -10,6 +10,11 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | Change |
 |------|---------|--------|
+| 2026-05-15 | [Real-Time Voice Agents (Speech-to-Speech IVR)](01-channels/self-service/feature-realtime-voice-agents-speech-to-speech.md) | New doc — Speech-to-speech IVR via Copilot Studio + OpenAI gpt-4o-realtime; GA April 2026 |
+| 2026-05-15 | [LLM-Based Sensitive Data Redaction for Human Interactions](11-security-and-compliance/feature-llm-sensitive-data-redaction.md) | New doc — PCI data redaction in live agent conversations using LLM; GA planned September 2026 |
+| 2026-05-15 | [Pinned Contacts and Queues During Consult and Transfer](03-agent-experience/feature-pinned-contacts-queues-transfer.md) | New doc — Admin-managed or agent-managed pins for consult/transfer panel; GA May 2026 |
+| 2026-05-15 | [Reliable Post-Call Actions for Caller Hangups (Voice Agents)](01-channels/self-service/feature-voice-agent-hangup-detection.md) | New doc — Instant hangup detection for voice agent flows; post-call actions fire on caller disconnect; GA March 2026 |
+| 2026-05-15 | [WFM AI Credit Estimation](07-workforce-engagement/feature-wfm-ai-credit-estimation.md) | New doc — Project AI credit consumption from WFM forecast scenarios; supports QEA, Case Mgmt, and Customer Intent agents |
 | 2026-05-12 | [Conversation Orchestration (AI-Powered Playbooks)](02-routing/feature-conversation-orchestration.md) | New doc — AI-driven playbooks for dynamic queue prioritisation and overflow; public preview |
 
 ---
@@ -18,6 +23,9 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | GA Date | Feature | Notes |
 |---------|---------|-------|
+| 2026-04-27 | [Real-Time Voice Agents (Speech-to-Speech IVR)](01-channels/self-service/feature-realtime-voice-agents-speech-to-speech.md) | Speech-to-speech IVR via Copilot Studio + OpenAI gpt-4o-realtime through Foundry |
+| 2026-05 | [Pinned Contacts and Queues During Consult and Transfer](03-agent-experience/feature-pinned-contacts-queues-transfer.md) | Admin-pushed or agent-managed pins; BU-scoped |
+| 2026-09 | [LLM-Based Sensitive Data Redaction for Human Interactions](11-security-and-compliance/feature-llm-sensitive-data-redaction.md) | PCI data redaction in live agent conversations using LLM (not yet released) |
 | 2026-04 | [Enhanced Dial Pad for DTMF Tones](01-channels/voice/feature-enhanced-dial-pad-dtmf.md) | Faster, reliable DTMF; admin-enable via DTMF Broadcast |
 | 2026-04-13 | [Cancel Voice Consult with External Number](03-agent-experience/feature-cancel-voice-consult.md) | Cancel consult/transfer during ringing; automatic, no config |
 | 2026-04 | [Infobip SMS Channel](01-channels/digital-messaging/feature-sms-infobip.md) | Infobip as third SMS provider alongside ACS and Twilio |
@@ -26,6 +34,7 @@ Single-pane view of every documented feature. For the section-by-section index, 
 | 2026-04 | [Consent-Based Recording](01-channels/voice/feature-consent-based-recording.md) | GDPR-aligned opt-out recording, consent travels through escalation |
 | 2026-04 | [Proactive SMS Engagement](01-channels/digital-messaging/feature-sms-proactive-engagement.md) | Outbound SMS via CCaaS API, Journeys, MCP, or file upload |
 | 2026-04 | [Conversation Orchestration (AI-Powered Playbooks)](02-routing/feature-conversation-orchestration.md) | ⚠️ Preview — AI-driven playbooks for dynamic queue prioritisation and overflow; voice and chat only; PAYG billing |
+| 2026-05 | [WFM AI Credit Estimation](07-workforce-engagement/feature-wfm-ai-credit-estimation.md) | Project AI credit consumption from WFM forecast scenarios; supports QEA, Case Mgmt Agent, Customer Intent Agent |
 | 2026-05 | [WFM Adherence History](07-workforce-engagement/feature-wfm-adherence-history.md) | Historical adherence analytics for supervisors; trend chart, metrics dashboard, activity summary |
 | 2026-05 | [Segment-Level Metrics Across Queues](08-analytics-and-reporting/feature-segment-level-metrics.md) | Per-queue wait time, SLA, abandonment tracking. **Note: changes existing metric calculations — flag with ops team** |
 | 2026-05 | [Service Operations Agent](09-administration/feature-service-operations-agent.md) | ⚠️ Preview — AI assistant for admin config; entered public preview April 2026 |
@@ -48,6 +57,7 @@ Single-pane view of every documented feature. For the section-by-section index, 
 | 2026-02 | [Custom Reporting Variables for Historical Bot Dashboard](08-analytics-and-reporting/feature-bot-analytics-custom-variables.md) | Copilot Studio variables surface in bot dashboard for LoB/campaign segmentation |
 | 2026-02-27 | [Custom Voice for Voice Agents](01-channels/self-service/feature-custom-voice-voice-agents.md) | Custom neural voice for IVR agents |
 | 2026-03 | [Proactive Voice Engagement](01-channels/voice/feature-proactive-voice-engagement.md) | Outbound calling with AMD, predictive/preview dial, SIP outcomes |
+| 2026-03-23 | [Reliable Post-Call Actions for Caller Hangups (Voice Agents)](01-channels/self-service/feature-voice-agent-hangup-detection.md) | Instant hangup detection for Copilot Studio voice agent flows; post-call actions fire on disconnect |
 | 2026-03-30 | [Rich Media Messaging](01-channels/digital-messaging/feature-rich-media-messaging.md) | Forms, suggested replies, adaptive cards for chat and WhatsApp |
 | 2025 Wave 2 | [Speaker-Wise Split Recordings](01-channels/voice/feature-speaker-split-recordings.md) | Colour-coded per-speaker recording tracks in closed conversation view |
 | 2025 Wave 2 | [Copilot Plugins](05-copilot-and-ai/feature-copilot-plugins.md) | ⚠️ Preview — 15-min publish delay confirmed |
