@@ -10,6 +10,8 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | Change |
 |------|---------|--------|
+| 2026-05-22 | [Headset Call Controls (Answer and Hang Up)](03-agent-experience/feature-headset-call-controls.md) | New doc — Teams-certified headset answer/hang-up support; GA September 2026 |
+| 2026-05-22 | [Average Wait-Time Diagnostics](08-analytics-and-reporting/feature-awt-diagnostics.md) | New doc — Application Insights AWT logging and real-time queue-level diagnostics; GA May 2026 |
 | 2026-05-15 | [Real-Time Voice Agents (Speech-to-Speech IVR)](01-channels/self-service/feature-realtime-voice-agents-speech-to-speech.md) | New doc — Speech-to-speech IVR via Copilot Studio + OpenAI gpt-4o-realtime; GA April 2026 |
 | 2026-05-15 | [LLM-Based Sensitive Data Redaction for Human Interactions](11-security-and-compliance/feature-llm-sensitive-data-redaction.md) | New doc — PCI data redaction in live agent conversations using LLM; GA planned September 2026 |
 | 2026-05-15 | [Pinned Contacts and Queues During Consult and Transfer](03-agent-experience/feature-pinned-contacts-queues-transfer.md) | New doc — Admin-managed or agent-managed pins for consult/transfer panel; GA May 2026 |
