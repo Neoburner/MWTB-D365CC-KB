@@ -1,7 +1,7 @@
 {
-  "last_check": "2026-05-17",
-  "last_ms_docs_commit_sha": "8db99000c1486d24dd1eb521d3982bc6cea57b05",
-  "ms_release_plan_feature_count": 55,
+  "last_check": "2026-05-26",
+  "last_ms_docs_commit_sha": "179c46e8aa38866f1bc5699ad44297e741523854",
+  "ms_release_plan_feature_count": 77,
   "suppressed_ms_slugs": {
     "administrator-experiences": "category section page, not a feature",
     "mask-sensitive-data-prevent-unauthorized-access": "covered by feature-data-masking.md",
@@ -160,7 +160,18 @@
     "orchestrate-conversation-distribution-ai-powered-playbooks": "feature-conversation-orchestration.md",
     "post-call-survey-language-tab-deprecated": "feature-surveys.md",
     "draft-chat-response-deprecated": "feature-copilot-draft-chat-response.md",
-    "local-hosting-voice-deprecated": "feature-voice-channel-overview.md"
+    "local-hosting-voice-deprecated": "feature-voice-channel-overview.md",
+    "support-average-wait-time-messaging-api-channels": "feature-queue-availability-api.md",
+    "use-enhanced-customer-first-direct-callbacks": "feature-voice-callback.md",
+    "certify-contact-center-windows-365-virtual-computers": "feature-system-requirements.md",
+    "use-role-based-enforcement-recording-transcription-downloads": "feature-voice-recording-transcription.md",
+    "update-representative-presence-missed-rejected-notifications": "feature-presence-and-custom-presence.md",
+    "use-headset-answer-calls-hang-up-contact-center": "feature-headset-call-controls.md",
+    "use-average-wait-time-diagnostics-wait-time-predictions": "feature-awt-diagnostics.md",
+    "certify-using-contact-center-windows-365-virtual-computers": "feature-system-requirements.md",
+    "update-representative-presence-missed-rejected-notification": "feature-presence-and-custom-presence.md",
+    "manage-all-ongoing-conversations": "feature-ongoing-conversations-dashboard.md",
+    "view-analytics-proactive-outbound-engagement": "feature-voice-analytics.md"
   },
   "documented_features": [
     "feature-accessibility.md",
@@ -178,6 +189,7 @@
     "feature-assignment-methods.md",
     "feature-attachment-handling.md",
     "feature-audit-logging.md",
+    "feature-awt-diagnostics.md",
     "feature-azure-ai-agent.md",
     "feature-azure-ai-services.md",
     "feature-azure-bot-service.md",
@@ -245,6 +257,7 @@
     "feature-gdpr.md",
     "feature-geo-redundancy.md",
     "feature-google-business-messages.md",
+    "feature-headset-call-controls.md",
     "feature-holiday-schedule.md",
     "feature-human-in-the-loop.md",
     "feature-inbox-enhancements.md",
