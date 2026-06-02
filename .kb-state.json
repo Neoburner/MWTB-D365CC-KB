@@ -1,12 +1,14 @@
 {
-  "last_check": "2026-06-01",
-  "last_ms_docs_commit_sha": "ca8f5fe7161dc9c8700ea0868267a62cea1f731a",
+  "last_check": "2026-06-02",
+  "last_ms_docs_commit_sha": "39dc626015d609f78b6a44be91711e465fd27d94",
   "ms_release_plan_feature_count": 21,
   "suppressed_ms_slugs": {
     "administrator-experiences": "category section page, not a feature",
     "mask-sensitive-data-prevent-unauthorized-access": "covered by feature-data-masking.md",
     "use-optimized-setting-update-presence": "covered by feature-presence-and-custom-presence.md",
-    "promote-intents-self-service-semi--or-fully-automated-manner": "covered by feature-customer-intent-agent.md"
+    "promote-intents-self-service-semi--or-fully-automated-manner": "covered by feature-customer-intent-agent.md",
+    "cc-troubleshooting-faqs": "FAQ/troubleshooting doc, not a feature",
+    "overview-ai-agents-copilot-features": "overview page, not a feature doc"
   },
   "known_ms_slugs": {
     "assign-work-higher-priority-queues-agents-first": "feature-priority-based-routing.md",
@@ -171,7 +173,27 @@
     "certify-using-contact-center-windows-365-virtual-computers": "feature-system-requirements.md",
     "update-representative-presence-missed-rejected-notification": "feature-presence-and-custom-presence.md",
     "manage-all-ongoing-conversations": "feature-ongoing-conversations-dashboard.md",
-    "view-analytics-proactive-outbound-engagement": "feature-voice-analytics.md"
+    "view-analytics-proactive-outbound-engagement": "feature-voice-analytics.md",
+    "conversation-orchestration-rai-faq": "feature-conversation-orchestration.md",
+    "configure-voice-citrix-virtual-desktop": "feature-voice-channel-overview.md",
+    "install-manage-desktop-app": "feature-desktop-companion-app.md",
+    "set-up-embedded-experience-servicenow": "feature-embedded-third-party-crm.md",
+    "set-up-embedded-experience": "feature-embedded-third-party-crm.md",
+    "workforce-management-configure-capacity-planning": "feature-wfm-forecasting-capacity.md",
+    "workforce-management-configure-forecast-scenarios": "feature-conversation-forecasting.md",
+    "workforce-management-configure-representative-calendar": "feature-wfm-schedule-management.md",
+    "workforce-management-enable-shift-bids": "feature-wfm-schedule-management.md",
+    "workforce-management-enable-shift-swapping": "feature-wfm-schedule-management.md",
+    "workforce-management-shift-activity-types": "feature-wfm-schedule-management.md",
+    "workforce-management-time-off-request-types": "feature-wfm-schedule-management.md",
+    "workforce-management-create-time-off-request": "feature-wfm-schedule-management.md",
+    "workforce-management-forecast-scenarios": "feature-conversation-forecasting.md",
+    "workforce-management-representative-shift-bidding": "feature-wfm-schedule-management.md",
+    "workforce-management-use-auto-schedule": "feature-wfm-schedule-management.md",
+    "workforce-management-use-shift-swapping": "feature-wfm-schedule-management.md",
+    "workforce-management-view-time-off-requests": "feature-wfm-schedule-management.md",
+    "draft-email-embedded-experience": "feature-copilot-email-drafting.md",
+    "use-quality-assurance-agent": "feature-quality-evaluation-agent.md"
   },
   "documented_features": [
     "feature-accessibility.md",
