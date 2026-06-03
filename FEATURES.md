@@ -461,11 +461,17 @@ The single most important thing to know about each major area. Read this before 
 
 - [Data Masking](11-security-and-compliance/feature-data-masking.md) — **Two independent systems** — chat regex rules (10 max) AND voice variable masking
 - [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-compliance.md) — Native masking + DTMF suppression; actual payment capture needs external PCI system
-- [Data Residency](11-security-and-compliance/feature-data-residency.md) — Dataverse region set at environment creation; ACS voice may process in different ron
+- [Data Residency](11-security-and-compliance/feature-data-residency.md) — Dataverse region set at environment creation; ACS voice may process in a different region
 - [GDPR & Data Subject Requests](11-security-and-compliance/feature-gdpr.md) — Power Platform DSR tools cover Dataverse; ACS/recording data needs manual process
 
 **Monitoring & Control**
 
 - [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview; routing table audit is separate
 - [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) — Manual block list + auto-block threshold for spam detection
-- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion app required; full-screen capture; **no default retention** — confi
+- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion app required; full-screen capture; **no default retention** — configure bulk delete before go-live
+
+---
+
+*212 features documented · Organised by Microsoft release wave · GA dates sourced from Microsoft release plans and product docs*
+
+*Last updated: 2026-06-03*
