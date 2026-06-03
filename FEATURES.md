@@ -10,6 +10,7 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | Change |
 |------|---------|--------|
+| 2026-06-03 | [Copilot Verbatim Responses for Knowledge Articles](05-copilot-and-ai/feature-copilot-verbatim-responses.md) | GA June 2026 — preview label removed; tagging behaviour now stable |
 | 2026-05-22 | [Headset Call Controls (Answer and Hang Up)](03-agent-experience/feature-headset-call-controls.md) | New doc — Teams-certified headset answer/hang-up support; GA September 2026 |
 | 2026-05-22 | [Average Wait-Time Diagnostics](08-analytics-and-reporting/feature-awt-diagnostics.md) | New doc — Application Insights AWT logging and real-time queue-level diagnostics; GA May 2026 |
 | 2026-05-15 | [Real-Time Voice Agents (Speech-to-Speech IVR)](01-channels/self-service/feature-realtime-voice-agents-speech-to-speech.md) | New doc — Speech-to-speech IVR via Copilot Studio + OpenAI gpt-4o-realtime; GA April 2026 |
@@ -467,10 +468,4 @@ The single most important thing to know about each major area. Read this before 
 
 - [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview; routing table audit is separate
 - [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) — Manual block list + auto-block threshold for spam detection
-- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion app required; full-screen capture; **no default retention** — configure bulk delete before go-live
-
----
-
-*128 features documented · Organised by Microsoft release wave · GA dates sourced from Microsoft release plans and product docs*
-
-*Last updated: 2026-05-12*
+- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion app required; full-screen capture; **no default retention** — confi
