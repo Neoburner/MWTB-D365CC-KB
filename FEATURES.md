@@ -10,6 +10,7 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | Change |
 |------|---------|--------|
+| 2026-06-24 | [Agentic Simulations](06-ai-agents/feature-agentic-simulations.md) | New doc — AI-generated conversations to test AI agents and voice routing before go-live; voice inbound only; ~40 Copilot Studio credits per run; public preview |
 | 2026-06-23 | [Real-Time Streaming Analytics](08-analytics-and-reporting/feature-realtime-streaming-analytics.md) | New doc — event-driven supervisor analytics in a separate CC-only preview portal; Wallboard/Conversations/Queues/Representatives/Assisted Service views; public preview |
 | 2026-06-12 | [Quality and Coaching Skills](06-ai-agents/feature-quality-and-coaching-skills.md) | New doc — real-time AI quality scoring and live coaching nudges; evaluation plans, quality indicators, and guardrails; Copilot credit-billed |
 | 2026-06-06 | [Proactive Engagement Consent Management](11-security-and-compliance/feature-proactive-engagement-consent.md) | New doc — opt-out tracking and do-not-call enforcement for proactive outbound voice/SMS |
@@ -469,6 +470,4 @@ The single most important thing to know about each major area. Read this before 
 
 **Monitoring & Control**
 
-- [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview; routing table audit is separate
-- [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) — Manual block list + auto-block threshold for spam detection
-- [Screen Recording](11-security-and-compliance/feature-screen-recording.md)
+- [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview;
