@@ -10,6 +10,8 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | Change |
 |------|---------|--------|
+| 2026-07-01 | [MCP Tools and MCP Server Support for AI Agents](10-integration-and-extensibility/feature-mcp-tools-and-servers.md) | New doc — first-party MCP tools plus registering non-Microsoft MCP servers to extend Service Agent; Entra-auth endpoints only; configured via maker mode; public preview |
+| 2026-07-01 | [Service Agent in Microsoft 365 Copilot](06-ai-agents/feature-service-agent-m365.md) | GA 30 June 2026 — preview language removed; added Outlook surface, in-chat file/image/chart/Office capabilities, and MCP extensibility |
 | 2026-06-24 | [Agentic Simulations](06-ai-agents/feature-agentic-simulations.md) | New doc — AI-generated conversations to test AI agents and voice routing before go-live; voice inbound only; ~40 Copilot Studio credits per run; public preview |
 | 2026-06-23 | [Real-Time Streaming Analytics](08-analytics-and-reporting/feature-realtime-streaming-analytics.md) | New doc — event-driven supervisor analytics in a separate CC-only preview portal; Wallboard/Conversations/Queues/Representatives/Assisted Service views; public preview |
 | 2026-06-12 | [Quality and Coaching Skills](06-ai-agents/feature-quality-and-coaching-skills.md) | New doc — real-time AI quality scoring and live coaching nudges; evaluation plans, quality indicators, and guardrails; Copilot credit-billed |
@@ -470,4 +472,4 @@ The single most important thing to know about each major area. Read this before 
 
 **Monitoring & Control**
 
-- [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview;
+- [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsof
