@@ -10,6 +10,8 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | Change |
 |------|---------|--------|
+| 2026-07-03 | [Proactive Engagement Dashboard](08-analytics-and-reporting/feature-proactive-engagement-dashboard.md) | New doc — real-time supervisor dashboard for proactive outbound; live pending/in-progress/throughput/pacing tiles in Omnichannel real-time analytics |
+| 2026-07-03 | [Proactive Delivery APIs (CCaaS)](10-integration-and-extensibility/feature-proactive-delivery-api.md) | New doc — CCaaS_CreateSimpleProactiveDelivery, CreateProactiveBulkDelivery (+V2), and GetDeliveryTasks for API-driven proactive outbound; caller owns consent/quiet-hours |
 | 2026-07-01 | [MCP Tools and MCP Server Support for AI Agents](10-integration-and-extensibility/feature-mcp-tools-and-servers.md) | New doc — first-party MCP tools plus registering non-Microsoft MCP servers to extend Service Agent; Entra-auth endpoints only; configured via maker mode; public preview |
 | 2026-07-01 | [Service Agent in Microsoft 365 Copilot](06-ai-agents/feature-service-agent-m365.md) | GA 30 June 2026 — preview language removed; added Outlook surface, in-chat file/image/chart/Office capabilities, and MCP extensibility |
 | 2026-06-24 | [Agentic Simulations](06-ai-agents/feature-agentic-simulations.md) | New doc — AI-generated conversations to test AI agents and voice routing before go-live; voice inbound only; ~40 Copilot Studio credits per run; public preview |
@@ -466,10 +468,4 @@ The single most important thing to know about each major area. Read this before 
 **Data Protection**
 
 - [Data Masking](11-security-and-compliance/feature-data-masking.md) — **Two independent systems** — chat regex rules (10 max) AND voice variable masking
-- [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-compliance.md) — Native masking + DTMF suppression; actual payment capture needs external PCI system
-- [Data Residency](11-security-and-compliance/feature-data-residency.md) — Dataverse region set at environment creation; ACS voice may process in a different region
-- [GDPR & Data Subject Requests](11-security-and-compliance/feature-gdpr.md) — Power Platform DSR tools cover Dataverse; ACS/recording data needs manual process
-
-**Monitoring & Control**
-
-- [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsof
+- [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-
