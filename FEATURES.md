@@ -10,6 +10,7 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | Change |
 |------|---------|--------|
+| 2026-07-08 | [Voice Biometrics and Anti-Fraud Agent](11-security-and-compliance/feature-voice-biometrics-authentication.md) | New doc — voiceprint caller verification and anti-fraud agent across voice agent and rep calls; part of an MFA strategy with OTP/knowledge challenges; ⚠️ Preview (Aug 2026), GA Sep 2026 |
 | 2026-07-03 | [Proactive Engagement Dashboard](08-analytics-and-reporting/feature-proactive-engagement-dashboard.md) | New doc — real-time supervisor dashboard for proactive outbound; live pending/in-progress/throughput/pacing tiles in Omnichannel real-time analytics |
 | 2026-07-03 | [Proactive Delivery APIs (CCaaS)](10-integration-and-extensibility/feature-proactive-delivery-api.md) | New doc — CCaaS_CreateSimpleProactiveDelivery, CreateProactiveBulkDelivery (+V2), and GetDeliveryTasks for API-driven proactive outbound; caller owns consent/quiet-hours |
 | 2026-07-01 | [MCP Tools and MCP Server Support for AI Agents](10-integration-and-extensibility/feature-mcp-tools-and-servers.md) | New doc — first-party MCP tools plus registering non-Microsoft MCP servers to extend Service Agent; Entra-auth endpoints only; configured via maker mode; public preview |
@@ -468,4 +469,12 @@ The single most important thing to know about each major area. Read this before 
 **Data Protection**
 
 - [Data Masking](11-security-and-compliance/feature-data-masking.md) — **Two independent systems** — chat regex rules (10 max) AND voice variable masking
-- [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-
+- [PCI-DSS Compliance](11-security-and-compliance/feature-pci-dss-compliance.md) — Native masking + DTMF suppression; actual payment capture needs external PCI system
+- [Data Residency](11-security-and-compliance/feature-data-residency.md) — Dataverse region set at environment creation; ACS voice may process in a different region
+- [GDPR & Data Subject Requests](11-security-and-compliance/feature-gdpr.md) — Power Platform DSR tools cover Dataverse; ACS/recording data needs manual process
+
+**Monitoring & Control**
+
+- [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview; routing table audit is separate
+- [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) — Manual block list + auto-block threshold for spam detection
+- [Screen Recording](11-security-and-compli

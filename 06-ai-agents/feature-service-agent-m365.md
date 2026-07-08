@@ -26,4 +26,16 @@ Use if the client has M365 Copilot licences and reps want an assistant that span
 
 ## Gotchas
 - **Two admin teams must coordinate.** M365 admin installs the Service app; D365 admin adds M365 Copilot to the environment. May be different teams. Clarify ownership early: common delay.
-- **Lice
+- **Licensing is the real gate.** Per-user M365 Copilot licences, separate from D365 — the rollout population is usually smaller than clients expect once they see the cost.
+- **Broad capability set invites scope creep.** File analysis, image/chart generation, Office doc creation and MCP extensibility are attractive in demos; agree which capabilities are actually in scope for go-live rather than switching everything on.
+
+## Consultant notes
+
+- Now it's GA, the conversation shifts from "should we pilot this" to "which reps and which capabilities". Confirm the M365 Copilot licence count first — it's per user and separate from D365, so the eligible population is usually smaller than the client pictures.
+- Two admin teams needing to coordinate is still the delay that catches projects. Confirm who owns M365 admin and who owns D365 admin at the start. If they're different teams (common in enterprise), get them introduced early and document which step each owns.
+- The MCP extensibility is the genuinely new lever for enterprise clients — if they've got MCP-capable backends, the agent can act in those systems without custom plugin builds. But the endpoint has to speak Entra auth, so check that with their platform team before promising anything.
+- Treat the in-chat file/image/Office capabilities as opt-in per rollout. They're powerful but they widen the surface reps (and support) have to understand; don't let "it can do everything" survive into the training plan without a decision on what's actually enabled.
+
+---
+
+*Source last updated: 2026-06-30 (GA) | Check this after multilingual support lands, MCP support moves out of preview, or licensing requirements change*
