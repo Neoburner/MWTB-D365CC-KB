@@ -10,6 +10,7 @@ Single-pane view of every documented feature. For the section-by-section index, 
 
 | Date | Feature | Change |
 |------|---------|--------|
+| 2026-07-14 | [Bullseye Routing](02-routing/feature-bullseye-routing.md) | New doc — progressive-expansion assignment via conversation orchestration playbooks; user-group levels widen the pool on wait-time thresholds; no custom assignment; public preview |
 | 2026-07-11 | [Shift Rotation Policies](07-workforce-engagement/feature-wfm-shift-rotation-policies.md) | New doc — WFM rotation of representatives across recurring time slots on a fixed cadence; auto-scheduler only; immovable activation date; public preview |
 | 2026-07-08 | [Voice Biometrics and Anti-Fraud Agent](11-security-and-compliance/feature-voice-biometrics-authentication.md) | New doc — voiceprint caller verification and anti-fraud agent across voice agent and rep calls; part of an MFA strategy with OTP/knowledge challenges; ⚠️ Preview (Aug 2026), GA Sep 2026 |
 | 2026-07-03 | [Proactive Engagement Dashboard](08-analytics-and-reporting/feature-proactive-engagement-dashboard.md) | New doc — real-time supervisor dashboard for proactive outbound; live pending/in-progress/throughput/pacing tiles in Omnichannel real-time analytics |
@@ -478,4 +479,4 @@ The single most important thing to know about each major area. Read this before 
 
 - [Audit Logging](11-security-and-compliance/feature-audit-logging.md) — Power Platform audit + Microsoft Purview; routing table audit is separate
 - [Blocked Numbers](11-security-and-compliance/feature-blocked-numbers.md) — Manual block list + auto-block threshold for spam detection
-- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion ap
+- [Screen Recording](11-security-and-compliance/feature-screen-recording.md) — Desktop companion app re
