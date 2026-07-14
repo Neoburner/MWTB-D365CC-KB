@@ -1,61 +1,21 @@
-# MWTB D365 Contact Center KB
+# MWTB D365 Contact Center KB — moved
 
-A consultant-focused knowledge base for Microsoft Dynamics 365 Contact Center — implementation notes, gotchas, and configuration decisions that aren't obvious from the official docs.
+**This knowledge base now lives at → https://apps.pr1vacy.cloud/kb/d365-contact-center**
 
-128 features documented across 11 categories. Updated daily.
+The consultant KB for Microsoft Dynamics 365 Contact Center — implementation notes, gotchas, and configuration decisions that aren't obvious from the official docs — has moved to a proper searchable site. It's no longer maintained here.
 
----
+## Go to the live KB
 
-## What's in here
+- **Browse:** https://apps.pr1vacy.cloud/kb/d365-contact-center
+- **Search everything:** https://apps.pr1vacy.cloud/kb/search
+- **What's new / changelog:** https://apps.pr1vacy.cloud/kb/d365-contact-center/FEATURES
 
-| File / Folder | What it contains |
-|---|---|
-| [FEATURES.md](./FEATURES.md) | Full feature list, recent additions by release wave, and top gotchas by area |
-| `01-channels/` | Voice, digital messaging, and self-service channels |
-| `02-routing/` | Unified routing, workstreams, queues, assignment rules |
-| `03-agent-experience/` | Agent desktop features |
-| `04-supervisor-experience/` | Supervisor dashboards and controls |
-| `05-copilot-and-ai/` | Copilot features |
-| `06-ai-agents/` | Autonomous AI agents |
-| `07-workforce-engagement/` | WFM — scheduling, forecasting, adherence |
-| `08-analytics-and-reporting/` | Dashboards and reporting |
-| `09-administration/` | Admin configuration |
-| `10-integration-and-extensibility/` | APIs, integrations, Power Platform |
-| `11-security-and-compliance/` | Security, compliance, data residency |
+The live site has full-text search, per-doc version history, related-doc links, status badges and a review queue — none of which the raw markdown here gives you.
+
+## About this repo
+
+This repository was the original home of the KB: markdown, one file per feature. It's kept as an archive of the source markdown, but it's no longer the primary — new features and updates now land directly in the live KB, not here.
 
 ---
 
-## How to use
-
-Each doc follows the same structure:
-
-- **What it does** — plain English, one or two sentences
-- **Key facts** — limits, defaults, prerequisites, non-obvious behaviour
-- **When to use / skip** — when this is the right tool and when it isn't
-- **Configuration decisions** — the choices an implementer has to make
-- **Gotchas** — things that will catch you out on a real project
-
-Docs link back to the Microsoft Learn source and include a review trigger note at the bottom.
-
----
-
-## Coverage gaps
-
-The following features are identified in the batch audit checklist but not yet documented:
-
-- Voice: conference calls, hold/mute/resume controls
-- Digital messaging: WeChat (no dedicated MS Learn page exists), Google Business Messages, attachment handling, rich text/card support, real-time message translation (chat)
-- Self-service: Azure Bot Service integration, third-party bot integration (Direct Line), multimodal customer intent, bot deflection analytics
-- Routing: percent-based routing (partially covered in route-to-queue doc), priority-based routing
-- Agent experience: swarming, email threading, internal notes & tags, customer summary/360 view, multi-session handling overview
-- Copilot: AI-suggested similar cases, AI-suggested knowledge articles, responsible AI controls
-- Supervisor: supervisor extensibility (custom metrics)
-- WFM: external data import for forecasting, agent feedback & coaching
-- Analytics: custom dashboards/extensibility, data export to Azure Data Lake, Power BI embedded, SLA management
-- Administration: locale/language settings, geo-redundancy & failover, email configuration (Exchange/EWS admin setup), licensing management
-- Integration: CIF v1, Power Automate custom workflows, Power Apps integration, Copilot Studio deep integration, Azure AI services, CTI third-party, ServiceNow connector
-- Security: DLP policies, network security/IP allowlisting
-
----
-
-*Last updated: 2026-05-08 · 128 features documented*
+*Consultant knowledge base · implementation notes & configuration guidance for Dynamics 365 Contact Center.*
